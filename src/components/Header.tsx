@@ -70,7 +70,7 @@ export function Header() {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between" style={{ padding: '12px 0', overflow: 'visible' }}>
+          <div className="navbar-brand-fixed">
 
             {/* ── Logo: premium — nombre completo + isotype 3 barras ── */}
             <Link href="/" className="flex items-center shrink-0 relative z-10">
@@ -80,8 +80,7 @@ export function Header() {
                 width={500}
                 height={174}
                 priority
-                className="h-[65px] w-auto object-contain transition-opacity duration-300"
-                style={{ display: "block" }}
+                className="brand-logo-fixed transition-opacity duration-300"
               />
             </Link>
 
@@ -164,14 +163,13 @@ export function Header() {
               className="fixed top-0 right-0 bottom-0 w-[280px] max-w-[80vw] bg-white z-50 lg:hidden flex flex-col shadow-2xl"
             >
               {/* Drawer Header */}
-              <div className="flex items-center justify-between px-4 border-b border-gray-100 shrink-0" style={{ padding: '12px 16px', overflow: 'visible' }}>
+              <div className="navbar-brand-fixed px-4 border-b border-gray-100 shrink-0">
                 <Image
                   src="/logo-header-noslogan.webp"
                   alt="Jhon & Asociados"
                   width={500}
                   height={174}
-                  className="h-[50px] w-auto object-contain"
-                  style={{ display: "block" }}
+                  className="brand-logo-fixed"
                 />
                 <button
                   onClick={() => setIsMobileOpen(false)}

@@ -122,6 +122,30 @@ img, svg {
   image-rendering: auto;
 }
 
+/* ─── BRAND LOGO FIXED — Anti-crop global rules (all pages, PC + Mobile) ─── */
+.brand-logo-fixed {
+  height: 65px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  transform: none !important;
+}
+
+@media (max-width: 768px) {
+  .brand-logo-fixed {
+    height: 50px !important;
+  }
+}
+
+/* ─── HEADER CONTAINER — Flexbox + padding, zero height constraints ─── */
+.navbar-brand-fixed {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 14px 0 !important;
+  overflow: visible !important;
+}
+
 /* Custom scrollbar — Jhon & Asociados brand colors (all devices) */
 * {
   scrollbar-width: thin;

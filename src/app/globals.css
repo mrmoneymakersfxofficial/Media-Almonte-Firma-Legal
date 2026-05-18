@@ -131,12 +131,6 @@ img, svg {
   transform: none !important;
 }
 
-@media (max-width: 768px) {
-  .brand-logo-fixed {
-    height: 50px !important;
-  }
-}
-
 /* ─── HEADER CONTAINER — Flexbox + padding, zero height constraints ─── */
 .navbar-brand-fixed {
   display: flex !important;
@@ -144,6 +138,21 @@ img, svg {
   justify-content: space-between !important;
   padding: 14px 0 !important;
   overflow: visible !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   MOBILE OPTIMIZATION (max-width: 768px)
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .brand-logo-fixed {
+    height: 48px !important;
+    width: auto !important;
+  }
+
+  .navbar-brand-fixed {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }
 
 /* Custom scrollbar — Jhon & Asociados brand colors (all devices) */
@@ -224,14 +233,73 @@ img, svg {
   background: linear-gradient(135deg, #002350 0%, #001528 40%, #481180 100%);
 }
 
-/* Card hover effect */
+/* ─── SERVICE CARDS — Premium Redesign ─── */
 .service-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 4px solid #481180 !important;
+  box-shadow: 0 10px 25px rgba(0, 35, 80, 0.05) !important;
+  transition: all 0.3s ease-in-out !important;
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 35, 80, 0.1);
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 35px rgba(0, 35, 80, 0.12) !important;
+}
+
+/* Icon container — integrated seal */
+.service-card-icon {
+  width: 45px !important;
+  height: 45px !important;
+  min-width: 45px !important;
+  background: #f8fafc !important;
+  border: 1.5px solid #002350 !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.service-card:hover .service-card-icon {
+  background: #002350 !important;
+  border-color: #002350 !important;
+}
+
+.service-card:hover .service-card-icon svg {
+  color: #ffffff !important;
+}
+
+/* Ver detalles — styled micro-button */
+.service-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #008775;
+  background: rgba(0, 135, 117, 0.06);
+  border-bottom: 2px solid rgba(0, 135, 117, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+.service-card-link:hover {
+  background: rgba(0, 135, 117, 0.12);
+  border-bottom-color: #008775;
+  color: #006655;
+  transform: translateX(2px);
+}
+
+/* ─── FADE-IN ANIMATION — IntersectionObserver ─── */
+.card-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* Pricing card highlight */

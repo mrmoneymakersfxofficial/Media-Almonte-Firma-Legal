@@ -58,11 +58,11 @@ const containerVariants = {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
 };
 
 export function Services() {
-  const { ref, isVisible } = useScrollAnimation(0.1);
+  const { ref, isVisible } = useScrollAnimation(0.15);
   const { openModal } = useWhatsAppStore();
 
   return (
@@ -108,19 +108,16 @@ export function Services() {
               <motion.div
                 key={card.title}
                 variants={cardVariants}
-                className="service-card bg-white rounded-2xl p-6 lg:p-8 border border-gray-100 shadow-sm group cursor-pointer"
+                className="service-card bg-white rounded-2xl p-6 lg:p-8 cursor-pointer"
               >
-                <div className="w-14 h-14 bg-emerald/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-emerald/20 transition-colors">
-                  <Icon className="w-7 h-7 text-emerald" />
+                <div className="service-card-icon mb-5">
+                  <Icon className="w-5 h-5 text-[#002350]" />
                 </div>
                 <h3 className="text-xl font-bold text-navy mb-3">{card.title}</h3>
                 <p className="text-muted-foreground leading-relaxed mb-5">{card.description}</p>
-                <Link
-                  href={card.href}
-                  className="inline-flex items-center text-emerald font-semibold text-sm hover:text-emerald-dark transition-colors group/btn"
-                >
+                <Link href={card.href} className="service-card-link">
                   Ver detalles
-                  <svg className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>

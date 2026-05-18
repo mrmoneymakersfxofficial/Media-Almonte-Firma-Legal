@@ -77,8 +77,8 @@ export function Header() {
               <Image
                 src={scrolled ? "/logo-header-noslogan.webp" : "/logo-header-white-noslogan.png"}
                 alt="Jhon & Asociados"
-                width={500}
-                height={174}
+                width={925}
+                height={381}
                 priority
                 className="brand-logo-fixed transition-opacity duration-300"
               />
@@ -167,8 +167,8 @@ export function Header() {
                 <Image
                   src="/logo-header-noslogan.webp"
                   alt="Jhon & Asociados"
-                  width={500}
-                  height={174}
+                  width={925}
+                  height={381}
                   className="brand-logo-fixed"
                 />
                 <button

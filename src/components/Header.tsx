@@ -70,9 +70,9 @@ export function Header() {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between py-3 sm:py-3.5 md:py-4 lg:py-5" style={{ overflow: 'visible' }}>
+          <div className="flex items-center justify-between" style={{ padding: '12px 0', overflow: 'visible' }}>
 
-            {/* ── Logo: única imagen responsive ── */}
+            {/* ── Logo: premium — nombre completo + isotype 3 barras ── */}
             <Link href="/" className="flex items-center shrink-0 relative z-10">
               <Image
                 src={scrolled ? "/logo-header-noslogan.webp" : "/logo-header-white-noslogan.png"}
@@ -80,7 +80,7 @@ export function Header() {
                 width={500}
                 height={174}
                 priority
-                className="h-[40px] sm:h-[44px] md:h-[48px] lg:h-[54px] xl:h-[60px] w-auto object-contain transition-opacity duration-300"
+                className="h-[65px] w-auto object-contain transition-opacity duration-300"
                 style={{ display: "block" }}
               />
             </Link>
@@ -164,14 +164,14 @@ export function Header() {
               className="fixed top-0 right-0 bottom-0 w-[280px] max-w-[80vw] bg-white z-50 lg:hidden flex flex-col shadow-2xl"
             >
               {/* Drawer Header */}
-              <div className="flex items-center justify-between px-4 py-4 border-b border-gray-100 shrink-0" style={{ overflow: 'visible' }}>
+              <div className="flex items-center justify-between px-4 border-b border-gray-100 shrink-0" style={{ padding: '12px 16px', overflow: 'visible' }}>
                 <Image
-                  src="/logo-header.webp"
+                  src="/logo-header-noslogan.webp"
                   alt="Jhon & Asociados"
-                  width={400}
-                  height={165}
-                  className="h-[40px] w-auto object-contain"
-                  style={{ width: "auto", display: "block" }}
+                  width={500}
+                  height={174}
+                  className="h-[50px] w-auto object-contain"
+                  style={{ display: "block" }}
                 />
                 <button
                   onClick={() => setIsMobileOpen(false)}

@@ -46,10 +46,6 @@ export function Header() {
     return pathname.startsWith(href);
   }
 
-  /* ─────────────────────────────────────────────
-     scrolled = true → white solid bg + brand border
-     scrolled = false → transparent (only on HOME)
-  ───────────────────────────────────────────── */
   const scrolled = isScrolled || !isHome;
 
   return (
@@ -61,7 +57,7 @@ export function Header() {
             : "bg-transparent"
         }`}
       >
-        {/* Brand accent line — always rendered but opacity-controlled (no layout shift) */}
+        {/* Brand gradient line — always in DOM, opacity toggled (zero layout shift) */}
         <div
           className={`w-full h-[3px] bg-gradient-to-r from-[#002350] via-[#481180] to-[#008775] transition-opacity duration-300 ${
             scrolled ? "opacity-100" : "opacity-0"
@@ -69,27 +65,28 @@ export function Header() {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[60px]">
-            {/* ── Logo ── */}
+          <div className="flex items-center justify-between h-[56px] sm:h-[60px]">
+
+            {/* ── Logo: full mark (isotype + text) ── */}
             <Link href="/" className="flex items-center shrink-0 relative z-10">
               <Image
                 src={scrolled ? "/logo-header.webp" : "/logo-header-white.png"}
-                alt="Jhon & Asociados"
-                width={160}
-                height={60}
+                alt="Jhon & Asociados — Especialistas Tributarios"
+                width={260}
+                height={100}
                 priority
-                className="object-contain h-[40px] sm:h-[44px] lg:h-[46px] transition-opacity duration-300"
+                className="object-contain h-[32px] sm:h-[36px] lg:h-[38px] transition-opacity duration-300"
                 style={{ width: "auto" }}
               />
             </Link>
 
             {/* ── Desktop Nav ── */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-0.5">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative px-3.5 py-2 text-[13.5px] font-medium transition-colors duration-200 rounded-md ${
+                  className={`relative px-3 py-2 text-[13px] font-medium transition-colors duration-200 rounded-md ${
                     scrolled
                       ? isActive(item.href)
                         ? "text-[#008775]"
@@ -102,7 +99,7 @@ export function Header() {
                   {item.label}
                   {isActive(item.href) && (
                     <span
-                      className={`absolute bottom-0 left-3.5 right-3.5 h-[2px] rounded-full transition-colors duration-300 ${
+                      className={`absolute bottom-0 left-3 right-3 h-[2px] rounded-full transition-colors duration-300 ${
                         scrolled ? "bg-[#008775]" : "bg-white"
                       }`}
                     />
@@ -111,7 +108,7 @@ export function Header() {
               ))}
               <button
                 onClick={() => openModal()}
-                className={`ml-3 px-5 py-2.5 rounded-lg text-[13.5px] font-bold transition-all duration-200 ${
+                className={`ml-2 px-5 py-2 rounded-lg text-[13px] font-bold transition-all duration-200 ${
                   scrolled
                     ? "bg-[#008775] hover:bg-[#006655] text-white shadow-sm hover:shadow-md"
                     : "bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white border border-white/25"
@@ -132,9 +129,9 @@ export function Header() {
               aria-label="Menú de navegación"
             >
               {isMobileOpen ? (
-                <X className="w-[22px] h-[22px]" strokeWidth={2} />
+                <X className="w-5 h-5" strokeWidth={2} />
               ) : (
-                <Menu className="w-[22px] h-[22px]" strokeWidth={2} />
+                <Menu className="w-5 h-5" strokeWidth={2} />
               )}
             </button>
           </div>
@@ -162,13 +159,13 @@ export function Header() {
               className="fixed top-0 right-0 bottom-0 w-[280px] max-w-[80vw] bg-white z-50 lg:hidden flex flex-col shadow-2xl"
             >
               {/* Drawer Header */}
-              <div className="flex items-center justify-between px-4 h-[60px] border-b border-gray-100 shrink-0">
+              <div className="flex items-center justify-between px-4 h-[56px] border-b border-gray-100 shrink-0">
                 <Image
                   src="/logo-header.webp"
                   alt="Jhon & Asociados"
-                  width={120}
-                  height={45}
-                  className="h-[36px] w-auto object-contain"
+                  width={200}
+                  height={77}
+                  className="h-[30px] w-auto object-contain"
                   style={{ width: "auto" }}
                 />
                 <button

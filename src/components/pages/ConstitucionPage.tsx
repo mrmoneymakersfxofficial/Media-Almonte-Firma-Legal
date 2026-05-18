@@ -250,7 +250,7 @@ export function ConstitucionPage() {
               <MessageCircle className="w-5 h-5" />
               Consultar por WhatsApp
             </button>
-            <Link href="/nosotros" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all">
+            <Link href="/nosotros-contacto" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all">
               Conocer más de nosotros
             </Link>
           </div>

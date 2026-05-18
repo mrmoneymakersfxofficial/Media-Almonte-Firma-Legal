@@ -31,7 +31,7 @@ function QuickSection() {
       price: "Desde S/ 350/mes",
     },
     {
-      href: "/defensa-tributaria",
+      href: "/defensa-tributaria-sunat",
       icon: Shield,
       title: "Defensa Tributaria y SUNAT",
       desc: "Atención urgente de cartas inductivas, fiscalizaciones y cobranzas coactivas de SUNAT.",

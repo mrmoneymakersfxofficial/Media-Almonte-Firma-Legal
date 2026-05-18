@@ -9,8 +9,8 @@ const quickLinks = [
   { label: "Inicio", href: "/" },
   { label: "Constitución de Empresas", href: "/constitucion-de-empresas" },
   { label: "Contabilidad y Tributación", href: "/contabilidad-tributacion" },
-  { label: "Defensa Tributaria", href: "/defensa-tributaria" },
-  { label: "Nosotros", href: "/nosotros" },
+  { label: "Defensa Tributaria", href: "/defensa-tributaria-sunat" },
+  { label: "Nosotros", href: "/nosotros-contacto" },
 ];
 
 const socialLinks = [
@@ -86,7 +86,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/defensa-tributaria" className="text-white/60 hover:text-emerald-light text-sm transition-colors">
+                <Link href="/defensa-tributaria-sunat" className="text-white/60 hover:text-emerald-light text-sm transition-colors">
                   Defensa Tributaria
                 </Link>
               </li>

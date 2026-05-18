@@ -12,7 +12,7 @@ import { useWhatsAppStore } from "@/lib/whatsapp";
 
 const mainFeatures = [
   { icon: BookOpen, title: "Libros Electrónicos", desc: "Registro de Compras, Ventas, Inventarios, Caja y Bancos, Diario, Mayor, Planilla. Todos al día y conforme a SUNAT." },
-  { icon: FileText, title: "Sistema SIRE", desc: "Registro Electrónico de Información de SUNAT. Actualizamos tu información de ventas, compras y比你ajetes electrónicos de forma mensual." },
+  { icon: FileText, title: "Sistema SIRE", desc: "Registro Electrónico de Información de SUNAT. Actualizamos tu información de ventas, compras y comprobantes electrónicos de forma mensual." },
   { icon: Calculator, title: "Declaraciones Mensuales", desc: "IGV, Renta, IES, Retenciones, ITAN. Preparamos y presentamos todas tus declaraciones tributarias antes de los plazos." },
   { icon: FileText, title: "PDTs y Formularios Vigentes", desc: "PDT 621, PDT 619, PDT 601, FRL 601, y todos los formularios que tu empresa necesite presentar." },
   { icon: BarChart3, title: "Conciliaciones Bancarias", desc: "Verificamos que tus registros contables coincidan con los movimientos bancarios. Detectamos diferencias a tiempo." },
@@ -218,7 +218,7 @@ export function ContabilidadPage() {
             <button onClick={() => openModal(4)} className="inline-flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp/90 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-lg hover:shadow-xl">
               <MessageCircle className="w-5 h-5" /> Cotización Personalizada
             </button>
-            <Link href="/defensa-tributaria" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all">
+            <Link href="/defensa-tributaria-sunat" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all">
               ¿Problemas con SUNAT? Ver Defensa Tributaria
             </Link>
           </div>

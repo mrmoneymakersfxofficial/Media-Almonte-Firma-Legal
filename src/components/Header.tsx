@@ -13,8 +13,8 @@ const navItems = [
   { label: "Servicios", href: "/#servicios" },
   { label: "Constitución", href: "/constitucion-de-empresas" },
   { label: "Contabilidad", href: "/contabilidad-tributacion" },
-  { label: "Defensa Tributaria", href: "/defensa-tributaria" },
-  { label: "Nosotros", href: "/nosotros" },
+  { label: "Defensa Tributaria", href: "/defensa-tributaria-sunat" },
+  { label: "Nosotros", href: "/nosotros-contacto" },
 ];
 
 export function Header() {

@@ -25,7 +25,7 @@ const serviceCards = [
     icon: Shield,
     title: "Defensa Tributaria",
     description: "Atención urgente de cartas inductivas, fiscalizaciones y cobranzas coactivas de SUNAT.",
-    href: "/defensa-tributaria",
+    href: "/defensa-tributaria-sunat",
     serviceId: 5,
   },
   {

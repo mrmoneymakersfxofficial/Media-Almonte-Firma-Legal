@@ -65,17 +65,28 @@ export function Header() {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[64px] sm:h-[68px] lg:h-[76px]">
+          <div className="flex items-center justify-between h-[64px] sm:h-[68px] lg:h-[72px]">
 
-            {/* ── Logo: full mark (isotype + text) ── */}
+            {/* ── Logo: isotype + title (no slogan on desktop) ── */}
             <Link href="/" className="flex items-center shrink-0 relative z-10">
+              {/* Desktop: logo SIN eslogan */}
+              <Image
+                src={scrolled ? "/logo-header-noslogan.webp" : "/logo-header-white-noslogan.png"}
+                alt="Jhon & Asociados"
+                width={400}
+                height={135}
+                priority
+                className="hidden lg:block object-contain h-[42px] xl:h-[46px] transition-opacity duration-300"
+                style={{ width: "auto" }}
+              />
+              {/* Mobile/Tablet: logo CON eslogan */}
               <Image
                 src={scrolled ? "/logo-header.webp" : "/logo-header-white.png"}
                 alt="Jhon & Asociados — Especialistas Tributarios"
                 width={400}
                 height={155}
                 priority
-                className="object-contain h-[40px] sm:h-[46px] lg:h-[56px] transition-opacity duration-300"
+                className="lg:hidden object-contain h-[40px] sm:h-[44px] transition-opacity duration-300"
                 style={{ width: "auto" }}
               />
             </Link>

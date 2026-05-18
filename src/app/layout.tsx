@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Jhon & Asociados" }],
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-isologo.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon-isologo-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-isologo-16x16.png", sizes: "16x16", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/favicon-isologo-192x192.png",
   },
   openGraph: {
     title: "Jhon & Asociados | Especialistas Tributarios",

@@ -31,18 +31,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-5">
+            <Link href="/" className="inline-block mb-5">
               <Image
-                src="/logo-white.png"
+                src="/logo-header-white.png"
                 alt="Jhon & Asociados"
-                width={36}
-                height={36}
-                className="rounded-lg"
+                width={140}
+                height={53}
+                className="h-[50px] w-auto object-contain"
+                style={{ width: "auto" }}
               />
-              <div>
-                <h3 className="font-bold text-lg leading-tight">Jhon & Asociados</h3>
-                <p className="text-emerald-light text-xs">Especialistas Tributarios</p>
-              </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
               Protegemos tu patrimonio con asesoría tributaria, contabilidad integral

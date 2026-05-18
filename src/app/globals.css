@@ -117,9 +117,9 @@ a, button, [role="button"] {
   transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 }
 
-/* ─── Smooth image rendering ─── */
+/* ─── Smooth image rendering (no forced sharp edges on logos) ─── */
 img, svg {
-  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
 }
 
 /* Custom scrollbar */

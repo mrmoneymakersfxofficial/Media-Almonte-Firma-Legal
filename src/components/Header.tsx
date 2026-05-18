@@ -57,11 +57,16 @@ export function Header() {
             : "bg-transparent"
         }`}
       >
-        {/* Brand gradient line — always in DOM, opacity toggled (zero layout shift) */}
+        {/* Brand gradient line — smooth 4px with GPU compositing */}
         <div
-          className={`w-full h-[3px] bg-gradient-to-r from-[#002350] via-[#481180] to-[#008775] transition-opacity duration-300 ${
+          className={`w-full h-[4px] transition-opacity duration-300 ${
             scrolled ? "opacity-100" : "opacity-0"
           }`}
+          style={{
+            background: 'linear-gradient(90deg, #002350 0%, #481180 50%, #008775 100%)',
+            willChange: 'opacity',
+            transform: 'translateZ(0)',
+          }}
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,8 +78,8 @@ export function Header() {
               <Image
                 src={scrolled ? "/logo-header-noslogan.webp" : "/logo-header-white-noslogan.png"}
                 alt="Jhon & Asociados"
-                width={400}
-                height={135}
+                width={500}
+                height={174}
                 priority
                 className="hidden lg:block object-contain h-[42px] xl:h-[46px] transition-opacity duration-300"
                 style={{ width: "auto" }}
@@ -83,8 +88,8 @@ export function Header() {
               <Image
                 src={scrolled ? "/logo-header.webp" : "/logo-header-white.png"}
                 alt="Jhon & Asociados — Especialistas Tributarios"
-                width={400}
-                height={155}
+                width={500}
+                height={206}
                 priority
                 className="lg:hidden object-contain h-[40px] sm:h-[44px] transition-opacity duration-300"
                 style={{ width: "auto" }}
@@ -174,8 +179,8 @@ export function Header() {
                 <Image
                   src="/logo-header.webp"
                   alt="Jhon & Asociados"
-                  width={300}
-                  height={116}
+                  width={400}
+                  height={165}
                   className="h-[38px] w-auto object-contain"
                   style={{ width: "auto" }}
                 />

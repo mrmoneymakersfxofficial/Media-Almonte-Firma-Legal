@@ -122,22 +122,22 @@ img, svg {
   image-rendering: auto;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar — Jhon & Asociados brand colors */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 35, 80, 0.25);
-  border-radius: 3px;
+  background: #002350;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 35, 80, 0.5);
+  background: #481180;
 }
 
 /* WhatsApp button - clean circular, no background artifacts */

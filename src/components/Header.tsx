@@ -65,17 +65,17 @@ export function Header() {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[64px] sm:h-[68px]">
+          <div className="flex items-center justify-between h-[64px] sm:h-[68px] lg:h-[76px]">
 
             {/* ── Logo: full mark (isotype + text) ── */}
             <Link href="/" className="flex items-center shrink-0 relative z-10">
               <Image
                 src={scrolled ? "/logo-header.webp" : "/logo-header-white.png"}
                 alt="Jhon & Asociados — Especialistas Tributarios"
-                width={260}
-                height={100}
+                width={400}
+                height={155}
                 priority
-                className="object-contain h-[40px] sm:h-[44px] lg:h-[48px] transition-opacity duration-300"
+                className="object-contain h-[40px] sm:h-[46px] lg:h-[56px] transition-opacity duration-300"
                 style={{ width: "auto" }}
               />
             </Link>
@@ -163,9 +163,9 @@ export function Header() {
                 <Image
                   src="/logo-header.webp"
                   alt="Jhon & Asociados"
-                  width={200}
-                  height={77}
-                  className="h-[36px] w-auto object-contain"
+                  width={300}
+                  height={116}
+                  className="h-[38px] w-auto object-contain"
                   style={{ width: "auto" }}
                 />
                 <button

@@ -29,8 +29,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Jhon & Asociados" }],
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Jhon & Asociados | Especialistas Tributarios",
@@ -42,8 +46,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logo.png",
-        width: 1024,
-        height: 1024,
+        width: 1600,
+        height: 764,
         alt: "Jhon & Asociados - Especialistas Tributarios",
       },
     ],

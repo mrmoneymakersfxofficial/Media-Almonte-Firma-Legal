@@ -50,11 +50,12 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <Image
-              src="/logo.png"
+              src={isScrolled || !isHome ? "/logo.png" : "/logo-white.png"}
               alt="Jhon & Asociados"
               width={40}
               height={40}
               className="rounded-lg"
+              priority
             />
             <div className="hidden sm:block">
               <h1

@@ -42,15 +42,15 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Brand Colors */
-  --color-navy: #002855;
-  --color-navy-light: #003d80;
-  --color-navy-dark: #001a38;
-  --color-purple: #4A148C;
-  --color-purple-light: #6A1B9A;
-  --color-emerald: #00897B;
-  --color-emerald-light: #00A99D;
-  --color-emerald-dark: #00695C;
+  /* Brand Colors - Official Jhon & Asociados */
+  --color-navy: #002350;
+  --color-navy-light: #0a3a6b;
+  --color-navy-dark: #001528;
+  --color-purple: #481180;
+  --color-purple-light: #5c1ca3;
+  --color-emerald: #008775;
+  --color-emerald-light: #00a996;
+  --color-emerald-dark: #006655;
   --color-whatsapp: #25D366;
   --color-urgent: #DC2626;
   --color-gold: #F59E0B;
@@ -114,12 +114,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #002855;
+  background: #002350;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #003d80;
+  background: #0a3a6b;
 }
 
 /* WhatsApp pulse animation */
@@ -160,7 +160,7 @@ html {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #002855, #4A148C, #00897B);
+  background: linear-gradient(135deg, #002350, #481180, #008775);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -168,7 +168,7 @@ html {
 
 /* Hero gradient overlay */
 .hero-gradient {
-  background: linear-gradient(135deg, #002855 0%, #001a38 40%, #4A148C 100%);
+  background: linear-gradient(135deg, #002350 0%, #001528 40%, #481180 100%);
 }
 
 /* Card hover effect */
@@ -178,12 +178,12 @@ html {
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 40, 85, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 35, 80, 0.15);
 }
 
 /* Pricing card highlight */
 .pricing-recommended {
-  border: 2px solid #00897B;
+  border: 2px solid #008775;
   position: relative;
   overflow: hidden;
 }
@@ -195,5 +195,5 @@ html {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #00897B, #00A99D);
+  background: linear-gradient(90deg, #008775, #00a996);
 }

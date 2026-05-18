@@ -72,27 +72,16 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-3 sm:py-3.5 md:py-4 lg:py-5" style={{ overflow: 'visible' }}>
 
-            {/* ── Logo: isotype + title (no slogan on desktop) ── */}
+            {/* ── Logo: única imagen responsive ── */}
             <Link href="/" className="flex items-center shrink-0 relative z-10">
-              {/* Desktop (md+): logo SIN eslogan */}
               <Image
                 src={scrolled ? "/logo-header-noslogan.webp" : "/logo-header-white-noslogan.png"}
                 alt="Jhon & Asociados"
                 width={500}
                 height={174}
                 priority
-                className="hidden md:block object-contain h-[42px] lg:h-[50px] xl:h-[56px] transition-opacity duration-300"
-                style={{ width: "auto", display: "block" }}
-              />
-              {/* Mobile (<md): logo CON eslogan */}
-              <Image
-                src={scrolled ? "/logo-header.webp" : "/logo-header-white.png"}
-                alt="Jhon & Asociados — Especialistas Tributarios"
-                width={500}
-                height={206}
-                priority
-                className="md:hidden object-contain h-[38px] sm:h-[44px] transition-opacity duration-300"
-                style={{ width: "auto", display: "block" }}
+                className="h-[40px] sm:h-[44px] md:h-[48px] lg:h-[54px] xl:h-[60px] w-auto object-contain transition-opacity duration-300"
+                style={{ display: "block" }}
               />
             </Link>
 

@@ -40,7 +40,6 @@ export function generateWhatsAppURL(
   serviceName: string,
   servicePrice: string,
   name: string,
-  phone: string,
   notes: string
 ): string {
   const message = `Hola Jhon & Asociados.
@@ -48,7 +47,6 @@ export function generateWhatsAppURL(
 Servicio: ${serviceName}
 Precio referencial: ${servicePrice}
 Nombre: ${name}
-Teléfono: ${phone}
 Consulta: ${notes}`;
 
   const encodedMessage = encodeURIComponent(message);

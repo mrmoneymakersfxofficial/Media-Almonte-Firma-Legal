@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, MessageCircle, Phone, User, FileText } from "lucide-react";
+import { X, MessageCircle, User, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,7 +13,6 @@ export function WhatsAppModal() {
   const { isOpen, closeModal, selectedServiceId } = useWhatsAppStore();
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
   const [notes, setNotes] = useState("");
 
   const effectiveSelectedId = selectedId ?? selectedServiceId;
@@ -33,14 +32,13 @@ export function WhatsAppModal() {
 
 
   function handleSubmit() {
-    if (!name.trim() || !phone.trim()) return;
+    if (!name.trim()) return;
     const serviceName = selectedService?.name || "No especificado";
     const servicePrice = selectedService?.price || "Consultar";
-    const url = generateWhatsAppURL(serviceName, servicePrice, name, phone, notes);
+    const url = generateWhatsAppURL(serviceName, servicePrice, name, notes);
     window.open(url, "_blank");
     closeModal();
     setName("");
-    setPhone("");
     setNotes("");
     setSelectedId(null);
   }
@@ -134,20 +132,6 @@ export function WhatsAppModal() {
                   />
                 </div>
 
-                {/* Phone */}
-                <div className="space-y-2">
-                  <Label className="text-sm font-semibold text-navy">
-                    <Phone className="w-4 h-4 inline mr-1" />
-                    Teléfono *
-                  </Label>
-                  <Input
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="Ej: 943366950"
-                    className="border-gray-300 focus-visible:ring-emerald/50 focus-visible:border-emerald"
-                  />
-                </div>
-
                 {/* Notes */}
                 <div className="space-y-2">
                   <Label className="text-sm font-semibold text-navy">Consulta adicional</Label>
@@ -163,7 +147,7 @@ export function WhatsAppModal() {
                 {/* Submit */}
                 <Button
                   onClick={handleSubmit}
-                  disabled={!name.trim() || !phone.trim()}
+                  disabled={!name.trim()}
                   className="w-full bg-whatsapp hover:bg-whatsapp/90 text-white font-semibold h-12 text-base rounded-xl transition-all"
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />

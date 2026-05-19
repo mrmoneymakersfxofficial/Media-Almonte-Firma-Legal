@@ -576,16 +576,22 @@ html.mobile-menu-open .whatsapp-float {
    ═══════════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
 
-  /* Section: force top alignment — override any desktop centering */
+  /* Section: force top alignment + shorter height to avoid crowding */
   .hero-fade-top {
     align-items: flex-start !important;
+    height: auto !important;
+    min-height: 85vh !important;
+    max-height: none !important;
   }
 
   /* Content: flex column, top-aligned, generous breathing below navbar */
   .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
     justify-content: flex-start !important;
     padding-top: 100px !important;
-    padding-bottom: 24px;
+    padding-bottom: 40px !important;
+    height: auto !important;
   }
 
   /* Text block: full width */

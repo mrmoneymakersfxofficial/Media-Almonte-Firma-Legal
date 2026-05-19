@@ -58,8 +58,8 @@ export function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-300 ease-in-out ${
           scrolled
-            ? "bg-white shadow-[0_1px_4px_rgba(0,35,80,0.08)]"
-            : "bg-transparent"
+            ? "header-scrolled"
+            : "header-hero"
         }`}
       >
         {/* Brand gradient line — smooth 4px with GPU compositing */}
@@ -99,17 +99,17 @@ export function Header() {
                     scrolled
                       ? isActive(item.href)
                         ? "text-[#008775]"
-                        : "text-[#002350]/80 hover:text-[#008775]"
+                        : "text-white/90 hover:text-[#00a996]"
                       : isActive(item.href)
                         ? "text-white"
-                        : "text-white/80 hover:text-white"
+                        : "text-white/80 hover:text-[#00a996]"
                   }`}
                 >
                   {item.label}
                   {isActive(item.href) && (
                     <span
                       className={`absolute bottom-0 left-3 right-3 h-[2px] rounded-full transition-colors duration-300 ${
-                        scrolled ? "bg-[#008775]" : "bg-white"
+                        scrolled ? "bg-[#00a996]" : "bg-white"
                       }`}
                     />
                   )}

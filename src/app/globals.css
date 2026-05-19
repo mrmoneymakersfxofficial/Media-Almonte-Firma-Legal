@@ -126,6 +126,18 @@ img, svg {
   image-rendering: auto;
 }
 
+/* ─── HEADER: Transparent over Hero → Navy on Scroll (PC ultra-premium) ─── */
+.header-hero {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+.header-scrolled {
+  background: #002350 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-bottom: none !important;
+}
+
 /* ─── BRAND LOGO FIXED — Anti-crop global rules (all pages, PC + Mobile) ─── */
 .brand-logo-fixed {
   height: 65px !important;
@@ -396,7 +408,7 @@ html.mobile-menu-open .whatsapp-float {
   /* Default: mobile vertical image, face centered in upper area */
   background-image: url('/jhon-hero-movil.webp');
   background-size: cover;
-  background-position: center top;
+  background-position: center 25%;
   background-repeat: no-repeat;
   animation: hero-ken-burns 25s ease-in-out infinite;
 }
@@ -542,6 +554,14 @@ html.mobile-menu-open .whatsapp-float {
   justify-content: center;
 }
 
+/* ─── Desktop: H1 compact corporate line-height ─── */
+@media (min-width: 1024px) {
+  .hero-h1 {
+    line-height: 1.15 !important;
+    margin-bottom: 20px;
+  }
+}
+
 /* ─── Desktop: text constrained to left column ─── */
 @media (min-width: 1024px) {
   .hero-text-col {
@@ -558,7 +578,7 @@ html.mobile-menu-open .whatsapp-float {
   /* Content: flex column, top-aligned with generous breathing */
   .hero-content {
     justify-content: flex-start;
-    padding-top: 80px;
+    padding-top: 60px !important;
     padding-bottom: 24px;
   }
 
@@ -571,25 +591,26 @@ html.mobile-menu-open .whatsapp-float {
   .hero-badge {
     font-size: 10px;
     padding: 5px 12px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
   }
 
-  /* H1: 28px, good line-height, breathing room */
+  /* H1: 26px, compact, clear breathing */
   .hero-h1 {
-    font-size: 28px !important;
-    line-height: 1.18 !important;
+    font-size: 26px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 12px !important;
     color: #ffffff;
   }
 
-  /* Subtitle: 13.5px, light, breathable */
+  /* Subtitle: 14px, light, clean */
   .hero-subtitle {
-    font-size: 13.5px !important;
-    margin-top: 16px !important;
+    font-size: 14px !important;
+    margin-top: 0 !important;
     color: rgba(248, 250, 252, 0.80);
-    line-height: 1.55 !important;
+    line-height: 1.5 !important;
   }
 
-  /* CTAs: full width, generous padding */
+  /* CTAs: full width, thumb-friendly */
   .hero-ctas button,
   .hero-ctas a {
     width: 100%;
@@ -601,18 +622,18 @@ html.mobile-menu-open .whatsapp-float {
 
   /* Trust badges: compact, clean spacing */
   .hero-trust {
-    gap: 6px 14px;
+    gap: 5px 12px;
     font-size: 10px;
-    margin-top: 16px !important;
+    margin-top: 14px !important;
   }
 
   /* Counters: compact, breathing */
   .hero-counters {
-    margin-top: 24px !important;
+    margin-top: 20px !important;
     gap: 8px;
   }
 
-  .hero-counters .grid {
+  .hero-counters > div {
     gap: 6px;
   }
 }

@@ -355,13 +355,13 @@ html.mobile-menu-open .whatsapp-float {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   HERO BANNER — Split Layout Desktop / Full Mobile
+   HERO BANNER — Split Desktop / Vertical Mobile
    Layer architecture:
-     z-index 0  → Background photograph (positioned right on desktop)
-     z-index 1  → Asymmetric brand overlay (dark left → transparent right)
+     z-index 0  → Background photograph (center-right desktop / center-bottom mobile)
+     z-index 1  → Brand overlay (horizontal desktop / vertical mobile)
      z-index 2  → Decorative blurs + dot pattern
      z-index 10 → Top/bottom fade pseudo-elements (hero-fade-top)
-     z-index 20 → Content column (left-aligned on desktop, full on mobile)
+     z-index 20 → Content column (55% left desktop / top 40% mobile)
    ═══════════════════════════════════════════════════════════════════════ */
 
 /* ─── Layer 0: Background photograph ─── */
@@ -381,6 +381,7 @@ html.mobile-menu-open .whatsapp-float {
   overflow: hidden;
 }
 
+/* Default (mobile): vertical image, anchored center-bottom so face stays centered */
 .hero-photo-bg::before {
   content: "";
   position: absolute;
@@ -388,22 +389,23 @@ html.mobile-menu-open .whatsapp-float {
   left: -20px;
   right: -20px;
   bottom: -20px;
-  background-image: url('/jhon-hero-oficina.webp');
+  background-image: url('/jhon-hero-movil.webp');
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   animation: hero-ken-burns 25s ease-in-out infinite;
 }
 
-/* Desktop: force image to the right so Jhon stays visible */
+/* Desktop: horizontal image, positioned center-right so Jhon is visible */
 @media (min-width: 1024px) {
   .hero-photo-bg::before {
+    background-image: url('/jhon-hero-oficina.webp');
     background-position: center right;
   }
 }
 
-/* ─── Layer 1: Asymmetric brand overlay ─── */
-/* Mobile: uniform dark overlay (text readability) */
+/* ─── Layer 1: Brand overlay ─── */
+/* Default (mobile): vertical gradient — dark top (text) → translucent bottom (Jhon visible) */
 .hero-brand-overlay {
   position: absolute;
   top: 0;
@@ -412,15 +414,15 @@ html.mobile-menu-open .whatsapp-float {
   height: 100%;
   z-index: 1;
   background: linear-gradient(
-    135deg,
-    rgba(0, 35, 80, 0.88) 0%,
-    rgba(0, 21, 40, 0.82) 40%,
-    rgba(72, 17, 128, 0.72) 100%
+    180deg,
+    rgba(0, 35, 80, 0.95) 0%,
+    rgba(0, 35, 80, 0.75) 50%,
+    rgba(72, 17, 128, 0.40) 100%
   );
   pointer-events: none;
 }
 
-/* Desktop: dark left (text), gradually transparent right (Jhon visible) */
+/* Desktop: horizontal gradient — dark left (text) → transparent right (Jhon visible) */
 @media (min-width: 1024px) {
   .hero-brand-overlay {
     background: linear-gradient(
@@ -495,5 +497,83 @@ html.mobile-menu-open .whatsapp-float {
 @media (min-width: 1024px) {
   .hero-text-col {
     max-width: 55%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   HERO MOBILE — Vertical Layout Optimization (max-width: 768px)
+   Text occupies top 40%, Jhon's silhouette breathes in bottom 60%
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Section: near-full viewport height */
+  .hero-fade-top {
+    min-height: 90vh;
+  }
+
+  /* Content: flex column, top-aligned, occupies upper portion */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+
+  /* Text block: constrained to ~40% of hero height so Jhon breathes below */
+  .hero-text-col {
+    max-width: 100%;
+  }
+
+  /* H1: 28px, tight line-height, pure white */
+  .hero-text-col h1 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    color: #ffffff;
+  }
+
+  /* Subtitle: 15px, light gray, compact spacing */
+  .hero-text-col p {
+    font-size: 15px !important;
+    margin-top: 10px;
+    color: rgba(248, 250, 252, 0.80);
+  }
+
+  /* Primary CTA: full width for thumb-friendly tap */
+  .hero-text-col button {
+    width: 100%;
+    justify-content: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 15px;
+  }
+
+  /* Secondary CTA: also full width on mobile */
+  .hero-text-col a {
+    width: 100%;
+    justify-content: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 15px;
+  }
+
+  /* Badge: slightly more compact */
+  .hero-text-col .inline-flex {
+    font-size: 11px;
+    padding: 6px 12px;
+    margin-bottom: 16px;
+  }
+
+  /* Trust badges: compact */
+  .hero-text-col .flex.flex-wrap {
+    gap: 8px 16px;
+    font-size: 11px;
+    margin-top: 16px;
+  }
+
+  /* Counters: smaller padding */
+  .hero-text-col + .grid {
+    margin-top: 24px;
+    gap: 8px;
   }
 }

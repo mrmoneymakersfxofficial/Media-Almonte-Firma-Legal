@@ -22,9 +22,16 @@ export function Hero() {
   const { openModal } = useWhatsAppStore();
 
   return (
-    <section className="relative min-h-[100svh] flex items-center hero-gradient overflow-hidden hero-fade-top">
-      {/* Decorative blurs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden hero-fade-top">
+
+      {/* ═══ LAYER 0 — Background Photograph ═══ */}
+      <div className="hero-photo-bg" aria-hidden="true" />
+
+      {/* ═══ LAYER 1 — Brand Gradient Overlay (Navy + Purple corporate tint) ═══ */}
+      <div className="hero-brand-overlay" aria-hidden="true" />
+
+      {/* ═══ LAYER 2 — Decorative Blurs + Dot Pattern ═══ */}
+      <div className="hero-decor-layer">
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#481180]/15 rounded-full blur-[100px]" />
         <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-[#008775]/10 rounded-full blur-[100px]" />
         <div
@@ -36,7 +43,8 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24 w-full">
+      {/* ═══ LAYER 20 — Content (always on top) ═══ */}
+      <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24 w-full">
         <div className="max-w-4xl">
           {/* Badge */}
           <motion.div

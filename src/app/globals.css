@@ -355,10 +355,85 @@ html.mobile-menu-open .whatsapp-float {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   HERO BANNER — Ultra-professional gradient fade transitions
-   Top: smooth white-navbar → dark-hero  |  Bottom: dark-hero → light-section
-   ~0.3 cm (≈12px) per side — minimalista y fluido
+   HERO BANNER — Photograph + Brand Overlay + Fade Transitions
+   Layer architecture:
+     z-index 0  → Background photograph (Ken Burns animation)
+     z-index 1  → Brand gradient overlay (navy → purple with transparency)
+     z-index 2  → Decorative blurs + dot pattern
+     z-index 10 → Top/bottom fade pseudo-elements (hero-fade-top)
+     z-index 20 → Content (text, CTAs, counters)
    ═══════════════════════════════════════════════════════════════════════ */
+
+/* ─── Layer 0: Background photograph with subtle Ken Burns ─── */
+@keyframes hero-ken-burns {
+  0% {
+    transform: scale(1.0);
+    filter: brightness(0.85);
+  }
+  50% {
+    transform: scale(1.08);
+    filter: brightness(0.9);
+  }
+  100% {
+    transform: scale(1.0);
+    filter: brightness(0.85);
+  }
+}
+
+.hero-photo-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-photo-bg::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background-image: url('/hero-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: hero-ken-burns 25s ease-in-out infinite;
+}
+
+/* ─── Layer 1: Brand gradient overlay (corporate tint on photo) ─── */
+.hero-brand-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 35, 80, 0.85) 0%,
+    rgba(0, 21, 40, 0.78) 35%,
+    rgba(72, 17, 128, 0.70) 100%
+  );
+  pointer-events: none;
+}
+
+/* ─── Layer 2: Decorative elements on top of overlay ─── */
+.hero-decor-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ─── Top/bottom fade transitions (~0.3cm per side) ─── */
 .hero-fade-top {
   position: relative !important;
 }
@@ -373,8 +448,8 @@ html.mobile-menu-open .whatsapp-float {
   height: 12px;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.35),
-    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.30),
+    rgba(255, 255, 255, 0.06),
     transparent
   );
   z-index: 10;
@@ -391,10 +466,16 @@ html.mobile-menu-open .whatsapp-float {
   height: 12px;
   background: linear-gradient(
     to top,
-    rgba(255, 255, 255, 0.18),
-    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.03),
     transparent
   );
   z-index: 10;
   pointer-events: none;
+}
+
+/* ─── Content layer — always above everything ─── */
+.hero-content {
+  position: relative;
+  z-index: 20;
 }

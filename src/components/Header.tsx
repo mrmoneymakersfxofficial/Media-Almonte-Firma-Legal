@@ -99,7 +99,7 @@ export function Header() {
                     scrolled
                       ? isActive(item.href)
                         ? "text-[#008775]"
-                        : "text-white/90 hover:text-[#00a996]"
+                        : "text-[#002350]/80 hover:text-[#008775]"
                       : isActive(item.href)
                         ? "text-white"
                         : "text-white/80 hover:text-[#00a996]"

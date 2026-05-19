@@ -126,16 +126,16 @@ img, svg {
   image-rendering: auto;
 }
 
-/* ─── HEADER: Transparent over Hero → Navy on Scroll (PC ultra-premium) ─── */
+/* ─── HEADER: Transparent over Hero → White on Scroll (premium contrast) ─── */
 .header-hero {
   background: transparent !important;
   border-bottom: none !important;
 }
 
 .header-scrolled {
-  background: #002350 !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border-bottom: none !important;
+  background: #ffffff !important;
+  box-shadow: 0 1px 12px rgba(0, 35, 80, 0.08);
+  border-bottom: 1px solid rgba(0, 35, 80, 0.06) !important;
 }
 
 /* ─── BRAND LOGO FIXED — Anti-crop global rules (all pages, PC + Mobile) ─── */

@@ -570,28 +570,26 @@ html.mobile-menu-open .whatsapp-float {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   HERO MOBILE — 100% Vertical Full-Screen (max-width: 768px)
-   Independent from desktop rules. Text pushed well below navbar.
-   Counters hidden to reduce crowding.
+   HERO MOBILE — 100% Full-Screen (max-width: 768px)
+   Image + overlay fill entire screen. Content centered with breathing.
    ═══════════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
 
-  /* Section: force top alignment + shorter height to avoid crowding */
+  /* Section: 100% full screen — NO white space below */
   .hero-fade-top {
-    align-items: flex-start !important;
-    height: auto !important;
-    min-height: 85vh !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
     max-height: none !important;
+    align-items: stretch !important;
   }
 
-  /* Content: flex column, top-aligned, generous breathing below navbar */
+  /* Content: centered vertically, safe padding from navbar */
   .hero-content {
     display: flex !important;
     flex-direction: column !important;
-    justify-content: flex-start !important;
-    padding-top: 100px !important;
+    justify-content: center !important;
+    padding-top: 60px !important;
     padding-bottom: 40px !important;
-    height: auto !important;
   }
 
   /* Text block: full width */
@@ -599,30 +597,35 @@ html.mobile-menu-open .whatsapp-float {
     max-width: 100%;
   }
 
-  /* Badge: compact spacing */
+  /* Badge */
   .hero-badge {
     font-size: 10px;
     padding: 5px 12px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 
-  /* H1: 26px, tight, breathing below */
+  /* H1: 28px, breathing */
   .hero-h1 {
-    font-size: 26px !important;
-    line-height: 1.15 !important;
-    margin-bottom: 12px !important;
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 16px !important;
     color: #ffffff;
   }
 
-  /* Subtitle: 14px, clean */
+  /* Subtitle */
   .hero-subtitle {
     font-size: 14px !important;
     margin-top: 0 !important;
+    margin-bottom: 28px !important;
     color: rgba(248, 250, 252, 0.80);
-    line-height: 1.5 !important;
+    line-height: 1.55 !important;
   }
 
-  /* CTAs: full width, thumb-friendly */
+  /* CTAs: full width, spaced */
+  .hero-ctas {
+    gap: 10px !important;
+  }
+
   .hero-ctas button,
   .hero-ctas a {
     width: 100%;
@@ -632,14 +635,14 @@ html.mobile-menu-open .whatsapp-float {
     font-size: 14px;
   }
 
-  /* Trust badges: compact, clean */
+  /* Trust badges: clean spacing */
   .hero-trust {
-    gap: 5px 12px;
+    gap: 6px 14px;
     font-size: 10px;
-    margin-top: 14px !important;
+    margin-top: 20px !important;
   }
 
-  /* Counters: HIDDEN on mobile — reduce content crowding */
+  /* Counters: hidden on mobile */
   .hero-counters {
     display: none !important;
   }

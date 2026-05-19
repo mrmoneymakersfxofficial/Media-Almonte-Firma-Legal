@@ -77,7 +77,7 @@ export function DefensaPage() {
   return (
     <SiteLayout>
       {/* Urgent Hero */}
-      <section className="pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-28 lg:pb-20 bg-gradient-to-br from-red-900 via-navy to-navy relative overflow-hidden">
+      <section className="pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-28 lg:pb-20 bg-gradient-to-br from-red-900 via-navy to-navy relative overflow-hidden hero-fade-top">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-urgent via-gold to-urgent" />
         </div>

@@ -353,3 +353,48 @@ html.mobile-menu-open .whatsapp-float {
   height: 4px;
   background: linear-gradient(90deg, #008775, #00a996);
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   HERO BANNER — Ultra-professional gradient fade transitions
+   Top: smooth white-navbar → dark-hero  |  Bottom: dark-hero → light-section
+   ~0.3 cm (≈12px) per side — minimalista y fluido
+   ═══════════════════════════════════════════════════════════════════════ */
+.hero-fade-top {
+  position: relative !important;
+}
+
+/* TOP FADE — White navbar → Dark hero background */
+.hero-fade-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* BOTTOM FADE — Dark hero background → Light next section */
+.hero-fade-top::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.04),
+    transparent
+  );
+  z-index: 10;
+  pointer-events: none;
+}

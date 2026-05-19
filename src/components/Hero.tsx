@@ -22,7 +22,7 @@ export function Hero() {
   const { openModal } = useWhatsAppStore();
 
   return (
-    <section className="relative min-h-[100svh] flex items-center hero-gradient overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center hero-gradient overflow-hidden hero-fade-top">
       {/* Decorative blurs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#481180]/15 rounded-full blur-[100px]" />

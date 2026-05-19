@@ -1,39 +1,139 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useWhatsAppStore } from "@/lib/whatsapp";
+
+// Rotating notification messages — each with a different intent
+const NOTIFICATIONS = [
+  {
+    title: "Jhon & Asociados",
+    message: "¿Necesitas ayuda con tu empresa? Conversemos ahora",
+    time: "ahora",
+  },
+  {
+    title: "Constitución de Empresas",
+    message: "Formaliza tu negocio desde S/ 380. ¡Consulta gratis!",
+    time: "hace 1 min",
+  },
+  {
+    title: "¿Problemas con SUNAT?",
+    message: "Te defendemos de fiscalizaciones y cobranzas coactivas",
+    time: "hace 3 min",
+  },
+  {
+    title: "Contabilidad Integral",
+    message: "Terceriza tus libros y declara a tiempo. Desde S/ 350/mes",
+    time: "hace 5 min",
+  },
+  {
+    title: "Asesoría Tributaria",
+    message: "Evita multas. Consultoría gratuita sin compromiso",
+    time: "hace 8 min",
+  },
+  {
+    title: "Planillas y Laboral",
+    message: "Nosotros manejamos tu planilla. Tú creces tu negocio",
+    time: "hace 10 min",
+  },
+  {
+    title: "Cotización Inmediata",
+    message: "Solicita tu cotización personalizada por WhatsApp",
+    time: "hace 12 min",
+  },
+];
+
+// Timing constants
+const FIRST_DELAY = 5000;        // 5s before first notification
+const CYCLE_INTERVAL = 35000;    // 35s between notifications
+const VISIBLE_DURATION = 5000;   // 5s each notification stays visible
+const VIBRATE_DURATION = 1500;   // 1.5s vibration
+const MAX_NOTIFICATIONS = 7;     // One full cycle through all messages
 
 export function WhatsAppButton() {
   const { openModal } = useWhatsAppStore();
   const [isHovered, setIsHovered] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [isVibrating, setIsVibrating] = useState(false);
-  const [notificationDismissed, setNotificationDismissed] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showCount, setShowCount] = useState(0);
+  const [lastUserInteraction, setLastUserInteraction] = useState(0);
+  const timersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
-  const triggerNotification = useCallback(() => {
-    if (notificationDismissed) return;
+  const clearAllTimers = useCallback(() => {
+    timersRef.current.forEach(clearTimeout);
+    timersRef.current = [];
+  }, []);
+
+  const showNotificationBubble = useCallback((index: number) => {
+    const notif = NOTIFICATIONS[index];
+    if (!notif) return;
+
+    setCurrentIndex(index);
+    setShowCount(prev => prev + 1);
+
+    // Vibrate first
     setIsVibrating(true);
-    // Small delay: start vibration, then show bubble
-    setTimeout(() => {
+
+    // Show bubble after short vibration
+    const showTimer = setTimeout(() => {
       setShowNotification(true);
     }, 400);
-    // Stop vibration after 1.5s
-    setTimeout(() => {
+    timersRef.current.push(showTimer);
+
+    // Stop vibration
+    const stopVibTimer = setTimeout(() => {
       setIsVibrating(false);
-    }, 1500);
-    // Auto-dismiss notification after 4s
-    setTimeout(() => {
+    }, VIBRATE_DURATION);
+    timersRef.current.push(stopVibTimer);
+
+    // Auto-dismiss
+    const dismissTimer = setTimeout(() => {
       setShowNotification(false);
-      setNotificationDismissed(true);
-    }, 4000);
-  }, [notificationDismissed]);
+    }, VISIBLE_DURATION);
+    timersRef.current.push(dismissTimer);
+  }, []);
 
   useEffect(() => {
-    // Show notification after 5 seconds
-    const timer = setTimeout(triggerNotification, 5000);
-    return () => clearTimeout(timer);
-  }, [triggerNotification]);
+    // First notification after 5s
+    const firstTimer = setTimeout(() => {
+      showNotificationBubble(0);
+    }, FIRST_DELAY);
+    timersRef.current.push(firstTimer);
+
+    // Cycle through remaining notifications
+    const cycleTimer = setInterval(() => {
+      // Don't show if user interacted recently (clicked widget or modal in last 60s)
+      if (Date.now() - lastUserInteraction < 60000) return;
+
+      const nextCount = showCount + 1;
+      if (nextCount >= MAX_NOTIFICATIONS) {
+        clearInterval(cycleTimer);
+        return;
+      }
+      const nextIndex = nextCount % NOTIFICATIONS.length;
+      showNotificationBubble(nextIndex);
+    }, CYCLE_INTERVAL);
+
+    return () => {
+      clearAllTimers();
+      clearInterval(cycleTimer);
+    };
+  }, [showNotificationBubble, showCount, lastUserInteraction, clearAllTimers]);
+
+  const handleNotificationClick = () => {
+    openModal();
+    setShowNotification(false);
+    setLastUserInteraction(Date.now());
+  };
+
+  const handleButtonClick = () => {
+    openModal();
+    setShowNotification(false);
+    setLastUserInteraction(Date.now());
+  };
+
+  const currentNotif = NOTIFICATIONS[currentIndex];
 
   return (
     <div
@@ -41,19 +141,16 @@ export function WhatsAppButton() {
       style={{ position: "fixed", bottom: "25px", right: "25px", zIndex: 999999 }}
     >
       {/* Notification Bubble */}
-      <AnimatePresence>
-        {showNotification && (
+      <AnimatePresence mode="wait">
+        {showNotification && currentNotif && (
           <motion.div
-            initial={{ opacity: 0, y: 10, scale: 0.9 }}
+            key={currentIndex}
+            initial={{ opacity: 0, y: 15, scale: 0.85 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.9 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute bottom-[72px] right-0 w-[260px] sm:w-[280px] cursor-pointer"
-            onClick={() => {
-              openModal();
-              setShowNotification(false);
-              setNotificationDismissed(true);
-            }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute bottom-[72px] right-0 w-[270px] sm:w-[290px] cursor-pointer"
+            onClick={handleNotificationClick}
           >
             {/* Bubble arrow */}
             <div className="absolute bottom-0 right-[24px] translate-y-full">
@@ -63,9 +160,7 @@ export function WhatsAppButton() {
               />
             </div>
             {/* Bubble content */}
-            <div
-              className="bg-white rounded-xl shadow-2xl p-4 border border-gray-100 relative overflow-hidden"
-            >
+            <div className="bg-white rounded-xl shadow-2xl p-4 border border-gray-100 relative overflow-hidden">
               {/* Green accent bar at top */}
               <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: "#25D366" }} />
               <div className="flex gap-3 items-start pt-1">
@@ -83,12 +178,12 @@ export function WhatsAppButton() {
                   </svg>
                 </div>
                 <div className="min-w-0">
-                  <p className="text-sm font-bold text-gray-900 leading-tight">Jhon & Asociados</p>
-                  <p className="text-xs text-gray-500 mt-1 leading-relaxed">¿Necesitas ayuda con tu empresa? Conversemos por WhatsApp</p>
+                  <p className="text-sm font-bold text-gray-900 leading-tight">{currentNotif.title}</p>
+                  <p className="text-xs text-gray-500 mt-1 leading-relaxed">{currentNotif.message}</p>
                 </div>
               </div>
               {/* Time ago */}
-              <p className="text-[10px] text-gray-400 mt-2.5 text-right">ahora</p>
+              <p className="text-[10px] text-gray-400 mt-2.5 text-right">{currentNotif.time}</p>
             </div>
           </motion.div>
         )}
@@ -105,7 +200,6 @@ export function WhatsAppButton() {
             className="absolute bottom-1/2 right-[68px] translate-y-1/2 bg-[#002350] text-white px-4 py-2 rounded-xl text-sm font-medium shadow-lg whitespace-nowrap pointer-events-none hidden sm:block"
           >
             ¿Necesitas ayuda?
-            {/* Tooltip arrow */}
             <div className="absolute top-1/2 -right-2 -translate-y-1/2 w-2 h-2 bg-[#002350] rotate-45" />
           </motion.div>
         )}
@@ -113,7 +207,7 @@ export function WhatsAppButton() {
 
       {/* WhatsApp Button */}
       <button
-        onClick={() => openModal()}
+        onClick={handleButtonClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={`relative w-[60px] h-[60px] rounded-full flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 ${

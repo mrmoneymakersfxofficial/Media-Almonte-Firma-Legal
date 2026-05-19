@@ -46,10 +46,11 @@ export const metadata: Metadata = {
     siteName: "Jhon & Asociados",
     images: [
       {
-        url: "/logo.png",
-        width: 1600,
-        height: 764,
-        alt: "Jhon & Asociados - Especialistas Tributarios",
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Jhon & Asociados - Especialistas Tributarios en Perú",
+        type: "image/png",
       },
     ],
   },
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     title: "Jhon & Asociados | Especialistas Tributarios",
     description:
       "Protege tu patrimonio. Nosotros nos encargamos de SUNAT. Consultoría gratuita.",
-    images: ["/logo.png"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

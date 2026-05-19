@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useWhatsAppStore, services } from "@/lib/whatsapp";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { useState } from "react";
 
 const columns = [
@@ -131,12 +132,11 @@ export function NosotrosPage() {
             <h3 className="text-2xl font-bold text-navy mb-8 text-center">Nuestros Valores</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {values.map((v, i) => (
-                <motion.div
+                <ScrollReveal
                   key={v.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.05 * i }}
+                  delay={0.05 * i}
+                  duration={0.4}
+                  y={20}
                   className="flex items-start gap-3 p-4 rounded-xl bg-white border border-gray-100 hover:shadow-sm transition-all"
                 >
                   <CheckCircle2 className="w-5 h-5 text-emerald mt-0.5 shrink-0" />
@@ -144,7 +144,7 @@ export function NosotrosPage() {
                     <span className="text-sm font-bold text-navy">{v.label}</span>
                     <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{v.description}</p>
                   </div>
-                </motion.div>
+                </ScrollReveal>
               ))}
             </div>
           </motion.div>
@@ -203,10 +203,9 @@ export function NosotrosPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+            <ScrollReveal
+              x={-30}
+              duration={0.6}
               className="lg:col-span-3 bg-gray-50 rounded-2xl border border-gray-200 p-6 lg:p-8"
             >
               <h3 className="text-xl font-bold text-navy mb-6">Envíanos un mensaje</h3>
@@ -240,12 +239,12 @@ export function NosotrosPage() {
                   <Send className="w-5 h-5" /> Enviar por WhatsApp
                 </button>
               </form>
-            </motion.div>
+            </ScrollReveal>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+            <ScrollReveal
+              x={30}
+              duration={0.6}
+              delay={0.2}
               className="lg:col-span-2 space-y-4"
             >
               {contactInfo.map((info) => {
@@ -268,7 +267,7 @@ export function NosotrosPage() {
               <button onClick={() => openModal()} className="w-full bg-navy hover:bg-navy-light text-white rounded-xl p-5 flex items-center justify-center gap-3 font-semibold transition-all shadow-md hover:shadow-lg">
                 <MessageCircle className="w-5 h-5" /> Consultoría Gratuita
               </button>
-            </motion.div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useWhatsAppStore } from "@/lib/whatsapp";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const mainFeatures = [
   { icon: BookOpen, title: "Libros Electrónicos", desc: "Registro de Compras, Ventas, Inventarios, Caja y Bancos, Diario, Mayor, Planilla. Todos al día y conforme a SUNAT." },
@@ -84,12 +85,9 @@ export function ContabilidadPage() {
             {mainFeatures.map((feature, i) => {
               const Icon = feature.icon;
               return (
-                <motion.div
+                <ScrollReveal
                   key={feature.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.05 * i }}
+                  delay={0.05 * i}
                   className="flex gap-4 p-6 rounded-xl border border-gray-100 hover:border-emerald/30 hover:shadow-sm transition-all"
                 >
                   <div className="w-12 h-12 bg-emerald/10 rounded-xl flex items-center justify-center shrink-0">
@@ -99,7 +97,7 @@ export function ContabilidadPage() {
                     <h3 className="text-lg font-bold text-navy mb-1">{feature.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
                   </div>
-                </motion.div>
+                </ScrollReveal>
               );
             })}
           </div>
@@ -152,17 +150,17 @@ export function ContabilidadPage() {
                 <h3 className="text-2xl font-bold text-navy mb-6">Beneficios de tercerizar tu contabilidad</h3>
                 <div className="space-y-4">
                   {benefits.map((b, i) => (
-                    <motion.div
+                    <ScrollReveal
                       key={i}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: 0.05 * i }}
-                      className="flex items-start gap-3"
+                      delay={0.05 * i}
+                      duration={0.3}
+                      y={10}
                     >
-                      <CheckCircle2 className="w-5 h-5 text-emerald mt-0.5 shrink-0" />
-                      <span className="text-muted-foreground leading-relaxed">{b}</span>
-                    </motion.div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-emerald mt-0.5 shrink-0" />
+                        <span className="text-muted-foreground leading-relaxed">{b}</span>
+                      </div>
+                    </ScrollReveal>
                   ))}
                 </div>
               </motion.div>
@@ -184,12 +182,9 @@ export function ContabilidadPage() {
             {additionalServices.map((s, i) => {
               const Icon = s.icon;
               return (
-                <motion.div
+                <ScrollReveal
                   key={s.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 * i }}
+                  delay={0.1 * i}
                   className="bg-gray-50 rounded-2xl p-6 lg:p-8 border border-gray-100 text-center"
                 >
                   <div className="w-14 h-14 bg-emerald/10 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -198,7 +193,7 @@ export function ContabilidadPage() {
                   <h3 className="text-lg font-bold text-navy mb-2">{s.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.desc}</p>
                   <span className="inline-block bg-emerald/10 text-emerald font-bold text-sm px-3 py-1 rounded-full">{s.price}</span>
-                </motion.div>
+                </ScrollReveal>
               );
             })}
           </div>

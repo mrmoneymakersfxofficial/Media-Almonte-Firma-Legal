@@ -1,16 +1,35 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { motion } from "framer-motion";
 
-interface FadeInViewProps {
+interface ScrollRevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
+  duration?: number;
+  y?: number;
+  x?: number;
   threshold?: number;
 }
 
-export function FadeInView({ children, className = "", delay = 0, threshold = 0.15 }: FadeInViewProps) {
+/**
+ * Reliable scroll-triggered reveal animation.
+ * Uses double requestAnimationFrame to wait for browser scroll restoration
+ * before checking if elements are already in viewport.
+ * Replace all Framer Motion whileInView usage with this component.
+ */
+export function ScrollReveal({
+  children,
+  className,
+  delay = 0,
+  duration = 0.6,
+  y = 30,
+  x = 0,
+  threshold = 0.1,
+}: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -31,21 +50,14 @@ export function FadeInView({ children, className = "", delay = 0, threshold = 0.
     const setup = () => {
       // After scroll restoration, check if already visible
       if (isInViewport()) {
-        el.classList.add("card-visible");
+        setIsVisible(true);
         return;
       }
-
-      // Start hidden
-      el.classList.add("card-hidden");
-      el.classList.remove("card-visible");
 
       observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            setTimeout(() => {
-              el.classList.add("card-visible");
-              el.classList.remove("card-hidden");
-            }, delay);
+            setIsVisible(true);
             observer?.disconnect();
           }
         },
@@ -63,11 +75,24 @@ export function FadeInView({ children, className = "", delay = 0, threshold = 0.
       cancelAnimationFrame(rafId);
       observer?.disconnect();
     };
-  }, [delay, threshold]);
+  }, [threshold]);
+
+  const hidden = { opacity: 0, y, x };
+  const visible = { opacity: 1, y: 0, x: 0 };
 
   return (
-    <div ref={ref} className={className} style={{ opacity: 0 }}>
+    <motion.div
+      ref={ref}
+      className={className}
+      initial={hidden}
+      animate={isVisible ? visible : hidden}
+      transition={{
+        duration,
+        delay: isVisible ? delay : 0,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 }

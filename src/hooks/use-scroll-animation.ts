@@ -10,31 +10,47 @@ export function useScrollAnimation(threshold = 0.1) {
     const element = ref.current;
     if (!element) return;
 
-    // Immediately check if element is already in viewport (handles page refresh mid-scroll)
-    const rect = element.getBoundingClientRect();
-    const isInViewport = (
-      rect.top < window.innerHeight &&
-      rect.bottom > 0 &&
-      rect.left < window.innerWidth &&
-      rect.right > 0
-    );
-    if (isInViewport) {
-      setIsVisible(true);
-      return; // No need to observe
-    }
+    let observer: IntersectionObserver | null = null;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(element);
-        }
-      },
-      { threshold }
-    );
+    const isInViewport = () => {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top < window.innerHeight &&
+        rect.bottom > 0 &&
+        rect.left < window.innerWidth &&
+        rect.right > 0
+      );
+    };
 
-    observer.observe(element);
-    return () => observer.disconnect();
+    const setup = () => {
+      // After scroll restoration, check if already visible
+      if (isInViewport()) {
+        setIsVisible(true);
+        return;
+      }
+
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer?.disconnect();
+          }
+        },
+        { threshold }
+      );
+      observer.observe(element);
+    };
+
+    // Double requestAnimationFrame ensures browser has finished scroll restoration
+    // before we check element positions
+    const rafId = requestAnimationFrame(() => {
+      requestAnimationFrame(setup);
+    });
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      observer?.disconnect();
+    };
   }, [threshold]);
 
   return { ref, isVisible };

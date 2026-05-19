@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { SiteLayout } from "@/components/SiteLayout";
 import { motion } from "framer-motion";
-import { CheckCircle2, Star, ArrowRight, Shield, FileText, Clock, MessageCircle, ChevronRight } from "lucide-react";
+import { CheckCircle2, Star, ArrowRight, MessageCircle, ChevronRight } from "lucide-react";
 import { useWhatsAppStore } from "@/lib/whatsapp";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const packages = [
   {
@@ -188,18 +189,16 @@ export function ConstitucionPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {steps.map((step, i) => (
-              <motion.div
+              <ScrollReveal
                 key={step.num}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.05 * i }}
+                delay={0.05 * i}
+                duration={0.5}
                 className="relative bg-white rounded-2xl p-6 border border-gray-100 shadow-sm"
               >
                 <span className="text-4xl font-black text-emerald/15">{step.num}</span>
                 <h3 className="text-lg font-bold text-navy mt-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{step.desc}</p>
-              </motion.div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -215,22 +214,23 @@ export function ConstitucionPage() {
 
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <motion.details
+              <ScrollReveal
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.05 * i }}
+                delay={0.05 * i}
+                duration={0.4}
+                y={20}
                 className="group bg-gray-50 rounded-xl border border-gray-100"
               >
-                <summary className="flex items-center justify-between p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                  <h3 className="font-semibold text-navy pr-4">{faq.q}</h3>
-                  <ChevronRight className="w-5 h-5 text-muted-foreground shrink-0 group-open:rotate-90 transition-transform" />
-                </summary>
-                <div className="px-5 pb-5">
-                  <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
-                </div>
-              </motion.details>
+                <details>
+                  <summary className="flex items-center justify-between p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <h3 className="font-semibold text-navy pr-4">{faq.q}</h3>
+                    <ChevronRight className="w-5 h-5 text-muted-foreground shrink-0 group-open:rotate-90 transition-transform" />
+                  </summary>
+                  <div className="px-5 pb-5">
+                    <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
+                  </div>
+                </details>
+              </ScrollReveal>
             ))}
           </div>
         </div>

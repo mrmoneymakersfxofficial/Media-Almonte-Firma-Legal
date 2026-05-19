@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useWhatsAppStore } from "@/lib/whatsapp";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const urgentCards = [
   {
@@ -126,12 +127,10 @@ export function DefensaPage() {
             {urgentCards.map((card, i) => {
               const Icon = card.icon;
               return (
-                <motion.div
+                <ScrollReveal
                   key={card.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.1 * i }}
+                  delay={0.1 * i}
+                  duration={0.6}
                   className="bg-white rounded-2xl border-2 border-urgent/20 shadow-sm hover:shadow-lg hover:border-urgent/40 transition-all overflow-hidden"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
@@ -166,7 +165,7 @@ export function DefensaPage() {
                       </button>
                     </div>
                   </div>
-                </motion.div>
+                </ScrollReveal>
               );
             })}
           </div>
@@ -186,19 +185,18 @@ export function DefensaPage() {
             {whyUs.map((item, i) => {
               const Icon = item.icon;
               return (
-                <motion.div
+                <ScrollReveal
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.1 * i }}
+                  delay={0.1 * i}
+                  duration={0.4}
+                  y={20}
                   className="flex items-start gap-4 p-5 rounded-xl bg-gray-50 border border-gray-100"
                 >
                   <div className="w-10 h-10 bg-emerald/10 rounded-lg flex items-center justify-center shrink-0">
                     <Icon className="w-5 h-5 text-emerald" />
                   </div>
                   <span className="text-muted-foreground leading-relaxed">{item.text}</span>
-                </motion.div>
+                </ScrollReveal>
               );
             })}
           </div>

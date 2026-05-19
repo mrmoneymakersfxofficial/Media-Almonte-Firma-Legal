@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Building2, Calculator, Shield, Users, TrendingUp, GraduationCap } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useWhatsAppStore } from "@/lib/whatsapp";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const serviceCards = [
   {
@@ -51,19 +52,8 @@ const serviceCards = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
-};
-
 export function Services() {
-  const { ref, isVisible } = useScrollAnimation(0.15);
-  const { openModal } = useWhatsAppStore();
+  const { ref, isVisible } = useScrollAnimation(0.05);
 
   return (
     <section id="servicios" className="py-20 lg:py-28 bg-gray-50/50">
@@ -96,18 +86,15 @@ export function Services() {
           </motion.p>
         </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isVisible ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-        >
-          {serviceCards.map((card) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {serviceCards.map((card, i) => {
             const Icon = card.icon;
             return (
-              <motion.div
+              <ScrollReveal
                 key={card.title}
-                variants={cardVariants}
+                delay={0.08 * i}
+                duration={0.7}
+                threshold={0.05}
                 className="service-card bg-white rounded-2xl p-6 lg:p-8 cursor-pointer"
               >
                 <div className="service-card-icon mb-5">
@@ -121,10 +108,10 @@ export function Services() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
-              </motion.div>
+              </ScrollReveal>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

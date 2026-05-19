@@ -220,6 +220,24 @@ img, svg {
   animation: urgent-pulse 1.5s ease-in-out infinite;
 }
 
+/* WhatsApp vibration — phone-style shake */
+@keyframes whatsapp-vibrate {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-12deg); }
+  20% { transform: rotate(10deg); }
+  30% { transform: rotate(-10deg); }
+  40% { transform: rotate(8deg); }
+  50% { transform: rotate(-6deg); }
+  60% { transform: rotate(4deg); }
+  70% { transform: rotate(-2deg); }
+  80% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.whatsapp-vibrate {
+  animation: whatsapp-vibrate 0.8s ease-in-out;
+}
+
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #002350, #481180, #008775);

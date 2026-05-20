@@ -649,14 +649,17 @@ html.mobile-menu-open .whatsapp-float {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   SUBPAGE HERO — Internal pages (Constitución, Contabilidad, Defensa, etc.)
-   75vh desktop, 100dvh mobile. Photo background + brand overlay.
+   SUBPAGE HERO — Internal pages (Constitución, Contabilidad, Defensa, Nosotros)
+   85vh desktop, 90vh mobile. Photo background + brand overlay.
+   Face-framed: right top (PC) / center 15% (Mobile).
    ═══════════════════════════════════════════════════════════════════════ */
 
-/* Container */
+/* Container — unified 85vh premium height */
 .subpage-hero {
   width: 100%;
-  min-height: 75vh;
+  min-height: 85vh !important;
+  background-size: cover !important;
+  background-position: right top !important; /* Reveals face on desktop */
   position: relative;
   background-color: #001528;
 }
@@ -666,8 +669,8 @@ html.mobile-menu-open .whatsapp-float {
   width: 100%;
   height: 100%;
   background-image: url('/jhon-constitucion.webp');
-  background-size: cover;
-  background-position: center right;
+  background-size: cover !important;
+  background-position: right top !important; /* Shows face + upper body on PC */
   background-repeat: no-repeat;
   animation: hero-ken-burns 25s ease-in-out infinite;
 }
@@ -694,26 +697,26 @@ html.mobile-menu-open .whatsapp-float {
   pointer-events: none;
 }
 
-/* Layer 20: Content — vertically centered */
+/* Layer 20: Content — vertically centered, 85vh breathing room */
 .subpage-hero-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  min-height: 75vh;
+  min-height: 85vh !important;
   padding-top: 80px;
   padding-bottom: 40px;
 }
 
-/* ─── Subpage Hero Mobile ─── */
+/* ─── Subpage Hero Mobile — Face framed, text breathing ─── */
 @media (max-width: 768px) {
   .subpage-hero {
-    min-height: 100dvh;
-    height: 100dvh;
+    min-height: 90vh !important;
+    background-position: center 15% !important; /* Face visible below navbar text */
   }
 
   .subpage-hero-photo {
-    background-position: center bottom;
+    background-position: center 15% !important; /* Anchors face in upper area */
   }
 
   .subpage-hero-overlay {
@@ -736,10 +739,9 @@ html.mobile-menu-open .whatsapp-float {
   }
 
   .subpage-hero-content {
-    min-height: 100dvh;
-    height: 100dvh;
-    padding-top: 100px !important;
-    padding-bottom: 30px;
+    min-height: 90vh !important;
+    padding-top: 110px !important; /* Extra breathing room from navbar */
+    padding-bottom: 50px !important;
     justify-content: flex-start !important;
   }
 

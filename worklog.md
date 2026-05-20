@@ -107,3 +107,23 @@ Stage Summary:
 - Mobile: 100dvh full screen, 100px padding-top, center-bottom background position
 - Red urgency accent line preserved at z-30 above all layers
 - Consistent with other subpage hero structures but with unique darker overlay variant
+
+---
+Task ID: 8
+Agent: Main Agent
+Task: Integrate jhon-nosotros.png into Nosotros y Contacto subpage hero + push to GitHub
+
+Work Log:
+- Copied pasted_image_1779302145922.png (1536x1024) as jhon-nosotros.png to public/
+- Converted PNG (2.2MB) to WebP (52KB) using sharp-cli
+- Replaced old gradient-only hero in NosotrosPage.tsx with 5-layer photo hero structure
+- Used standard .subpage-hero-overlay (navy + purple brand gradient)
+- Added CTAs: "Consultoría Gratuita" (emerald) + "Escríbenos" (mailto)
+- Build verified: zero errors, all 8 pages generated
+- Git commit and push to GitHub successful (main branch, commit 7659355)
+- Vercel deploy failed: no valid Vercel token in environment (GitHub PAT ≠ Vercel token)
+
+Stage Summary:
+- All 4 subpages now have photographic hero with modular overlay system
+- GitHub push successful: https://github.com/gozustrike-lab/jhon-asociados (main)
+- Vercel auto-deploy pending: needs valid Vercel token or manual dashboard deploy

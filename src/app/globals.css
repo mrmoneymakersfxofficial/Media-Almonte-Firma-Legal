@@ -708,15 +708,15 @@ html.mobile-menu-open .whatsapp-float {
   padding-bottom: 40px;
 }
 
-/* ─── Subpage Hero Mobile — Face framed, text breathing ─── */
+/* ─── Subpage Hero Mobile — Face framed (75% center), text breathing ─── */
 @media (max-width: 768px) {
   .subpage-hero {
-    min-height: 90vh !important;
-    background-position: center 15% !important; /* Face visible below navbar text */
+    min-height: 85vh !important;
+    background-position: 75% center !important; /* Shifts photo left to reveal face on smartphones */
   }
 
   .subpage-hero-photo {
-    background-position: center 15% !important; /* Anchors face in upper area */
+    background-position: 75% center !important; /* Anchors Jhon's face in visible area */
   }
 
   .subpage-hero-overlay {
@@ -739,10 +739,12 @@ html.mobile-menu-open .whatsapp-float {
   }
 
   .subpage-hero-content {
-    min-height: 90vh !important;
-    padding-top: 110px !important; /* Extra breathing room from navbar */
-    padding-bottom: 50px !important;
-    justify-content: flex-start !important;
+    min-height: 85vh !important;
+    padding-top: 140px !important;  /* Aggressive top breathing from transparent navbar */
+    padding-bottom: 60px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; /* Centers text block vertically on screen */
   }
 
   .subpage-hero-title {

@@ -21,7 +21,6 @@ export function Header() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const pathname = usePathname();
   const { openModal } = useWhatsAppStore();
-  const isHome = pathname === "/";
 
   useEffect(() => {
     function handleScroll() {
@@ -51,7 +50,7 @@ export function Header() {
     return pathname.startsWith(href);
   }
 
-  const scrolled = isScrolled || !isHome;
+  const scrolled = isScrolled;
 
   return (
     <>

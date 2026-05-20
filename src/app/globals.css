@@ -721,19 +721,17 @@ html.mobile-menu-open .whatsapp-float {
 
 /* ─── Subpage Hero Mobile — EXCLUSIVE: no home-hero rules here ─── */
 @media (max-width: 768px) {
-  /* Full bleed 100dvh — matches Home hero immersive experience */
+  /* Full bleed 90vh — room for portrait + text without white gap */
   .subpage-hero {
     width: 100% !important;
-    height: 100dvh !important;
-    min-height: 100dvh !important;
-    max-height: none !important;
+    min-height: 90vh !important; /* Incrementa la altura para dar aire al retrato */
     background-size: cover !important;
-    background-position: center top !important; /* Prioritizes face/upper body on portrait phones */
+    background-position: 70% 15% !important; /* Fuerza a revelar el rostro y sonrisa de Jhon en celulares */
   }
 
-  /* Photo layer matches parent positioning */
+  /* Photo layer: same anchor point to reveal face */
   .subpage-hero-photo {
-    background-position: center top !important;
+    background-position: 70% 15% !important; /* Rostro centrado en la mitad superior del celular */
   }
 
   /* Mobile overlay: vertical gradient — dark top (text) → translucent bottom (person visible) */

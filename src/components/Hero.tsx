@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Shield, CheckCircle2 } from "lucide-react";
 import { useCountUp } from "@/hooks/use-count-up";
 import { useWhatsAppStore } from "@/lib/whatsapp";
+import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
 
 function CounterItem({ value, suffix, label }: { value: number; suffix: string; label: string }) {
   const { count, ref } = useCountUp(value, 2500);
@@ -149,6 +150,9 @@ export function Hero() {
           ))}
         </motion.div>
       </div>
+
+      {/* Scroll down indicator */}
+      <ScrollDownIndicator />
     </section>
   );
 }

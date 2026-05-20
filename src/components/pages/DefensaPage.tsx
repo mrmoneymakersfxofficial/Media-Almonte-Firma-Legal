@@ -11,6 +11,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionDivider } from "@/components/SectionDivider";
+import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
 
 const urgentCards = [
   {
@@ -130,10 +131,7 @@ export function DefensaPage() {
           </motion.div>
         </div>
         {/* Scroll down indicator */}
-        <div className="scroll-down-indicator" onClick={() => window.scrollTo({ top: document.querySelector('.subpage-hero')?.offsetHeight, behavior: 'smooth' })}>
-          <span>Ver más</span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="scroll-arrow"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </div>
+        <ScrollDownIndicator />
       </section>
 
       {/* Urgent Service Cards */}

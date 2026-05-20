@@ -734,14 +734,19 @@ html.mobile-menu-open .whatsapp-float {
   font-size: 13px;
   font-weight: 600;
   z-index: 10;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
+  cursor: pointer !important;
+  user-select: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   letter-spacing: 0.02em;
 }
 
 .scroll-down-indicator:hover {
-  opacity: 1;
-  color: #ffffff;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.scroll-down-indicator:active {
+  transform: translateX(-50%) scale(0.92);
 }
 
 .scroll-arrow {

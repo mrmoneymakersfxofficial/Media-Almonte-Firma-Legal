@@ -425,6 +425,7 @@ html.mobile-menu-open .whatsapp-float {
   .hero-photo-bg::before {
     background-image: url('/jhon-hero-oficina.webp');
     background-position: right 12% top 22%;
+    filter: brightness(0.88) contrast(1.02); /* Fusiona la iluminación del retrato con la oficina nocturna */
   }
 }
 
@@ -465,17 +466,15 @@ html.mobile-menu-open .whatsapp-float {
   }
 }
 
-/* Desktop: horizontal gradient — dark left (text) → transparent right (Jhon visible) */
+/* Desktop: horizontal gradient — dark left (text) → purple translucent right (Jhon matted) */
 @media (min-width: 1024px) {
   .hero-brand-overlay {
     background: linear-gradient(
-      to right,
+      90deg,
       rgba(0, 35, 80, 0.92) 0%,
-      rgba(0, 21, 40, 0.85) 25%,
-      rgba(0, 21, 40, 0.55) 45%,
-      rgba(72, 17, 128, 0.20) 65%,
-      rgba(72, 17, 128, 0.05) 100%
-    );
+      rgba(0, 35, 80, 0.70) 45%,
+      rgba(72, 17, 128, 0.25) 100%
+    ) !important;
   }
 }
 

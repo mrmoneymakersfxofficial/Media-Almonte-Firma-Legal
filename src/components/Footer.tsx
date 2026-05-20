@@ -141,9 +141,14 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-sm">
-            © 2026 Jhon & Asociados. Todos los derechos reservados.
-          </p>
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-white/40 text-sm">
+              © 2026 Jhon & Asociados. Todos los derechos reservados.
+            </p>
+            <p className="footer-credits">
+              Diseñado y desarrollado por <a href="https://www.fastpagepro.com" target="_blank" rel="noopener noreferrer">FastPagePro</a>
+            </p>
+          </div>
           <div className="flex items-center gap-4">
             <a href="#" className="text-white/40 hover:text-white/60 text-sm transition-colors">
               Política de Privacidad

@@ -719,6 +719,26 @@ html.mobile-menu-open .whatsapp-float {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
+   FOOTER CREDITS — Agency attribution (hardcoded, no CMS)
+   ═══════════════════════════════════════════════════════════════════════ */
+.footer-credits {
+  font-size: 13px !important;
+  color: #64748b !important;
+  margin: 0 !important;
+}
+
+.footer-credits a {
+  color: #008775 !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
+  transition: color 0.2s ease-in-out !important;
+}
+
+.footer-credits a:hover {
+  color: #002350 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
    SCROLL DOWN INDICATOR — Animated "Ver más" on subpage heroes
    ═══════════════════════════════════════════════════════════════════════ */
 .scroll-down-indicator {

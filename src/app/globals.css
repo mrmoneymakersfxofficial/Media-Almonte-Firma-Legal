@@ -718,6 +718,44 @@ html.mobile-menu-open .whatsapp-float {
   padding-bottom: 40px;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════
+   SCROLL DOWN INDICATOR — Animated "Ver más" on subpage heroes
+   ═══════════════════════════════════════════════════════════════════════ */
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 10;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.scroll-down-indicator:hover {
+  opacity: 1;
+  color: #ffffff;
+}
+
+.scroll-arrow {
+  width: 18px;
+  height: 18px;
+  animation: scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(6px); }
+  60% { transform: translateY(3px); }
+}
+
 /* ─── Subpage Hero Mobile — EXCLUSIVE: no home-hero rules here ─── */
 @media (max-width: 768px) {
   /* Full bleed 90vh — room for portrait + text without white gap */

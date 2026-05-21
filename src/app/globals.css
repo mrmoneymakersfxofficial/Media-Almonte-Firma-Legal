@@ -504,14 +504,14 @@ html.mobile-menu-open .whatsapp-float {
   }
 }
 
-/* Desktop: horizontal gradient — dark left (text) → purple translucent right (Jhon matted) */
+/* Desktop: horizontal gradient — dark left (text) → nearly transparent right (Jhon vivid) */
 @media (min-width: 1024px) {
   .hero-brand-overlay {
     background: linear-gradient(
       90deg,
       rgba(0, 35, 80, 0.92) 0%,
-      rgba(0, 35, 80, 0.70) 45%,
-      rgba(72, 17, 128, 0.25) 100%
+      rgba(0, 35, 80, 0.60) 35%,
+      rgba(72, 17, 128, 0.08) 100%
     ) !important;
   }
 }
@@ -591,9 +591,10 @@ html.mobile-menu-open .whatsapp-float {
   justify-content: center;
 }
 
-/* ─── Desktop: H1 compact corporate line-height ─── */
+/* ─── Desktop: H1 large authority ─── */
 @media (min-width: 1024px) {
   .hero-h1 {
+    font-size: 54px !important;
     line-height: 1.15 !important;
     margin-bottom: 20px;
   }
@@ -641,9 +642,9 @@ html.mobile-menu-open .whatsapp-float {
     margin-bottom: 20px;
   }
 
-  /* H1: 28px, breathing */
+  /* H1: 34px — bigger for authority */
   .hero-h1 {
-    font-size: 28px !important;
+    font-size: 34px !important;
     line-height: 1.2 !important;
     margin-bottom: 16px !important;
     color: #ffffff;

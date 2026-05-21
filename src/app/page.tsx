@@ -4,129 +4,446 @@ import Link from "next/link";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
-import { motion } from "framer-motion";
-import { ArrowRight, Building2, Calculator, Shield, CheckCircle2, MessageCircle } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { useWhatsAppStore } from "@/lib/whatsapp";
 import { SectionDivider } from "@/components/SectionDivider";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { useWhatsAppStore } from "@/lib/whatsapp";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { motion } from "framer-motion";
+import {
+  MessageCircle,
+  CheckCircle2,
+  Shield,
+  Building2,
+  Handshake,
+  Star,
+  Users,
+  Calendar,
+  ArrowRight,
+} from "lucide-react";
 
-function QuickSection() {
-  const { ref, isVisible } = useScrollAnimation(0.1);
+/* ════════════════════════════════════════════════════════════════
+   SECTION 1: CONFERENCE CAPTURE CARD
+   ════════════════════════════════════════════════════════════════ */
+function ConferenceCaptureCard() {
   const { openModal } = useWhatsAppStore();
 
-  const pages = [
-    {
-      href: "/constitucion-de-empresas",
-      icon: Building2,
-      title: "Constitución de Empresas",
-      desc: "Formaliza tu negocio desde S/380. SAC, EIRL, SRL con todo incluido: minuta, RUC, Clave SOL.",
-      color: "bg-emerald/10 text-emerald",
-      price: "Desde S/ 380",
-    },
-    {
-      href: "/contabilidad-tributacion",
-      icon: Calculator,
-      title: "Contabilidad y Tributación",
-      desc: "Tercerización contable completa. Libros electrónicos, SIRE, declaraciones y estados financieros.",
-      color: "bg-navy/10 text-navy",
-      price: "Desde S/ 350/mes",
-    },
-    {
-      href: "/defensa-tributaria-sunat",
-      icon: Shield,
-      title: "Defensa Tributaria y SUNAT",
-      desc: "Atención urgente de cartas inductivas, fiscalizaciones y cobranzas coactivas de SUNAT.",
-      color: "bg-urgent/10 text-urgent",
-      price: "Atención inmediata",
-    },
-  ];
-
   return (
-    <section ref={ref} className="py-20 lg:py-28 bg-white">
+    <section className="py-20 lg:py-28 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">
-            Nuestros Servicios Especializados
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy">
-            Soluciones integrales para tu{" "}
-            <span className="text-purple">empresa</span>
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Haz clic en cada servicio para ver el detalle completo, precios y proceso de contratación.
-          </p>
-        </motion.div>
+        <ScrollReveal duration={0.7}>
+          <div className="bg-white rounded-3xl shadow-lg shadow-navy/[0.04] border border-gray-100 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-0">
+              {/* Left: Text content */}
+              <div className="p-8 sm:p-10 lg:p-14">
+                <span className="inline-block bg-emerald/10 text-emerald text-xs sm:text-sm font-bold tracking-wider uppercase px-4 py-1.5 rounded-full mb-5">
+                  🎓 CAPACITACIÓN GRATUITA
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-navy leading-tight mb-4">
+                  Accede Sin Costo a Nuestra Conferencia en Vivo
+                </h2>
+                <p className="text-emerald font-semibold text-base sm:text-lg mb-4">
+                  Cómo Pagar Menos Impuesto y Ganar Más Dinero, Cumpliendo la Ley
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  Miles de emprendedores ya están aplicando estos conocimientos y
+                  transformando su negocio con estrategias simples pero poderosas.
+                </p>
+                <button
+                  onClick={() => openModal(10)}
+                  className="inline-flex items-center justify-center gap-2.5 bg-emerald hover:bg-emerald/90 text-white px-7 sm:px-9 py-4 sm:py-[18px] rounded-xl text-[15px] sm:text-lg font-bold transition-all shadow-lg shadow-emerald/25 hover:shadow-xl hover:shadow-emerald/30 active:scale-[0.98]"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  ¡INSCRÍBETE GRATIS AHORA!
+                </button>
+              </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {pages.map((page, i) => {
-            const Icon = page.icon;
-            return (
-              <motion.div
-                key={page.href}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.1 * (i + 1) }}
-              >
-                <Link href={page.href} className="group block bg-gray-50 rounded-2xl p-6 lg:p-8 border border-gray-100 hover:border-emerald/30 hover:shadow-lg transition-all h-full">
-                  <div className={`w-14 h-14 ${page.color} rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
-                    <Icon className="w-7 h-7" />
+              {/* Right: Decorative visual */}
+              <div className="relative hidden lg:flex items-center justify-center min-h-[340px] bg-gradient-to-br from-navy via-[#0a1e4a] to-purple p-12">
+                <div className="absolute -top-10 -right-10 w-48 h-48 bg-emerald/10 rounded-full blur-3xl" />
+                <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-purple/20 rounded-full blur-3xl" />
+                <div className="relative text-center">
+                  <div className="w-28 h-28 mx-auto mb-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center">
+                    <Calendar className="w-14 h-14 text-emerald" />
                   </div>
-                  <h3 className="text-xl font-bold text-navy mb-2">{page.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">{page.desc}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-bold text-emerald">{page.price}</span>
-                    <span className="inline-flex items-center text-emerald font-semibold text-sm group-hover:translate-x-1 transition-transform">
-                      Ver más <ArrowRight className="w-4 h-4 ml-1" />
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-16 rounded-2xl p-8 lg:p-12 text-white text-center relative overflow-hidden"
-          style={{ background: "linear-gradient(135deg, #002350 0%, #481180 50%, #008775 100%)" }}
-        >
-          {/* Decorative */}
-          <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/5 rounded-full blur-2xl" />
-          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-white/5 rounded-full blur-2xl" />
-
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 relative">¿Necesitas orientación personalizada?</h3>
-          <p className="text-white/70 mb-6 max-w-2xl mx-auto text-sm sm:text-base relative">
-            Conversemos por WhatsApp y te recomendamos el servicio ideal según tu situación.
-            Sin costo, sin compromiso.
-          </p>
-          <button
-            onClick={() => openModal()}
-            className="relative inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fb855] text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl text-[15px] sm:text-lg font-bold transition-all shadow-lg shadow-[#25D366]/20 hover:shadow-xl active:scale-[0.98]"
-          >
-            <MessageCircle className="w-5 h-5" />
-            Consultoría Gratuita por WhatsApp
-          </button>
-        </motion.div>
+                  <p className="text-white font-bold text-xl mb-1">EN VIVO</p>
+                  <p className="text-white/60 text-sm">Capacitación Tributaria</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
 }
 
+/* ════════════════════════════════════════════════════════════════
+   SECTION 2: CONFERENCE SPEAKER AUTHORITY
+   ════════════════════════════════════════════════════════════════ */
+function SpeakerAuthority() {
+  const achievements = [
+    "Especialista en Optimización Fiscal Legal",
+    "Asesor de Grandes Contribuyentes",
+    "Mentor de Negocios MYPE",
+  ];
+
+  return (
+    <section className="py-20 lg:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Photo placeholder */}
+          <ScrollReveal x={-30} duration={0.7}>
+            <div
+              className="w-full h-[240px] sm:h-[300px] rounded-2xl flex items-center justify-center"
+              style={{
+                background: "linear-gradient(135deg, #002350 0%, #481180 100%)",
+              }}
+            >
+              <span className="text-white/40 text-sm sm:text-base font-medium tracking-wide uppercase">
+                FOTO DEL CONFERENCISTA
+              </span>
+            </div>
+          </ScrollReveal>
+
+          {/* Right: Info */}
+          <ScrollReveal x={30} duration={0.7}>
+            <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">
+              CONFERENCISTA ESPECIALIZADO
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy leading-tight mb-5">
+              Jhon & Asociados:{" "}
+              <span className="text-purple">Más de 25 años</span> protegiendo
+              patrimonios en el Perú
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              Con una trayectoria consolidada en asesoría tributaria, contabilidad
+              integral y defensa ante SUNAT, nuestro equipo liderado por Jhon ha
+              ayudado a miles de emprendedores y empresas a cumplir con la ley
+              tributaria de forma inteligente, optimizando sus cargas fiscales y
+              protegiendo su patrimonio.
+            </p>
+            <ul className="space-y-4">
+              {achievements.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-emerald flex-shrink-0 mt-0.5" />
+                  <span className="text-navy font-medium text-base sm:text-lg">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SECTION 3: COMPANY FORMATION + RUC 20 BENEFITS
+   ════════════════════════════════════════════════════════════════ */
+function CompanyFormation() {
+  const { openModal } = useWhatsAppStore();
+
+  const benefits = [
+    {
+      icon: Shield,
+      title: "Patrimonio Seguro",
+      description:
+        "Protege tus bienes personales al separarlos de los de tu empresa. Constituirte te brinda seguridad jurídica y respaldo legal ante cualquier situación.",
+    },
+    {
+      icon: Building2,
+      title: "Licitaciones del Estado",
+      description:
+        "Accede a oportunidades de contratación con el gobierno. Solo empresas formalizadas con RUC 20 pueden participar en procesos de selección del Estado peruano.",
+    },
+    {
+      icon: Handshake,
+      title: "Créditos y Alianzas",
+      description:
+        "Accede a líneas de crédito, financiamiento y alianzas estratégicas con proveedores y socios comerciales que requieren empresas formalizadas.",
+    },
+  ];
+
+  return (
+    <section className="py-20 lg:py-28 bg-gray-50/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy leading-tight mb-4">
+              Constituye tu empresa por el único precio desde{" "}
+              <span className="text-emerald">S/.380</span>
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Formaliza tu negocio de manera rápida y segura. Incluye minuta,
+              partida registral, RUC, Clave SOL y asesoría personalizada para que
+              operes legalmente desde el primer día.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.15}>
+          <div className="text-center mb-14">
+            <Link
+              href="/constitucion-de-empresas"
+              className="inline-flex items-center gap-2 bg-emerald hover:bg-emerald/90 text-white px-8 sm:px-10 py-4 rounded-xl text-base sm:text-lg font-bold transition-all shadow-lg shadow-emerald/25 hover:shadow-xl active:scale-[0.98]"
+            >
+              ¡Constituir Ya!
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {benefits.map((benefit, i) => {
+            const Icon = benefit.icon;
+            return (
+              <ScrollReveal key={benefit.title} delay={0.1 * i} duration={0.6}>
+                <div className="bg-white rounded-2xl border border-gray-100 p-7 sm:p-8 h-full hover:shadow-lg hover:border-emerald/20 transition-all">
+                  <div className="w-14 h-14 bg-emerald/10 rounded-xl flex items-center justify-center mb-5">
+                    <Icon className="w-7 h-7 text-emerald" />
+                  </div>
+                  <h3 className="text-xl font-bold text-navy mb-3">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
+              </ScrollReveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SECTION 4: TESTIMONIALS
+   ════════════════════════════════════════════════════════════════ */
+const testimonials = [
+  {
+    name: "Fernando Coronel Mucha",
+    text: "Gracias a la asesoría tributaria de Jhon & Asociados, logré reducir mi carga impositiva legalmente. Su equipo me explicó cada paso con claridad y profesionalismo. Totalmente recomendados.",
+    stars: 5,
+  },
+  {
+    name: "María Fernanda López",
+    text: "Constituí mi empresa con ellos y el proceso fue rápido y sin complicaciones. Desde la minuta hasta el RUC, todo quedó perfecto. Ahora opero con total tranquilidad y respaldo legal.",
+    stars: 5,
+  },
+  {
+    name: "Juan Mendoza",
+    text: "La asesoría estratégica que recibí fue clave para el crecimiento de mi negocio. Me ayudaron a tomar decisiones financieras correctas y a cumplir con todas mis obligaciones tributarias.",
+    stars: 5,
+  },
+  {
+    name: "Lilia Estrada",
+    text: "Llevo más de 2 años con su servicio de contabilidad integral y cada mes me siento tranquila sabiendo que mis declaraciones están correctas. Excelente equipo y atención personalizada.",
+    stars: 5,
+  },
+];
+
+function Testimonials() {
+  return (
+    <section className="py-20 lg:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">
+              Testimonios
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy">
+              Nuestros Clientes{" "}
+              <span className="text-purple">Hablan Por Nosotros</span>
+            </h2>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {testimonials.map((t, i) => (
+            <ScrollReveal key={t.name} delay={0.1 * i} duration={0.6}>
+              <div className="bg-gray-50/80 rounded-2xl p-7 sm:p-8 h-full">
+                {/* Stars */}
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: t.stars }).map((_, j) => (
+                    <Star
+                      key={j}
+                      className="w-5 h-5 fill-amber-400 text-amber-400"
+                    />
+                  ))}
+                </div>
+                <p className="text-navy/80 leading-relaxed mb-6 italic">
+                  &ldquo;{t.text}&rdquo;
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center">
+                    <span className="text-navy font-bold text-sm">
+                      {t.name
+                        .split(" ")
+                        .map((w) => w[0])
+                        .slice(0, 2)
+                        .join("")}
+                    </span>
+                  </div>
+                  <span className="text-navy font-semibold text-sm">
+                    {t.name}
+                  </span>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SECTION 5: AUTHORITY METRICS
+   ════════════════════════════════════════════════════════════════ */
+const metrics = [
+  {
+    value: "25+",
+    label: "Años de Experiencia",
+    subtext: "Potenciando negocios en el Perú",
+  },
+  {
+    value: "21,000+",
+    label: "Empresas Constituidas",
+    subtext: "Con RUC 20 activo y sin complicaciones",
+  },
+  {
+    value: "23,000+",
+    label: "Emprendedores Capacitados",
+    subtext: "En talleres, seminarios y tips tributarios",
+  },
+  {
+    value: "Equipo Experto",
+    label: "Colaboradores",
+    subtext: "Contadores profesionales listos para protegerte",
+  },
+];
+
+function AuthorityMetrics() {
+  return (
+    <section className="py-20 lg:py-28 bg-navy">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+              Números que{" "}
+              <span className="text-emerald">Hablan por Nosotros</span>
+            </h2>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          {metrics.map((m, i) => (
+            <ScrollReveal key={m.label} delay={0.1 * i} duration={0.6}>
+              <div className="text-center">
+                <p className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-emerald mb-2">
+                  {m.value}
+                </p>
+                <p className="text-white font-semibold text-base sm:text-lg mb-1">
+                  {m.label}
+                </p>
+                <p className="text-white/50 text-sm">{m.subtext}</p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SECTION 6: HIGH CONVERSION CTA
+   ════════════════════════════════════════════════════════════════ */
+function HighConversionCTA() {
+  const { openModal } = useWhatsAppStore();
+
+  return (
+    <section className="py-20 lg:py-28 relative overflow-hidden">
+      {/* Gradient background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(135deg, #002350 0%, #481180 100%)",
+        }}
+      />
+      {/* Decorative blurs */}
+      <div className="absolute -top-20 -right-20 w-64 h-64 bg-emerald/10 rounded-full blur-3xl" />
+      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-purple/20 rounded-full blur-3xl" />
+
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <ScrollReveal>
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-white leading-tight mb-8 max-w-3xl mx-auto">
+            ¡No busques más! Nosotros nos encargamos de tus declaraciones y te
+            ayudamos a evitar problemas con SUNAT.
+          </h2>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/constitucion-de-empresas"
+              className="inline-flex items-center justify-center gap-2 bg-emerald hover:bg-emerald/90 text-white px-7 sm:px-9 py-4 rounded-xl text-[15px] sm:text-lg font-bold transition-all shadow-lg shadow-emerald/25 hover:shadow-xl active:scale-[0.98] w-full sm:w-auto"
+            >
+              <Building2 className="w-5 h-5" />
+              QUIERO CONSTITUIR MI EMPRESA AHORA
+            </Link>
+            <button
+              onClick={() => openModal()}
+              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border-2 border-white/40 text-white px-7 sm:px-9 py-4 rounded-xl text-[15px] sm:text-lg font-bold transition-all backdrop-blur-sm w-full sm:w-auto"
+            >
+              <MessageCircle className="w-5 h-5" />
+              CONSULTORÍA GRATUITA
+            </button>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
+   HOME PAGE
+   ════════════════════════════════════════════════════════════════ */
 export default function Home() {
   return (
     <SiteLayout>
       <Hero />
       <SectionDivider from="#001528" to="#f9fafb" />
-      <Services />
+
+      {/* Section 1: Conference Capture Card */}
+      <ConferenceCaptureCard />
+
       <SectionDivider from="#f9fafb" to="#ffffff" />
-      <QuickSection />
+
+      {/* Section 2: Speaker Authority */}
+      <SpeakerAuthority />
+
+      <SectionDivider from="#ffffff" to="#f9fafb" />
+
+      {/* Section 3: Company Formation + RUC 20 Benefits */}
+      <CompanyFormation />
+
+      <SectionDivider from="#f9fafb" to="#f9fafb" />
+
+      {/* Services (existing, SEO value) */}
+      <Services />
+
+      <SectionDivider from="#f9fafb" to="#ffffff" />
+
+      {/* Section 4: Testimonials */}
+      <Testimonials />
+
+      {/* Section 5: Authority Metrics (navy bg) */}
+      <AuthorityMetrics />
+
+      {/* Section 6: High Conversion CTA */}
+      <HighConversionCTA />
     </SiteLayout>
   );
 }

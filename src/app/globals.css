@@ -630,6 +630,16 @@ html.mobile-menu-open .whatsapp-float {
     padding-bottom: 40px !important;
   }
 
+  /* Mobile overlay: HORIZONTAL — dark left (text) → transparent right (face visible) */
+  .hero-brand-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 35, 80, 0.88) 0%,
+      rgba(0, 35, 80, 0.48) 40%,
+      rgba(72, 17, 128, 0.08) 100%
+    ) !important;
+  }
+
   /* Text block: full width */
   .hero-text-col {
     max-width: 100%;
@@ -835,23 +845,23 @@ html.mobile-menu-open .whatsapp-float {
     background-position: 70% 15% !important; /* Rostro centrado en la mitad superior del celular */
   }
 
-  /* Mobile overlay: HORIZONTAL gradient — dark left (text) → transparent right (face at 70% clearly visible) */
+  /* Mobile overlay: HORIZONTAL + 10% more blue — text readable, face at 70% clearly visible */
   .subpage-hero-overlay {
     background: linear-gradient(
       90deg,
-      rgba(0, 35, 80, 0.85) 0%,
-      rgba(0, 35, 80, 0.45) 40%,
-      rgba(72, 17, 128, 0.05) 100%
+      rgba(0, 35, 80, 0.92) 0%,
+      rgba(0, 35, 80, 0.55) 40%,
+      rgba(72, 17, 128, 0.12) 100%
     ) !important;
   }
 
-  /* Defensa mobile: HORIZONTAL — dark left (urgency text) → transparent right (face at 70% clearly visible) */
+  /* Defensa mobile: HORIZONTAL + 10% more blue — urgency text readable, face at 70% clearly visible */
   .subpage-hero-overlay-defensa {
     background: linear-gradient(
       90deg,
-      rgba(0, 35, 80, 0.88) 0%,
-      rgba(0, 35, 80, 0.40) 40%,
-      rgba(0, 35, 80, 0.05) 100%
+      rgba(0, 35, 80, 0.95) 0%,
+      rgba(0, 35, 80, 0.50) 40%,
+      rgba(0, 35, 80, 0.12) 100%
     ) !important;
   }
 

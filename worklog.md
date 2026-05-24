@@ -127,3 +127,23 @@ Stage Summary:
 - All 4 subpages now have photographic hero with modular overlay system
 - GitHub push successful: https://github.com/gozustrike-lab/jhon-asociados (main)
 - Vercel auto-deploy pending: needs valid Vercel token or manual dashboard deploy
+---
+Task ID: 1
+Agent: Main Agent
+Task: Restore DefensaPage to original design — only rename to Asesoría Tributaria
+
+Work Log:
+- User reported that the Defensa Tributaria page was completely rewritten (colors, hero type, content, booking form added) when only the name should have changed
+- Retrieved original DefensaPage.tsx from git history (commit ae95baa^) — red urgent theme with SUNAT defense content
+- Restored DefensaPage.tsx to original state: red urgent overlay, "¿SUNAT te fiscalizó?" hero, Cartas Inductivas/Fiscalizaciones/Cobranza Coactiva cards, urgent CTA
+- Only changed breadcrumb text "Defensa Tributaria" → "Asesoría Tributaria"
+- Reverted Services.tsx description back to "Atención urgente de cartas inductivas, fiscalizaciones y cobranzas coactivas de SUNAT."
+- Reverted whatsapp.ts service names: "Asesoría Tributaria - Cartas Inductivas", "Asesoría Tributaria - Fiscalización", "Cobranza Coactiva"
+- Updated page.tsx metadata title to "Asesoría Tributaria y SUNAT"
+- Pushed to Vercel successfully (commit 2ce5ec2)
+
+Stage Summary:
+- DefensaPage fully restored to original red urgent theme with SUNAT defense content
+- Only the name label changed: "Defensa Tributaria" → "Asesoría Tributaria"
+- All other files (Header, Footer nav labels) already had correct "Asesoría Tributaria" label
+- Pushed to Vercel: ae95baa..2ce5ec2

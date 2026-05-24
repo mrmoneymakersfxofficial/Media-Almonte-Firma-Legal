@@ -5,7 +5,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { motion } from "framer-motion";
 import {
   AlertTriangle, Shield, Gavel, MessageCircle, Clock, ArrowRight,
-  ChevronRight, CheckCircle2, FileWarning, Scale, Zap
+  ChevronRight, CheckCircle2, FileWarning, FileText, Scale, Zap
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useWhatsAppStore } from "@/lib/whatsapp";
@@ -22,6 +22,22 @@ const urgentCards = [
     serviceId: 5,
     urgency: "Tienes 10 días hábiles para responder. Actúa ahora.",
     price: "Desde S/ 200",
+    details: [
+      "Análisis completo de la carta recibida",
+      "Identificación de las inconsistencias detectadas por SUNAT",
+      "Preparación de la respuesta fundamentada con documentación",
+      "Presentación de descargos ante SUNAT",
+      "Seguimiento hasta la resolución del caso",
+    ],
+  },
+  {
+    icon: FileText,
+    title: "Carta por Incremento Patrimonial No Justificado",
+    description: "SUNAT detectó un incremento en tu patrimonio que no coincide con tus declaraciones tributarias. Es fundamental presentar descargos sólidos con documentación que sustente tus ingresos.",
+    cta: "Atender mi Carta Patrimonial",
+    serviceId: 11,
+    urgency: "Tienes 10 días hábiles para responder. Actúa ahora.",
+    price: "Consultar según el caso",
     details: [
       "Análisis completo de la carta recibida",
       "Identificación de las inconsistencias detectadas por SUNAT",

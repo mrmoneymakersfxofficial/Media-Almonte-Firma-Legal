@@ -18,6 +18,7 @@ export const services: Service[] = [
   { id: 8, name: "Planilla y Laboral (mensual)", price: "Desde S/ 250", priceNum: 250 },
   { id: 9, name: "Asesoría Inversionista", price: "Consultar", priceNum: 0 },
   { id: 10, name: "Capacitación Tributaria", price: "Gratis", priceNum: 0 },
+  { id: 11, name: "Carta Incremento Patrimonial No Justificado", price: "Consultar", priceNum: 0 },
 ];
 
 interface WhatsAppState {

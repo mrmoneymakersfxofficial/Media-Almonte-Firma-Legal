@@ -13,7 +13,7 @@ const packages = [
   {
     name: "SAC",
     fullName: "Sociedad Anónima Cerrada",
-    price: "S/ 450",
+    price: "Consultar",
     priceNum: 450,
     serviceId: 1,
     recommended: false,
@@ -30,7 +30,7 @@ const packages = [
   {
     name: "EIRL",
     fullName: "Empresa Individual de Responsabilidad Limitada",
-    price: "S/ 380",
+    price: "Consultar",
     priceNum: 380,
     serviceId: 2,
     recommended: true,
@@ -48,7 +48,7 @@ const packages = [
   {
     name: "SRL",
     fullName: "Sociedad de Responsabilidad Limitada",
-    price: "S/ 550",
+    price: "Consultar",
     priceNum: 550,
     serviceId: 3,
     recommended: false,
@@ -110,8 +110,7 @@ export function ConstitucionPage() {
               Constitución de <span className="text-[#00a996]">Empresas</span>
             </h1>
             <p className="subpage-hero-desc mt-5 text-[15px] sm:text-lg text-white/75 max-w-2xl leading-relaxed font-light">
-              Empieza con pie derecho. Formaliza tu negocio con paquetes claros,
-              precios transparentes y un proceso acompañado de principio a fin.
+              Formaliza tu negocio con precios flexibles y un proceso acompañado de principio a fin. Nosotros nos encargamos de todo.
             </p>
             <div className="subpage-hero-ctas mt-8 flex flex-col sm:flex-row gap-3">
               <button
@@ -168,8 +167,7 @@ export function ConstitucionPage() {
                   <h3 className="text-2xl font-bold text-navy">{pkg.name}</h3>
                   <p className="text-sm text-muted-foreground mt-1">{pkg.fullName}</p>
                   <div className="mt-4">
-                    <span className="text-sm text-muted-foreground">Desde</span>
-                    <div className="text-4xl lg:text-5xl font-bold text-navy">{pkg.price}</div>
+                    <span className="text-xl sm:text-2xl font-extrabold text-emerald">{pkg.price}</span>
                   </div>
                 </div>
 
@@ -271,7 +269,7 @@ export function ConstitucionPage() {
       <section className="py-20 bg-gradient-to-r from-navy to-purple">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            ¿Listo para formalizar tu negocio?
+            ¿Listo para gestionar tu contabilidad?
           </h2>
           <p className="text-white/70 mb-8 text-lg">
             Constituye tu empresa hoy y empieza a facturar legalmente. Consultoría sin costo.

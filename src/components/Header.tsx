@@ -12,7 +12,7 @@ const navItems = [
   { label: "Inicio", href: "/" },
   { label: "Constitución", href: "/constitucion-de-empresas" },
   { label: "Contabilidad", href: "/contabilidad-tributacion" },
-  { label: "Defensa Tributaria", href: "/defensa-tributaria-sunat" },
+  { label: "Asesoría Tributaria", href: "/defensa-tributaria-sunat" },
   { label: "Nosotros", href: "/nosotros-contacto" },
 ];
 

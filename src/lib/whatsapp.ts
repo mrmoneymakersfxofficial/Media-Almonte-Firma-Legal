@@ -12,9 +12,9 @@ export const services: Service[] = [
   { id: 2, name: "Constitución EIRL", price: "Desde S/ 380", priceNum: 380 },
   { id: 3, name: "Constitución SRL", price: "Desde S/ 550", priceNum: 550 },
   { id: 4, name: "Contabilidad Integral (mensual)", price: "Desde S/ 350", priceNum: 350 },
-  { id: 5, name: "Defensa Tributaria - Cartas Inductivas", price: "Desde S/ 200", priceNum: 200 },
-  { id: 6, name: "Defensa Tributaria - Fiscalización", price: "Consultar", priceNum: 0 },
-  { id: 7, name: "Cobranza Coactiva", price: "Consultar", priceNum: 0 },
+  { id: 5, name: "Asesoría Tributaria - Consulta General", price: "Desde S/ 200", priceNum: 200 },
+  { id: 6, name: "Asesoría Tributaria - Planificación Fiscal", price: "Consultar", priceNum: 0 },
+  { id: 7, name: "Asesoría Tributaria - Cumplimiento Normativo", price: "Consultar", priceNum: 0 },
   { id: 8, name: "Planilla y Laboral (mensual)", price: "Desde S/ 250", priceNum: 250 },
   { id: 9, name: "Asesoría Inversionista", price: "Consultar", priceNum: 0 },
   { id: 10, name: "Capacitación Tributaria", price: "Gratis", priceNum: 0 },
@@ -42,7 +42,7 @@ export function generateWhatsAppURL(
   name: string,
   notes: string
 ): string {
-  const message = `Hola Jhon & Asociados.
+  const message = `Hola *Jhon&Asociados*.
 
 Servicio: ${serviceName}
 Precio referencial: ${servicePrice}

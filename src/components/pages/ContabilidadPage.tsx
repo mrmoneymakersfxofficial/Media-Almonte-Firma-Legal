@@ -5,7 +5,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { motion } from "framer-motion";
 import {
   CheckCircle2, BarChart3, MessageCircle, BookOpen, FileText, Shield,
-  Users, TrendingUp, Monitor, Clock, ChevronRight, Calculator, ArrowRight
+  Users, TrendingUp, Clock, ChevronRight, Calculator, ArrowRight
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useWhatsAppStore } from "@/lib/whatsapp";
@@ -25,7 +25,6 @@ const mainFeatures = [
 
 const additionalServices = [
   { icon: Users, title: "Planilla y Laboral", desc: "T-REGISTRO, PDT 601, boletas de pago, liquidaciones, CTS, vacaciones y gratificaciones.", price: "Desde S/ 250/mes" },
-  { icon: Monitor, title: "Software Contable", desc: "Acceso a plataforma digital para consultar tus libros, estados financieros y documentos en tiempo real.", price: "Incluido" },
   { icon: Clock, title: "Cumplimiento de Plazos", desc: "Calendario personalizado con todos los vencimientos tributarios y laborales de tu empresa.", price: "Incluido" },
 ];
 
@@ -154,13 +153,12 @@ export function ContabilidadPage() {
                     <BarChart3 className="w-6 h-6 text-emerald-light" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold">Desde S/ 350/mes</h3>
-                    <p className="text-white/60 text-sm">Contabilidad completa + Planilla</p>
+                    <h3 className="text-3xl font-extrabold">Desde S/ 300/mes</h3>
+                    <p className="text-white/60 text-sm">Servicios Contables</p>
                   </div>
                 </div>
                 <p className="text-white/70 leading-relaxed mb-8">
-                  Incluye todos los libros electrónicos, declaraciones mensuales, conciliaciones, estados financieros
-                  y planilla electrónica. Todo lo que necesitas para estar al día con SUNAT y la SUNAFIL.
+                  Incluye todos los libros electrónicos, declaraciones mensuales, conciliaciones, estados financieros. Todo lo que necesitas para estar al día con SUNAT.
                 </p>
                 <div className="grid grid-cols-3 gap-4">
                   {stats.map((stat) => (
@@ -211,7 +209,7 @@ export function ContabilidadPage() {
               Más de lo que esperas
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {additionalServices.map((s, i) => {
               const Icon = s.icon;
               return (
@@ -238,7 +236,7 @@ export function ContabilidadPage() {
       <section className="py-20 bg-gradient-to-r from-navy to-purple">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            ¿Listo para tercerizar tu contabilidad?
+            ¿Listo para gestionar tu contabilidad?
           </h2>
           <p className="text-white/70 mb-8 text-lg">
             Solicita una cotización personalizada. Sin compromiso, sin costo.
@@ -248,7 +246,7 @@ export function ContabilidadPage() {
               <MessageCircle className="w-5 h-5" /> Cotización Personalizada
             </button>
             <Link href="/defensa-tributaria-sunat" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all">
-              ¿Problemas con SUNAT? Ver Defensa Tributaria
+              ¿Problemas con SUNAT? Ver Asesoría Tributaria
             </Link>
           </div>
         </div>

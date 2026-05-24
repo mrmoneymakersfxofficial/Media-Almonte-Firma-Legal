@@ -65,7 +65,7 @@ export function NosotrosPage() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const serviceName = services.find((s) => s.name === formData.service)?.name || formData.service || "General";
-    const message = `Hola Jhon & Asociados.\n\nNombre: ${formData.name}\nEmail: ${formData.email}\nServicio: ${serviceName}\nMensaje: ${formData.message}`;
+    const message = `Hola *Jhon&Asociados*.\n\nNombre: ${formData.name}\nEmail: ${formData.email}\nServicio: ${serviceName}\nMensaje: ${formData.message}`;
     const url = `https://api.whatsapp.com/send?phone=51943366950&text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   }

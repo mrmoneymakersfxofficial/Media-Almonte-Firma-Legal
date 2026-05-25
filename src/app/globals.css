@@ -768,6 +768,35 @@ html.mobile-menu-open .whatsapp-float {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
+   SECTION HEADINGS — Enhanced visibility (bigger, bolder, wider)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* h2 section headings — extra bold with tighter tracking */
+section h2 {
+  font-weight: 800 !important;
+  letter-spacing: -0.005em !important;
+}
+
+/* Size bumps for common responsive heading patterns */
+@media (min-width: 640px) {
+  h2[class*="sm:text-4xl"] { font-size: 2.5rem !important; }
+  h2[class*="sm:text-3xl"] { font-size: 2.125rem !important; }
+}
+
+@media (min-width: 1024px) {
+  h2[class*="lg:text-5xl"] { font-size: 3.25rem !important; }
+  h2[class*="lg:text-4xl"] { font-size: 2.75rem !important; }
+  h2[class*="lg:text-\\[32px\\]"] { font-size: 2.25rem !important; }
+}
+
+/* Green uppercase section labels — bigger, bolder, wider */
+span.text-emerald.uppercase {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
    FOOTER CREDITS — Agency attribution (hardcoded, no CMS)
    ═══════════════════════════════════════════════════════════════════════ */
 .footer-credits {

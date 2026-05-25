@@ -94,14 +94,13 @@ function SpeakerAuthority() {
           {/* Left: Photo placeholder */}
           <ScrollReveal x={-30} duration={0.7}>
             <div
-              className="w-full h-[240px] sm:h-[300px] rounded-2xl flex items-center justify-center"
-              style={{
-                background: "linear-gradient(135deg, #002350 0%, #481180 100%)",
-              }}
+              className="w-full h-[240px] sm:h-[300px] rounded-2xl overflow-hidden"
             >
-              <span className="text-white/40 text-sm sm:text-base font-medium tracking-wide uppercase">
-                FOTO DEL CONFERENCISTA
-              </span>
+              <img
+                src="/jhon-retrato-profesional.png"
+                alt="Jhon — Fundador de Jhon & Asociados"
+                className="w-full h-full object-cover"
+              />
             </div>
           </ScrollReveal>
 
@@ -112,7 +111,7 @@ function SpeakerAuthority() {
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy leading-tight mb-5">
               Jhon & Asociados:{" "}
-              <span className="text-purple">Más de 25 años</span> protegiendo
+              <span className="text-purple">Más de 20 años</span> protegiendo
               patrimonios en el Perú
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
@@ -172,8 +171,8 @@ function CompanyFormation() {
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy leading-tight mb-4">
-              Constituye tu empresa por el único precio desde{" "}
-              <span className="text-emerald">S/.380</span>
+              Constituye tu empresa{" "}
+              <span className="text-emerald">Precios a Consultar</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
               Formaliza tu negocio de manera rápida y segura. Incluye minuta,
@@ -306,7 +305,7 @@ function Testimonials() {
    ════════════════════════════════════════════════════════════════ */
 const metrics = [
   {
-    value: "25+",
+    value: "20+",
     label: "Años de Experiencia",
     subtext: "Potenciando negocios en el Perú",
   },

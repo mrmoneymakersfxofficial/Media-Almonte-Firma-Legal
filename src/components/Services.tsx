@@ -11,7 +11,7 @@ const serviceCards = [
   {
     icon: Building2,
     title: "Constitución de Empresas",
-    description: "Formaliza tu negocio desde S/380. SAC, EIRL, SRL. Incluye minuta, partida, RUC y Clave SOL.",
+    description: "Formaliza tu negocio con paquetes flexibles. SAC, EIRL, SRL. Incluye minuta, partida, RUC y Clave SOL.",
     href: "/constitucion-de-empresas",
     serviceId: 1,
   },

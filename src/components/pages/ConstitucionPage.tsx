@@ -13,8 +13,8 @@ const packages = [
   {
     name: "SAC",
     fullName: "Sociedad Anónima Cerrada",
-    price: "Consultar",
-    priceNum: 450,
+    price: "S/ 1,600",
+    priceNum: 1600,
     serviceId: 1,
     recommended: false,
     features: [
@@ -30,8 +30,8 @@ const packages = [
   {
     name: "EIRL",
     fullName: "Empresa Individual de Responsabilidad Limitada",
-    price: "Consultar",
-    priceNum: 380,
+    price: "S/ 1,600",
+    priceNum: 1600,
     serviceId: 2,
     recommended: true,
     features: [
@@ -48,8 +48,8 @@ const packages = [
   {
     name: "SRL",
     fullName: "Sociedad de Responsabilidad Limitada",
-    price: "Consultar",
-    priceNum: 550,
+    price: "S/ 1,600",
+    priceNum: 1600,
     serviceId: 3,
     recommended: false,
     features: [
@@ -133,8 +133,65 @@ export function ConstitucionPage() {
         <ScrollDownIndicator />
       </section>
 
+      {/* ═══ Requirements Section — After Hero ═══ */}
+      <SectionDivider from="#001528" to="#f9fafb" />
+      <section className="py-20 lg:py-28 bg-gray-50/50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Información del Servicio</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy">
+                Constituye tu empresa por el único precio{" "}
+                <span className="text-emerald">desde S/ 1,600</span>
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                Formaliza tu negocio sin estrés ni trámites complicados. Nos encargamos de todo el proceso, rápido y sin colas, para que empieces a facturar de inmediato.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 lg:p-10">
+              <h3 className="text-xl font-bold text-navy mb-6 flex items-center gap-3">
+                <div className="w-10 h-10 bg-emerald/10 rounded-lg flex items-center justify-center">
+                  <CheckCircle2 className="w-5 h-5 text-emerald" />
+                </div>
+                Requisitos para Constituir tu Empresa
+              </h3>
+              <ul className="space-y-5">
+                {[
+                  "El importe de capital social tiene un máximo de S/ 20,000. En caso de desear aportar un monto mayor, puede contactarse con nosotros para una evaluación personalizada. No es necesario depositar el capital en una cuenta bancaria.",
+                  "El pago del servicio cubre hasta un gerente general. Si desea incluir gerentes adicionales en la estructura de su empresa, contáctenos para brindarle la asesoría correspondiente.",
+                  "No tener multas pendientes en la ONPE por no haber sufragado. Puede verificar su situación en www.onpe.gob.pe. En caso de tener multas, contáctenos y le orientamos sobre el procedimiento.",
+                  "No existe un monto mínimo obligatorio de aporte de capital. Sin embargo, recomendamos constituir con un importe mínimo de S/ 100.00 para efectos registrales.",
+                  "Proponer de 2 a 3 nombres alternativos para la denominación social de su empresa, los cuales serán verificados para asegurar su disponibilidad en los Registros Públicos.",
+                  "Definir la distribución porcentual de acciones o participaciones entre los socios de la empresa.",
+                  "Indicar la dirección donde se registrará la empresa. No se requiere presentar recibos de servicios originales de agua o luz.",
+                  "Completar el formulario de datos de la estructura societaria con la información de todos los socios y el gerente general.",
+                  "Todos los socios y el gerente general deberán contar con su documento de identidad vigente (DNI). En caso de contar con multas en la ONPE, nuestro equipo le orientará sobre cómo regularizar su situación.",
+                ].map((req, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-emerald mt-0.5 shrink-0" />
+                    <span className="text-muted-foreground leading-relaxed text-[15px]">{req}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 text-center">
+                <button
+                  onClick={() => openModal()}
+                  className="inline-flex items-center justify-center gap-2 bg-emerald hover:bg-emerald/90 text-white px-8 py-4 rounded-xl text-base font-bold transition-all shadow-lg shadow-emerald/25 hover:shadow-xl active:scale-[0.98]"
+                >
+                  Constituir mi Empresa
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Pricing Cards */}
-      <SectionDivider from="#001528" to="#ffffff" />
+      <SectionDivider from="#f9fafb" to="#ffffff" />
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -167,7 +224,7 @@ export function ConstitucionPage() {
                   <h3 className="text-2xl font-bold text-navy">{pkg.name}</h3>
                   <p className="text-sm text-muted-foreground mt-1">{pkg.fullName}</p>
                   <div className="mt-4">
-                    <span className="text-xl sm:text-2xl font-extrabold text-emerald">{pkg.price}</span>
+                    <span className="text-3xl sm:text-4xl font-extrabold text-emerald">{pkg.price}</span>
                   </div>
                 </div>
 

@@ -8,9 +8,9 @@ export interface Service {
 }
 
 export const services: Service[] = [
-  { id: 1, name: "Constitución SAC", price: "Desde S/ 450", priceNum: 450 },
-  { id: 2, name: "Constitución EIRL", price: "Desde S/ 380", priceNum: 380 },
-  { id: 3, name: "Constitución SRL", price: "Desde S/ 550", priceNum: 550 },
+  { id: 1, name: "Constitución SAC", price: "S/ 1,600", priceNum: 1600 },
+  { id: 2, name: "Constitución EIRL", price: "S/ 1,600", priceNum: 1600 },
+  { id: 3, name: "Constitución SRL", price: "S/ 1,600", priceNum: 1600 },
   { id: 4, name: "Contabilidad Integral (mensual)", price: "Desde S/ 350", priceNum: 350 },
   { id: 5, name: "Asesoría Tributaria - Cartas Inductivas", price: "Desde S/ 200", priceNum: 200 },
   { id: 6, name: "Asesoría Tributaria - Fiscalización", price: "Consultar", priceNum: 0 },

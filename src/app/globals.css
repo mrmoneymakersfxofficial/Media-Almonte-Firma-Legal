@@ -474,6 +474,106 @@ html.mobile-menu-open .whatsapp-float {
   }
 }
 
+/* ═══════════════════════════════════════════════════════════════════════
+   HERO SLIDER — Dynamic crossfade backgrounds (5 slides)
+   Each slide positioned absolutely, opacity-controlled crossfade (0.8s).
+   Ken Burns subtle zoom animation on active slides.
+   ═══════════════════════════════════════════════════════════════════════ */
+.hero-slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-color: #001528;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  will-change: opacity;
+}
+
+.hero-slide-bg.hero-slide-active {
+  opacity: 1;
+}
+
+/* Desktop positioning — face framed on right side */
+.hero-slide-bg[data-slide="0"] {
+  background-position: right 12% top 22% !important;
+  filter: brightness(0.88) contrast(1.02);
+}
+.hero-slide-bg[data-slide="1"] {
+  background-position: right 8% top 15% !important;
+  filter: brightness(0.85) contrast(1.02);
+}
+.hero-slide-bg[data-slide="2"] {
+  background-position: right 10% top 18% !important;
+  filter: brightness(0.85) contrast(1.02);
+}
+.hero-slide-bg[data-slide="3"] {
+  background-position: right 8% top 15% !important;
+  filter: brightness(0.85) contrast(1.02);
+}
+.hero-slide-bg[data-slide="4"] {
+  background-position: right 10% top 15% !important;
+  filter: brightness(0.85) contrast(1.02);
+}
+
+/* Active slides get Ken Burns */
+.hero-slide-bg.hero-slide-active {
+  animation: hero-ken-burns 25s ease-in-out infinite;
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1440px) {
+  .hero-slide-bg[data-slide="0"] { background-position: right 15% top 20% !important; }
+  .hero-slide-bg[data-slide="1"] { background-position: right 12% top 14% !important; }
+  .hero-slide-bg[data-slide="2"] { background-position: right 13% top 16% !important; }
+  .hero-slide-bg[data-slide="3"] { background-position: right 12% top 14% !important; }
+  .hero-slide-bg[data-slide="4"] { background-position: right 13% top 14% !important; }
+}
+
+/* Mobile positioning — face visible at 70% right */
+@media (max-width: 768px) {
+  .hero-slide-bg[data-slide="0"] {
+    background-image: url('/jhon-hero-movil.webp') !important;
+    background-position: center 25% !important;
+    filter: none !important;
+  }
+  .hero-slide-bg[data-slide="1"] { background-position: 70% 15% !important; filter: none !important; }
+  .hero-slide-bg[data-slide="2"] { background-position: 70% 15% !important; filter: none !important; }
+  .hero-slide-bg[data-slide="3"] { background-position: 70% 15% !important; filter: none !important; }
+  .hero-slide-bg[data-slide="4"] { background-position: 70% 15% !important; filter: none !important; }
+}
+
+/* ─── Progress bar — 4s linear fill ─── */
+@keyframes hero-progress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.hero-progress-fill {
+  transform-origin: left;
+  animation: hero-progress 4s linear forwards;
+}
+
+.hero-progress-fill.paused {
+  animation-play-state: paused;
+}
+
+/* ─── Navigation dots — subtle bottom left ─── */
+.hero-slider-dots {
+  /* Desktop positioning */
+}
+
+@media (max-width: 768px) {
+  .hero-slider-dots {
+    bottom: 56px !important;
+    left: 16px !important;
+  }
+}
+
 /* ─── Layer 1: Brand overlay ─── */
 /* Mobile: vertical gradient — dark top (text) → translucent bottom (Jhon visible) */
 .hero-brand-overlay {

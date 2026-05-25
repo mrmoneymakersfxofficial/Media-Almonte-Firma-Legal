@@ -147,3 +147,26 @@ Stage Summary:
 - Only the name label changed: "Defensa Tributaria" → "Asesoría Tributaria"
 - All other files (Header, Footer nav labels) already had correct "Asesoría Tributaria" label
 - Pushed to Vercel: ae95baa..2ce5ec2
+
+---
+Task ID: 1
+Agent: Main Agent
+Task: Fix horizontal scroll overflow, MÁS POPULAR badge, and change prices to 'A Consultar'
+
+Work Log:
+- Added global overflow-x: hidden to html and body in globals.css
+- Added overflow-x: hidden to .subpage-hero container (prevents Ken Burns scale from causing scroll-x)
+- Added overflow: hidden to .subpage-hero-photo (contains the scale animation)
+- Changed .pricing-recommended from overflow: hidden to overflow: visible (badge was being clipped)
+- Moved MÁS POPULAR badge from -top-3 to -top-4 with z-10 and whitespace-nowrap
+- Changed all Constitution prices from "S/ 1,600" to "A Consultar" with professional styling
+- Added "Inversión:" label and italic subtitle on pricing cards
+- Changed Constitution info section heading from "desde S/ 1,600" to "Precios a Consultar"
+- Changed Contabilidad page "Desde S/ 300/mes" → "A Consultar"
+- Changed Planilla y Laboral "Desde S/ 250/mes" → "A Consultar"
+- Build passed, committed as 8e2e9ab, pushed to Vercel
+
+Stage Summary:
+- Horizontal scroll-x eliminated on all subpages (mobile-first)
+- MÁS POPULAR badge now displays correctly without being clipped
+- All fixed prices replaced with "A Consultar" professional format

@@ -24,7 +24,7 @@ const mainFeatures = [
 ];
 
 const additionalServices = [
-  { icon: Users, title: "Planilla y Laboral", desc: "T-REGISTRO, PDT 601, boletas de pago, liquidaciones, CTS, vacaciones y gratificaciones.", price: "Desde S/ 250/mes" },
+  { icon: Users, title: "Planilla y Laboral", desc: "T-REGISTRO, PDT 601, boletas de pago, liquidaciones, CTS, vacaciones y gratificaciones.", price: "A Consultar" },
   { icon: Clock, title: "Cumplimiento de Plazos", desc: "Calendario personalizado con todos los vencimientos tributarios y laborales de tu empresa.", price: "Incluido" },
 ];
 
@@ -153,7 +153,7 @@ export function ContabilidadPage() {
                     <BarChart3 className="w-6 h-6 text-emerald-light" />
                   </div>
                   <div>
-                    <h3 className="text-3xl font-extrabold">Desde S/ 300/mes</h3>
+                    <h3 className="text-3xl font-extrabold">A Consultar</h3>
                     <p className="text-white/60 text-sm">Servicios Contables</p>
                   </div>
                 </div>

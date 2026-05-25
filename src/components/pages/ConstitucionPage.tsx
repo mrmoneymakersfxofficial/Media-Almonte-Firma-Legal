@@ -13,8 +13,7 @@ const packages = [
   {
     name: "SAC",
     fullName: "Sociedad Anónima Cerrada",
-    price: "S/ 1,600",
-    priceNum: 1600,
+    price: "A Consultar",
     serviceId: 1,
     recommended: false,
     features: [
@@ -30,8 +29,7 @@ const packages = [
   {
     name: "EIRL",
     fullName: "Empresa Individual de Responsabilidad Limitada",
-    price: "S/ 1,600",
-    priceNum: 1600,
+    price: "A Consultar",
     serviceId: 2,
     recommended: true,
     features: [
@@ -48,8 +46,7 @@ const packages = [
   {
     name: "SRL",
     fullName: "Sociedad de Responsabilidad Limitada",
-    price: "S/ 1,600",
-    priceNum: 1600,
+    price: "A Consultar",
     serviceId: 3,
     recommended: false,
     features: [
@@ -141,8 +138,8 @@ export function ConstitucionPage() {
             <div className="text-center max-w-3xl mx-auto mb-14">
               <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Información del Servicio</span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy">
-                Constituye tu empresa por el único precio{" "}
-                <span className="text-emerald">desde S/ 1,600</span>
+                Constituye tu empresa{" "}
+                <span className="text-emerald">Precios a Consultar</span>
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Formaliza tu negocio sin estrés ni trámites complicados. Nos encargamos de todo el proceso, rápido y sin colas, para que empieces a facturar de inmediato.
@@ -213,8 +210,8 @@ export function ConstitucionPage() {
                 }`}
               >
                 {pkg.recommended && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-emerald text-white text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1 shadow-lg">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                    <span className="bg-emerald text-white text-xs font-bold px-5 py-1.5 rounded-full flex items-center gap-1 shadow-lg whitespace-nowrap">
                       <Star className="w-3 h-3 fill-current" /> MÁS POPULAR
                     </span>
                   </div>
@@ -224,7 +221,9 @@ export function ConstitucionPage() {
                   <h3 className="text-2xl font-bold text-navy">{pkg.name}</h3>
                   <p className="text-sm text-muted-foreground mt-1">{pkg.fullName}</p>
                   <div className="mt-4">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-emerald">{pkg.price}</span>
+                    <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">Inversión</p>
+                    <span className="text-2xl sm:text-3xl font-extrabold text-navy">A Consultar</span>
+                    <p className="text-[11px] text-muted-foreground mt-1 italic">Tarifa adaptada según el capital social de tu empresa</p>
                   </div>
                 </div>
 

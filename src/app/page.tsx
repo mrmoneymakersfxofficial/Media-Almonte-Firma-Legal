@@ -91,15 +91,15 @@ function SpeakerAuthority() {
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Photo placeholder */}
+          {/* Left: Photo — Jhon en oficina (misma imagen de Constitución) */}
           <ScrollReveal x={-30} duration={0.7}>
             <div
-              className="w-full h-[240px] sm:h-[300px] rounded-2xl overflow-hidden"
+              className="w-full h-[280px] sm:h-[380px] lg:h-[480px] rounded-2xl overflow-hidden"
             >
               <img
-                src="/jhon-retrato-profesional.png"
+                src="/jhon-constitucion.webp"
                 alt="Jhon — Fundador de Jhon & Asociados"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </ScrollReveal>
@@ -149,19 +149,19 @@ function CompanyFormation() {
       icon: Shield,
       title: "Patrimonio Seguro",
       description:
-        "Protege tus bienes personales al separarlos de los de tu empresa. Constituirte te brinda seguridad jurídica y respaldo legal ante cualquier situación.",
+        "Tus recursos y patrimonio estarán seguros frente a cualquier imprevisto.",
     },
     {
       icon: Building2,
       title: "Licitaciones del Estado",
       description:
-        "Accede a oportunidades de contratación con el gobierno. Solo empresas formalizadas con RUC 20 pueden participar en procesos de selección del Estado peruano.",
+        "Podrás trabajar con el Estado y aprovechar sus programas empresariales.",
     },
     {
       icon: Handshake,
       title: "Créditos y Alianzas",
       description:
-        "Accede a líneas de crédito, financiamiento y alianzas estratégicas con proveedores y socios comerciales que requieren empresas formalizadas.",
+        "Amplía tus oportunidades comerciales al trabajar con empresas de mayor nivel y facilita el acceso a futuros créditos empresariales.",
     },
   ];
 
@@ -194,21 +194,23 @@ function CompanyFormation() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="max-w-3xl mx-auto">
           {benefits.map((benefit, i) => {
             const Icon = benefit.icon;
             return (
               <ScrollReveal key={benefit.title} delay={0.1 * i} duration={0.6}>
-                <div className="bg-white rounded-2xl border border-gray-100 p-7 sm:p-8 h-full hover:shadow-lg hover:border-emerald/20 transition-all">
-                  <div className="w-14 h-14 bg-emerald/10 rounded-xl flex items-center justify-center mb-5">
-                    <Icon className="w-7 h-7 text-emerald" />
+                <div className="benefit-item-immersive flex flex-row items-start gap-4 sm:gap-[18px] mb-9 last:mb-0">
+                  <div className="benefit-icon-pin w-[46px] h-[46px] shrink-0 rounded-[10px] bg-emerald/[0.08] flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-navy" />
                   </div>
-                  <h3 className="text-xl font-bold text-navy mb-3">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {benefit.description}
-                  </p>
+                  <div className="benefit-text-block pt-0.5">
+                    <h3 className="benefit-item-title text-[18px] font-bold text-navy mb-1.5">
+                      {benefit.title}
+                    </h3>
+                    <p className="benefit-item-desc text-[14px] text-[#475569] leading-[1.5] m-0">
+                      {benefit.description}
+                    </p>
+                  </div>
                 </div>
               </ScrollReveal>
             );

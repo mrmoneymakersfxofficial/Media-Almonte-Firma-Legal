@@ -170,3 +170,24 @@ Stage Summary:
 - Horizontal scroll-x eliminated on all subpages (mobile-first)
 - MÁS POPULAR badge now displays correctly without being clipped
 - All fixed prices replaced with "A Consultar" professional format
+
+---
+Task ID: 1
+Agent: Main Agent
+Task: Fix hero slider text spacing + Redesign benefits section to immersive layout
+
+Work Log:
+- Analyzed Hero.tsx H1 titles: found `{" "}` already present between spans, added CSS safety net (.hero-h1 span word-spacing + margin-right)
+- Transformed CompanyFormation benefits from 3-column card grid to immersive single-column flex-row list
+- Removed: bg-white, rounded-2xl, border, shadow, hover effects from benefit items
+- Added: flex-row layout with 46px icon pin on left, text block on right (gap: 16px)
+- Updated benefit texts to competencia versions (exact wording preserved as instructed)
+- Added CSS classes: .benefit-item-immersive, .benefit-icon-pin, .benefit-text-block, .benefit-item-title, .benefit-item-desc
+- Typography: H3 18px bold navy, P 14px slate-600 line-height 1.5
+- Icon: navy color (#002350), 46px, border-radius 10px, emerald/8% bg, flex-shrink 0
+- Commit: e6a04bf
+
+Stage Summary:
+- Benefits section now immersive: no card borders/shadows/background, clean flex-row layout
+- Hero span spacing safety CSS added for mobile rendering
+- All other page content left untouched

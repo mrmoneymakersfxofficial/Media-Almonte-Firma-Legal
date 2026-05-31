@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ContabilidadPage } from "@/components/pages/ContabilidadPage";
 
 export const metadata: Metadata = {
-  title: "Contabilidad Integral y Tributación | Tercerización Contable | Jhon & Asociados",
+  title: "Contabilidad Integral y Tributación | Tercerización Contable | Jhon&Asociados",
   description:
     "Terceriza tu contabilidad con expertos. Libros electrónicos, SIRE, declaraciones IGV/Renta, planillas, conciliaciones bancarias y estados financieros. Tarifas a consultar.",
   keywords: [

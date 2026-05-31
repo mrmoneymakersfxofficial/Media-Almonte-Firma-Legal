@@ -34,7 +34,7 @@ export function Footer() {
             <Link href="/" className="inline-block mb-5">
               <Image
                 src="/logo-header-white.png"
-                alt="Jhon & Asociados"
+                alt="Jhon&Asociados"
                 width={260}
                 height={100}
                 className="h-[36px] sm:h-[40px] w-auto object-contain"
@@ -138,7 +138,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col items-center gap-2">
             <p className="text-white/40 text-sm">
-              © 2026 Jhon & Asociados. Todos los derechos reservados.
+              © 2026 Jhon&Asociados. Todos los derechos reservados.
             </p>
             <p className="footer-credits">
               Diseñado y desarrollado por <a href="https://www.fastpagepro.com" target="_blank" rel="noopener noreferrer">FastPagePro</a>

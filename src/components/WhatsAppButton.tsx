@@ -7,7 +7,7 @@ import { useWhatsAppStore } from "@/lib/whatsapp";
 // Rotating notification messages — each with a different intent
 const NOTIFICATIONS = [
   {
-    title: "Jhon & Asociados",
+    title: "Jhon&Asociados",
     message: "¿Necesitas ayuda con tu empresa? Conversemos ahora",
     time: "ahora",
   },

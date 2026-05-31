@@ -67,7 +67,7 @@ export function Services() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy"
           >
             ¿Por qué elegir{" "}
-            <span className="text-emerald whitespace-nowrap">Jhon & Asociados</span>?
+            <span className="text-emerald whitespace-nowrap">Jhon&Asociados</span>?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

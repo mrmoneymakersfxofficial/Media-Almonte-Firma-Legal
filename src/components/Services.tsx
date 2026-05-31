@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Building2, Calculator, Shield, Users, TrendingUp, GraduationCap } from "lucide-react";
+import { Building2, Calculator, Shield, Users, TrendingUp } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -33,22 +33,15 @@ const serviceCards = [
     icon: Users,
     title: "Planillas y Laboral",
     description: "Administración de planillas, T-REGISTRO, PDT 601 y cumplimiento laboral total.",
-    href: "/contabilidad-tributacion",
+    href: "/contabilidad-tributacion#planillas-laboral",
     serviceId: 8,
   },
   {
     icon: TrendingUp,
     title: "Asesoría al Inversionista",
     description: "Orientación integral para inversores nacionales y extranjeros. Planificación fiscal estratégica.",
-    href: "/contabilidad-tributacion",
+    href: "/defensa-tributaria-sunat#asesoria-inversionista",
     serviceId: 9,
-  },
-  {
-    icon: GraduationCap,
-    title: "Capacitaciones",
-    description: "Programas de formación tributaria y empresarial para dueños y personal contable.",
-    href: "/contabilidad-tributacion",
-    serviceId: 10,
   },
 ];
 
@@ -74,7 +67,7 @@ export function Services() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy"
           >
             ¿Por qué elegir{" "}
-            <span className="text-emerald">Jhon & Asociados</span>?
+            <span className="text-emerald whitespace-nowrap">Jhon & Asociados</span>?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

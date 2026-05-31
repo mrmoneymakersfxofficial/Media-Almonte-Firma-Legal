@@ -88,18 +88,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contabilidad-tributacion" className="text-white/60 hover:text-emerald-light text-sm transition-colors">
+                <Link href="/contabilidad-tributacion#planillas-laboral" className="text-white/60 hover:text-emerald-light text-sm transition-colors">
                   Planillas y Laboral
                 </Link>
               </li>
               <li>
-                <Link href="/contabilidad-tributacion" className="text-white/60 hover:text-emerald-light text-sm transition-colors">
+                <Link href="/defensa-tributaria-sunat#asesoria-inversionista" className="text-white/60 hover:text-emerald-light text-sm transition-colors">
                   Asesoría al Inversionista
-                </Link>
-              </li>
-              <li>
-                <Link href="/contabilidad-tributacion" className="text-white/60 hover:text-emerald-light text-sm transition-colors">
-                  Capacitaciones
                 </Link>
               </li>
             </ul>
@@ -112,7 +107,7 @@ export function Footer() {
             </h4>
             <div className="space-y-3 text-sm text-white/60 mb-6">
               <p>+51 943 366 950</p>
-              <p>contacto@jhonyasociados.com</p>
+              <p>contacto@jhonasociados.com</p>
               <p>Lima, Perú</p>
             </div>
 

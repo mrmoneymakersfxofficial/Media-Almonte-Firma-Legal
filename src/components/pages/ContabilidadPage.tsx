@@ -43,6 +43,17 @@ const benefits = [
   "Enfócate en tu negocio, nosotros nos encargamos de los números",
 ];
 
+const planillasFeatures = [
+  { icon: Users, title: "T-REGISTRO", desc: "Alta, baja y modificación de trabajadores en plataforma SUNAT" },
+  { icon: FileText, title: "Planilla Mensual PDT 601", desc: "Elaboración y presentación de planilla electrónica" },
+  { icon: Calculator, title: "Boletas de Pago", desc: "Cálculo de remuneraciones, deducciones y aportes" },
+  { icon: Clock, title: "CTS", desc: "Cálculo y depósito de Compensación por Tiempo de Servicios" },
+  { icon: BookOpen, title: "Vacaciones y Gratificaciones", desc: "Control de descansos y gratificaciones ordinarias y extraordinarias" },
+  { icon: TrendingUp, title: "Liquidaciones", desc: "Cálculo preciso de liquidaciones por fin de contrato" },
+  { icon: Shield, title: "Seguro Essalud y ONP", desc: "Declaración y pago mensual de aportes" },
+  { icon: CheckCircle2, title: "Auditoría Laboral", desc: "Revisión de cumplimiento normativo laboral" },
+];
+
 export function ContabilidadPage() {
   const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation(0.1);
   const { openModal } = useWhatsAppStore();
@@ -231,8 +242,58 @@ export function ContabilidadPage() {
         </div>
       </section>
 
+      {/* Planillas y Laboral */}
+      <SectionDivider from="#ffffff" to="#f9fafb" />
+      <section id="planillas-laboral" className="py-20 lg:py-28 bg-gray-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Servicio Especializado</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy">
+              Planillas y Laboral <span className="text-purple">Tercerización total</span>
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Gestionamos integralmente todas tus obligaciones laborales: desde el registro de trabajadores
+              hasta las liquidaciones finales, para que cumplas con la normativa y cuides a tu equipo.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {planillasFeatures.map((feature, i) => {
+              const Icon = feature.icon;
+              return (
+                <ScrollReveal
+                  key={feature.title}
+                  delay={0.05 * i}
+                  className="flex gap-4 p-6 rounded-xl border border-gray-100 hover:border-emerald/30 hover:shadow-sm transition-all"
+                >
+                  <div className="w-12 h-12 bg-emerald/10 rounded-xl flex items-center justify-center shrink-0">
+                    <Icon className="w-6 h-6 text-emerald" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-navy mb-1">{feature.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+
+          <div className="text-center mt-12">
+            <ScrollReveal delay={0.3} duration={0.4} y={15}>
+              <button
+                onClick={() => openModal(8)}
+                className="inline-flex items-center justify-center gap-2.5 bg-[#008775] hover:bg-[#006655] text-white px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-lg shadow-[#008775]/30 hover:shadow-xl active:scale-[0.98]"
+              >
+                Cotizar Planilla
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <SectionDivider from="#ffffff" to="#002350" />
+      <SectionDivider from="#f9fafb" to="#002350" />
       <section className="py-20 bg-gradient-to-r from-navy to-purple">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">

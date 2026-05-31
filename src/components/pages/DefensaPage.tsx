@@ -5,7 +5,8 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { motion } from "framer-motion";
 import {
   AlertTriangle, Shield, Gavel, MessageCircle, Clock, ArrowRight,
-  ChevronRight, CheckCircle2, FileWarning, FileText, Scale, Zap
+  ChevronRight, CheckCircle2, FileWarning, FileText, Scale, Zap,
+  TrendingUp, Users
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useWhatsAppStore } from "@/lib/whatsapp";
@@ -85,6 +86,17 @@ const whyUs = [
   { icon: Shield, text: "Equipo especializado con experiencia en defensa tributaria real" },
   { icon: Scale, text: "Conocimiento profundo de la normativa tributaria peruana vigente" },
   { icon: CheckCircle2, text: "Seguimiento constante hasta la resolución final de tu caso" },
+];
+
+const inversionistaFeatures = [
+  { icon: TrendingUp, title: "Evaluación de Inversiones", desc: "Análisis de viabilidad y rentabilidad de proyectos de inversión" },
+  { icon: Scale, title: "Planificación Fiscal", desc: "Estructuración tributaria óptima para maximizar retornos" },
+  { icon: Users, title: "Constitución de Empresas", desc: "Creación de vehículos societarios para inversores nacionales y extranjeros" },
+  { icon: Gavel, title: "Debido Diligencia", desc: "Verificación integral de empresas antes de adquirir participaciones" },
+  { icon: FileText, title: "Reestructuración Societaria", desc: "Reorganización de estructuras corporativas para eficiencia fiscal" },
+  { icon: CheckCircle2, title: "Asesoría Inmobiliaria", desc: "Orientación en inversiones inmobiliarias y aspectos tributarios" },
+  { icon: ArrowRight, title: "Transferencia de Acciones", desc: "Asesoramiento en compra-venta de participaciones empresariales" },
+  { icon: Zap, title: "Reportes Financieros", desc: "Estados financieros especializados para toma de decisiones de inversión" },
 ];
 
 export function DefensaPage() {
@@ -243,6 +255,56 @@ export function DefensaPage() {
                 </ScrollReveal>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Asesoría al Inversionista */}
+      <SectionDivider from="#ffffff" to="#ffffff" />
+      <section id="asesoria-inversionista" className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Servicio Especializado</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy">
+              Asesoría al Inversionista <span className="text-purple">Planificación estratégica</span>
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Acompañamos a inversores nacionales y extranjeros en cada etapa: desde la evaluación
+              de oportunidades hasta la estructuración fiscal óptima para maximizar sus retornos.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {inversionistaFeatures.map((feature, i) => {
+              const Icon = feature.icon;
+              return (
+                <ScrollReveal
+                  key={feature.title}
+                  delay={0.05 * i}
+                  className="flex gap-4 p-6 rounded-xl border border-gray-100 hover:border-emerald/30 hover:shadow-sm transition-all"
+                >
+                  <div className="w-12 h-12 bg-emerald/10 rounded-xl flex items-center justify-center shrink-0">
+                    <Icon className="w-6 h-6 text-emerald" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-navy mb-1">{feature.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+
+          <div className="text-center mt-12">
+            <ScrollReveal delay={0.3} duration={0.4} y={15}>
+              <button
+                onClick={() => openModal(9)}
+                className="inline-flex items-center justify-center gap-2.5 bg-[#008775] hover:bg-[#006655] text-white px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-lg shadow-[#008775]/30 hover:shadow-xl active:scale-[0.98]"
+              >
+                Consultar Asesoría
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </ScrollReveal>
           </div>
         </div>
       </section>

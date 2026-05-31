@@ -19,7 +19,90 @@ import {
   Users,
   Calendar,
   ArrowRight,
+  Quote,
+  Award,
 } from "lucide-react";
+
+/* ════════════════════════════════════════════════════════════════
+   SECTION 0: PRESENTATION — Michael Jhon B. Profile
+   ════════════════════════════════════════════════════════════════ */
+function FounderPresentation() {
+  const { openModal } = useWhatsAppStore();
+
+  return (
+    <section className="py-20 lg:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left: Professional Photo */}
+          <ScrollReveal x={-30} duration={0.7}>
+            <div className="relative">
+              <div className="w-full h-[340px] sm:h-[420px] lg:h-[520px] rounded-2xl overflow-hidden shadow-2xl shadow-navy/20">
+                <img
+                  src="/jhon-constitucion.webp"
+                  alt="Michael Jhon B. — Especialista Tributario"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              {/* Floating badge */}
+              <div className="absolute -bottom-5 -right-3 sm:-right-5 bg-emerald text-white rounded-xl px-5 py-3 shadow-lg shadow-emerald/30 flex items-center gap-2.5">
+                <Award className="w-5 h-5" />
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider">Experiencia</p>
+                  <p className="text-lg font-extrabold leading-tight">+20 Años</p>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Right: Info */}
+          <ScrollReveal x={30} duration={0.7}>
+            <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">
+              Fundador & Director General
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-navy leading-tight mb-4">
+              Michael Jhon B.
+            </h2>
+            <p className="text-emerald font-bold text-lg sm:text-xl mb-6">
+              Especialistas Tributarios
+            </p>
+
+            {/* Quote */}
+            <div className="relative mb-8 pl-5 border-l-4 border-emerald/40">
+              <Quote className="w-8 h-8 text-emerald/20 absolute -top-1 -left-1" />
+              <p className="text-navy/80 text-lg sm:text-xl italic leading-relaxed font-medium">
+                &ldquo;Trabajamos al lado de nuestros clientes para ser socios estratégicos en el crecimiento de sus negocios.&rdquo;
+              </p>
+            </div>
+
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              Especialistas en asesoría tributaria, contabilidad integral y defensa ante
+              SUNAT. Acompañamos a empresas y emprendedores con soluciones legales que
+              protegen su patrimonio y optimizan su carga tributaria, cumpliendo siempre
+              con la normativa vigente.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={() => openModal()}
+                className="inline-flex items-center justify-center gap-2.5 bg-emerald hover:bg-emerald/90 text-white px-7 py-4 rounded-xl text-[15px] font-bold transition-all shadow-lg shadow-emerald/25 hover:shadow-xl active:scale-[0.98]"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Consultoría Gratuita
+              </button>
+              <Link
+                href="/nosotros-contacto"
+                className="inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy-light text-white px-7 py-4 rounded-xl text-[15px] font-semibold transition-all"
+              >
+                Conoce Nuestro Equipo
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /* ════════════════════════════════════════════════════════════════
    SECTION 1: CONFERENCE CAPTURE CARD
@@ -83,7 +166,7 @@ function ConferenceCaptureCard() {
 function SpeakerAuthority() {
   const achievements = [
     "Especialista en Optimización Fiscal Legal",
-    "Asesor de Grandes Contribuyentes",
+    "Asesor de exitosos Contribuyentes",
     "Mentor de Negocios MYPE",
   ];
 
@@ -110,7 +193,7 @@ function SpeakerAuthority() {
               CONFERENCISTA ESPECIALIZADO
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy leading-tight mb-5">
-              Jhon & Asociados:{" "}
+              <span className="whitespace-nowrap">Jhon & Asociados:</span>{" "}
               <span className="text-purple">Más de 20 años</span> protegiendo
               patrimonios en el Perú
             </h2>
@@ -226,22 +309,22 @@ function CompanyFormation() {
    ════════════════════════════════════════════════════════════════ */
 const testimonials = [
   {
-    name: "Fernando Coronel Mucha",
+    name: "Fernando",
     text: "Gracias a la asesoría tributaria de Jhon & Asociados, logré reducir mi carga impositiva legalmente. Su equipo me explicó cada paso con claridad y profesionalismo. Totalmente recomendados.",
     stars: 5,
   },
   {
-    name: "María Fernanda López",
+    name: "María Fernanda",
     text: "Constituí mi empresa con ellos y el proceso fue rápido y sin complicaciones. Desde la minuta hasta el RUC, todo quedó perfecto. Ahora opero con total tranquilidad y respaldo legal.",
     stars: 5,
   },
   {
-    name: "Juan Mendoza",
+    name: "Juan",
     text: "La asesoría estratégica que recibí fue clave para el crecimiento de mi negocio. Me ayudaron a tomar decisiones financieras correctas y a cumplir con todas mis obligaciones tributarias.",
     stars: 5,
   },
   {
-    name: "Lilia Estrada",
+    name: "Lilia",
     text: "Llevo más de 2 años con su servicio de contabilidad integral y cada mes me siento tranquila sabiendo que mis declaraciones están correctas. Excelente equipo y atención personalizada.",
     stars: 5,
   },
@@ -415,7 +498,12 @@ export default function Home() {
   return (
     <SiteLayout>
       <Hero />
-      <SectionDivider from="#001528" to="#f9fafb" />
+      <SectionDivider from="#001528" to="#ffffff" />
+
+      {/* Section 0: Founder Presentation */}
+      <FounderPresentation />
+
+      <SectionDivider from="#ffffff" to="#f9fafb" />
 
       {/* Section 1: Conference Capture Card */}
       <ConferenceCaptureCard />

@@ -182,7 +182,7 @@ function SpeakerAuthority() {
   const achievements = [
     "Especialista en Optimización Fiscal Legal",
     "Asesor de exitosos Contribuyentes",
-    "Mentor de Negocios MYPE",
+    "Mentor y Coach de Negocios MYPE",
   ];
 
   return (
@@ -407,12 +407,12 @@ const metrics = [
     subtext: "Potenciando negocios en el Perú",
   },
   {
-    value: "21,000+",
+    value: "5,000+",
     label: "Empresas Constituidas",
     subtext: "Con RUC 20 activo y sin complicaciones",
   },
   {
-    value: "23,000+",
+    value: "15,000+",
     label: "Emprendedores Capacitados",
     subtext: "En talleres, seminarios y tips tributarios",
   },

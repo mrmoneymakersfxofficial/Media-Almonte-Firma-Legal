@@ -135,7 +135,7 @@ const slides: SlideData[] = [
       type: "link",
       href: "/nosotros-contacto",
     },
-    badges: ["+21,000 empresas", "Transparencia total", "Resultados comprobados"],
+    badges: ["+5,000 empresas", "Transparencia total", "Resultados comprobados"],
   },
 ];
 
@@ -341,8 +341,8 @@ export function Hero() {
           className="hero-counters mt-14 lg:mt-20 grid grid-cols-3 gap-3 sm:gap-6 hero-text-col"
         >
           {[
-            { value: 500, suffix: "+", label: "Empresas Formalizadas" },
-            { value: 2, suffix: "M+", label: "en Multas Evitadas" },
+            { value: 408, suffix: "+", label: "Empresas Formalizadas" },
+            { value: 1, suffix: "M+", label: "en Multas Evitadas" },
             { value: 98, suffix: "%", label: "de Satisfacción" },
           ].map((item) => (
             <div

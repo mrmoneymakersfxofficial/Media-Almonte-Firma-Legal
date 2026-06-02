@@ -181,7 +181,7 @@ function SpeakerAuthority() {
             >
               <img
                 src="/jhon-constitucion.webp"
-                alt="Jhon — Fundador de Jhon & Asociados"
+                alt="Jhon — Fundador de Jhon&Asociados"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -193,7 +193,7 @@ function SpeakerAuthority() {
               CONFERENCISTA ESPECIALIZADO
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy leading-tight mb-5">
-              <span className="whitespace-nowrap">Jhon & Asociados:</span>{" "}
+              <span className="whitespace-nowrap">Jhon&Asociados:</span>{" "}
               <span className="text-purple">Más de 20 años</span> protegiendo
               patrimonios en el Perú
             </h2>
@@ -310,7 +310,7 @@ function CompanyFormation() {
 const testimonials = [
   {
     name: "Fernando",
-    text: "Gracias a la asesoría tributaria de Jhon & Asociados, logré reducir mi carga impositiva legalmente. Su equipo me explicó cada paso con claridad y profesionalismo. Totalmente recomendados.",
+    text: "Gracias a la asesoría tributaria de Jhon&Asociados, logré reducir mi carga impositiva legalmente. Su equipo me explicó cada paso con claridad y profesionalismo. Totalmente recomendados.",
     stars: 5,
   },
   {

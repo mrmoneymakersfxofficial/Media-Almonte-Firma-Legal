@@ -16,14 +16,14 @@ export const metadata: Metadata = {
     "contador tributario",
   ],
   openGraph: {
-    title: "Contabilidad Integral | Jhon & Asociados",
+    title: "Contabilidad Integral | Jhon&Asociados",
     description: "Terceriza tu contabilidad con expertos. Libros electrónicos, declaraciones mensuales, planillas y cumplimiento tributario completo.",
     url: "https://jhonyasociados.com/contabilidad-tributacion",
     images: [{ url: "/og-banner-jhon.png?v=2.1", width: 1200, height: 630, type: "image/png" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contabilidad Integral | Jhon & Asociados",
+    title: "Contabilidad Integral | Jhon&Asociados",
     description: "Terceriza tu contabilidad. Libros electrónicos, SIRE, declaraciones IGV/Renta y planillas.",
     images: ["/og-banner-jhon.png?v=2.1"],
   },

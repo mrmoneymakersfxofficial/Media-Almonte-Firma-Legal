@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DefensaPage } from "@/components/pages/DefensaPage";
 
 export const metadata: Metadata = {
-  title: "Defensa Tributaria y SUNAT | Cartas Inductivas, Fiscalizaciones | Jhon & Asociados",
+  title: "Defensa Tributaria y SUNAT | Cartas Inductivas, Fiscalizaciones | Jhon&Asociados",
   description:
     "¿SUNAT te fiscalizó? Actuamos con urgencia. Atención de cartas inductivas, defensa en fiscalizaciones y negociación de cobranzas coactivas. Protege tu patrimonio.",
   keywords: [

@@ -80,7 +80,7 @@ export function Header() {
             <Link href="/" className="flex items-center shrink-0 relative z-10">
               <Image
                 src={scrolled ? "/logo-header-noslogan.webp" : "/logo-header-white-noslogan.png"}
-                alt="Jhon & Asociados"
+                alt="Jhon&Asociados"
                 width={925}
                 height={381}
                 priority
@@ -170,7 +170,7 @@ export function Header() {
               <div className="navbar-brand-fixed px-4 border-b border-gray-100 shrink-0">
                 <Image
                   src="/logo-header-noslogan.webp"
-                  alt="Jhon & Asociados"
+                  alt="Jhon&Asociados"
                   width={925}
                   height={381}
                   className="brand-logo-fixed"

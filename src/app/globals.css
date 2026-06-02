@@ -42,7 +42,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Brand Colors - Official Jhon & Asociados */
+  /* Brand Colors - Official Jhon&Asociados */
   --color-navy: #002350;
   --color-navy-light: #0a3a6b;
   --color-navy-dark: #001528;
@@ -216,7 +216,7 @@ img, svg {
   }
 }
 
-/* Custom scrollbar — Jhon & Asociados brand colors (all devices) */
+/* Custom scrollbar — Jhon&Asociados brand colors (all devices) */
 * {
   scrollbar-width: thin;
   scrollbar-color: #002350 #f8fafc;

@@ -1038,59 +1038,76 @@ span.text-emerald.uppercase {
 
 /* ─── Subpage Hero Mobile — EXCLUSIVE: no home-hero rules here ─── */
 @media (max-width: 768px) {
-  /* Full bleed hero — image fills entire width, no crop */
+
   .subpage-hero {
     width: 100% !important;
-    min-height: auto !important;
-    height: 100vw !important;
-    background-size: cover !important;
-    background-position: center 30% !important;
+    min-height: 85vh !important;
+    /* Dark gradient fallback — fills any gap around the image */
+    background: linear-gradient(180deg, #0B2146 0%, #081935 50%, #050F21 100%) !important;
+    background-size: auto !important;
+    background-position: initial !important;
   }
 
-  /* Photo layer: cover to fill hero completely, position to show full person */
+  /* Photo: CONTAIN shows the FULL image, no crop. Gradient bg fills gaps. */
   .subpage-hero-photo {
-    background-size: cover !important;
-    background-position: center 25% !important;
+    background-size: contain !important;
+    background-position: center 22% !important;
+    background-repeat: no-repeat !important;
   }
 
-  /* Mobile overlay: HORIZONTAL + 10% more blue — text readable, face at 70% clearly visible */
+  /* Overlay: vertical gradient — transparent center (image visible) — dark top/bottom (text readable) */
   .subpage-hero-overlay {
     background: linear-gradient(
-      90deg,
-      rgba(0, 35, 80, 0.92) 0%,
-      rgba(0, 35, 80, 0.55) 40%,
-      rgba(72, 17, 128, 0.12) 100%
+      180deg,
+      rgba(11, 33, 70, 0.65) 0%,
+      rgba(11, 33, 70, 0.10) 30%,
+      rgba(5, 15, 33, 0.05) 50%,
+      rgba(5, 15, 33, 0.45) 70%,
+      rgba(5, 15, 33, 0.88) 100%
     ) !important;
   }
 
-  /* Defensa mobile: HORIZONTAL + 10% more blue — urgency text readable, face at 70% clearly visible */
+  /* Defensa mobile overlay — same vertical pattern */
   .subpage-hero-overlay-defensa {
     background: linear-gradient(
-      90deg,
-      rgba(0, 35, 80, 0.95) 0%,
-      rgba(0, 35, 80, 0.50) 40%,
-      rgba(0, 35, 80, 0.12) 100%
+      180deg,
+      rgba(11, 33, 70, 0.70) 0%,
+      rgba(11, 33, 70, 0.10) 30%,
+      rgba(5, 15, 33, 0.05) 50%,
+      rgba(5, 15, 33, 0.50) 70%,
+      rgba(5, 15, 33, 0.90) 100%
     ) !important;
   }
 
-  /* Content: centered vertically — same approach as Home hero */
+  /* Content: centered vertically */
   .subpage-hero-content {
     height: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: center !important;
-    padding-top: 60px !important;
-    padding-bottom: 40px !important;
+    justify-content: space-between !important;
+    padding-top: 110px !important;
+    padding-bottom: 32px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   .subpage-hero-title {
-    font-size: 26px !important;
-    line-height: 1.2 !important;
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
   }
 
   .subpage-hero-desc {
     font-size: 14px !important;
-    margin-top: 14px !important;
+    margin-top: 12px !important;
+    max-width: 320px !important;
+  }
+
+  /* CTAs: full width, stacked */
+  .subpage-hero-ctas {
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-top: auto !important;
   }
 
   .subpage-hero-ctas button,
@@ -1102,7 +1119,7 @@ span.text-emerald.uppercase {
     padding-bottom: 14px;
   }
 
-  .subpage-hero-ctas {
-    gap: 10px !important;
+  .subpage-hero-breadcrumb {
+    font-size: 12px !important;
   }
 }

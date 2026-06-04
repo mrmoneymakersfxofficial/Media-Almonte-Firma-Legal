@@ -191,3 +191,23 @@ Stage Summary:
 - Benefits section now immersive: no card borders/shadows/background, clean flex-row layout
 - Hero span spacing safety CSS added for mobile rendering
 - All other page content left untouched
+
+---
+Task ID: 1
+Agent: Main Agent
+Task: Replace Conferencista section image, remove blue borders, make bigger with minimal margins
+
+Work Log:
+- Converted uploaded PNG (562x918) to webp at /public/jhon-conferencista.webp
+- Removed navy gradient background (linear-gradient 135deg #001528 → #0a2a5a) that created blue borders
+- Changed from object-contain to object-cover with object-top so image fills container fully
+- Increased max-width from 560px to 640px for bigger display
+- Changed mobile width from 93% to 96% for minimal side margins
+- Updated aspect ratio to 3/5 for mobile, 580px height for desktop
+- Reduced shadow intensity for cleaner look
+- Build passed with 0 errors
+- Pushed to git (Vercel auto-deploys from git)
+
+Stage Summary:
+- Conference image replaced, no blue borders, larger display with minimal margins
+- Build successful, pushed to git main branch

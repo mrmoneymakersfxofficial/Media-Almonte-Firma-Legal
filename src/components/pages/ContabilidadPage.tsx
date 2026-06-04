@@ -5,7 +5,8 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { motion } from "framer-motion";
 import {
   CheckCircle2, BarChart3, MessageCircle, BookOpen, FileText, Shield,
-  Users, TrendingUp, Clock, ChevronRight, Calculator, ArrowRight
+  Users, TrendingUp, Clock, ChevronRight, Calculator, ArrowRight,
+  AlertTriangle, Mail
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useScrollSlug } from "@/hooks/use-scroll-slug";
@@ -147,8 +148,132 @@ export function ContabilidadPage() {
         </div>
       </section>
 
+      {/* ═══ CONTABILIDAD DIGITAL — Plan Promocional ═══ */}
+      <SectionDivider from="#ffffff" to="#f0fdf4" />
+      <section id="contabilidad-digital" className="py-16 sm:py-20 lg:py-24 bg-[#f0fdf4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Header */}
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-3">Plan Promocional</span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy leading-tight mb-3">
+                CONTABILIDAD <span className="text-emerald">DIGITAL</span>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-xl mx-auto">Tu empresa merece respaldo real</p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+
+            {/* Price Card */}
+            <ScrollReveal delay={0.1}>
+              <div className="relative bg-white rounded-2xl shadow-xl shadow-emerald/10 border border-emerald/10 overflow-hidden">
+                {/* Green ribbon */}
+                <div className="bg-emerald text-white text-center py-2 text-sm font-bold tracking-wider uppercase">
+                  Precio Promocional
+                </div>
+                <div className="p-8 text-center">
+                  <p className="text-muted-foreground text-sm uppercase tracking-wider mb-2">Desde</p>
+                  <div className="flex items-baseline justify-center gap-1 mb-1">
+                    <span className="text-navy/60 text-lg font-semibold">S/</span>
+                    <span className="text-5xl font-extrabold text-navy">250</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-6">al mes</p>
+                  <p className="text-xs text-muted-foreground/70 mb-6">Modalidad Promocional</p>
+                  <a
+                    href="https://wa.me/51943366950?text=Hola%2C%20me%20interesa%20el%20plan%20de%20Contabilidad%20Digital%20S%2F250%20al%20mes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2.5 w-full bg-emerald hover:bg-emerald/90 text-white px-7 py-4 rounded-xl text-base font-bold transition-all shadow-lg shadow-emerald/25 active:scale-[0.98]"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    Cotizar Ahora
+                  </a>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Benefits Grid */}
+            <ScrollReveal delay={0.2} className="lg:col-span-2">
+              <h3 className="text-xl font-bold text-navy mb-6">Beneficios Incluidos</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: "📄", title: "Cero documentación física", desc: "Gestión completamente digitalizada, rápida y sin necesidad de archivar papeles físicos." },
+                  { icon: "📊", title: "Operaciones oportunas", desc: "Libros electrónicos y Sistema SIRE actualizados rigurosamente mes a mes ante la SUNAT." },
+                  { icon: "🛒", title: "Revisión de compras y ventas", desc: "Control detallado de todas tus transacciones comerciales y del registro de tu personal." },
+                  { icon: "💬", title: "Atención por WhatsApp", desc: "Canal directo de comunicación inmediata para resolver cualquier consulta contable cotidiana." },
+                  { icon: "🔓", title: "Sin contrato de permanencia", desc: "Libertad absoluta para gestionar tu contabilidad sin penalizaciones ni plazos forzosos." },
+                  { icon: "👨‍💼", title: "Contador responsable", desc: "Respaldo profesional y técnico directo ante cualquier requerimiento o fiscalización de SUNAT y SUNAFIL." },
+                  { icon: "🏢", title: "Oficina en Lima, Perú", desc: "Operaciones centralizadas estratégicamente para brindar cobertura digital a todo el territorio nacional." },
+                  { icon: "✅", title: "Tranquilidad tributaria", desc: "Mayor control sobre tus finanzas para garantizar un crecimiento empresarial seguro y sostenible." },
+                ].map((b, i) => (
+                  <ScrollReveal key={i} delay={0.05 * i} duration={0.3} y={10}>
+                    <div className="flex items-start gap-3 bg-white rounded-xl p-4 border border-emerald/5 shadow-sm">
+                      <span className="text-xl shrink-0 mt-0.5">{b.icon}</span>
+                      <div>
+                        <p className="font-semibold text-navy text-sm mb-1">{b.title}</p>
+                        <p className="text-muted-foreground text-xs leading-relaxed">{b.desc}</p>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+
+          {/* SUNAT Alert */}
+          <ScrollReveal delay={0.3}>
+            <div className="mt-10 bg-amber-50 border border-amber-200 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start gap-4">
+              <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center shrink-0">
+                <AlertTriangle className="w-6 h-6 text-amber-600" />
+              </div>
+              <div>
+                <h4 className="font-bold text-amber-800 mb-2">Alerta Preventiva SUNAT</h4>
+                <p className="text-amber-700 text-sm leading-relaxed">
+                  Evita multas y contingencias: No dejes tus declaraciones al azar. Una sola infracción o multa de SUNAT puede costarte hasta <strong>S/ 5,500</strong> o más. En <strong>Jhon&Asociados</strong> nos encargamos de proteger tu patrimonio.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Contact channels */}
+          <ScrollReveal delay={0.4}>
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+              <a
+                href="https://wa.me/51943366950?text=Hola%2C%20me%20interesa%20el%20plan%20de%20Contabilidad%20Digital%20S%2F250%20al%20mes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="w-10 h-10 bg-emerald/10 rounded-lg flex items-center justify-center shrink-0">
+                  <MessageCircle className="w-5 h-5 text-emerald" />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">WhatsApp Directo</p>
+                  <p className="font-bold text-navy text-sm">943-366-950</p>
+                </div>
+              </a>
+              <a
+                href="mailto:contacto@jhonasociados.com"
+                className="flex items-center gap-3 bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="w-10 h-10 bg-navy/10 rounded-lg flex items-center justify-center shrink-0">
+                  <Mail className="w-5 h-5 text-navy" />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Correo Electrónico</p>
+                  <p className="font-bold text-navy text-sm">contacto@jhonasociados.com</p>
+                </div>
+              </a>
+            </div>
+          </ScrollReveal>
+
+        </div>
+      </section>
+
       {/* Stats & Price Panel */}
-      <SectionDivider from="#ffffff" to="#f9fafb" />
+      <SectionDivider from="#f0fdf4" to="#f9fafb" />
       <section id="estadisticas-beneficios" ref={statsRef} className="py-20 lg:py-28 bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

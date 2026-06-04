@@ -906,7 +906,7 @@ html.mobile-menu-open .whatsapp-float {
   height: 100%;
   background-image: url('/jhon-constitucion.webp');
   background-size: cover !important;
-  background-position: right top !important; /* Shows face + upper body on PC */
+  background-position: 60% 20% !important; /* Shows face + upper body on PC */
   background-repeat: no-repeat;
   animation: hero-ken-burns 25s ease-in-out infinite;
   overflow: hidden;
@@ -1048,7 +1048,7 @@ span.text-emerald.uppercase {
 
   /* Photo layer: same anchor point to reveal face */
   .subpage-hero-photo {
-    background-position: 70% 15% !important; /* Rostro centrado en la mitad superior del celular */
+    background-position: 65% 18% !important; /* Rostro centrado en la mitad superior del celular */
   }
 
   /* Mobile overlay: HORIZONTAL + 10% more blue — text readable, face at 70% clearly visible */

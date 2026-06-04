@@ -174,16 +174,21 @@ function SpeakerAuthority() {
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Photo — Jhon en oficina (misma imagen de Constitución) */}
+          {/* Left: Photo — Michael Jhon en conferencia tributaria */}
           <ScrollReveal x={-30} duration={0.7}>
-            <div
-              className="w-full h-[280px] sm:h-[380px] lg:h-[480px] rounded-2xl overflow-hidden"
-            >
-              <img
-                src="/jhon-constitucion.webp"
-                alt="Jhon — Fundador de Jhon&Asociados"
-                className="w-full h-full object-cover object-top"
-              />
+            <div className="relative group">
+              {/* Main image container */}
+              <div
+                className="w-full h-[320px] sm:h-[420px] lg:h-[520px] rounded-2xl overflow-hidden shadow-2xl shadow-navy/15"
+              >
+                <img
+                  src="/jhon-conferencista.webp"
+                  alt="Michael Jhon B. — Conferencista Especializado en Estrategias Tributarias"
+                  className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                />
+              </div>
+              {/* Decorative accent bar at bottom */}
+              <div className="absolute bottom-0 left-6 right-6 h-1 bg-gradient-to-r from-emerald via-teal to-emerald/50 rounded-full opacity-60" />
             </div>
           </ScrollReveal>
 

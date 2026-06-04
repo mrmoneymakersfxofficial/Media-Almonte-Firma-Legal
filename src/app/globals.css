@@ -1041,14 +1041,16 @@ span.text-emerald.uppercase {
   /* Full bleed 90vh — room for portrait + text without white gap */
   .subpage-hero {
     width: 100% !important;
-    min-height: 90vh !important; /* Incrementa la altura para dar aire al retrato */
+    min-height: 90vh !important;
     background-size: cover !important;
-    background-position: 70% 15% !important; /* Fuerza a revelar el rostro y sonrisa de Jhon en celulares */
+    background-position: center 25% !important;
   }
 
-  /* Photo layer: same anchor point to reveal face */
+  /* Photo layer: contain to show full person, not cropped */
   .subpage-hero-photo {
-    background-position: 65% 18% !important; /* Rostro centrado en la mitad superior del celular */
+    background-size: contain !important;
+    background-position: center 30% !important;
+    background-repeat: no-repeat !important;
   }
 
   /* Mobile overlay: HORIZONTAL + 10% more blue — text readable, face at 70% clearly visible */

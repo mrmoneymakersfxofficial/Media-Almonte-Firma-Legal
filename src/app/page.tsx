@@ -113,50 +113,145 @@ function ConferenceCaptureCard() {
   const { openModal } = useWhatsAppStore();
 
   return (
-    <section className="py-20 lg:py-28 bg-gray-50/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal duration={0.7}>
-          <div className="bg-white rounded-3xl shadow-lg shadow-navy/[0.04] border border-gray-100 overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-0">
-              {/* Left: Text content */}
-              <div className="p-8 sm:p-10 lg:p-14">
-                <span className="inline-block bg-emerald/10 text-emerald text-xs sm:text-sm font-bold tracking-wider uppercase px-4 py-1.5 rounded-full mb-5">
-                  🎓 CAPACITACIÓN GRATUITA
-                </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-navy leading-tight mb-4">
-                  Accede Sin Costo a Nuestra Conferencia en Vivo
-                </h2>
-                <p className="text-emerald font-semibold text-base sm:text-lg mb-4">
-                  Cómo Pagar Menos Impuesto y Ganar Más Dinero, Cumpliendo la Ley
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-8">
-                  Miles de emprendedores ya están aplicando estos conocimientos y
-                  transformando su negocio con estrategias simples pero poderosas.
-                </p>
-                <button
-                  onClick={() => openModal(10)}
-                  className="inline-flex items-center justify-center gap-2.5 bg-emerald hover:bg-emerald/90 text-white px-7 sm:px-9 py-4 sm:py-[18px] rounded-xl text-[15px] sm:text-lg font-bold transition-all shadow-lg shadow-emerald/25 hover:shadow-xl hover:shadow-emerald/30 active:scale-[0.98]"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  ¡INSCRÍBETE GRATIS AHORA!
-                </button>
-              </div>
+    <section className="relative bg-gray-50/50">
+      {/* ─── Mobile: Immersive full-bleed image ─── */}
+      <div className="relative lg:hidden overflow-hidden">
+        <motion.div
+          initial={{ scale: 1.12, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
+          className="relative w-full aspect-[3/2] overflow-hidden"
+        >
+          <motion.img
+            src="/capacitacion-conferencia.webp"
+            alt="Capacitación Tributaria Gratuita — Jhon&Asociados"
+            loading="lazy"
+            className="w-full h-full object-cover object-center"
+            initial={{ scale: 1.08 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+          />
+          {/* Gradient overlay for text readability */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/50 to-navy/20"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          />
+          {/* Floating badge — top left */}
+          <motion.div
+            className="absolute top-5 left-5"
+            initial={{ opacity: 0, y: -20, scale: 0.8 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <span className="inline-flex items-center gap-1.5 bg-emerald/90 backdrop-blur-sm text-white text-xs font-bold tracking-wider uppercase px-3.5 py-1.5 rounded-full shadow-lg shadow-emerald/30">
+              🎓 CAPACITACIÓN GRATUITA
+            </span>
+          </motion.div>
+          {/* Content at bottom */}
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 p-6 sm:p-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-3 drop-shadow-lg">
+              Accede Sin Costo a Nuestra Conferencia en Vivo
+            </h2>
+            <p className="text-emerald font-semibold text-sm sm:text-base mb-2 drop-shadow">
+              Cómo Pagar Menos Impuesto y Ganar Más Dinero, Cumpliendo la Ley
+            </p>
+            <p className="text-white/75 text-sm leading-relaxed mb-6 drop-shadow">
+              Miles de emprendedores ya están aplicando estos conocimientos y transformando su negocio.
+            </p>
+            <motion.button
+              onClick={() => openModal(10)}
+              className="inline-flex items-center justify-center gap-2.5 bg-emerald hover:bg-emerald/90 text-white px-7 py-4 rounded-xl text-base font-bold transition-all shadow-lg shadow-emerald/30 active:scale-[0.98]"
+              whileTap={{ scale: 0.96 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+            >
+              <MessageCircle className="w-5 h-5" />
+              ¡INSCRÍBETE GRATIS AHORA!
+            </motion.button>
+          </motion.div>
+        </motion.div>
+      </div>
 
-              {/* Right: Decorative visual */}
-              <div className="relative hidden lg:flex items-center justify-center min-h-[340px] bg-gradient-to-br from-navy via-[#0a1e4a] to-purple p-12">
-                <div className="absolute -top-10 -right-10 w-48 h-48 bg-emerald/10 rounded-full blur-3xl" />
-                <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-purple/20 rounded-full blur-3xl" />
-                <div className="relative text-center">
-                  <div className="w-28 h-28 mx-auto mb-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center">
-                    <Calendar className="w-14 h-14 text-emerald" />
-                  </div>
-                  <p className="text-white font-bold text-xl mb-1">EN VIVO</p>
-                  <p className="text-white/60 text-sm">Capacitación Tributaria</p>
+      {/* ─── Desktop: Card layout with image on right ─── */}
+      <div className="hidden lg:block py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal duration={0.7}>
+            <div className="bg-white rounded-3xl shadow-lg shadow-navy/[0.04] border border-gray-100 overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-0">
+                {/* Left: Text content */}
+                <div className="p-8 sm:p-10 lg:p-14">
+                  <span className="inline-block bg-emerald/10 text-emerald text-xs sm:text-sm font-bold tracking-wider uppercase px-4 py-1.5 rounded-full mb-5">
+                    🎓 CAPACITACIÓN GRATUITA
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-navy leading-tight mb-4">
+                    Accede Sin Costo a Nuestra Conferencia en Vivo
+                  </h2>
+                  <p className="text-emerald font-semibold text-base sm:text-lg mb-4">
+                    Cómo Pagar Menos Impuesto y Ganar Más Dinero, Cumpliendo la Ley
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed mb-8">
+                    Miles de emprendedores ya están aplicando estos conocimientos y
+                    transformando su negocio con estrategias simples pero poderosas.
+                  </p>
+                  <button
+                    onClick={() => openModal(10)}
+                    className="inline-flex items-center justify-center gap-2.5 bg-emerald hover:bg-emerald/90 text-white px-7 sm:px-9 py-4 sm:py-[18px] rounded-xl text-[15px] sm:text-lg font-bold transition-all shadow-lg shadow-emerald/25 hover:shadow-xl hover:shadow-emerald/30 active:scale-[0.98]"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    ¡INSCRÍBETE GRATIS AHORA!
+                  </button>
                 </div>
+
+                {/* Right: Conference image with parallax animation */}
+                <motion.div
+                  className="relative min-h-[420px] overflow-hidden"
+                  initial={{ opacity: 0, x: 60 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <motion.img
+                    src="/capacitacion-conferencia.webp"
+                    alt="Capacitación Tributaria Gratuita — Jhon&Asociados"
+                    loading="lazy"
+                    className="w-full h-full object-cover object-center"
+                    initial={{ scale: 1.1 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                  {/* Subtle overlay at edge */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" />
+                  {/* Live badge floating */}
+                  <motion.div
+                    className="absolute top-6 right-6 flex items-center gap-2 bg-navy/80 backdrop-blur-md text-white px-4 py-2 rounded-full shadow-lg"
+                    initial={{ opacity: 0, scale: 0.7 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                  >
+                    <span className="w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse" />
+                    <span className="text-sm font-bold tracking-wide">EN VIVO</span>
+                  </motion.div>
+                </motion.div>
               </div>
             </div>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );

@@ -1038,19 +1038,19 @@ span.text-emerald.uppercase {
 
 /* ─── Subpage Hero Mobile — EXCLUSIVE: no home-hero rules here ─── */
 @media (max-width: 768px) {
-  /* Full bleed 90vh — room for portrait + text without white gap */
+  /* Full bleed hero — image fills entire width, no crop */
   .subpage-hero {
     width: 100% !important;
-    min-height: 90vh !important;
+    min-height: auto !important;
+    height: 100vw !important;
     background-size: cover !important;
-    background-position: center 25% !important;
+    background-position: center 30% !important;
   }
 
-  /* Photo layer: contain to show full person, not cropped */
+  /* Photo layer: cover to fill hero completely, position to show full person */
   .subpage-hero-photo {
-    background-size: contain !important;
-    background-position: center 30% !important;
-    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center 25% !important;
   }
 
   /* Mobile overlay: HORIZONTAL + 10% more blue — text readable, face at 70% clearly visible */

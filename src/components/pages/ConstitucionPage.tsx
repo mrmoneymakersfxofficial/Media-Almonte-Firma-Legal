@@ -93,7 +93,7 @@ export function ConstitucionPage() {
           <img
             src="/jhon-constitucion.webp"
             alt="Especialista Jhon&Asociados"
-            className="w-full h-full object-cover object-[65%_20%] md:object-[60%_20%] brightness-[0.45]"
+            className="w-full h-full object-cover object-[center_20%] brightness-[0.45]"
           />
         </div>
         {/* Layer 1: Brand overlay */}

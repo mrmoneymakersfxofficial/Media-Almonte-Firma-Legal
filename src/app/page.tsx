@@ -179,13 +179,21 @@ function SpeakerAuthority() {
           {/* Left: Photo — Michael Jhon en conferencia tributaria — Standardized CorporateImage */}
           <ScrollReveal x={-30} duration={0.7}>
             <div className="group">
-              <CorporateImage
-                src="/jhon-conferencista.webp"
-                alt="Michael Jhon B. — Conferencista Especializado en Estrategias Tributarias"
-                height="xl"
-                hoverZoom
-                accentBar
-              />
+              <div className="relative mx-auto w-[93%] sm:w-full max-w-[560px] lg:max-w-none">
+                <div
+                  className="w-full h-[320px] sm:h-[420px] lg:h-[520px] rounded-[20px] sm:rounded-[22px] lg:rounded-2xl overflow-hidden shadow-lg shadow-navy/[0.10] sm:shadow-xl sm:shadow-navy/[0.12] lg:shadow-2xl lg:shadow-navy/20"
+                  style={{ background: "linear-gradient(135deg, #001528 0%, #0a2a5a 100%)" }}
+                >
+                  <img
+                    src="/jhon-conferencista.webp"
+                    alt="Michael Jhon B. — Conferencista Especializado en Estrategias Tributarias"
+                    loading="lazy"
+                    className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                  />
+                </div>
+                {/* Decorative accent bar at bottom */}
+                <div className="absolute bottom-0 left-6 sm:left-8 right-6 sm:right-8 h-1 bg-gradient-to-r from-emerald via-teal to-emerald/50 rounded-full opacity-50" />
+              </div>
             </div>
           </ScrollReveal>
 

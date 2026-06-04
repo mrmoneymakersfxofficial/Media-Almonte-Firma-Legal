@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Hero } from "@/components/Hero";
+import { CorporateImage } from "@/components/CorporateImage";
 import { Services } from "@/components/Services";
 import { SectionDivider } from "@/components/SectionDivider";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -33,25 +34,22 @@ function FounderPresentation() {
     <section className="py-20 lg:py-28 founder-presentation-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left: Professional Photo — Mobile-first: ~93% width, premium frame */}
+          {/* Left: Professional Photo — Standardized CorporateImage */}
           <ScrollReveal x={-30} duration={0.7}>
-            <div className="relative mx-auto w-[93%] sm:w-full max-w-[560px] lg:max-w-none">
-              <div className="w-full h-[340px] sm:h-[420px] lg:h-[520px] rounded-[22px] sm:rounded-2xl overflow-hidden shadow-xl shadow-navy/[0.12] sm:shadow-2xl sm:shadow-navy/20">
-                <img
-                  src="/jhon-constitucion.webp"
-                  alt="Michael Jhon B. — Especialista Tributario"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              {/* Floating badge */}
-              <div className="absolute -bottom-5 -right-1 sm:-right-5 bg-emerald text-white rounded-xl px-5 py-3 shadow-lg shadow-emerald/30 flex items-center gap-2.5">
-                <Award className="w-5 h-5" />
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-wider">Experiencia</p>
-                  <p className="text-lg font-extrabold leading-tight">+20 Años</p>
+            <CorporateImage
+              src="/jhon-constitucion.webp"
+              alt="Michael Jhon B. — Especialista Tributario"
+              height="lg"
+              badge={
+                <div className="bg-emerald text-white rounded-xl px-5 py-3 shadow-lg shadow-emerald/30 flex items-center gap-2.5">
+                  <Award className="w-5 h-5" />
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider">Experiencia</p>
+                    <p className="text-lg font-extrabold leading-tight">+20 Años</p>
+                  </div>
                 </div>
-              </div>
-            </div>
+              }
+            />
           </ScrollReveal>
 
           {/* Right: Info */}
@@ -178,21 +176,16 @@ function SpeakerAuthority() {
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Photo — Michael Jhon en conferencia tributaria */}
+          {/* Left: Photo — Michael Jhon en conferencia tributaria — Standardized CorporateImage */}
           <ScrollReveal x={-30} duration={0.7}>
-            <div className="relative group">
-              {/* Main image container */}
-              <div
-                className="w-full h-[320px] sm:h-[420px] lg:h-[520px] rounded-2xl overflow-hidden shadow-2xl shadow-navy/15"
-              >
-                <img
-                  src="/jhon-conferencista.webp"
-                  alt="Michael Jhon B. — Conferencista Especializado en Estrategias Tributarias"
-                  className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                />
-              </div>
-              {/* Decorative accent bar at bottom */}
-              <div className="absolute bottom-0 left-6 right-6 h-1 bg-gradient-to-r from-emerald via-teal to-emerald/50 rounded-full opacity-60" />
+            <div className="group">
+              <CorporateImage
+                src="/jhon-conferencista.webp"
+                alt="Michael Jhon B. — Conferencista Especializado en Estrategias Tributarias"
+                height="xl"
+                hoverZoom
+                accentBar
+              />
             </div>
           </ScrollReveal>
 

@@ -95,7 +95,7 @@ export function NosotrosPage() {
               Inicio <ChevronRight className="w-4 h-4" /> Nosotros
             </Link>
             <h1 className="subpage-hero-title text-[28px] sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-              Jhon & <span className="text-[#00a996]">Asociados</span>
+              Jhon&<span className="text-[#00a996]">Asociados</span>
             </h1>
             <p className="subpage-hero-desc mt-5 text-[15px] sm:text-lg text-white/75 max-w-2xl leading-relaxed font-light">
               Transparencia, tecnología y resultados. Conoce al equipo que protege el patrimonio

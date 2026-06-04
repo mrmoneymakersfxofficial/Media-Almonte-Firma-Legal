@@ -141,6 +141,10 @@ function ConferenceCaptureCard() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           />
+          {/* Top white fade — seamless blend with section above */}
+          <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-[#f9fafb]/80 to-transparent pointer-events-none" />
+          {/* Bottom white fade — seamless blend with section below */}
+          <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white/80 to-transparent pointer-events-none" />
           {/* Floating badge — top left */}
           <motion.div
             className="absolute top-5 left-5"
@@ -269,7 +273,7 @@ function SpeakerAuthority() {
 
   return (
     <section className="bg-navy relative overflow-hidden">
-      {/* ─── Mobile: Immersive full-bleed image with overlay content ─── */}
+      {/* ─── Mobile: Immersive image only — no text, maximum visual impact ─── */}
       <div className="relative lg:hidden">
         <motion.div
           className="relative w-full aspect-square overflow-hidden"
@@ -283,66 +287,11 @@ function SpeakerAuthority() {
             alt="Michael Jhon B. — Conferencista Especializado en Estrategias Tributarias"
             loading="lazy"
             className="w-full h-full object-cover object-center"
-            initial={{ scale: 1.08 }}
+            initial={{ scale: 1.06 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
           />
-          {/* Dark gradient overlay */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/30"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          />
-          {/* Top badge */}
-          <motion.div
-            className="absolute top-5 left-5 right-5 flex justify-center"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="inline-flex items-center gap-1.5 bg-emerald/90 backdrop-blur-sm text-white text-xs font-bold tracking-wider uppercase px-4 py-2 rounded-full shadow-lg shadow-emerald/30">
-              CONFERENCISTA ESPECIALIZADO
-            </span>
-          </motion.div>
-          {/* Bottom content */}
-          <motion.div
-            className="absolute bottom-0 left-0 right-0 p-6 sm:p-8"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-4 drop-shadow-lg">
-              <span className="text-emerald">Jhon&Asociados:</span>{" "}
-              <span className="text-purple">Más de 20 años</span> protegiendo
-              patrimonios en el Perú
-            </h2>
-            <p className="text-white/80 text-sm leading-relaxed mb-6 drop-shadow">
-              Con una trayectoria consolidada en asesoría tributaria, contabilidad
-              integral y defensa ante SUNAT, nuestro equipo liderado por Jhon ha
-              ayudado a miles de emprendedores y empresas a cumplir con la ley
-              tributaria de forma inteligente.
-            </p>
-            <ul className="space-y-3">
-              {achievements.map((item, i) => (
-                <motion.li
-                  key={item}
-                  className="flex items-start gap-3"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.7 + i * 0.15 }}
-                >
-                  <CheckCircle2 className="w-5 h-5 text-emerald flex-shrink-0 mt-0.5" />
-                  <span className="text-white font-medium text-sm">{item}</span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
         </motion.div>
       </div>
 

@@ -1068,35 +1068,42 @@ span.text-emerald.uppercase {
     ) !important;
   }
 
-  /* Content: centered vertically */
+  /* Content: distributed vertically with breathing room */
   .subpage-hero-content {
     height: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    padding-top: 110px !important;
-    padding-bottom: 32px !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-top: 140px !important;
+    padding-bottom: 48px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  /* Inner content wrapper: flex column to distribute 3 blocks */
+  .subpage-hero-content > * {
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .subpage-hero-title {
     font-size: 28px !important;
     line-height: 1.15 !important;
     letter-spacing: -0.02em !important;
+    margin-top: 0 !important;
   }
 
   .subpage-hero-desc {
     font-size: 14px !important;
-    margin-top: 12px !important;
+    margin-top: 16px !important;
     max-width: 320px !important;
   }
 
-  /* CTAs: full width, stacked */
+  /* CTAs: full width, stacked, spaced from content */
   .subpage-hero-ctas {
     flex-direction: column !important;
-    gap: 10px !important;
-    margin-top: auto !important;
+    gap: 12px !important;
+    margin-top: 32px !important;
   }
 
   .subpage-hero-ctas button,

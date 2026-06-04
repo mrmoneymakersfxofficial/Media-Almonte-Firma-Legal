@@ -128,22 +128,29 @@ export function DefensaPage() {
         </div>
         {/* Layer 20: Content */}
         <div className="subpage-hero-content relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Link href="/" className="subpage-hero-breadcrumb inline-flex items-center gap-1 text-white/60 hover:text-white text-sm transition-colors mb-5">
-              Inicio <ChevronRight className="w-4 h-4" /> Asesoría Tributaria
-            </Link>
-            <div className="inline-flex items-center gap-2 bg-urgent/20 border border-urgent/30 rounded-full px-4 py-2 mb-6">
-              <span className="w-2.5 h-2.5 bg-urgent rounded-full urgent-pulse" />
-              <span className="text-urgent font-semibold text-sm uppercase tracking-wider">Situación Urgente</span>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col justify-between h-full">
+            {/* Block 1: Breadcrumb */}
+            <div>
+              <Link href="/" className="subpage-hero-breadcrumb inline-flex items-center gap-1 text-white/60 hover:text-white text-sm transition-colors">
+                Inicio <ChevronRight className="w-4 h-4" /> Asesoría Tributaria
+              </Link>
             </div>
-            <h1 className="subpage-hero-title text-[28px] sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-              ¿SUNAT te <span className="text-urgent">fiscalizó</span>?
-            </h1>
-            <p className="subpage-hero-desc mt-5 text-[15px] sm:text-lg text-white/75 max-w-2xl leading-relaxed font-light">
-              No dejes pasar el plazo. Cada día cuenta para defender tu patrimonio. Nuestro equipo de
-              especialistas tributarios actúa con la urgencia que tu caso requiere.
-            </p>
-            <div className="subpage-hero-ctas mt-8 flex flex-col sm:flex-row gap-3">
+            {/* Block 2: Title + Description (centered vertically with air) */}
+            <div className="my-auto pt-8 pb-4">
+              <div className="inline-flex items-center gap-2 bg-urgent/20 border border-urgent/30 rounded-full px-4 py-2 mb-6">
+                <span className="w-2.5 h-2.5 bg-urgent rounded-full urgent-pulse" />
+                <span className="text-urgent font-semibold text-sm uppercase tracking-wider">Situación Urgente</span>
+              </div>
+              <h1 className="subpage-hero-title text-[28px] sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+                ¿SUNAT te <span className="text-urgent">fiscalizó</span>?
+              </h1>
+              <p className="subpage-hero-desc mt-5 text-[15px] sm:text-lg text-white/75 max-w-2xl leading-relaxed font-light">
+                No dejes pasar el plazo. Cada día cuenta para defender tu patrimonio. Nuestro equipo de
+                especialistas tributarios actúa con la urgencia que tu caso requiere.
+              </p>
+            </div>
+            {/* Block 3: CTA Buttons (bottom) */}
+            <div className="subpage-hero-ctas flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => openModal(5)}
                 className="inline-flex items-center justify-center gap-2.5 bg-urgent hover:bg-urgent/90 text-white px-7 py-3.5 rounded-xl text-[15px] font-bold transition-all shadow-lg shadow-urgent/40 hover:shadow-xl active:scale-[0.98]"

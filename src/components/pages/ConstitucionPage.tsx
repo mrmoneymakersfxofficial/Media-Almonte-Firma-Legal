@@ -105,17 +105,24 @@ export function ConstitucionPage() {
         </div>
         {/* Layer 20: Content */}
         <div className="subpage-hero-content relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Link href="/" className="subpage-hero-breadcrumb inline-flex items-center gap-1 text-white/60 hover:text-white text-sm transition-colors mb-5">
-              Inicio <ChevronRight className="w-4 h-4" /> Constitución de Empresas
-            </Link>
-            <h1 className="subpage-hero-title text-[28px] sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-              Constitución de <span className="text-[#00a996]">Empresas</span>
-            </h1>
-            <p className="subpage-hero-desc mt-5 text-[15px] sm:text-lg text-white/75 max-w-2xl leading-relaxed font-light">
-              Formaliza tu negocio con precios flexibles y un proceso acompañado de principio a fin. Nosotros nos encargamos de todo.
-            </p>
-            <div className="subpage-hero-ctas mt-8 flex flex-col sm:flex-row gap-3">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col justify-between h-full">
+            {/* Block 1: Breadcrumb */}
+            <div>
+              <Link href="/" className="subpage-hero-breadcrumb inline-flex items-center gap-1 text-white/60 hover:text-white text-sm transition-colors">
+                Inicio <ChevronRight className="w-4 h-4" /> Constitución de Empresas
+              </Link>
+            </div>
+            {/* Block 2: Title + Description (centered vertically with air) */}
+            <div className="my-auto pt-8 pb-4">
+              <h1 className="subpage-hero-title text-[28px] sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+                Constitución de <span className="text-[#00a996]">Empresas</span>
+              </h1>
+              <p className="subpage-hero-desc mt-5 text-[15px] sm:text-lg text-white/75 max-w-2xl leading-relaxed font-light">
+                Formaliza tu negocio con precios flexibles y un proceso acompañado de principio a fin. Nosotros nos encargamos de todo.
+              </p>
+            </div>
+            {/* Block 3: CTA Buttons (bottom) */}
+            <div className="subpage-hero-ctas flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => openModal()}
                 className="inline-flex items-center justify-center gap-2.5 bg-[#008775] hover:bg-[#006655] text-white px-7 py-3.5 rounded-xl text-[15px] font-bold transition-all shadow-lg shadow-[#008775]/30 hover:shadow-xl active:scale-[0.98]"

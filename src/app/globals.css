@@ -900,16 +900,16 @@ html.mobile-menu-open .whatsapp-float {
   }
 }
 
-/* Layer 0: Photo background */
+/* Layer 0: Photo container — uses <img> with object-cover inside */
 .subpage-hero-photo {
   width: 100%;
   height: 100%;
-  background-image: url('/jhon-constitucion.webp');
-  background-size: cover !important;
-  background-position: 60% 20% !important; /* Shows face + upper body on PC */
-  background-repeat: no-repeat;
-  animation: hero-ken-burns 25s ease-in-out infinite;
   overflow: hidden;
+}
+
+/* Ken Burns animation on hero images */
+.subpage-hero img {
+  animation: hero-ken-burns 25s ease-in-out infinite;
 }
 
 /* Layer 1: Brand overlay — horizontal gradient: dark left (text) → transparent right (face visible) */
@@ -1042,17 +1042,6 @@ span.text-emerald.uppercase {
   .subpage-hero {
     width: 100% !important;
     min-height: 85vh !important;
-    /* Dark gradient fallback — fills any gap around the image */
-    background: linear-gradient(180deg, #0B2146 0%, #081935 50%, #050F21 100%) !important;
-    background-size: auto !important;
-    background-position: initial !important;
-  }
-
-  /* Photo: CONTAIN shows the FULL image, no crop. Gradient bg fills gaps. */
-  .subpage-hero-photo {
-    background-size: contain !important;
-    background-position: center 22% !important;
-    background-repeat: no-repeat !important;
   }
 
   /* Overlay: vertical gradient — transparent center (image visible) — dark top/bottom (text readable) */

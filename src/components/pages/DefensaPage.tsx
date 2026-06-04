@@ -111,11 +111,12 @@ export function DefensaPage() {
       <section id="hero" className="subpage-hero relative overflow-hidden">
         {/* Top urgency accent line */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-urgent via-gold to-urgent z-30" />
-        {/* Layer 0: Background photo — Jhon making stop signal */}
-        <div className="absolute inset-0 z-0">
-          <div
-            className="subpage-hero-photo"
-            style={{ backgroundImage: "url('/jhon-defensa.webp')" }}
+        {/* Layer 0: Background photo - full bleed, face-focused */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <img
+            src="/jhon-defensa.webp"
+            alt="Especialista Jhon&Asociados"
+            className="w-full h-full object-cover object-[center_20%] md:object-[60%_20%] brightness-[0.40]"
           />
         </div>
         {/* Layer 1: Dark high-conversion overlay (denser navy, no purple) */}

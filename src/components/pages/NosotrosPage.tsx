@@ -76,11 +76,12 @@ export function NosotrosPage() {
     <SiteLayout>
       {/* ═══ SUBPAGE HERO — Institutional Photograph + Brand Overlay ═══ */}
       <section id="hero" className="subpage-hero relative overflow-hidden">
-        {/* Layer 0: Background photo — Jhon institutional portrait */}
-        <div className="absolute inset-0 z-0">
-          <div
-            className="subpage-hero-photo"
-            style={{ backgroundImage: "url('/jhon-nosotros.webp')" }}
+        {/* Layer 0: Background photo - full bleed, face-focused */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <img
+            src="/jhon-nosotros.webp"
+            alt="Especialista Jhon&Asociados"
+            className="w-full h-full object-cover object-[center_20%] md:object-[60%_20%] brightness-[0.40]"
           />
         </div>
         {/* Layer 1: Brand overlay — standard corporate gradient */}

@@ -30,13 +30,13 @@ function FounderPresentation() {
   const { openModal } = useWhatsAppStore();
 
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-20 lg:py-28 founder-presentation-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left: Professional Photo */}
+          {/* Left: Professional Photo — Mobile-first: ~93% width, premium frame */}
           <ScrollReveal x={-30} duration={0.7}>
-            <div className="relative">
-              <div className="w-full h-[340px] sm:h-[420px] lg:h-[520px] rounded-2xl overflow-hidden shadow-2xl shadow-navy/20">
+            <div className="relative mx-auto w-[93%] sm:w-full max-w-[560px] lg:max-w-none">
+              <div className="w-full h-[340px] sm:h-[420px] lg:h-[520px] rounded-[22px] sm:rounded-2xl overflow-hidden shadow-xl shadow-navy/[0.12] sm:shadow-2xl sm:shadow-navy/20">
                 <img
                   src="/jhon-constitucion.webp"
                   alt="Michael Jhon B. — Especialista Tributario"
@@ -44,7 +44,7 @@ function FounderPresentation() {
                 />
               </div>
               {/* Floating badge */}
-              <div className="absolute -bottom-5 -right-3 sm:-right-5 bg-emerald text-white rounded-xl px-5 py-3 shadow-lg shadow-emerald/30 flex items-center gap-2.5">
+              <div className="absolute -bottom-5 -right-1 sm:-right-5 bg-emerald text-white rounded-xl px-5 py-3 shadow-lg shadow-emerald/30 flex items-center gap-2.5">
                 <Award className="w-5 h-5" />
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider">Experiencia</p>
@@ -66,11 +66,15 @@ function FounderPresentation() {
               Especialistas Tributarios
             </p>
 
-            {/* Quote */}
+            {/* Quote — with gradient highlight on key phrase */}
             <div className="relative mb-8 pl-5 border-l-4 border-emerald/40">
               <Quote className="w-8 h-8 text-emerald/20 absolute -top-1 -left-1" />
               <p className="text-navy/80 text-lg sm:text-xl italic leading-relaxed font-medium">
-                &ldquo;Trabajamos al lado de nuestros clientes para ser socios estratégicos en el crecimiento de sus negocios.&rdquo;
+                &ldquo;Trabajamos al lado de nuestros clientes para ser{" "}
+                <span className="font-extrabold not-italic founder-gradient-text">
+                  socios estratégicos
+                </span>{" "}
+                en el crecimiento de sus negocios.&rdquo;
               </p>
             </div>
 

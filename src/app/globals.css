@@ -240,6 +240,18 @@ img, svg {
   background: #481180;
 }
 
+/* ── Founder Presentation Section ── */
+.founder-presentation-bg {
+  background: linear-gradient(180deg, #ffffff 0%, #f5f8ff 100%);
+}
+
+.founder-gradient-text {
+  background: linear-gradient(135deg, #002350 0%, #008775 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* WhatsApp button - clean circular, no background artifacts */
 .watsapp-btn-clean {
   position: fixed;

@@ -114,7 +114,7 @@ function ConferenceCaptureCard() {
 
   return (
     <section className="relative bg-gray-50/50">
-      {/* ─── Mobile: Immersive full-bleed image ─── */}
+      {/* ─── Mobile: Immersive full-bleed image — no text ─── */}
       <div className="relative lg:hidden overflow-hidden">
         <motion.div
           initial={{ scale: 1.12, opacity: 0 }}
@@ -133,60 +133,10 @@ function ConferenceCaptureCard() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
           />
-          {/* Gradient overlay for text readability */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/50 to-navy/20"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          />
           {/* Top white fade — seamless blend with section above */}
           <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-[#f9fafb]/80 to-transparent pointer-events-none" />
           {/* Bottom white fade — seamless blend with section below */}
           <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white/80 to-transparent pointer-events-none" />
-          {/* Floating badge — top left */}
-          <motion.div
-            className="absolute top-5 left-5"
-            initial={{ opacity: 0, y: -20, scale: 0.8 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="inline-flex items-center gap-1.5 bg-emerald/90 backdrop-blur-sm text-white text-xs font-bold tracking-wider uppercase px-3.5 py-1.5 rounded-full shadow-lg shadow-emerald/30">
-              🎓 CAPACITACIÓN GRATUITA
-            </span>
-          </motion.div>
-          {/* Content at bottom */}
-          <motion.div
-            className="absolute bottom-0 left-0 right-0 p-6 sm:p-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-3 drop-shadow-lg">
-              Accede Sin Costo a Nuestra Conferencia en Vivo
-            </h2>
-            <p className="text-emerald font-semibold text-sm sm:text-base mb-2 drop-shadow">
-              Cómo Pagar Menos Impuesto y Ganar Más Dinero, Cumpliendo la Ley
-            </p>
-            <p className="text-white/75 text-sm leading-relaxed mb-6 drop-shadow">
-              Miles de emprendedores ya están aplicando estos conocimientos y transformando su negocio.
-            </p>
-            <motion.button
-              onClick={() => openModal(10)}
-              className="inline-flex items-center justify-center gap-2.5 bg-emerald hover:bg-emerald/90 text-white px-7 py-4 rounded-xl text-base font-bold transition-all shadow-lg shadow-emerald/30 active:scale-[0.98]"
-              whileTap={{ scale: 0.96 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-            >
-              <MessageCircle className="w-5 h-5" />
-              ¡INSCRÍBETE GRATIS AHORA!
-            </motion.button>
-          </motion.div>
         </motion.div>
       </div>
 
@@ -273,7 +223,7 @@ function SpeakerAuthority() {
 
   return (
     <section className="bg-navy relative overflow-hidden">
-      {/* ─── Mobile: Immersive image only — no text, maximum visual impact ─── */}
+      {/* ─── Mobile: Immersive image with text at bottom ─── */}
       <div className="relative lg:hidden">
         <motion.div
           className="relative w-full aspect-square overflow-hidden"
@@ -292,6 +242,50 @@ function SpeakerAuthority() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
           />
+          {/* Dark gradient from bottom for text readability */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          />
+          {/* Text content at bottom */}
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 p-6 sm:p-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <span className="inline-block text-emerald font-semibold text-xs tracking-wider uppercase mb-3">
+              CONFERENCISTA ESPECIALIZADO
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-3 drop-shadow-lg">
+              <span className="text-emerald">Jhon&Asociados:</span>{" "}
+              <span className="text-purple">Más de 20 años</span> protegiendo
+              patrimonios en el Perú
+            </h2>
+            <p className="text-white/80 text-sm leading-relaxed mb-5 drop-shadow">
+              Con una trayectoria consolidada en asesoría tributaria, contabilidad
+              integral y defensa ante SUNAT.
+            </p>
+            <ul className="space-y-2.5">
+              {achievements.map((item, i) => (
+                <motion.li
+                  key={item}
+                  className="flex items-start gap-2.5"
+                  initial={{ opacity: 0, x: -15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.6 + i * 0.12 }}
+                >
+                  <CheckCircle2 className="w-5 h-5 text-emerald flex-shrink-0 mt-0.5" />
+                  <span className="text-white font-medium text-sm">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </motion.div>
       </div>
 

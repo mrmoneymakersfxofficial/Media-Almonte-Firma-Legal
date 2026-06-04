@@ -268,56 +268,151 @@ function SpeakerAuthority() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Photo — Michael Jhon en conferencia tributaria */}
-          <ScrollReveal x={-30} duration={0.7}>
-            <div className="group">
-              <div className="relative mx-auto w-[96%] sm:w-full max-w-[640px] lg:max-w-none">
-                <div className="w-full aspect-[3/5] sm:aspect-[3/5] lg:aspect-auto lg:h-[580px] rounded-[20px] sm:rounded-[22px] lg:rounded-2xl overflow-hidden shadow-lg shadow-navy/[0.08] sm:shadow-xl sm:shadow-navy/[0.10] lg:shadow-2xl lg:shadow-navy/15">
-                  <img
-                    src="/jhon-conferencista.webp"
-                    alt="Michael Jhon B. — Conferencista Especializado en Estrategias Tributarias"
-                    loading="lazy"
-                    className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                  />
-                </div>
-                {/* Decorative accent bar at bottom */}
-                <div className="absolute bottom-0 left-6 sm:left-8 right-6 sm:right-8 h-1 bg-gradient-to-r from-emerald via-teal to-emerald/50 rounded-full opacity-50" />
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Right: Info */}
-          <ScrollReveal x={30} duration={0.7}>
-            <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">
+    <section className="bg-navy relative overflow-hidden">
+      {/* ─── Mobile: Immersive full-bleed image with overlay content ─── */}
+      <div className="relative lg:hidden">
+        <motion.div
+          className="relative w-full aspect-square overflow-hidden"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.img
+            src="/jhon-conferencista.webp"
+            alt="Michael Jhon B. — Conferencista Especializado en Estrategias Tributarias"
+            loading="lazy"
+            className="w-full h-full object-cover object-center"
+            initial={{ scale: 1.08 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+          />
+          {/* Dark gradient overlay */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/30"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          />
+          {/* Top badge */}
+          <motion.div
+            className="absolute top-5 left-5 right-5 flex justify-center"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <span className="inline-flex items-center gap-1.5 bg-emerald/90 backdrop-blur-sm text-white text-xs font-bold tracking-wider uppercase px-4 py-2 rounded-full shadow-lg shadow-emerald/30">
               CONFERENCISTA ESPECIALIZADO
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy leading-tight mb-5">
-              <span className="whitespace-nowrap">Jhon&Asociados:</span>{" "}
+          </motion.div>
+          {/* Bottom content */}
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 p-6 sm:p-8"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-4 drop-shadow-lg">
+              <span className="text-emerald">Jhon&Asociados:</span>{" "}
               <span className="text-purple">Más de 20 años</span> protegiendo
               patrimonios en el Perú
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
+            <p className="text-white/80 text-sm leading-relaxed mb-6 drop-shadow">
               Con una trayectoria consolidada en asesoría tributaria, contabilidad
               integral y defensa ante SUNAT, nuestro equipo liderado por Jhon ha
               ayudado a miles de emprendedores y empresas a cumplir con la ley
-              tributaria de forma inteligente, optimizando sus cargas fiscales y
-              protegiendo su patrimonio.
+              tributaria de forma inteligente.
             </p>
-            <ul className="space-y-4">
-              {achievements.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-emerald flex-shrink-0 mt-0.5" />
-                  <span className="text-navy font-medium text-base sm:text-lg">
-                    {item}
-                  </span>
-                </li>
+            <ul className="space-y-3">
+              {achievements.map((item, i) => (
+                <motion.li
+                  key={item}
+                  className="flex items-start gap-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.7 + i * 0.15 }}
+                >
+                  <CheckCircle2 className="w-5 h-5 text-emerald flex-shrink-0 mt-0.5" />
+                  <span className="text-white font-medium text-sm">{item}</span>
+                </motion.li>
               ))}
             </ul>
-          </ScrollReveal>
-        </div>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* ─── Desktop: Side-by-side with image + content ─── */}
+      <div className="hidden lg:grid lg:grid-cols-2 gap-0 min-h-[600px] items-stretch">
+        {/* Left: Full-height image with zoom animation */}
+        <motion.div
+          className="relative overflow-hidden"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <motion.img
+            src="/jhon-conferencista.webp"
+            alt="Michael Jhon B. — Conferencista Especializado en Estrategias Tributarias"
+            loading="lazy"
+            className="w-full h-full object-cover object-center"
+            initial={{ scale: 1.08 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+          />
+          {/* Subtle edge gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-navy/30" />
+          {/* Decorative accent bar at bottom */}
+          <div className="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-emerald via-teal to-emerald/50 rounded-full opacity-40" />
+        </motion.div>
+
+        {/* Right: Content */}
+        <motion.div
+          className="py-20 lg:py-28 px-12 xl:px-16"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-5">
+            CONFERENCISTA ESPECIALIZADO
+          </span>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight mb-6">
+            <span className="text-emerald">Jhon&Asociados:</span>{" "}
+            <span className="text-purple">Más de 20 años</span> protegiendo
+            patrimonios en el Perú
+          </h2>
+          <p className="text-white/70 leading-relaxed mb-10 text-lg">
+            Con una trayectoria consolidada en asesoría tributaria, contabilidad
+            integral y defensa ante SUNAT, nuestro equipo liderado por Jhon ha
+            ayudado a miles de emprendedores y empresas a cumplir con la ley
+            tributaria de forma inteligente, optimizando sus cargas fiscales y
+            protegiendo su patrimonio.
+          </p>
+          <ul className="space-y-5">
+            {achievements.map((item, i) => (
+              <motion.li
+                key={item}
+                className="flex items-start gap-4"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.3 + i * 0.15 }}
+              >
+                <CheckCircle2 className="w-6 h-6 text-emerald flex-shrink-0 mt-0.5" />
+                <span className="text-white font-medium text-lg">
+                  {item}
+                </span>
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
     </section>
   );
@@ -610,12 +705,12 @@ export default function Home() {
       {/* Section 1: Conference Capture Card */}
       <ConferenceCaptureCard />
 
-      <SectionDivider from="#f9fafb" to="#ffffff" />
+      <SectionDivider from="#f9fafb" to="#002350" />
 
       {/* Section 2: Speaker Authority */}
       <SpeakerAuthority />
 
-      <SectionDivider from="#ffffff" to="#f9fafb" />
+      <SectionDivider from="#002350" to="#f9fafb" />
 
       {/* Section 3: Company Formation + RUC 20 Benefits */}
       <CompanyFormation />

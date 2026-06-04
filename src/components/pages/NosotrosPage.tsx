@@ -8,6 +8,7 @@ import {
   ChevronRight, Mail, MapPin, Clock, Send, ArrowRight
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useScrollSlug } from "@/hooks/use-scroll-slug";
 import { useWhatsAppStore, services } from "@/lib/whatsapp";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionDivider } from "@/components/SectionDivider";
@@ -53,6 +54,7 @@ const contactInfo = [
 ];
 
 export function NosotrosPage() {
+  useScrollSlug();
   const { ref: aboutRef, isVisible: aboutVisible } = useScrollAnimation(0.1);
   const { ref: credRef, isVisible: credVisible } = useScrollAnimation(0.1);
   const { openModal } = useWhatsAppStore();

@@ -5,6 +5,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { motion } from "framer-motion";
 import { CheckCircle2, Star, ArrowRight, MessageCircle, ChevronRight } from "lucide-react";
 import { useWhatsAppStore } from "@/lib/whatsapp";
+import { useScrollSlug } from "@/hooks/use-scroll-slug";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionDivider } from "@/components/SectionDivider";
 import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
@@ -80,6 +81,7 @@ const faqs = [
 ];
 
 export function ConstitucionPage() {
+  useScrollSlug();
   const { openModal } = useWhatsAppStore();
 
   return (

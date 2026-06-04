@@ -9,6 +9,7 @@ import {
   TrendingUp, Users
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useScrollSlug } from "@/hooks/use-scroll-slug";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionDivider } from "@/components/SectionDivider";
@@ -100,6 +101,7 @@ const inversionistaFeatures = [
 ];
 
 export function DefensaPage() {
+  useScrollSlug();
   const { ref, isVisible } = useScrollAnimation(0.1);
   const { openModal } = useWhatsAppStore();
 

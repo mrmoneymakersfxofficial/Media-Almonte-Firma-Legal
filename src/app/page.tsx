@@ -8,6 +8,7 @@ import { SectionDivider } from "@/components/SectionDivider";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useScrollSlug } from "@/hooks/use-scroll-slug";
 import { motion } from "framer-motion";
 import {
   MessageCircle,
@@ -499,6 +500,7 @@ function HighConversionCTA() {
    HOME PAGE
    ════════════════════════════════════════════════════════════════ */
 export default function Home() {
+  useScrollSlug();
   return (
     <SiteLayout>
       <Hero />

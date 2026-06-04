@@ -8,6 +8,7 @@ import {
   Users, TrendingUp, Clock, ChevronRight, Calculator, ArrowRight
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useScrollSlug } from "@/hooks/use-scroll-slug";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionDivider } from "@/components/SectionDivider";
@@ -55,6 +56,7 @@ const planillasFeatures = [
 ];
 
 export function ContabilidadPage() {
+  useScrollSlug();
   const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation(0.1);
   const { openModal } = useWhatsAppStore();
 

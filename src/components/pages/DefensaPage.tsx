@@ -106,7 +106,7 @@ export function DefensaPage() {
   return (
     <SiteLayout>
       {/* ═══ SUBPAGE HERO — Asesoría Tributaria: Urgent Photograph + Dark Overlay ═══ */}
-      <section className="subpage-hero relative overflow-hidden">
+      <section id="hero" className="subpage-hero relative overflow-hidden">
         {/* Top urgency accent line */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-urgent via-gold to-urgent z-30" />
         {/* Layer 0: Background photo — Jhon making stop signal */}
@@ -164,7 +164,7 @@ export function DefensaPage() {
 
       {/* Urgent Service Cards */}
       <SectionDivider from="#001528" to="#f9fafb" />
-      <section className="py-20 lg:py-28 bg-gray-50/50 relative">
+      <section id="elige-tu-situacion" className="py-20 lg:py-28 bg-gray-50/50 relative">
         <div className="absolute inset-0 bg-gradient-to-br from-red-50/50 via-transparent to-red-50/30 pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={ref} className="text-center max-w-3xl mx-auto mb-16">
@@ -229,7 +229,7 @@ export function DefensaPage() {
 
       {/* Why Us */}
       <SectionDivider from="#f9fafb" to="#ffffff" />
-      <section className="py-20 lg:py-28 bg-white">
+      <section id="por-que-confiar-en-nosotros" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Nuestra Ventaja</span>
@@ -311,7 +311,7 @@ export function DefensaPage() {
 
       {/* CTA */}
       <SectionDivider from="#ffffff" to="#991b1b" />
-      <section className="py-20 bg-gradient-to-r from-urgent to-navy">
+      <section id="contacto" className="py-20 bg-gradient-to-r from-urgent to-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             El tiempo es tu peor enemigo frente a SUNAT

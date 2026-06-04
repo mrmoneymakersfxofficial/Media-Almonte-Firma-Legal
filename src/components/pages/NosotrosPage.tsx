@@ -73,7 +73,7 @@ export function NosotrosPage() {
   return (
     <SiteLayout>
       {/* ═══ SUBPAGE HERO — Institutional Photograph + Brand Overlay ═══ */}
-      <section className="subpage-hero relative overflow-hidden">
+      <section id="hero" className="subpage-hero relative overflow-hidden">
         {/* Layer 0: Background photo — Jhon institutional portrait */}
         <div className="absolute inset-0 z-0">
           <div
@@ -125,7 +125,7 @@ export function NosotrosPage() {
 
       {/* Mission & Vision */}
       <SectionDivider from="#001528" to="#ffffff" />
-      <section className="py-20 lg:py-28 bg-white">
+      <section id="mision-vision" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={aboutRef} className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Quiénes Somos</span>
@@ -185,7 +185,7 @@ export function NosotrosPage() {
 
       {/* Credentials */}
       <SectionDivider from="#ffffff" to="#f9fafb" />
-      <section className="py-20 lg:py-28 bg-gray-50/50">
+      <section id="credenciales" className="py-20 lg:py-28 bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={credRef} className="bg-navy rounded-2xl p-8 lg:p-12 relative overflow-hidden">
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple/20 rounded-full blur-3xl" />
@@ -224,7 +224,7 @@ export function NosotrosPage() {
 
       {/* Contact Form */}
       <SectionDivider from="#f9fafb" to="#ffffff" />
-      <section className="py-20 lg:py-28 bg-white">
+      <section id="contacto" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Contacto</span>

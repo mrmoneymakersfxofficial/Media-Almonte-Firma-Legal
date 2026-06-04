@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Hero } from "@/components/Hero";
-import { CorporateImage } from "@/components/CorporateImage";
 import { Services } from "@/components/Services";
 import { SectionDivider } from "@/components/SectionDivider";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -31,29 +30,12 @@ function FounderPresentation() {
   const { openModal } = useWhatsAppStore();
 
   return (
-    <section className="py-20 lg:py-28 founder-presentation-bg">
+    <section id="fundador" className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left: Professional Photo — Standardized CorporateImage */}
-          <ScrollReveal x={-30} duration={0.7}>
-            <CorporateImage
-              src="/jhon-constitucion.webp"
-              alt="Michael Jhon B. — Especialista Tributario"
-              height="lg"
-              badge={
-                <div className="bg-emerald text-white rounded-xl px-5 py-3 shadow-lg shadow-emerald/30 flex items-center gap-2.5">
-                  <Award className="w-5 h-5" />
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-wider">Experiencia</p>
-                    <p className="text-lg font-extrabold leading-tight">+20 Años</p>
-                  </div>
-                </div>
-              }
-            />
-          </ScrollReveal>
-
-          {/* Right: Info */}
-          <ScrollReveal x={30} duration={0.7}>
+        {/* Mobile: text header → image → text body | Desktop: image left, text right */}
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-20 lg:items-center">
+          {/* 1. Text header — order-1 mobile (first), order-2 desktop (right col) */}
+          <ScrollReveal x={30} duration={0.7} className="order-1 lg:order-2">
             <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">
               Fundador & Director General
             </span>
@@ -63,16 +45,36 @@ function FounderPresentation() {
             <p className="text-emerald font-bold text-lg sm:text-xl mb-6">
               Especialistas Tributarios
             </p>
+          </ScrollReveal>
 
-            {/* Quote — with gradient highlight on key phrase */}
+          {/* 2. Image — order-2 mobile (second), order-1 desktop (left col, spans 2 rows) */}
+          <ScrollReveal x={-30} duration={0.7} className="order-2 lg:order-1 lg:row-span-2">
+            <div className="relative">
+              <div className="w-full h-[340px] sm:h-[420px] lg:h-[520px] rounded-2xl overflow-hidden shadow-2xl shadow-navy/20">
+                <img
+                  src="/jhon-constitucion.webp"
+                  alt="Michael Jhon B. — Especialista Tributario"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              {/* Floating badge */}
+              <div className="absolute -bottom-5 -right-3 sm:-right-5 bg-emerald text-white rounded-xl px-5 py-3 shadow-lg shadow-emerald/30 flex items-center gap-2.5">
+                <Award className="w-5 h-5" />
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider">Experiencia</p>
+                  <p className="text-lg font-extrabold leading-tight">+20 Años</p>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* 3. Text body (quote + desc + buttons) — order-3 mobile (after image), right col row 2 desktop */}
+          <ScrollReveal x={30} duration={0.7} className="order-3 lg:order-3 lg:col-start-2">
+            {/* Quote */}
             <div className="relative mb-8 pl-5 border-l-4 border-emerald/40">
               <Quote className="w-8 h-8 text-emerald/20 absolute -top-1 -left-1" />
               <p className="text-navy/80 text-lg sm:text-xl italic leading-relaxed font-medium">
-                &ldquo;Trabajamos al lado de nuestros clientes para ser{" "}
-                <span className="font-extrabold not-italic founder-gradient-text">
-                  socios estratégicos
-                </span>{" "}
-                en el crecimiento de sus negocios.&rdquo;
+                &ldquo;Trabajamos al lado de nuestros clientes para ser socios estratégicos en el crecimiento de sus negocios.&rdquo;
               </p>
             </div>
 
@@ -113,99 +115,50 @@ function ConferenceCaptureCard() {
   const { openModal } = useWhatsAppStore();
 
   return (
-    <section className="relative bg-gray-50/50">
-      {/* ─── Mobile: Immersive full-bleed image — no text ─── */}
-      <div className="relative lg:hidden overflow-hidden">
-        <motion.div
-          initial={{ scale: 1.12, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full aspect-[3/2] overflow-hidden"
-        >
-          <motion.img
-            src="/capacitacion-conferencia.webp"
-            alt="Capacitación Tributaria Gratuita — Jhon&Asociados"
-            loading="lazy"
-            className="w-full h-full object-cover object-center"
-            initial={{ scale: 1.08 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-          />
-          {/* Top white fade — seamless blend with section above */}
-          <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-[#f9fafb]/80 to-transparent pointer-events-none" />
-          {/* Bottom white fade — seamless blend with section below */}
-          <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white/80 to-transparent pointer-events-none" />
-        </motion.div>
-      </div>
-
-      {/* ─── Desktop: Card layout with image on right ─── */}
-      <div className="hidden lg:block py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal duration={0.7}>
-            <div className="bg-white rounded-3xl shadow-lg shadow-navy/[0.04] border border-gray-100 overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-0">
-                {/* Left: Text content */}
-                <div className="p-8 sm:p-10 lg:p-14">
-                  <span className="inline-block bg-emerald/10 text-emerald text-xs sm:text-sm font-bold tracking-wider uppercase px-4 py-1.5 rounded-full mb-5">
-                    🎓 CAPACITACIÓN GRATUITA
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-navy leading-tight mb-4">
-                    Accede Sin Costo a Nuestra Conferencia en Vivo
-                  </h2>
-                  <p className="text-emerald font-semibold text-base sm:text-lg mb-4">
-                    Cómo Pagar Menos Impuesto y Ganar Más Dinero, Cumpliendo la Ley
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed mb-8">
-                    Miles de emprendedores ya están aplicando estos conocimientos y
-                    transformando su negocio con estrategias simples pero poderosas.
-                  </p>
-                  <button
-                    onClick={() => openModal(10)}
-                    className="inline-flex items-center justify-center gap-2.5 bg-emerald hover:bg-emerald/90 text-white px-7 sm:px-9 py-4 sm:py-[18px] rounded-xl text-[15px] sm:text-lg font-bold transition-all shadow-lg shadow-emerald/25 hover:shadow-xl hover:shadow-emerald/30 active:scale-[0.98]"
-                  >
-                    <MessageCircle className="w-5 h-5" />
-                    ¡INSCRÍBETE GRATIS AHORA!
-                  </button>
-                </div>
-
-                {/* Right: Conference image with parallax animation */}
-                <motion.div
-                  className="relative min-h-[420px] overflow-hidden"
-                  initial={{ opacity: 0, x: 60 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+    <section id="capacitacion-gratuita" className="py-20 lg:py-28 bg-gray-50/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal duration={0.7}>
+          <div className="bg-white rounded-3xl shadow-lg shadow-navy/[0.04] border border-gray-100 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-0">
+              {/* Left: Text content */}
+              <div className="p-8 sm:p-10 lg:p-14">
+                <span className="inline-block bg-emerald/10 text-emerald text-xs sm:text-sm font-bold tracking-wider uppercase px-4 py-1.5 rounded-full mb-5">
+                  🎓 CAPACITACIÓN GRATUITA
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-navy leading-tight mb-4">
+                  Accede Sin Costo a Nuestra Conferencia en Vivo
+                </h2>
+                <p className="text-emerald font-semibold text-base sm:text-lg mb-4">
+                  Cómo Pagar Menos Impuesto y Ganar Más Dinero, Cumpliendo la Ley
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  Miles de emprendedores ya están aplicando estos conocimientos y
+                  transformando su negocio con estrategias simples pero poderosas.
+                </p>
+                <button
+                  onClick={() => openModal(10)}
+                  className="inline-flex items-center justify-center gap-2.5 bg-emerald hover:bg-emerald/90 text-white px-7 sm:px-9 py-4 sm:py-[18px] rounded-xl text-[15px] sm:text-lg font-bold transition-all shadow-lg shadow-emerald/25 hover:shadow-xl hover:shadow-emerald/30 active:scale-[0.98]"
                 >
-                  <motion.img
-                    src="/capacitacion-conferencia.webp"
-                    alt="Capacitación Tributaria Gratuita — Jhon&Asociados"
-                    loading="lazy"
-                    className="w-full h-full object-cover object-center"
-                    initial={{ scale: 1.1 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                  />
-                  {/* Subtle overlay at edge */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" />
-                  {/* Live badge floating */}
-                  <motion.div
-                    className="absolute top-6 right-6 flex items-center gap-2 bg-navy/80 backdrop-blur-md text-white px-4 py-2 rounded-full shadow-lg"
-                    initial={{ opacity: 0, scale: 0.7 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                  >
-                    <span className="w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse" />
-                    <span className="text-sm font-bold tracking-wide">EN VIVO</span>
-                  </motion.div>
-                </motion.div>
+                  <MessageCircle className="w-5 h-5" />
+                  ¡INSCRÍBETE GRATIS AHORA!
+                </button>
+              </div>
+
+              {/* Right: Decorative visual */}
+              <div className="relative hidden lg:flex items-center justify-center min-h-[340px] bg-gradient-to-br from-navy via-[#0a1e4a] to-purple p-12">
+                <div className="absolute -top-10 -right-10 w-48 h-48 bg-emerald/10 rounded-full blur-3xl" />
+                <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-purple/20 rounded-full blur-3xl" />
+                <div className="relative text-center">
+                  <div className="w-28 h-28 mx-auto mb-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center">
+                    <Calendar className="w-14 h-14 text-emerald" />
+                  </div>
+                  <p className="text-white font-bold text-xl mb-1">EN VIVO</p>
+                  <p className="text-white/60 text-sm">Capacitación Tributaria</p>
+                </div>
               </div>
             </div>
-          </ScrollReveal>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
@@ -222,140 +175,51 @@ function SpeakerAuthority() {
   ];
 
   return (
-    <section className="bg-navy relative overflow-hidden">
-      {/* ─── Mobile: Immersive image with text at bottom ─── */}
-      <div className="relative lg:hidden">
-        <motion.div
-          className="relative w-full aspect-square overflow-hidden"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.img
-            src="/jhon-conferencista.webp"
-            alt="Michael Jhon B. — Conferencista Especializado en Estrategias Tributarias"
-            loading="lazy"
-            className="w-full h-full object-cover object-center"
-            initial={{ scale: 1.06 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
-          />
-          {/* Dark gradient from bottom for text readability */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          />
-          {/* Text content at bottom */}
-          <motion.div
-            className="absolute bottom-0 left-0 right-0 p-6 sm:p-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="inline-block text-emerald font-semibold text-xs tracking-wider uppercase mb-3">
+    <section id="conferencista" className="py-20 lg:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Photo — Jhon en oficina (misma imagen de Constitución) */}
+          <ScrollReveal x={-30} duration={0.7}>
+            <div
+              className="w-full h-[280px] sm:h-[380px] lg:h-[480px] rounded-2xl overflow-hidden"
+            >
+              <img
+                src="/jhon-constitucion.webp"
+                alt="Jhon — Fundador de Jhon&Asociados"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </ScrollReveal>
+
+          {/* Right: Info */}
+          <ScrollReveal x={30} duration={0.7}>
+            <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">
               CONFERENCISTA ESPECIALIZADO
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-3 drop-shadow-lg">
-              <span className="text-emerald">Jhon&Asociados:</span>{" "}
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy leading-tight mb-5">
+              <span className="whitespace-nowrap">Jhon&Asociados:</span>{" "}
               <span className="text-purple">Más de 20 años</span> protegiendo
               patrimonios en el Perú
             </h2>
-            <p className="text-white/80 text-sm leading-relaxed mb-5 drop-shadow">
+            <p className="text-muted-foreground leading-relaxed mb-8">
               Con una trayectoria consolidada en asesoría tributaria, contabilidad
-              integral y defensa ante SUNAT.
+              integral y defensa ante SUNAT, nuestro equipo liderado por Jhon ha
+              ayudado a miles de emprendedores y empresas a cumplir con la ley
+              tributaria de forma inteligente, optimizando sus cargas fiscales y
+              protegiendo su patrimonio.
             </p>
-            <ul className="space-y-2.5">
-              {achievements.map((item, i) => (
-                <motion.li
-                  key={item}
-                  className="flex items-start gap-2.5"
-                  initial={{ opacity: 0, x: -15 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.6 + i * 0.12 }}
-                >
-                  <CheckCircle2 className="w-5 h-5 text-emerald flex-shrink-0 mt-0.5" />
-                  <span className="text-white font-medium text-sm">{item}</span>
-                </motion.li>
+            <ul className="space-y-4">
+              {achievements.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-emerald flex-shrink-0 mt-0.5" />
+                  <span className="text-navy font-medium text-base sm:text-lg">
+                    {item}
+                  </span>
+                </li>
               ))}
             </ul>
-          </motion.div>
-        </motion.div>
-      </div>
-
-      {/* ─── Desktop: Side-by-side with image + content ─── */}
-      <div className="hidden lg:grid lg:grid-cols-2 gap-0 min-h-[600px] items-stretch">
-        {/* Left: Full-height image with zoom animation */}
-        <motion.div
-          className="relative overflow-hidden"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <motion.img
-            src="/jhon-conferencista.webp"
-            alt="Michael Jhon B. — Conferencista Especializado en Estrategias Tributarias"
-            loading="lazy"
-            className="w-full h-full object-cover object-center"
-            initial={{ scale: 1.08 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-          />
-          {/* Subtle edge gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-navy/30" />
-          {/* Decorative accent bar at bottom */}
-          <div className="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-emerald via-teal to-emerald/50 rounded-full opacity-40" />
-        </motion.div>
-
-        {/* Right: Content */}
-        <motion.div
-          className="py-20 lg:py-28 px-12 xl:px-16"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-5">
-            CONFERENCISTA ESPECIALIZADO
-          </span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight mb-6">
-            <span className="text-emerald">Jhon&Asociados:</span>{" "}
-            <span className="text-purple">Más de 20 años</span> protegiendo
-            patrimonios en el Perú
-          </h2>
-          <p className="text-white/70 leading-relaxed mb-10 text-lg">
-            Con una trayectoria consolidada en asesoría tributaria, contabilidad
-            integral y defensa ante SUNAT, nuestro equipo liderado por Jhon ha
-            ayudado a miles de emprendedores y empresas a cumplir con la ley
-            tributaria de forma inteligente, optimizando sus cargas fiscales y
-            protegiendo su patrimonio.
-          </p>
-          <ul className="space-y-5">
-            {achievements.map((item, i) => (
-              <motion.li
-                key={item}
-                className="flex items-start gap-4"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 + i * 0.15 }}
-              >
-                <CheckCircle2 className="w-6 h-6 text-emerald flex-shrink-0 mt-0.5" />
-                <span className="text-white font-medium text-lg">
-                  {item}
-                </span>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );
@@ -389,7 +253,7 @@ function CompanyFormation() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-gray-50/50">
+    <section id="constitucion-empresas" className="py-20 lg:py-28 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -472,7 +336,7 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section id="testimonios" className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -553,7 +417,7 @@ const metrics = [
 
 function AuthorityMetrics() {
   return (
-    <section className="py-20 lg:py-28 bg-navy">
+    <section id="metricas" className="py-20 lg:py-28 bg-navy">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -591,7 +455,7 @@ function HighConversionCTA() {
   const { openModal } = useWhatsAppStore();
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
+    <section id="contacto" className="py-20 lg:py-28 relative overflow-hidden">
       {/* Gradient background */}
       <div
         className="absolute inset-0"
@@ -648,12 +512,12 @@ export default function Home() {
       {/* Section 1: Conference Capture Card */}
       <ConferenceCaptureCard />
 
-      <SectionDivider from="#f9fafb" to="#002350" />
+      <SectionDivider from="#f9fafb" to="#ffffff" />
 
       {/* Section 2: Speaker Authority */}
       <SpeakerAuthority />
 
-      <SectionDivider from="#002350" to="#f9fafb" />
+      <SectionDivider from="#ffffff" to="#f9fafb" />
 
       {/* Section 3: Company Formation + RUC 20 Benefits */}
       <CompanyFormation />

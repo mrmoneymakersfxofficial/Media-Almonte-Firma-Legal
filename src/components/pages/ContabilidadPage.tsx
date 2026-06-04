@@ -5,8 +5,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { motion } from "framer-motion";
 import {
   CheckCircle2, BarChart3, MessageCircle, BookOpen, FileText, Shield,
-  Users, TrendingUp, Clock, ChevronRight, Calculator, ArrowRight,
-  AlertTriangle, Mail, Smartphone, Landmark, Headphones, FileX, Lock
+  Users, TrendingUp, Clock, ChevronRight, Calculator, ArrowRight
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useWhatsAppStore } from "@/lib/whatsapp";
@@ -62,7 +61,7 @@ export function ContabilidadPage() {
   return (
     <SiteLayout>
       {/* ═══ SUBPAGE HERO — Corporate Photograph + Brand Overlay ═══ */}
-      <section className="subpage-hero relative overflow-hidden">
+      <section id="hero" className="subpage-hero relative overflow-hidden">
         {/* Layer 0: Background photo */}
         <div className="absolute inset-0 z-0">
           <div
@@ -114,7 +113,7 @@ export function ContabilidadPage() {
 
       {/* Main Features */}
       <SectionDivider from="#001528" to="#ffffff" />
-      <section className="py-20 lg:py-28 bg-white">
+      <section id="servicios-incluidos" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Servicios Incluidos</span>
@@ -146,161 +145,9 @@ export function ContabilidadPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-         CONTABILIDAD DIGITAL — Plan Promocional Premium
-         Insertado después de Servicios Incluidos, antes de Stats.
-         ═══════════════════════════════════════════════════════════ */}
-      <SectionDivider from="#ffffff" to="#f9fafb" />
-      <section id="contabilidad-digital-promo" className="py-16 sm:py-20 lg:py-24 bg-gray-50/50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* ── Header ── */}
-          <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-3">
-                Plan Promocional
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy leading-tight">
-                CONTABILIDAD{" "}
-                <span className="text-emerald">DIGITAL</span>
-              </h2>
-              <p className="mt-3 text-lg text-muted-foreground">
-                Tu empresa merece respaldo real
-              </p>
-            </div>
-          </ScrollReveal>
-
-          {/* ── Price Card ── */}
-          <ScrollReveal delay={0.1}>
-            <div className="max-w-md mx-auto mb-12">
-              <div className="relative bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
-                {/* Green promo ribbon */}
-                <div className="bg-emerald text-center py-2.5 px-4">
-                  <span className="text-white text-sm font-bold tracking-wider uppercase">
-                    Precio Promocional
-                  </span>
-                </div>
-                <div className="p-8 text-center">
-                  <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider mb-2">Desde</p>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-navy/70 text-xl font-semibold">S/</span>
-                    <span className="text-5xl sm:text-6xl font-extrabold text-navy">250</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm mt-2">al mes</p>
-                  <div className="mt-6 flex items-center justify-center gap-2 text-emerald">
-                    <CheckCircle2 className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Modalidad Promocional</span>
-                  </div>
-                </div>
-                {/* Bottom CTA */}
-                <button
-                  onClick={() => openModal(4)}
-                  className="w-full bg-navy hover:bg-navy-light text-white py-4 font-bold text-[15px] transition-all flex items-center justify-center gap-2.5"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  Cotizar Ahora
-                </button>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* ── Benefits Grid ── */}
-          <ScrollReveal delay={0.15}>
-            <div className="mb-10">
-              <h3 className="text-xl sm:text-2xl font-bold text-navy text-center mb-8 flex items-center justify-center gap-2.5">
-                <div className="w-8 h-8 bg-emerald/10 rounded-lg flex items-center justify-center">
-                  <FileText className="w-4 h-4 text-emerald" />
-                </div>
-                Beneficios Incluidos
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {[
-                  { icon: FileX, title: "Cero documentación física", desc: "Gestión completamente digitalizada, rápida y sin necesidad de archivar papeles físicos." },
-                  { icon: Clock, title: "Operaciones oportunas", desc: "Libros electrónicos y Sistema SIRE actualizados rigurosamente mes a mes ante la SUNAT." },
-                  { icon: BarChart3, title: "Revisión de compras y ventas", desc: "Control detallado de todas tus transacciones comerciales y del registro de tu personal." },
-                  { icon: Smartphone, title: "Atención por WhatsApp", desc: "Canal directo de comunicación inmediata para resolver cualquier consulta contable cotidiana." },
-                  { icon: Lock, title: "Sin contrato de permanencia", desc: "Libertad absoluta para gestionar tu contabilidad sin penalizaciones ni plazos forzosos." },
-                  { icon: Shield, title: "Contador responsable", desc: "Respaldo profesional y técnico directo ante cualquier requerimiento o fiscalización de SUNAT y SUNAFIL." },
-                  { icon: Landmark, title: "Oficina en Lima, Perú", desc: "Operaciones centralizadas estratégicamente para brindar cobertura digital a todo el territorio nacional." },
-                  { icon: TrendingUp, title: "Tranquilidad tributaria", desc: "Mayor control sobre tus finanzas para garantizar un crecimiento empresarial seguro y sostenible." },
-                ].map((item, i) => {
-                  const Icon = item.icon;
-                  return (
-                    <ScrollReveal key={item.title} delay={0.04 * i} duration={0.4} y={12}>
-                      <div className="bg-white rounded-xl p-5 border border-gray-100 hover:border-emerald/25 hover:shadow-sm transition-all h-full">
-                        <div className="w-10 h-10 bg-emerald/[0.07] rounded-lg flex items-center justify-center mb-3">
-                          <Icon className="w-5 h-5 text-emerald" />
-                        </div>
-                        <h4 className="font-bold text-navy text-[14px] mb-1.5 leading-snug">{item.title}</h4>
-                        <p className="text-muted-foreground text-[13px] leading-relaxed">{item.desc}</p>
-                      </div>
-                    </ScrollReveal>
-                  );
-                })}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* ── Alert Box: SUNAT ── */}
-          <ScrollReveal delay={0.2}>
-            <div className="bg-amber-50 border border-amber-200/80 rounded-xl p-5 sm:p-6 flex items-start gap-4 mb-10">
-              <div className="w-11 h-11 bg-amber-100 rounded-lg flex items-center justify-center shrink-0">
-                <AlertTriangle className="w-5 h-5 text-amber-600" />
-              </div>
-              <div>
-                <h4 className="font-bold text-navy text-sm mb-1">Alerta Preventiva SUNAT</h4>
-                <p className="text-navy/70 text-sm leading-relaxed">
-                  <strong>Evita multas y contingencias:</strong> No dejes tus declaraciones al azar. Una sola infracción o multa de SUNAT puede costarte hasta{" "}
-                  <strong className="text-amber-700">S/ 5,500</strong> o más. En Jhon&Asociados nos encargamos de proteger tu patrimonio.
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* ── Contact Channels + CTA ── */}
-          <ScrollReveal delay={0.25}>
-            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
-                {/* Channel 1: WhatsApp */}
-                <div className="flex items-center gap-3.5 p-5 sm:px-6 border-b sm:border-b-0 sm:border-r border-gray-100">
-                  <div className="w-10 h-10 bg-emerald/10 rounded-lg flex items-center justify-center shrink-0">
-                    <Smartphone className="w-5 h-5 text-emerald" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground font-medium">WhatsApp Directo</p>
-                    <p className="text-navy font-bold text-sm">943-366-950</p>
-                  </div>
-                </div>
-                {/* Channel 2: Email */}
-                <div className="flex items-center gap-3.5 p-5 sm:px-6 border-b sm:border-b-0 sm:border-r border-gray-100">
-                  <div className="w-10 h-10 bg-emerald/10 rounded-lg flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5 text-emerald" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground font-medium">Correo Electrónico</p>
-                    <p className="text-navy font-bold text-sm">contacto@jhonasociados.com</p>
-                  </div>
-                </div>
-                {/* Channel 3: CTA */}
-                <div className="flex items-center justify-center p-5 sm:px-6">
-                  <button
-                    onClick={() => openModal(4)}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-emerald hover:bg-emerald/90 text-white px-6 sm:px-7 py-3.5 rounded-xl text-[14px] sm:text-[15px] font-bold transition-all shadow-lg shadow-emerald/25 hover:shadow-xl active:scale-[0.98]"
-                  >
-                    <MessageCircle className="w-5 h-5" />
-                    Escríbenos y Recibe Información
-                  </button>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-      {/* ═══ END CONTABILIDAD DIGITAL ═══════════════════════════════ */}
-
       {/* Stats & Price Panel */}
-      <SectionDivider from="#f9fafb" to="#f9fafb" />
-      <section ref={statsRef} className="py-20 lg:py-28 bg-gray-50/50">
+      <SectionDivider from="#ffffff" to="#f9fafb" />
+      <section id="estadisticas-beneficios" ref={statsRef} className="py-20 lg:py-28 bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -365,7 +212,7 @@ export function ContabilidadPage() {
 
       {/* Additional Services */}
       <SectionDivider from="#f9fafb" to="#ffffff" />
-      <section className="py-20 lg:py-28 bg-white">
+      <section id="servicios-complementarios" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Servicios Complementarios</span>
@@ -447,7 +294,7 @@ export function ContabilidadPage() {
 
       {/* CTA */}
       <SectionDivider from="#f9fafb" to="#002350" />
-      <section className="py-20 bg-gradient-to-r from-navy to-purple">
+      <section id="contacto" className="py-20 bg-gradient-to-r from-navy to-purple">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             ¿Listo para gestionar tu contabilidad?

@@ -85,7 +85,7 @@ export function ConstitucionPage() {
   return (
     <SiteLayout>
       {/* ═══ SUBPAGE HERO — Corporate Photograph + Brand Overlay ═══ */}
-      <section className="subpage-hero relative overflow-hidden">
+      <section id="hero" className="subpage-hero relative overflow-hidden">
         {/* Layer 0: Background photo */}
         <div className="absolute inset-0 z-0">
           <div className="subpage-hero-photo" />
@@ -132,7 +132,7 @@ export function ConstitucionPage() {
 
       {/* ═══ Requirements Section — After Hero ═══ */}
       <SectionDivider from="#001528" to="#f9fafb" />
-      <section className="py-20 lg:py-28 bg-gray-50/50">
+      <section id="requisitos" className="py-20 lg:py-28 bg-gray-50/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-14">
@@ -189,7 +189,7 @@ export function ConstitucionPage() {
 
       {/* Pricing Cards */}
       <SectionDivider from="#f9fafb" to="#ffffff" />
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section id="paquetes-precios" className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Paquetes y Precios</span>
@@ -258,7 +258,7 @@ export function ConstitucionPage() {
 
       {/* Process Steps */}
       <SectionDivider from="#ffffff" to="#f9fafb" />
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50/50">
+      <section id="proceso" className="py-12 sm:py-16 lg:py-20 bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Proceso</span>
@@ -289,7 +289,7 @@ export function ConstitucionPage() {
 
       {/* FAQ */}
       <SectionDivider from="#f9fafb" to="#ffffff" />
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section id="preguntas-frecuentes" className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Preguntas Frecuentes</span>
@@ -322,7 +322,7 @@ export function ConstitucionPage() {
 
       {/* CTA */}
       <SectionDivider from="#ffffff" to="#002350" />
-      <section className="py-20 bg-gradient-to-r from-navy to-purple">
+      <section id="contacto" className="py-20 bg-gradient-to-r from-navy to-purple">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             ¿Listo para gestionar tu contabilidad?

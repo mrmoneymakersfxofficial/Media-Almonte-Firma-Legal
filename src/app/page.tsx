@@ -178,22 +178,10 @@ function SpeakerAuthority() {
   return (
     <section id="conferencista" className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Photo — Jhon en oficina (misma imagen de Constitución) */}
-          <ScrollReveal x={-30} duration={0.7}>
-            <div
-              className="w-full h-[280px] sm:h-[380px] lg:h-[480px] rounded-2xl overflow-hidden"
-            >
-              <img
-                src="/jhon-constitucion.webp"
-                alt="Jhon — Fundador de Jhon&Asociados"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-          </ScrollReveal>
-
-          {/* Right: Info */}
-          <ScrollReveal x={30} duration={0.7}>
+        {/* Mobile: label -> title -> image -> trajectory | Desktop: image left, text right */}
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 lg:items-center">
+          {/* 1. Text header - order-1 mobile (first), order-2 desktop (right col) */}
+          <ScrollReveal x={30} duration={0.7} className="order-1 lg:order-2">
             <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">
               CONFERENCISTA ESPECIALIZADO
             </span>
@@ -202,6 +190,21 @@ function SpeakerAuthority() {
               <span className="text-purple">Más de 20 años</span> protegiendo
               patrimonios en el Perú
             </h2>
+          </ScrollReveal>
+
+          {/* 2. Image - order-2 mobile (second), order-1 desktop (left col, spans 2 rows) */}
+          <ScrollReveal x={-30} duration={0.7} className="order-2 lg:order-1 lg:row-span-2">
+            <div className="w-full h-[280px] sm:h-[380px] lg:h-[480px] rounded-2xl overflow-hidden">
+              <img
+                src="/jhon-conferencista.webp"
+                alt="Jhon - Fundador de Jhon&Asociados"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </ScrollReveal>
+
+          {/* 3. Text body (trajectory + achievements) - order-3 mobile (after image), right col row 2 desktop */}
+          <ScrollReveal x={30} duration={0.7} className="order-3 lg:order-3 lg:col-start-2">
             <p className="text-muted-foreground leading-relaxed mb-8">
               Con una trayectoria consolidada en asesoría tributaria, contabilidad
               integral y defensa ante SUNAT, nuestro equipo liderado por Jhon ha

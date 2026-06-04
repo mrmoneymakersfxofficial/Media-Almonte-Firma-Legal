@@ -1044,46 +1044,36 @@ span.text-emerald.uppercase {
     min-height: 85vh !important;
   }
 
-  /* Overlay: vertical gradient — transparent center (image visible) — dark top/bottom (text readable) */
+  /* Overlay: HORIZONTAL - matches homepage hero (dark left text, transparent right face) */
   .subpage-hero-overlay {
     background: linear-gradient(
-      180deg,
-      rgba(11, 33, 70, 0.65) 0%,
-      rgba(11, 33, 70, 0.10) 30%,
-      rgba(5, 15, 33, 0.05) 50%,
-      rgba(5, 15, 33, 0.45) 70%,
-      rgba(5, 15, 33, 0.88) 100%
+      90deg,
+      rgba(11, 33, 70, 0.88) 0%,
+      rgba(11, 33, 70, 0.48) 40%,
+      rgba(5, 15, 33, 0.06) 100%
     ) !important;
   }
 
-  /* Defensa mobile overlay — same vertical pattern */
+  /* Defensa mobile overlay - same horizontal pattern, slightly darker */
   .subpage-hero-overlay-defensa {
     background: linear-gradient(
-      180deg,
-      rgba(11, 33, 70, 0.70) 0%,
-      rgba(11, 33, 70, 0.10) 30%,
-      rgba(5, 15, 33, 0.05) 50%,
-      rgba(5, 15, 33, 0.50) 70%,
-      rgba(5, 15, 33, 0.90) 100%
+      90deg,
+      rgba(11, 33, 70, 0.90) 0%,
+      rgba(11, 33, 70, 0.50) 40%,
+      rgba(5, 15, 33, 0.06) 100%
     ) !important;
   }
 
-  /* Content: distributed vertically with breathing room */
+  /* Content: aligned at bottom, compact like homepage hero */
   .subpage-hero-content {
     height: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: space-between !important;
-    padding-top: 140px !important;
+    justify-content: flex-end !important;
+    padding-top: 60px !important;
     padding-bottom: 48px !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
-
-  /* Inner content wrapper: flex column to distribute 3 blocks */
-  .subpage-hero-content > * {
-    display: flex !important;
-    flex-direction: column !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   .subpage-hero-title {
@@ -1095,15 +1085,15 @@ span.text-emerald.uppercase {
 
   .subpage-hero-desc {
     font-size: 14px !important;
-    margin-top: 16px !important;
+    margin-top: 10px !important;
     max-width: 320px !important;
   }
 
-  /* CTAs: full width, stacked, spaced from content */
+  /* CTAs: full width, stacked */
   .subpage-hero-ctas {
     flex-direction: column !important;
-    gap: 12px !important;
-    margin-top: 32px !important;
+    gap: 10px !important;
+    margin-top: 20px !important;
   }
 
   .subpage-hero-ctas button,

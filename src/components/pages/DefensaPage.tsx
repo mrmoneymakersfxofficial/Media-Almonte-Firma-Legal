@@ -116,7 +116,7 @@ export function DefensaPage() {
           <img
             src="/jhon-defensa.webp"
             alt="Especialista Jhon&Asociados"
-            className="w-full h-full object-cover object-[center_20%] md:object-[60%_20%] brightness-[0.40]"
+            className="w-full h-full object-cover object-[65%_20%] md:object-[60%_20%] brightness-[0.45]"
           />
         </div>
         {/* Layer 1: Dark high-conversion overlay (denser navy, no purple) */}

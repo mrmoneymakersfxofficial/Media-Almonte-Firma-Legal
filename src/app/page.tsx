@@ -176,19 +176,16 @@ function SpeakerAuthority() {
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Photo — Michael Jhon en conferencia tributaria — Standardized CorporateImage */}
+          {/* Left: Photo — Michael Jhon en conferencia tributaria */}
           <ScrollReveal x={-30} duration={0.7}>
             <div className="group">
-              <div className="relative mx-auto w-[93%] sm:w-full max-w-[560px] lg:max-w-none">
-                <div
-                  className="w-full h-[320px] sm:h-[420px] lg:h-[520px] rounded-[20px] sm:rounded-[22px] lg:rounded-2xl overflow-hidden shadow-lg shadow-navy/[0.10] sm:shadow-xl sm:shadow-navy/[0.12] lg:shadow-2xl lg:shadow-navy/20"
-                  style={{ background: "linear-gradient(135deg, #001528 0%, #0a2a5a 100%)" }}
-                >
+              <div className="relative mx-auto w-[96%] sm:w-full max-w-[640px] lg:max-w-none">
+                <div className="w-full aspect-[3/5] sm:aspect-[3/5] lg:aspect-auto lg:h-[580px] rounded-[20px] sm:rounded-[22px] lg:rounded-2xl overflow-hidden shadow-lg shadow-navy/[0.08] sm:shadow-xl sm:shadow-navy/[0.10] lg:shadow-2xl lg:shadow-navy/15">
                   <img
                     src="/jhon-conferencista.webp"
                     alt="Michael Jhon B. — Conferencista Especializado en Estrategias Tributarias"
                     loading="lazy"
-                    className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-out"
                   />
                 </div>
                 {/* Decorative accent bar at bottom */}

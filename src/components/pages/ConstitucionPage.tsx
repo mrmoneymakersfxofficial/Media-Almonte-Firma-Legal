@@ -211,15 +211,15 @@ export function ConstitucionPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             {packages.map((pkg, i) => (
               <motion.div
                 key={pkg.name}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 * i }}
-                className={`relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm border transition-all hover:shadow-lg ${
-                  pkg.recommended ? "pricing-recommended border-emerald shadow-md scale-[1.02] lg:scale-105" : "border-gray-200"
+                className={`relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm border flex flex-col h-full transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] ${
+                  pkg.recommended ? "pricing-recommended border-emerald shadow-md lg:scale-[1.03]" : "border-gray-200"
                 }`}
               >
                 {pkg.recommended && (
@@ -230,6 +230,7 @@ export function ConstitucionPage() {
                   </div>
                 )}
 
+                {/* Header: name + price */}
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-navy">{pkg.name}</h3>
                   <p className="text-sm text-muted-foreground mt-1">{pkg.fullName}</p>
@@ -240,7 +241,8 @@ export function ConstitucionPage() {
                   </div>
                 </div>
 
-                <div className="space-y-3 mb-6">
+                {/* Features list — flex-grow fills remaining space */}
+                <div className="space-y-3 mb-6 flex-grow">
                   {pkg.features.map((feature) => (
                     <div key={feature} className="flex items-start gap-3">
                       <CheckCircle2 className={`w-5 h-5 mt-0.5 shrink-0 ${pkg.recommended ? "text-emerald" : "text-navy/40"}`} />
@@ -249,14 +251,16 @@ export function ConstitucionPage() {
                   ))}
                 </div>
 
+                {/* Ideal para — aligned across all cards */}
                 <div className="bg-gray-50 rounded-xl p-4 mb-6">
                   <p className="text-xs font-semibold text-navy mb-1">Ideal para:</p>
                   <p className="text-xs text-muted-foreground leading-relaxed">{pkg.idealFor}</p>
                 </div>
 
+                {/* CTA — always at bottom (mt-auto) */}
                 <button
                   onClick={() => openModal(pkg.serviceId)}
-                  className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm transition-all ${
+                  className={`mt-auto w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
                     pkg.recommended ? "bg-emerald hover:bg-emerald-dark text-white shadow-md hover:shadow-lg" : "bg-navy hover:bg-navy-light text-white"
                   }`}
                 >

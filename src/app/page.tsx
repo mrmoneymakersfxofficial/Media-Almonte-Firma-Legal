@@ -6,6 +6,7 @@ import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 import { SectionDivider } from "@/components/SectionDivider";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { ConferencistaGallery } from "@/components/ConferencistaGallery";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useScrollSlug } from "@/hooks/use-scroll-slug";
@@ -201,15 +202,9 @@ function SpeakerAuthority() {
             </h2>
           </ScrollReveal>
 
-          {/* 2. Image - order-2 mobile (second), order-1 desktop (left col, spans 2 rows) */}
+          {/* 2. Gallery Carousel - order-2 mobile, order-1 desktop (left col, spans 2 rows) */}
           <ScrollReveal x={-30} duration={0.7} className="order-2 lg:order-1 lg:row-span-2">
-            <div className="w-full h-[280px] sm:h-[380px] lg:h-[480px] rounded-2xl overflow-hidden">
-              <img
-                src="/jhon-conferencista.webp"
-                alt="Jhon - Fundador de Jhon&Asociados"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
+            <ConferencistaGallery />
           </ScrollReveal>
 
           {/* 3. Text body (trajectory + achievements) - order-3 mobile (after image), right col row 2 desktop */}

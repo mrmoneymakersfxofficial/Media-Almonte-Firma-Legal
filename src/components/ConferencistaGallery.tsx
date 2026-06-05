@@ -6,31 +6,32 @@ import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 
 /* ════════════════════════════════════════════════════════════════
    CONFERENCIST GALLERY — Premium Instagram-style Carousel + Lightbox
-   3 images: swipeable on mobile, clickable to full-screen lightbox.
+   3 images: instant transitions, swipe mobile, edge-click desktop.
    ════════════════════════════════════════════════════════════════ */
 
 interface GalleryImage {
   src: string;
   alt: string;
-  width: number;
-  height: number;
 }
 
 const images: GalleryImage[] = [
-  { src: "/jhon-conferencista.webp", alt: "Conferencista - Capacitacion Tributaria", width: 1200, height: 1500 },
-  { src: "/conferencista-2.webp", alt: "Conferencista - Evento empresarial", width: 1200, height: 1500 },
-  { src: "/conferencista-3.webp", alt: "Conferencista - Expositor principal", width: 1200, height: 1500 },
+  { src: "/jhon-conferencista.webp", alt: "Conferencista - Capacitacion Tributaria" },
+  { src: "/conferencista-2.webp", alt: "Conferencista - Evento empresarial" },
+  { src: "/conferencista-3.webp", alt: "Conferencista - Expositor principal" },
 ];
 
-/* ─── Drag threshold (px) to trigger slide change ─── */
-const DRAG_THRESHOLD = 50;
+const DRAG_THRESHOLD = 40;
+
+/* Instant transition — zero delay */
+const instantTransition = { duration: 0 };
 
 export function ConferencistaGallery() {
   const [current, setCurrent] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const [direction, setDirection] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
+  const hasDragged = useRef(false);
+  const dragStartX = useRef(0);
+  const isDragging = useRef(false);
 
   /* Lock body scroll when lightbox is open */
   useEffect(() => {
@@ -64,61 +65,90 @@ export function ConferencistaGallery() {
     });
   }, []);
 
-  const handleDragEnd = useCallback((_: any, info: PanInfo) => {
-    if (Math.abs(info.offset.x) > DRAG_THRESHOLD || Math.abs(info.velocity.x) > 300) {
+  const goToIndex = useCallback((i: number) => {
+    setDirection(i > current ? 1 : -1);
+    setCurrent(i);
+  }, [current]);
+
+  /* Instant crossfade variants for both carousel and lightbox */
+  const instantVariants = {
+    enter: (dir: number) => ({ opacity: 0 }),
+    center: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+
+  const handleInlineDragStart = useCallback(() => {
+    isDragging.current = true;
+    hasDragged.current = false;
+  }, []);
+
+  const handleInlineDrag = useCallback((_: any, info: PanInfo) => {
+    if (Math.abs(info.offset.x) > 10) {
+      hasDragged.current = true;
+    }
+  }, []);
+
+  const handleInlineDragEnd = useCallback((e: React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent, info: PanInfo) => {
+    isDragging.current = false;
+    if (Math.abs(info.offset.x) > DRAG_THRESHOLD || Math.abs(info.velocity.x) > 250) {
       const dir = info.offset.x > 0 ? -1 : 1;
+      hasDragged.current = true;
       goTo(dir);
     }
-    setIsDragging(false);
+    /* Prevent lightbox open after a swipe */
+    setTimeout(() => { hasDragged.current = false; }, 50);
   }, [goTo]);
 
-  /* Slide animation variants */
-  const slideVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? 300 : -300,
-      opacity: 0,
-      scale: 0.95,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-    },
-    exit: (dir: number) => ({
-      x: dir > 0 ? -300 : 300,
-      opacity: 0,
-      scale: 0.95,
-    }),
-  };
+  const handleInlineClick = useCallback(() => {
+    if (!hasDragged.current && !isDragging.current) {
+      setLightbox(true);
+    }
+  }, []);
+
+  /* Edge click handler for desktop (click on left/right 25% edge) */
+  const handleEdgeClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (hasDragged.current) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const width = rect.width;
+    /* Left 25% edge */
+    if (clickX < width * 0.25) {
+      goTo(-1);
+      return;
+    }
+    /* Right 25% edge */
+    if (clickX > width * 0.75) {
+      goTo(1);
+      return;
+    }
+    /* Center area opens lightbox */
+    setLightbox(true);
+  }, [goTo]);
 
   return (
     <>
       {/* ═══ INLINE CAROUSEL (in section) ═══ */}
-      <div className="relative group cursor-pointer" onClick={() => setLightbox(true)}>
+      <div className="relative group">
         <div
-          ref={containerRef}
-          className="w-full h-[320px] sm:h-[420px] lg:h-[520px] rounded-2xl overflow-hidden shadow-2xl shadow-navy/20 bg-[#001528]"
+          className="w-full h-[320px] sm:h-[420px] lg:h-[520px] rounded-2xl overflow-hidden shadow-2xl shadow-navy/20 bg-[#001528] cursor-pointer"
+          onClick={handleEdgeClick}
         >
-          <AnimatePresence initial={false} custom={direction} mode="wait">
+          <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={current}
               custom={direction}
-              variants={slideVariants}
+              variants={instantVariants}
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              transition={instantTransition}
               className="absolute inset-0"
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.15}
-              onDragStart={() => setIsDragging(true)}
-              onDragEnd={(e, info) => {
-                handleDragEnd(e, info);
-                if (Math.abs(info.offset.x) > DRAG_THRESHOLD || Math.abs(info.velocity.x) > 300) {
-                  e.stopPropagation();
-                }
-              }}
+              dragElastic={0.1}
+              onDragStart={handleInlineDragStart}
+              onDrag={handleInlineDrag}
+              onDragEnd={handleInlineDragEnd}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -130,12 +160,16 @@ export function ConferencistaGallery() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Zoom icon overlay */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20 z-[5]">
+          {/* Zoom icon overlay (center hover) */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/15 z-[5] pointer-events-none">
             <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
               <ZoomIn className="w-6 h-6 text-white" />
             </div>
           </div>
+
+          {/* Desktop edge zones - subtle gradient hints */}
+          <div className="absolute inset-y-0 left-0 w-[25%] z-[3] pointer-events-none bg-gradient-to-r from-black/10 to-transparent" />
+          <div className="absolute inset-y-0 right-0 w-[25%] z-[3] pointer-events-none bg-gradient-to-l from-black/10 to-transparent" />
         </div>
 
         {/* Dots indicator */}
@@ -145,10 +179,9 @@ export function ConferencistaGallery() {
               key={i}
               onClick={(e) => {
                 e.stopPropagation();
-                setDirection(i > current ? 1 : -1);
-                setCurrent(i);
+                goToIndex(i);
               }}
-              className={`rounded-full transition-all duration-300 ${
+              className={`rounded-full transition-all duration-200 ${
                 i === current
                   ? "w-8 h-2.5 bg-white shadow-lg"
                   : "w-2.5 h-2.5 bg-white/50 hover:bg-white/80"
@@ -158,17 +191,17 @@ export function ConferencistaGallery() {
           ))}
         </div>
 
-        {/* Desktop arrows */}
+        {/* Arrows - always visible on desktop, on mobile visible as small arrows */}
         <button
           onClick={(e) => { e.stopPropagation(); goTo(-1); }}
-          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white/30 active:scale-90 hidden sm:flex"
+          className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-white/25 active:scale-90"
           aria-label="Anterior"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={(e) => { e.stopPropagation(); goTo(1); }}
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white/30 active:scale-90 hidden sm:flex"
+          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-white/25 active:scale-90"
           aria-label="Siguiente"
         >
           <ChevronRight className="w-5 h-5" />
@@ -182,7 +215,7 @@ export function ConferencistaGallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.15 }}
             className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-md flex items-center justify-center"
             onClick={() => setLightbox(false)}
           >
@@ -209,21 +242,17 @@ export function ConferencistaGallery() {
                 <motion.div
                   key={current}
                   custom={direction}
-                  variants={{
-                    enter: (dir: number) => ({ x: dir > 0 ? "100%" : "-100%", opacity: 0 }),
-                    center: { x: 0, opacity: 1 },
-                    exit: (dir: number) => ({ x: dir > 0 ? "-100%" : "100%", opacity: 0 }),
-                  }}
+                  variants={instantVariants}
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  transition={instantTransition}
                   className="absolute inset-0 flex items-center justify-center px-2 sm:px-8"
                   drag="x"
                   dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={0.2}
+                  dragElastic={0.15}
                   onDragEnd={(e, info) => {
-                    if (Math.abs(info.offset.x) > 60 || Math.abs(info.velocity.x) > 400) {
+                    if (Math.abs(info.offset.x) > DRAG_THRESHOLD || Math.abs(info.velocity.x) > 300) {
                       const dir = info.offset.x > 0 ? -1 : 1;
                       goTo(dir);
                     }
@@ -268,10 +297,9 @@ export function ConferencistaGallery() {
                   key={i}
                   onClick={(e) => {
                     e.stopPropagation();
-                    setDirection(i > current ? 1 : -1);
-                    setCurrent(i);
+                    goToIndex(i);
                   }}
-                  className={`rounded-full transition-all duration-300 ${
+                  className={`rounded-full transition-all duration-200 ${
                     i === current
                       ? "w-10 h-3 bg-white"
                       : "w-3 h-3 bg-white/30 hover:bg-white/60"

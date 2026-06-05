@@ -51,11 +51,11 @@ function FounderPresentation() {
           {/* 2. Image — order-2 mobile (second), order-1 desktop (left col, spans 2 rows) */}
           <ScrollReveal x={-30} duration={0.7} className="order-2 lg:order-1 lg:row-span-2">
             <div className="relative">
-              <div className="w-full h-[340px] sm:h-[420px] lg:h-[520px] rounded-2xl overflow-hidden shadow-2xl shadow-navy/20">
+              <div className="w-full h-[380px] sm:h-[480px] lg:h-[580px] rounded-[20px] overflow-hidden shadow-2xl shadow-navy/20">
                 <img
-                  src="/jhon-constitucion.webp"
-                  alt="Michael Jhon B. — Especialista Tributario"
-                  className="w-full h-full object-cover object-top"
+                  src="/jhon-fundador.webp"
+                  alt="Michael Jhon B. - Especialista Tributario"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               {/* Floating badge */}
@@ -69,13 +69,36 @@ function FounderPresentation() {
             </div>
           </ScrollReveal>
 
-          {/* 3. Text body (quote + desc + buttons) — order-3 mobile (after image), right col row 2 desktop */}
-          <ScrollReveal x={30} duration={0.7} className="order-3 lg:order-3 lg:col-start-2">
+          {/* Right: Info - Premium hierarchy inspired by Monica Sanchez style */}
+          <ScrollReveal x={30} duration={0.7}>
+            {/* Label: uppercase, wide tracking */}
+            <span className="inline-block text-emerald font-bold text-sm sm:text-[15px] tracking-[0.15em] uppercase mb-5">
+              FUNDADOR & CEO EN JHON&Asociados
+            </span>
+
+            {/* Name: DOMINANT element - big, black, 900 weight */}
+            <h2
+              className="text-navy leading-[1.05] mb-4"
+              style={{
+                fontSize: 'clamp(2.2rem, 5vw, 3.2rem)',
+                fontWeight: 900,
+                letterSpacing: '-0.02em',
+                color: '#002B6B',
+              }}
+            >
+              MICHAEL JHON B.
+            </h2>
+
+            {/* Cargo: uppercase, emerald, bold */}
+            <p className="text-emerald font-bold text-base sm:text-lg tracking-[0.08em] uppercase mb-6">
+              ESPECIALISTA TRIBUTARIO
+            </p>
+
             {/* Quote */}
             <div className="relative mb-8 pl-5 border-l-4 border-emerald/40">
               <Quote className="w-8 h-8 text-emerald/20 absolute -top-1 -left-1" />
               <p className="text-navy/80 text-lg sm:text-xl italic leading-relaxed font-medium">
-                &ldquo;Trabajamos al lado de nuestros clientes para ser socios estratégicos en el crecimiento de sus negocios.&rdquo;
+                &ldquo;Trabajamos contigo en cada paso, como tu principal socio estratégico.&rdquo;
               </p>
             </div>
 

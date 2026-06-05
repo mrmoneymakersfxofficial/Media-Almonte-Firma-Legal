@@ -59,7 +59,25 @@ const packages = [
       "Libro de actas legalizado",
       "Licencia de funcionamiento (asesoría)",
     ],
-    idealFor: "Socios que desean una estructura flexible con fewer requisitos formales que la SAC. Entre 2 y 20 socios con Responsabilidad Limitada.",
+    idealFor: "Socios que desean una estructura flexible con menos requisitos formales que la SAC. Entre 2 y 20 socios con Responsabilidad Limitada.",
+  },
+  {
+    name: "COOPERATIVA",
+    fullName: "Constitución de Cooperativas",
+    price: "A Consultar",
+    serviceId: 4,
+    recommended: false,
+    features: [
+      "Minuta de constitución",
+      "Escritura pública",
+      "Inscripción en SUNARP",
+      "Obtención de RUC",
+      "Clave SOL operativa",
+      "Libro de actas legalizado",
+      "Estatutos y reglamento interno",
+      "Asesoría en estructura cooperativa",
+    ],
+    idealFor: "Clientes que se dedican a la colocación de capitales con fondos propios, mínimo 12 socios.",
   },
 ];
 
@@ -254,7 +272,7 @@ export function ConstitucionPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 items-stretch">
             {packages.map((pkg, i) => (
               <motion.div
                 key={pkg.name}

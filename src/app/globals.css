@@ -872,59 +872,14 @@ html.mobile-menu-open .whatsapp-float {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   SUBPAGE HERO — Internal pages (Constitución, Contabilidad, Defensa, Nosotros)
-   100dvh full bleed immersive — matches Home hero architecture.
-   Face-framed: right top (PC) / center top (Mobile).
+   SUBPAGE HERO — Defensa overlay only (other subpages reuse home hero classes)
    ═══════════════════════════════════════════════════════════════════════ */
-
-/* Container — full bleed immersive (100dvh like Home hero) */
-.subpage-hero {
-  width: 100%;
-  height: 100vh;
-  height: 100dvh;
-  min-height: 100vh;
-  min-height: 100dvh;
-  max-height: none;
-  background-size: cover !important;
-  background-position: right top !important; /* Reveals face on desktop */
-  position: relative;
-  background-color: #001528;
-  overflow-x: hidden;
-}
-
-/* Safari fallback for dvh */
-@supports not (height: 100dvh) {
-  .subpage-hero {
-    height: 100vh;
-    min-height: 100vh;
-  }
-}
-
-/* Layer 0: Photo container — uses <img> with object-cover inside */
-.subpage-hero-photo {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-/* Ken Burns animation on hero images */
-.subpage-hero img {
-  animation: hero-ken-burns 25s ease-in-out infinite;
-}
-
-/* Layer 1: Brand overlay — horizontal gradient: dark left (text) → transparent right (face visible) */
-.subpage-hero-overlay {
-  background: linear-gradient(
-    90deg,
-    rgba(0, 35, 80, 0.90) 0%,
-    rgba(0, 35, 80, 0.55) 35%,
-    rgba(72, 17, 128, 0.06) 100%
-  );
-  pointer-events: none;
-}
 
 /* Defensa Tributaria — Darker left (urgency) but transparent right (face visible) */
 .subpage-hero-overlay-defensa {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background: linear-gradient(
     90deg,
     rgba(0, 35, 80, 0.93) 0%,
@@ -932,16 +887,6 @@ html.mobile-menu-open .whatsapp-float {
     rgba(0, 35, 80, 0.06) 100%
   );
   pointer-events: none;
-}
-
-/* Layer 20: Content — vertically centered, full bleed height */
-.subpage-hero-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  padding-top: 80px;
-  padding-bottom: 40px;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -1036,23 +981,8 @@ span.text-emerald.uppercase {
   60% { transform: translateY(3px); }
 }
 
-/* ─── Subpage Hero Mobile — EXCLUSIVE: no home-hero rules here ─── */
+/* ─── Subpage Hero Mobile — Defensa overlay only (other subpages reuse home hero mobile rules) ─── */
 @media (max-width: 768px) {
-
-  .subpage-hero {
-    width: 100% !important;
-    min-height: 85vh !important;
-  }
-
-  /* Overlay: HORIZONTAL - matches homepage hero (dark left text, transparent right face) */
-  .subpage-hero-overlay {
-    background: linear-gradient(
-      90deg,
-      rgba(11, 33, 70, 0.88) 0%,
-      rgba(11, 33, 70, 0.48) 40%,
-      rgba(5, 15, 33, 0.06) 100%
-    ) !important;
-  }
 
   /* Defensa mobile overlay - same horizontal pattern, slightly darker */
   .subpage-hero-overlay-defensa {
@@ -1062,50 +992,5 @@ span.text-emerald.uppercase {
       rgba(11, 33, 70, 0.50) 40%,
       rgba(5, 15, 33, 0.06) 100%
     ) !important;
-  }
-
-  /* Content: aligned at bottom, compact like homepage hero */
-  .subpage-hero-content {
-    height: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-end !important;
-    padding-top: 60px !important;
-    padding-bottom: 48px !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-
-  .subpage-hero-title {
-    font-size: 28px !important;
-    line-height: 1.15 !important;
-    letter-spacing: -0.02em !important;
-    margin-top: 0 !important;
-  }
-
-  .subpage-hero-desc {
-    font-size: 14px !important;
-    margin-top: 10px !important;
-    max-width: 320px !important;
-  }
-
-  /* CTAs: full width, stacked */
-  .subpage-hero-ctas {
-    flex-direction: column !important;
-    gap: 10px !important;
-    margin-top: 20px !important;
-  }
-
-  .subpage-hero-ctas button,
-  .subpage-hero-ctas a {
-    width: 100%;
-    justify-content: center;
-    font-size: 14px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-  }
-
-  .subpage-hero-breadcrumb {
-    font-size: 12px !important;
   }
 }

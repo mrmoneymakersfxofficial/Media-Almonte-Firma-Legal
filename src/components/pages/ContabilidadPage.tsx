@@ -63,60 +63,103 @@ export function ContabilidadPage() {
 
   return (
     <SiteLayout>
-      {/* ═══ SUBPAGE HERO — Corporate Photograph + Brand Overlay ═══ */}
-      <section id="hero" className="subpage-hero relative overflow-hidden">
-        {/* Layer 0: Background photo - full bleed, face-focused */}
+      {/* ═══ SUBPAGE HERO — Matches Homepage Hero Architecture ═══ */}
+      <section id="hero" className="relative flex overflow-hidden hero-fade-top">
+        {/* Layer 0: Background photo - full bleed */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/jhon-contabilidad.webp"
             alt="Especialista Jhon&Asociados"
-            className="w-full h-full object-cover object-[65%_20%] md:object-[60%_20%] brightness-[0.45]"
+            className="w-full h-full object-cover object-[70%_15%] lg:object-[right_10%_top_18%] brightness-[0.45] lg:brightness-[0.85] lg:contrast-[1.02]"
           />
         </div>
-        {/* Layer 1: Brand overlay */}
-        <div className="absolute inset-0 z-1 subpage-hero-overlay" />
-        {/* Layer 2: Decorative blurs */}
-        <div className="absolute inset-0 z-2 pointer-events-none overflow-hidden">
-          <div className="absolute -top-20 -left-20 w-60 h-60 bg-[#008775]/15 rounded-full blur-3xl" />
-          <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-[#481180]/15 rounded-full blur-3xl" />
+        {/* Layer 1: Brand overlay (same as home) */}
+        <div className="hero-brand-overlay" />
+        {/* Layer 2: Decorative blurs (home-sized) */}
+        <div className="hero-decor-layer">
+          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#481180]/12 rounded-full blur-[100px]" />
+          <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-[#008775]/8 rounded-full blur-[100px]" />
         </div>
         {/* Layer 20: Content */}
-        <div className="subpage-hero-content relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col justify-between h-full">
-            {/* Block 1: Breadcrumb */}
-            <div>
-              <Link href="/" className="subpage-hero-breadcrumb inline-flex items-center gap-1 text-white/60 hover:text-white text-sm transition-colors">
+        <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="hero-text-col">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
+              {/* Breadcrumb */}
+              <Link href="/" className="inline-flex items-center gap-1 text-white/50 hover:text-white/75 text-[13px] transition-colors">
                 Inicio <ChevronRight className="w-4 h-4" /> Contabilidad y Tributación
               </Link>
-            </div>
-            {/* Block 2: Title + Description (centered vertically with air) */}
-            <div className="my-auto pt-8 pb-4">
-              <h1 className="subpage-hero-title text-[28px] sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-                Contabilidad Integral <span className="text-[#00a996]">y Tributación</span>
-              </h1>
-              <p className="subpage-hero-desc mt-5 text-[15px] sm:text-lg text-white/75 max-w-2xl leading-relaxed font-light">
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 mt-4"
+              >
+                <Shield className="w-3.5 h-3.5 text-[#00a996]" />
+                <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">Contabilidad Integral</span>
+              </motion.div>
+              {/* H1 */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="hero-h1 text-[34px] sm:text-[46px] lg:text-[54px] xl:text-[62px] font-extrabold text-white leading-[1.1] tracking-tight"
+              >
+                Contabilidad Integral{" "}
+                <span className="text-[#00a996]">y Tributación</span>
+              </motion.h1>
+              {/* Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="hero-subtitle mt-6 text-[15px] sm:text-[17px] lg:text-[18px] text-[#f8fafc]/80 max-w-lg leading-relaxed font-light"
+              >
                 Terceriza tu contabilidad con expertos. Nosotros nos encargamos de los libros electrónicos,
                 declaraciones mensuales, planillas y cumplimiento tributario completo para que tú te
                 enfoques en hacer crecer tu negocio.
-              </p>
-            </div>
-            {/* Block 3: CTA Buttons (bottom) */}
-            <div className="subpage-hero-ctas flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => openModal(4)}
-                className="inline-flex items-center justify-center gap-2.5 bg-[#008775] hover:bg-[#006655] text-white px-7 py-3.5 rounded-xl text-[15px] font-bold transition-all shadow-lg shadow-[#008775]/30 hover:shadow-xl active:scale-[0.98]"
+              </motion.p>
+              {/* CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="hero-ctas mt-10 flex flex-col sm:flex-row gap-3.5"
               >
-                Cotización Personalizada
-                <ArrowRight className="w-4 h-4" />
-              </button>
-              <Link
-                href="/defensa-tributaria-sunat"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-3.5 rounded-xl text-[15px] font-semibold transition-all backdrop-blur-sm"
+                <button
+                  onClick={() => openModal(4)}
+                  className="inline-flex items-center justify-center gap-2.5 bg-[#008775] hover:bg-[#006655] text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#008775]/30 hover:shadow-xl hover:shadow-[#008775]/40 active:scale-[0.98]"
+                >
+                  Cotización Personalizada
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <Link
+                  href="/defensa-tributaria-sunat"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm"
+                >
+                  Problemas con SUNAT
+                </Link>
+              </motion.div>
+              {/* Trust badges */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.45 }}
+                className="hero-trust mt-7 flex flex-wrap gap-x-5 gap-y-2 text-white/45 text-xs sm:text-sm"
               >
-                Problemas con SUNAT
-              </Link>
-            </div>
-          </motion.div>
+                {[
+                  "Declaraciones mensuales",
+                  "Libros electrónicos",
+                  "Planilla laboral"
+                ].map((badge) => (
+                  <span key={badge} className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#00a996]" />
+                    {badge}
+                  </span>
+                ))}
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
         {/* Scroll down indicator */}
         <ScrollDownIndicator />

@@ -360,7 +360,7 @@ export function DefensaPage() {
 
       {/* CTA */}
       <SectionDivider from="#ffffff" to="#991b1b" />
-      <section id="contacto" className="py-20 bg-gradient-to-r from-urgent to-navy">
+      <section id="contacto" className="py-20 lg:py-28 bg-gradient-to-r from-urgent to-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             El tiempo es tu peor enemigo frente a SUNAT

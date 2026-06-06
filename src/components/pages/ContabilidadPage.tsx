@@ -201,7 +201,7 @@ export function ContabilidadPage() {
 
       {/* ═══ CONTABILIDAD DIGITAL — Plan Promocional ═══ */}
       <SectionDivider from="#ffffff" to="#f0fdf4" />
-      <section id="contabilidad-digital" className="py-16 sm:py-20 lg:py-24 bg-[#f0fdf4]">
+      <section id="contabilidad-digital" className="py-20 lg:py-28 bg-[#f0fdf4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Header */}
@@ -472,7 +472,7 @@ export function ContabilidadPage() {
 
       {/* CTA */}
       <SectionDivider from="#f9fafb" to="#002350" />
-      <section id="contacto" className="py-20 bg-gradient-to-r from-navy to-purple">
+      <section id="contacto" className="py-20 lg:py-28 bg-gradient-to-r from-navy to-purple">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             ¿Listo para gestionar tu contabilidad?

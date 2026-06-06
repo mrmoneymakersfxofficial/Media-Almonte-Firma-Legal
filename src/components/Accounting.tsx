@@ -94,7 +94,7 @@ export function Accounting() {
                     <BarChart3 className="w-6 h-6 text-emerald-light" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold">Consultar por Desde S/ 300/mes</h3>
+                    <h3 className="text-xl font-bold">Desde S/300 al mes</h3>
                     <p className="text-white/60 text-sm">Contabilidad completa</p>
                   </div>
                 </div>

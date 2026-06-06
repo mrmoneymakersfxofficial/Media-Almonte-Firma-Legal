@@ -248,7 +248,7 @@ function CompanyFormation() {
     },
     {
       icon: Building2,
-      title: "Licitaciones del Estado",
+      title: "Licitaciones con el Estado",
       description:
         "Podrás trabajar con el Estado y aprovechar sus programas empresariales.",
     },

@@ -293,8 +293,8 @@ export function ConstitucionPage() {
                   </div>
                 )}
 
-                {/* CONTENEDOR SUPERIOR: Todo el contenido informativo */}
-                <div className="space-y-6">
+                {/* CONTENEDOR SUPERIOR: Título, Inversión y Lista de Checks */}
+                <div className="flex-grow flex flex-col justify-between">
                   {/* Header: name + price */}
                   <div className="text-center">
                     <h3 className="text-2xl font-bold text-navy">{pkg.name}</h3>
@@ -307,24 +307,24 @@ export function ConstitucionPage() {
                   </div>
 
                   {/* Features list */}
-                  <div className="space-y-3">
+                  <ul className="space-y-3 pb-6 mt-6">
                     {pkg.features.map((feature) => (
-                      <div key={feature} className="flex items-start gap-3">
+                      <li key={feature} className="flex items-start gap-3">
                         <CheckCircle2 className={`w-5 h-5 mt-0.5 shrink-0 ${pkg.recommended ? "text-emerald" : "text-navy/40"}`} />
                         <span className="text-sm text-muted-foreground">{feature}</span>
-                      </div>
+                      </li>
                     ))}
-                  </div>
-
-                  {/* Ideal para */}
-                  <div className="bg-gray-50 rounded-xl p-4">
-                    <p className="text-xs font-semibold text-navy mb-1">Ideal para:</p>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{pkg.idealFor}</p>
-                  </div>
+                  </ul>
                 </div>
 
-                {/* CONTENEDOR INFERIOR: CTA empujado al fondo */}
-                <div className="mt-8 pt-4 border-t border-gray-100">
+                {/* CONTENEDOR CENTRAL: "Ideal para" alineado obligatoriamente */}
+                <div className="min-h-[120px] flex flex-col justify-start bg-gray-50 rounded-xl p-4 mb-6">
+                  <p className="text-xs font-semibold text-navy mb-1">Ideal para:</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{pkg.idealFor}</p>
+                </div>
+
+                {/* CONTENEDOR INFERIOR: Botón CTA al fondo */}
+                <div className="mt-auto pt-4 border-t border-gray-100">
                   <button
                     onClick={() => openModal(pkg.serviceId)}
                     className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm transition-all duration-300 ${

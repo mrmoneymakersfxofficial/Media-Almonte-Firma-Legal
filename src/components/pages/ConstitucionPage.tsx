@@ -274,14 +274,14 @@ export function ConstitucionPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {packages.map((pkg, i) => (
               <motion.div
                 key={pkg.name}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 * i }}
-                className={`relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm border flex flex-col h-full transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] ${
+                className={`relative flex flex-col justify-between h-full bg-white rounded-2xl p-6 lg:p-8 shadow-sm border transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] ${
                   pkg.recommended ? "pricing-recommended border-emerald shadow-md lg:scale-[1.03]" : "border-gray-200"
                 }`}
               >
@@ -293,43 +293,48 @@ export function ConstitucionPage() {
                   </div>
                 )}
 
-                {/* Header: name + price */}
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-navy">{pkg.name}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{pkg.fullName}</p>
-                  <div className="mt-4">
-                    <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">Inversión</p>
-                    <span className="text-2xl sm:text-3xl font-extrabold text-navy">A Consultar</span>
-                    <p className="text-[11px] text-muted-foreground mt-1 italic">Tarifa adaptada según el capital social de tu empresa</p>
+                {/* CONTENEDOR SUPERIOR: Todo el contenido informativo */}
+                <div className="space-y-6">
+                  {/* Header: name + price */}
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-navy">{pkg.name}</h3>
+                    <p className="text-sm text-muted-foreground mt-1">{pkg.fullName}</p>
+                    <div className="mt-4">
+                      <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">Inversión</p>
+                      <span className="text-2xl sm:text-3xl font-extrabold text-navy">A Consultar</span>
+                      <p className="text-[11px] text-muted-foreground mt-1 italic">Tarifa adaptada según el capital social de tu empresa</p>
+                    </div>
+                  </div>
+
+                  {/* Features list */}
+                  <div className="space-y-3">
+                    {pkg.features.map((feature) => (
+                      <div key={feature} className="flex items-start gap-3">
+                        <CheckCircle2 className={`w-5 h-5 mt-0.5 shrink-0 ${pkg.recommended ? "text-emerald" : "text-navy/40"}`} />
+                        <span className="text-sm text-muted-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Ideal para */}
+                  <div className="bg-gray-50 rounded-xl p-4">
+                    <p className="text-xs font-semibold text-navy mb-1">Ideal para:</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{pkg.idealFor}</p>
                   </div>
                 </div>
 
-                {/* Features list — flex-grow fills remaining space */}
-                <div className="space-y-3 mb-6 flex-grow">
-                  {pkg.features.map((feature) => (
-                    <div key={feature} className="flex items-start gap-3">
-                      <CheckCircle2 className={`w-5 h-5 mt-0.5 shrink-0 ${pkg.recommended ? "text-emerald" : "text-navy/40"}`} />
-                      <span className="text-sm text-muted-foreground">{feature}</span>
-                    </div>
-                  ))}
+                {/* CONTENEDOR INFERIOR: CTA empujado al fondo */}
+                <div className="mt-8 pt-4 border-t border-gray-100">
+                  <button
+                    onClick={() => openModal(pkg.serviceId)}
+                    className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm transition-all duration-300 ${
+                      pkg.recommended ? "bg-emerald hover:bg-emerald-dark text-white shadow-md hover:shadow-lg" : "bg-navy hover:bg-navy-light text-white"
+                    }`}
+                  >
+                    Constituir mi {pkg.name}
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </div>
-
-                {/* Ideal para — aligned across all cards */}
-                <div className="bg-gray-50 rounded-xl p-4 mb-6">
-                  <p className="text-xs font-semibold text-navy mb-1">Ideal para:</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{pkg.idealFor}</p>
-                </div>
-
-                {/* CTA — always at bottom (mt-auto) */}
-                <button
-                  onClick={() => openModal(pkg.serviceId)}
-                  className={`mt-auto w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
-                    pkg.recommended ? "bg-emerald hover:bg-emerald-dark text-white shadow-md hover:shadow-lg" : "bg-navy hover:bg-navy-light text-white"
-                  }`}
-                >
-                  Constituir mi {pkg.name}
-                  <ArrowRight className="w-4 h-4" />
-                </button>
               </motion.div>
             ))}
           </div>

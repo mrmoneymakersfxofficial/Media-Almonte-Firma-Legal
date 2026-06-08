@@ -76,6 +76,8 @@ const packages = [
       "Libro de actas legalizado",
       "Estatutos y reglamento interno",
       "Asesoría en estructura cooperativa",
+      "Licencia de funcionamiento (Asesoría)",
+      "Permisos SBS (Asesoría)",
     ],
     idealFor: "Clientes que se dedican a la colocación de capitales con fondos propios, mínimo 12 socios.",
   },

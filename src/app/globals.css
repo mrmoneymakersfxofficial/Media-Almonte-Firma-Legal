@@ -872,38 +872,39 @@ html.mobile-menu-open .whatsapp-float {
    Reduce hero padding, hide counters, tighten spacing
    ═══════════════════════════════════════════════════════════════════════ */
 @media (max-height: 850px) {
-  /* Homepage hero: reduce vertical space */
+  /* Homepage hero: keep full viewport, tighten internal spacing */
   .hero-fade-top {
-    min-height: 100vh;
+    height: 100dvh;
+    height: 100vh;
     min-height: 100dvh;
-    height: auto;
+    min-height: 100vh;
     align-items: center;
   }
 
   .hero-content {
-    padding-top: 30px !important;
-    padding-bottom: 20px !important;
+    padding-top: 80px !important;
+    padding-bottom: 12px !important;
   }
 
   .hero-h1 {
-    margin-bottom: 8px !important;
+    margin-bottom: 6px !important;
   }
 
   .hero-subtitle {
     font-size: 14px !important;
-    margin-top: 8px !important;
-    margin-bottom: 16px !important;
+    margin-top: 6px !important;
+    margin-bottom: 12px !important;
     line-height: 1.5 !important;
   }
 
   .hero-badge {
     font-size: 11px;
     padding: 4px 12px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 
   .hero-ctas {
-    margin-top: 12px !important;
+    margin-top: 10px !important;
     gap: 8px !important;
   }
 
@@ -915,7 +916,7 @@ html.mobile-menu-open .whatsapp-float {
   }
 
   .hero-trust {
-    margin-top: 12px !important;
+    margin-top: 8px !important;
     font-size: 11px;
   }
 

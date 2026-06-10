@@ -64,13 +64,13 @@ export function ContabilidadPage() {
   return (
     <SiteLayout>
       {/* ═══ SUBPAGE HERO — Responsive Layout ═══ */}
-      <section id="hero" className="relative w-full min-h-[90vh] xl:min-h-[85vh] flex items-center justify-start overflow-hidden bg-[#0B2146] pt-[120px] pb-16 px-6 sm:px-12 lg:px-20 xl:px-32">
+      <section id="hero" className="relative w-full min-h-screen min-h-[100dvh] flex items-center justify-start overflow-hidden bg-[#0B2146] pt-[100px] pb-12 px-6 sm:px-12 lg:px-20 xl:px-32">
         {/* Background image layer */}
         <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <img
             src="/jhon-contabilidad.webp"
             alt="Especialista Jhon&Asociados"
-            className="w-full h-full object-cover object-[center_20%] md:object-[65%_center] lg:object-[75%_center] xl:object-[80%_center] scale-105 brightness-[0.40] md:brightness-100"
+            className="w-full h-full object-cover object-[center_15%] md:object-[60%_20%] lg:object-[70%_22%] xl:object-[75%_20%] scale-105 brightness-[0.40] md:brightness-100"
           />
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#0B2146] via-[#0B2146]/80 to-transparent w-full md:w-[70%] lg:w-[60%] z-10"></div>
           <div className="block md:hidden absolute inset-0 bg-gradient-to-b from-[#0B2146]/90 via-[#0B2146]/60 to-[#050F21] z-10"></div>

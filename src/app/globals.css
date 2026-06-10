@@ -941,6 +941,51 @@ html.mobile-menu-open .whatsapp-float {
   }
 }
 
+/* ═══════════════════════════════════════════════════════════════════════
+   SHORT VIEWPORT — Subpage heroes (1366x768 & similar)
+   Tighten internal spacing so content fits within 100dvh
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-height: 850px) {
+  section#hero {
+    padding-top: 80px !important;
+    padding-bottom: 8px !important;
+  }
+
+  section#hero .hero-h1 {
+    margin-bottom: 4px !important;
+  }
+
+  section#hero .hero-subtitle {
+    font-size: 14px !important;
+    margin-top: 4px !important;
+    margin-bottom: 8px !important;
+    line-height: 1.5 !important;
+  }
+
+  section#hero .hero-badge {
+    font-size: 11px;
+    padding: 4px 12px;
+    margin-bottom: 6px;
+  }
+
+  section#hero .hero-ctas {
+    margin-top: 8px !important;
+    gap: 8px !important;
+  }
+
+  section#hero .hero-ctas button,
+  section#hero .hero-ctas a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 13px;
+  }
+
+  section#hero .hero-trust {
+    margin-top: 6px !important;
+    font-size: 11px;
+  }
+}
+
 @media (max-height: 700px) {
   .hero-h1 {
     margin-bottom: 4px !important;

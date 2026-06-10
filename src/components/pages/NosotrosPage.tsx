@@ -98,7 +98,7 @@ export function NosotrosPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 mt-4"
+              className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 mt-5"
             >
               <Shield className="w-3.5 h-3.5 text-[#00a996]" />
               <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">Más de 20 años de Experiencia</span>
@@ -108,7 +108,7 @@ export function NosotrosPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-white leading-tight tracking-tight"
+              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-white leading-tight tracking-tight mt-4"
             >
               Jhon&<span className="text-[#00a996]">Asociados</span>
             </motion.h1>
@@ -117,7 +117,7 @@ export function NosotrosPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="hero-subtitle mt-6 text-[15px] sm:text-[17px] lg:text-[18px] text-[#f8fafc]/80 max-w-lg leading-relaxed font-light"
+              className="hero-subtitle mt-5 text-[15px] sm:text-[17px] lg:text-[18px] text-[#f8fafc]/80 max-w-lg leading-relaxed font-light"
             >
               Transparencia, tecnología y resultados. Conoce al equipo que protege el patrimonio
               de más de 500 empresas en Perú.
@@ -127,7 +127,7 @@ export function NosotrosPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="hero-ctas mt-10 flex flex-col sm:flex-row gap-3.5"
+              className="hero-ctas mt-8 flex flex-col sm:flex-row gap-3.5"
             >
               <button
                 onClick={() => openModal()}
@@ -149,7 +149,7 @@ export function NosotrosPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="hero-trust mt-7 flex flex-wrap gap-x-5 gap-y-2 text-white/45 text-xs sm:text-sm"
+              className="hero-trust mt-8 flex flex-wrap gap-x-6 gap-y-2.5 text-white/45 text-xs sm:text-sm"
             >
               {[
                 "+21,000 empresas",

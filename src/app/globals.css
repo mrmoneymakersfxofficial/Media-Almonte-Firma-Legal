@@ -943,46 +943,46 @@ html.mobile-menu-open .whatsapp-float {
 
 /* ═══════════════════════════════════════════════════════════════════════
    SHORT VIEWPORT — Subpage heroes (1366x768 & similar)
-   Tighten internal spacing so content fits within 100dvh
+   Moderate spacing adjustments so content breathes within 100dvh
    ═══════════════════════════════════════════════════════════════════════ */
 @media (max-height: 850px) {
   section#hero {
-    padding-top: 80px !important;
-    padding-bottom: 8px !important;
+    padding-top: 90px !important;
+    padding-bottom: 16px !important;
   }
 
   section#hero .hero-h1 {
-    margin-bottom: 4px !important;
+    margin-bottom: 10px !important;
   }
 
   section#hero .hero-subtitle {
-    font-size: 14px !important;
-    margin-top: 4px !important;
-    margin-bottom: 8px !important;
-    line-height: 1.5 !important;
+    font-size: 15px !important;
+    margin-top: 12px !important;
+    margin-bottom: 16px !important;
+    line-height: 1.6 !important;
   }
 
   section#hero .hero-badge {
-    font-size: 11px;
-    padding: 4px 12px;
-    margin-bottom: 6px;
+    font-size: 12px;
+    padding: 5px 14px;
+    margin-bottom: 10px;
   }
 
   section#hero .hero-ctas {
-    margin-top: 8px !important;
-    gap: 8px !important;
+    margin-top: 20px !important;
+    gap: 10px !important;
   }
 
   section#hero .hero-ctas button,
   section#hero .hero-ctas a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 13px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 14px;
   }
 
   section#hero .hero-trust {
-    margin-top: 6px !important;
-    font-size: 11px;
+    margin-top: 16px !important;
+    font-size: 12px;
   }
 }
 

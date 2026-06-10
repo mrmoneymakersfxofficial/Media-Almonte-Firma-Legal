@@ -107,7 +107,7 @@ export function ConstitucionPage() {
   return (
     <SiteLayout>
       {/* ═══ SUBPAGE HERO — Responsive Layout ═══ */}
-      <section id="hero" className="relative w-full min-h-screen min-h-[100dvh] flex items-center justify-start overflow-hidden bg-[#0B2146] pt-[100px] pb-12 px-6 sm:px-12 lg:px-20 xl:px-32">
+      <section id="hero" className="relative w-full min-h-screen min-h-[100dvh] flex items-center overflow-hidden bg-[#0B2146] pt-[100px] pb-12">
         {/* Background image layer */}
         <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <img
@@ -118,8 +118,9 @@ export function ConstitucionPage() {
           <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#0B2146] via-[#0B2146]/80 to-transparent w-full md:w-[70%] lg:w-[60%] z-10"></div>
           <div className="block md:hidden absolute inset-0 bg-gradient-to-b from-[#0B2146]/90 via-[#0B2146]/60 to-[#050F21] z-10"></div>
         </div>
-        {/* Content */}
-        <div className="relative z-20 w-full max-w-xl md:max-w-2xl lg:max-w-3xl flex flex-col justify-center text-left">
+        {/* Content — same container as homepage */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="w-full max-w-xl md:max-w-2xl lg:max-w-3xl flex flex-col justify-center text-left">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
             {/* Breadcrumb */}
             <Link href="/" className="inline-flex items-center gap-1 text-white/50 hover:text-white/75 text-[13px] transition-colors">
@@ -194,6 +195,7 @@ export function ConstitucionPage() {
               ))}
             </motion.div>
           </motion.div>
+        </div>
         </div>
         {/* Scroll down indicator */}
         <ScrollDownIndicator />

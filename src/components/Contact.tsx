@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    detail: "contacto@jhonyasociados.com",
+    detail: "contacto@jhonasociados.com",
     description: "Respuesta en 24h",
     color: "text-navy",
     bg: "bg-navy/10",

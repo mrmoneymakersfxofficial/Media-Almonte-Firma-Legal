@@ -48,7 +48,7 @@ const credentials = [
 
 const contactInfo = [
   { icon: MessageCircle, title: "WhatsApp", detail: "+51 943 366 950", description: "Respuesta inmediata", color: "text-whatsapp", bg: "bg-whatsapp/10" },
-  { icon: Mail, title: "Email", detail: "contacto@jhonyasociados.com", description: "Respuesta en 24h", color: "text-navy", bg: "bg-navy/10" },
+  { icon: Mail, title: "Email", detail: "contacto@jhonasociados.com", description: "Respuesta en 24h", color: "text-navy", bg: "bg-navy/10" },
   { icon: MapPin, title: "Ubicación", detail: "Lima, Perú", description: "Atención virtual y presencial", color: "text-purple", bg: "bg-purple/10" },
   { icon: Clock, title: "Horario", detail: "Lun - Vie: 8:00 - 18:00", description: "Sáb: 9:00 - 13:00", color: "text-emerald", bg: "bg-emerald/10" },
 ];
@@ -140,7 +140,7 @@ export function NosotrosPage() {
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <a
-                  href="mailto:contacto@jhonyasociados.com"
+                  href="mailto:contacto@jhonasociados.com"
                   className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm"
                 >
                   <Mail className="w-4 h-4" />

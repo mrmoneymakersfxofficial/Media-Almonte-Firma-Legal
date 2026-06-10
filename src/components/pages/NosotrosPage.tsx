@@ -75,101 +75,94 @@ export function NosotrosPage() {
   return (
     <SiteLayout>
       {/* ═══ SUBPAGE HERO — Responsive Layout ═══ */}
-      <section id="hero" className="relative min-h-[70vh] sm:min-h-[80vh] lg:min-h-[85vh] w-full flex items-center overflow-hidden bg-[#0B2146]">
-        {/* Background image */}
-        <img
-          src="/jhon-nosotros.webp"
-          alt="Especialista Jhon&Asociados"
-          className="absolute inset-0 w-full h-full z-0 object-cover object-[80%_center] md:object-[right_center] xl:object-[85%_center] brightness-[0.45] lg:brightness-100 lg:opacity-90"
-        />
-        {/* Gradient: Desktop — horizontal from left */}
-        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#0B2146] via-[#0B2146]/75 to-transparent w-[60%] z-[1]" />
-        {/* Gradient: Mobile — vertical */}
-        <div className="block lg:hidden absolute inset-0 bg-gradient-to-b from-[#0B2146]/90 via-[#0B2146]/70 to-[#050F21] z-[1]" />
+      <section id="hero" className="relative w-full min-h-[90vh] xl:min-h-[85vh] flex items-center justify-start overflow-hidden bg-[#0B2146] pt-[120px] pb-16 px-6 sm:px-12 lg:px-20 xl:px-32">
+        {/* Background image layer */}
+        <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+          <img
+            src="/jhon-nosotros.webp"
+            alt="Especialista Jhon&Asociados"
+            className="w-full h-full object-cover object-[center_20%] md:object-[65%_center] lg:object-[75%_center] xl:object-[80%_center] scale-105 brightness-[0.40] md:brightness-100"
+          />
+          <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#0B2146] via-[#0B2146]/80 to-transparent w-full md:w-[70%] lg:w-[60%] z-10"></div>
+          <div className="block md:hidden absolute inset-0 bg-gradient-to-b from-[#0B2146]/90 via-[#0B2146]/60 to-[#050F21] z-10"></div>
+        </div>
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-6 md:px-12 xl:px-24 pt-[80px] sm:pt-[100px] lg:pt-[100px] xl:pt-[110px] pb-12 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
-            {/* Left column: text and buttons */}
-            <div className="max-w-xl text-left">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
-              {/* Breadcrumb */}
-              <Link href="/" className="inline-flex items-center gap-1 text-white/50 hover:text-white/75 text-[13px] transition-colors">
-                Inicio <ChevronRight className="w-4 h-4" /> Nosotros
-              </Link>
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 mt-4"
-              >
-                <Shield className="w-3.5 h-3.5 text-[#00a996]" />
-                <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">Más de 20 años de Experiencia</span>
-              </motion.div>
-              {/* H1 */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="hero-h1 text-[34px] sm:text-[46px] lg:text-[54px] xl:text-[62px] font-extrabold text-white leading-[1.1] tracking-tight"
-              >
-                Jhon&<span className="text-[#00a996]">Asociados</span>
-              </motion.h1>
-              {/* Subtitle */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="hero-subtitle mt-6 text-[15px] sm:text-[17px] lg:text-[18px] text-[#f8fafc]/80 max-w-lg leading-relaxed font-light"
-              >
-                Transparencia, tecnología y resultados. Conoce al equipo que protege el patrimonio
-                de más de 500 empresas en Perú.
-              </motion.p>
-              {/* CTAs */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="hero-ctas mt-10 flex flex-col sm:flex-row gap-3.5"
-              >
-                <button
-                  onClick={() => openModal()}
-                  className="inline-flex items-center justify-center gap-2.5 bg-[#008775] hover:bg-[#006655] text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#008775]/30 hover:shadow-xl hover:shadow-[#008775]/40 active:scale-[0.98]"
-                >
-                  Consultoría Gratuita
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-                <a
-                  href="mailto:contacto@jhonasociados.com"
-                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm"
-                >
-                  <Mail className="w-4 h-4" />
-                  Escríbenos
-                </a>
-              </motion.div>
-              {/* Trust badges */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.45 }}
-                className="hero-trust mt-7 flex flex-wrap gap-x-5 gap-y-2 text-white/45 text-xs sm:text-sm"
-              >
-                {[
-                  "+21,000 empresas",
-                  "Transparencia total",
-                  "Resultados comprobados"
-                ].map((badge) => (
-                  <span key={badge} className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#00a996]" />
-                    {badge}
-                  </span>
-                ))}
-              </motion.div>
+        <div className="relative z-20 w-full max-w-xl md:max-w-2xl lg:max-w-3xl flex flex-col justify-center text-left">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
+            {/* Breadcrumb */}
+            <Link href="/" className="inline-flex items-center gap-1 text-white/50 hover:text-white/75 text-[13px] transition-colors">
+              Inicio <ChevronRight className="w-4 h-4" /> Nosotros
+            </Link>
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 mt-4"
+            >
+              <Shield className="w-3.5 h-3.5 text-[#00a996]" />
+              <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">Más de 20 años de Experiencia</span>
             </motion.div>
-            </div>
-            {/* Right column: spacer for specialist image area on PC/TV */}
-            <div className="hidden lg:block h-[450px]"></div>
-          </div>
+            {/* H1 */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-white leading-tight tracking-tight"
+            >
+              Jhon&<span className="text-[#00a996]">Asociados</span>
+            </motion.h1>
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hero-subtitle mt-6 text-[15px] sm:text-[17px] lg:text-[18px] text-[#f8fafc]/80 max-w-lg leading-relaxed font-light"
+            >
+              Transparencia, tecnología y resultados. Conoce al equipo que protege el patrimonio
+              de más de 500 empresas en Perú.
+            </motion.p>
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="hero-ctas mt-10 flex flex-col sm:flex-row gap-3.5"
+            >
+              <button
+                onClick={() => openModal()}
+                className="inline-flex items-center justify-center gap-2.5 bg-[#008775] hover:bg-[#006655] text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#008775]/30 hover:shadow-xl hover:shadow-[#008775]/40 active:scale-[0.98]"
+              >
+                Consultoría Gratuita
+                <ArrowRight className="w-4 h-4" />
+              </button>
+              <a
+                href="mailto:contacto@jhonasociados.com"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm"
+              >
+                <Mail className="w-4 h-4" />
+                Escríbenos
+              </a>
+            </motion.div>
+            {/* Trust badges */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              className="hero-trust mt-7 flex flex-wrap gap-x-5 gap-y-2 text-white/45 text-xs sm:text-sm"
+            >
+              {[
+                "+21,000 empresas",
+                "Transparencia total",
+                "Resultados comprobados"
+              ].map((badge) => (
+                <span key={badge} className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#00a996]" />
+                  {badge}
+                </span>
+              ))}
+            </motion.div>
+          </motion.div>
         </div>
         {/* Scroll down indicator */}
         <ScrollDownIndicator />

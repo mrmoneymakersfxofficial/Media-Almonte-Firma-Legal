@@ -48,3 +48,30 @@ Add `id` attributes to all `<section>` elements across 4 subpage files that didn
 - **IDs already present (skipped):** 2 (`asesoria-inversionista`, `planillas-laboral`)
 - **No other code was modified** — only `id="..."` attributes added to `<section>` tags
 - **Convention used:** kebab-case Spanish slugs derived from headings; `hero` for subpage-hero sections; `contacto` for CTA/contact sections
+---
+Task ID: 1
+Agent: Main
+Task: Fix responsive layout for 1366x768 laptop resolution across homepage and all subpages
+
+Work Log:
+- Read all hero sections: Hero.tsx (homepage), ConstitucionPage.tsx, ContabilidadPage.tsx, DefensaPage.tsx, NosotrosPage.tsx
+- Read globals.css to understand CSS class-based hero system
+- Identified root causes of "squashed" layout: fixed min-h-[85vh] with excessive pt-[100px], rigid h-[450px] spacer, large fixed font sizes
+- Restructured all 4 subpage heroes: removed grid/2-col layout, removed h-[450px] spacer, simplified to single-column content with max-w-xl/md:max-w-2xl/lg:max-w-3xl
+- Changed subpage hero section from `min-h-[70vh] sm:min-h-[80vh] lg:min-h-[85vh]` to `min-h-[90vh] xl:min-h-[85vh]` with `pt-[120px] pb-16`
+- Wrapped background image in container div with responsive object positions: `object-[center_20%] md:object-[65%_center] lg:object-[75%_center] xl:object-[80%_center] scale-105`
+- Changed gradient breakpoints from lg to md for earlier desktop gradient activation
+- Changed all H1 font sizes from `text-[34px] sm:text-[46px] lg:text-[54px] xl:text-[62px]` to `text-2xl sm:text-3xl md:text-4xl xl:text-5xl`
+- Changed H1 line-height from `leading-[1.1]` to `leading-tight`
+- Updated Hero.tsx homepage H1 to same responsive font classes
+- Removed CSS font-size overrides from hero-h1 rules (desktop, mobile, 850px, 700px breakpoints) — now only controls margin-bottom
+- Added CSS rules for subpage hero padding reduction on short viewports (max-height: 850px and 700px)
+- Preserved ALL text content, image URLs, CTAs, trust badges, animations — no content changes
+- Build verified: all 5 pages compile successfully
+
+Stage Summary:
+- All 5 hero sections now fully responsive with fluid typography
+- Background images properly focused on face with scale-105 and responsive object-position
+- Subpage heroes use simplified single-column layout without grid/spacer
+- Homepage hero CSS no longer forces fixed font sizes, allowing Tailwind responsive classes to work
+- Short viewport (1366x768) gets reduced padding via CSS media queries

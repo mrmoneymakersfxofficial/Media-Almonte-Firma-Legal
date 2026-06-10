@@ -290,7 +290,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="hero-h1 text-[34px] sm:text-[46px] lg:text-[54px] xl:text-[62px] font-extrabold text-white leading-[1.1] tracking-tight"
+              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-white leading-tight tracking-tight"
             >
               {slide.h1}
             </motion.h1>

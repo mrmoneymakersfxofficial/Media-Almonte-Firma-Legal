@@ -766,12 +766,10 @@ html.mobile-menu-open .whatsapp-float {
   justify-content: center;
 }
 
-/* ─── Desktop: H1 large authority ─── */
+/* ─── Desktop: H1 spacing only (sizing handled by Tailwind) ─── */
 @media (min-width: 1024px) {
   .hero-h1 {
-    font-size: 54px !important;
-    line-height: 1.15 !important;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 }
 
@@ -827,11 +825,9 @@ html.mobile-menu-open .whatsapp-float {
     margin-bottom: 20px;
   }
 
-  /* H1: 34px — bigger for authority */
+  /* H1: sizing handled by Tailwind text-2xl responsive classes */
   .hero-h1 {
-    font-size: 34px !important;
-    line-height: 1.2 !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 12px !important;
     color: #ffffff;
   }
 
@@ -890,9 +886,7 @@ html.mobile-menu-open .whatsapp-float {
   }
 
   .hero-h1 {
-    font-size: 38px !important;
-    line-height: 1.15 !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 8px !important;
   }
 
   .hero-subtitle {
@@ -948,8 +942,7 @@ html.mobile-menu-open .whatsapp-float {
 
 @media (max-height: 700px) {
   .hero-h1 {
-    font-size: 32px !important;
-    margin-bottom: 6px !important;
+    margin-bottom: 4px !important;
   }
 
   .hero-subtitle {
@@ -970,6 +963,23 @@ html.mobile-menu-open .whatsapp-float {
 
   .brand-logo-fixed {
     height: 42px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   SUBPAGE HERO — Short viewport padding (1366x768)
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-height: 850px) {
+  section#hero {
+    padding-top: 80px !important;
+    padding-bottom: 32px !important;
+  }
+}
+
+@media (max-height: 700px) {
+  section#hero {
+    padding-top: 70px !important;
+    padding-bottom: 24px !important;
   }
 }
 

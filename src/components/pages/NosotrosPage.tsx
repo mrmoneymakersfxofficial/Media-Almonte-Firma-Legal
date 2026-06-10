@@ -74,26 +74,23 @@ export function NosotrosPage() {
 
   return (
     <SiteLayout>
-      {/* ═══ SUBPAGE HERO — Matches Homepage Hero Architecture ═══ */}
-      <section id="hero" className="relative flex overflow-hidden hero-fade-top">
-        {/* Layer 0: Background photo - full bleed */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <img
-            src="/jhon-nosotros.webp"
-            alt="Especialista Jhon&Asociados"
-            className="w-full h-full object-cover object-[70%_15%] lg:object-[right_10%_top_15%] brightness-[0.45] lg:brightness-[0.85] lg:contrast-[1.02]"
-          />
-        </div>
-        {/* Layer 1: Brand overlay (same as home) */}
-        <div className="hero-brand-overlay" />
-        {/* Layer 2: Decorative blurs (home-sized) */}
-        <div className="hero-decor-layer">
-          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#481180]/12 rounded-full blur-[100px]" />
-          <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-[#008775]/8 rounded-full blur-[100px]" />
-        </div>
-        {/* Layer 20: Content */}
-        <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="hero-text-col">
+      {/* ═══ SUBPAGE HERO — Responsive Layout ═══ */}
+      <section id="hero" className="relative min-h-[90vh] lg:min-h-[85vh] w-full flex items-center overflow-hidden bg-[#0B2146]">
+        {/* Background image */}
+        <img
+          src="/jhon-nosotros.webp"
+          alt="Especialista Jhon&Asociados"
+          className="absolute inset-0 w-full h-full z-0 object-cover object-[80%_center] md:object-[right_center] xl:object-[85%_center] brightness-[0.45] lg:brightness-100 lg:opacity-90"
+        />
+        {/* Gradient: Desktop — horizontal from left */}
+        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#0B2146] via-[#0B2146]/75 to-transparent w-[60%] z-[1]" />
+        {/* Gradient: Mobile — vertical */}
+        <div className="block lg:hidden absolute inset-0 bg-gradient-to-b from-[#0B2146]/90 via-[#0B2146]/70 to-[#050F21] z-[1]" />
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-6 md:px-12 xl:px-24 pt-[135px] lg:pt-[110px] pb-12 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+            {/* Left column: text and buttons */}
+            <div className="max-w-xl text-left">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
               {/* Breadcrumb */}
               <Link href="/" className="inline-flex items-center gap-1 text-white/50 hover:text-white/75 text-[13px] transition-colors">
@@ -169,6 +166,9 @@ export function NosotrosPage() {
                 ))}
               </motion.div>
             </motion.div>
+            </div>
+            {/* Right column: spacer for specialist image area on PC/TV */}
+            <div className="hidden lg:block h-[450px]"></div>
           </div>
         </div>
         {/* Scroll down indicator */}

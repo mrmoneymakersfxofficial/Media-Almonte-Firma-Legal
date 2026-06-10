@@ -872,6 +872,108 @@ html.mobile-menu-open .whatsapp-float {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
+   SHORT VIEWPORT — Laptop 1366x768 & similar
+   Reduce hero padding, hide counters, tighten spacing
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-height: 850px) {
+  /* Homepage hero: reduce vertical space */
+  .hero-fade-top {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    align-items: center;
+  }
+
+  .hero-content {
+    padding-top: 30px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .hero-h1 {
+    font-size: 38px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-subtitle {
+    font-size: 14px !important;
+    margin-top: 8px !important;
+    margin-bottom: 16px !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero-badge {
+    font-size: 11px;
+    padding: 4px 12px;
+    margin-bottom: 12px;
+  }
+
+  .hero-ctas {
+    margin-top: 12px !important;
+    gap: 8px !important;
+  }
+
+  .hero-ctas button,
+  .hero-ctas a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 13px;
+  }
+
+  .hero-trust {
+    margin-top: 12px !important;
+    font-size: 11px;
+  }
+
+  /* Hide counters on short screens — not enough room */
+  .hero-counters {
+    display: none !important;
+  }
+
+  /* Smaller logo on short viewports */
+  .brand-logo-fixed {
+    height: 50px !important;
+  }
+
+  .navbar-brand-fixed {
+    padding: 8px 0 !important;
+  }
+
+  /* Scroll down indicator closer to bottom */
+  .scroll-down-indicator {
+    bottom: 12px;
+    font-size: 11px;
+  }
+}
+
+@media (max-height: 700px) {
+  .hero-h1 {
+    font-size: 32px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .hero-subtitle {
+    font-size: 13px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-ctas button,
+  .hero-ctas a {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .hero-trust {
+    display: none !important;
+  }
+
+  .brand-logo-fixed {
+    height: 42px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
    SUBPAGE HERO — Defensa overlay only (other subpages reuse home hero classes)
    ═══════════════════════════════════════════════════════════════════════ */
 

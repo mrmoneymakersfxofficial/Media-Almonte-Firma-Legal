@@ -64,7 +64,7 @@ export function ContabilidadPage() {
   return (
     <SiteLayout>
       {/* ═══ SUBPAGE HERO — Responsive Layout ═══ */}
-      <section id="hero" className="relative min-h-[90vh] lg:min-h-[85vh] w-full flex items-center overflow-hidden bg-[#0B2146]">
+      <section id="hero" className="relative min-h-[70vh] sm:min-h-[80vh] lg:min-h-[85vh] w-full flex items-center overflow-hidden bg-[#0B2146]">
         {/* Background image */}
         <img
           src="/jhon-contabilidad.webp"
@@ -76,7 +76,7 @@ export function ContabilidadPage() {
         {/* Gradient: Mobile — vertical */}
         <div className="block lg:hidden absolute inset-0 bg-gradient-to-b from-[#0B2146]/90 via-[#0B2146]/70 to-[#050F21] z-[1]" />
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-6 md:px-12 xl:px-24 pt-[135px] lg:pt-[110px] pb-12 w-full">
+        <div className="relative z-10 container mx-auto px-6 md:px-12 xl:px-24 pt-[80px] sm:pt-[100px] lg:pt-[100px] xl:pt-[110px] pb-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left column: text and buttons */}
             <div className="max-w-xl text-left">

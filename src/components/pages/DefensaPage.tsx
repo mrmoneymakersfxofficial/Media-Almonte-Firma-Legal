@@ -129,22 +129,12 @@ export function DefensaPage() {
             <Link href="/" className="inline-flex items-center gap-1 text-white/50 hover:text-white/75 text-[13px] transition-colors">
               Inicio <ChevronRight className="w-4 h-4" /> Asesoría Tributaria
             </Link>
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 mt-5"
-            >
-              <Shield className="w-3.5 h-3.5 text-[#00a996]" />
-              <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">Defensa Tributaria Urgente</span>
-            </motion.div>
             {/* H1 */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-white leading-tight tracking-tight mt-4"
+              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-white leading-tight tracking-tight mt-5"
             >
               ¿SUNAT te{" "}
               <span className="text-[#ef4444]">fiscalizó</span>?

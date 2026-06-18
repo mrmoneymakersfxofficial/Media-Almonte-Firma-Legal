@@ -62,7 +62,7 @@ export function TaxDefense() {
       {/* Subtle urgent background */}
       <div className="absolute inset-0 bg-gradient-to-br from-red-50/50 via-transparent to-red-50/30" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div ref={ref} className="text-center max-w-3xl mx-auto mb-16">
           <motion.div

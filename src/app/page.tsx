@@ -33,7 +33,7 @@ function FounderPresentation() {
 
   return (
     <section id="fundador" className="py-20 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile: header text → image → body text | Desktop: image left, text right */}
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-20 lg:items-center">
 
@@ -127,7 +127,7 @@ function ConferenceCaptureCard() {
 
   return (
     <section id="capacitacion-gratuita" className="py-20 lg:py-28 bg-gray-50/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal duration={0.7}>
           <div className="bg-white rounded-3xl shadow-lg shadow-navy/[0.04] border border-gray-100 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-0">
@@ -187,7 +187,7 @@ function SpeakerAuthority() {
 
   return (
     <section id="conferencista" className="py-20 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile: label -> title -> image -> trajectory | Desktop: image left, text right */}
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 lg:items-center">
           {/* 1. Text header - order-1 mobile (first), order-2 desktop (right col) */}
@@ -262,7 +262,7 @@ function CompanyFormation() {
 
   return (
     <section id="constitucion-empresas" className="py-20 lg:py-28 bg-gray-50/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy leading-tight mb-4">
@@ -345,7 +345,7 @@ const testimonials = [
 function Testimonials() {
   return (
     <section id="testimonios" className="py-20 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">
@@ -426,7 +426,7 @@ const metrics = [
 function AuthorityMetrics() {
   return (
     <section id="metricas" className="py-20 lg:py-28 bg-navy">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
@@ -479,7 +479,7 @@ function HighConversionCTA() {
         <ScrollReveal>
           <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-white leading-tight mb-8 max-w-3xl mx-auto">
             ¡No busques más! Nosotros nos encargamos de tus declaraciones y te
-            ayudamos a evitar problemas con SUNAT.
+            ayudamos a evitar inconvenientes con SUNAT.
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

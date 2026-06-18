@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Preloader } from "@/components/Preloader";
 
-const inter = Inter({
-  variable: "--font-inter",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "700", "900"],
   display: "swap",
 });
 
@@ -76,7 +77,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased bg-background text-foreground`}>
+      <body className={`${roboto.variable} antialiased bg-background text-foreground`}>
         <Preloader />
         {children}
         <Toaster />

@@ -17,7 +17,7 @@ const NOTIFICATIONS = [
     time: "hace 1 min",
   },
   {
-    title: "¿Problemas con SUNAT?",
+    title: "¿Inconvenientes con SUNAT?",
     message: "Te defendemos de fiscalizaciones y cobranzas coactivas",
     time: "hace 3 min",
   },

@@ -263,7 +263,7 @@ export function Hero() {
       </div>
 
       {/* ═══ LAYER 20 — Content (animated per slide) ═══ */}
-      <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="hero-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="hero-text-col">
           {/* Animated text wrapper — key re-triggers entrance animation */}
           <motion.div

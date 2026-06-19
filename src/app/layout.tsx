@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Preloader } from "@/components/Preloader";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "900"],
-  display: "swap",
-});
+// Villamares usa system font stack nativo — replicamos exacto
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jhonyasociados.com"),
@@ -77,7 +71,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${roboto.variable} antialiased bg-background text-foreground`}>
+      <body className="antialiased bg-background text-foreground" style={{fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif'}}>
         <Preloader />
         {children}
         <Toaster />

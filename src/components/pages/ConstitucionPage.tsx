@@ -131,7 +131,7 @@ export function ConstitucionPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-white leading-tight tracking-tight mt-5"
+              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-tight tracking-tight mt-5"
             >
               Constitución de{" "}
               <span className="text-[#00a996]">Empresas</span>
@@ -286,7 +286,7 @@ export function ConstitucionPage() {
                     <p className="text-sm text-muted-foreground mt-1">{pkg.fullName}</p>
                     <div className="mt-4">
                       <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">Inversión</p>
-                      <span className="text-2xl sm:text-3xl font-extrabold text-navy">A Consultar</span>
+                      <span className="text-2xl sm:text-3xl font-bold text-navy">A Consultar</span>
                       <p className="text-[11px] text-muted-foreground mt-1 italic">Tarifa adaptada según el capital social de tu empresa</p>
                     </div>
                   </div>
@@ -348,7 +348,7 @@ export function ConstitucionPage() {
                 duration={0.5}
                 className="relative bg-white rounded-2xl p-6 border border-gray-100 shadow-sm"
               >
-                <span className="text-4xl font-black text-emerald/15">{step.num}</span>
+                <span className="text-4xl font-bold text-emerald/15">{step.num}</span>
                 <h3 className="text-lg font-bold text-navy mt-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{step.desc}</p>
               </ScrollReveal>

@@ -2,8 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Preloader } from "@/components/Preloader";
+import { Oswald } from "next/font/google";
 
-// Villamares usa system font stack nativo — replicamos exacto
+// Oswald — condensada gótica, idéntica a News Gothic BT, misma que villamares.com.pe
+const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jhonyasociados.com"),
@@ -71,7 +78,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className="antialiased bg-background text-foreground" style={{fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif'}}>
+      <body className={`${oswald.variable} antialiased bg-background text-foreground`}>
         <Preloader />
         {children}
         <Toaster />

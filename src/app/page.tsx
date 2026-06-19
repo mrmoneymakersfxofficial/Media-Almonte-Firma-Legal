@@ -73,7 +73,7 @@ function FounderPresentation() {
                 <Award className="w-5 h-5" />
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider">Experiencia</p>
-                  <p className="text-lg font-extrabold leading-tight">+20 Años</p>
+                  <p className="text-lg font-bold leading-tight">+20 Años</p>
                 </div>
               </div>
             </div>
@@ -440,7 +440,7 @@ function AuthorityMetrics() {
           {metrics.map((m, i) => (
             <ScrollReveal key={m.label} delay={0.1 * i} duration={0.6}>
               <div className="text-center">
-                <p className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-emerald mb-2">
+                <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald mb-2">
                   {m.value}
                 </p>
                 <p className="text-white font-semibold text-base sm:text-lg mb-1">

@@ -154,7 +154,7 @@ function CounterItem({
     <div className="text-center">
       <span
         ref={ref}
-        className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight"
+        className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight"
       >
         {count}
         {suffix}
@@ -290,7 +290,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-white leading-tight tracking-tight"
+              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-tight tracking-tight"
             >
               {slide.h1}
             </motion.h1>

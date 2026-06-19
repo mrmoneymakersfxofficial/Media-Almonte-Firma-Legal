@@ -88,7 +88,7 @@ export function ContabilidadPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-white leading-tight tracking-tight mt-5"
+              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-tight tracking-tight mt-5"
             >
               Contabilidad Integral{" "}
               <span className="text-[#00a996]">y Tributación</span>
@@ -193,7 +193,7 @@ export function ContabilidadPage() {
           <ScrollReveal>
             <div className="text-center mb-12">
               <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-3">Plan Promocional</span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy leading-tight mb-3">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy leading-tight mb-3">
                 CONTABILIDAD <span className="text-emerald">DIGITAL</span>
               </h2>
               <p className="text-muted-foreground text-lg max-w-xl mx-auto">Tu empresa merece respaldo real</p>
@@ -213,7 +213,7 @@ export function ContabilidadPage() {
                   <p className="text-muted-foreground text-sm uppercase tracking-wider mb-2">Desde</p>
                   <div className="flex items-baseline justify-center gap-1 mb-1">
                     <span className="text-navy/60 text-lg font-semibold">S/</span>
-                    <span className="text-5xl font-extrabold text-navy">250</span>
+                    <span className="text-5xl font-bold text-navy">250</span>
                   </div>
                   <p className="text-muted-foreground text-sm mb-6">al mes</p>
                   <p className="text-xs text-muted-foreground/70 mb-6">Modalidad Promocional</p>
@@ -327,7 +327,7 @@ export function ContabilidadPage() {
                     <BarChart3 className="w-6 h-6 text-emerald-light" />
                   </div>
                   <div>
-                    <h3 className="text-3xl font-extrabold">A Consultar</h3>
+                    <h3 className="text-3xl font-bold">A Consultar</h3>
                     <p className="text-white/60 text-sm">Servicios Contables</p>
                   </div>
                 </div>

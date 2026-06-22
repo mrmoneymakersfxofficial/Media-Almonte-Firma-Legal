@@ -21,8 +21,11 @@ import {
   Users,
   Calendar,
   ArrowRight,
-  Quote,
   Award,
+  Facebook,
+  Instagram,
+  Video,
+  Phone,
 } from "lucide-react";
 
 /* ════════════════════════════════════════════════════════════════
@@ -31,88 +34,124 @@ import {
 function FounderPresentation() {
   const { openModal } = useWhatsAppStore();
 
+  const actionButtons = [
+    { label: "Seminarios Gratuitos", href: "#capacitacion-gratuita", icon: Video },
+    { label: "WhatsApp Grupo Emprendedores", href: "https://chat.whatsapp.com/", icon: MessageCircle, external: true },
+    { label: "Consulta Tributaria Empresarial", action: () => openModal(), icon: Phone },
+    { label: "Reservar una reunión", action: () => openModal(), icon: Calendar },
+  ];
+
+  const socialLinks = [
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Video, href: "#", label: "TikTok" },
+  ];
+
   return (
     <section id="fundador" className="py-20 lg:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Mobile: header text → image → body text | Desktop: image left, text right */}
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-20 lg:items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          {/* 1. Text header (Label + Name + Cargo) — order-1 mobile, order-2 desktop */}
-          <ScrollReveal x={30} duration={0.7} className="order-1 lg:order-2">
-            <span className="inline-block text-emerald font-bold text-sm sm:text-[15px] tracking-[0.15em] uppercase mb-5">
-              FUNDADOR & CEO EN JHON&Asociados
-            </span>
-            <h2
-              className="text-navy leading-[1.05] mb-4"
-              style={{
-                fontSize: 'clamp(2.2rem, 5vw, 3.2rem)',
-                fontWeight: 900,
-                letterSpacing: '-0.02em',
-                color: '#002B6B',
-              }}
-            >
-              MICHAEL JHON B.
-            </h2>
-            <p className="text-emerald font-bold text-base sm:text-lg tracking-[0.08em] uppercase mb-6">
-              ESPECIALISTA TRIBUTARIO
-            </p>
-          </ScrollReveal>
-
-          {/* 2. Founder Photo — order-2 mobile (below cargo), order-1 desktop (left col, spans 2 rows) */}
-          <ScrollReveal x={-30} duration={0.7} className="order-2 lg:order-1 lg:row-span-2">
-            <div className="relative">
-              <div className="w-full h-[380px] sm:h-[480px] lg:h-[580px] rounded-[20px] overflow-hidden shadow-2xl shadow-navy/20">
+          {/* LEFT: Photo + Name + Title + Quote */}
+          <ScrollReveal x={-30} duration={0.7} className="flex flex-col items-center text-center">
+            {/* Photo with bottom fade */}
+            <div className="relative w-[220px] sm:w-[260px] lg:w-[280px] mb-6">
+              <div className="relative rounded-2xl overflow-hidden">
                 <img
                   src="/jhon-fundador.webp"
                   alt="Michael Jhon B. - Especialista Tributario"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-[280px] sm:h-[320px] lg:h-[340px] object-cover object-top"
                 />
+                {/* Bottom fade gradient */}
+                <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-white via-white/70 to-transparent pointer-events-none" />
               </div>
-              {/* Floating badge */}
-              <div className="absolute -bottom-5 -right-3 sm:-right-5 bg-emerald text-white rounded-xl px-5 py-3 shadow-lg shadow-emerald/30 flex items-center gap-2.5">
-                <Award className="w-5 h-5" />
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-wider">Experiencia</p>
-                  <p className="text-lg font-bold leading-tight">+20 Años</p>
-                </div>
-              </div>
+              {/* Decorative accent lines (brand colors) */}
+              <div className="absolute -top-3 -left-3 w-16 h-16 border-t-4 border-l-4 border-navy rounded-tl-2xl" />
+              <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-4 border-r-4 border-emerald rounded-br-2xl" />
             </div>
+
+            <h3 className="text-2xl sm:text-3xl font-bold text-navy tracking-tight leading-tight">
+              MICHAEL JHON B.
+            </h3>
+            <p className="text-emerald font-bold text-sm sm:text-base tracking-[0.1em] uppercase mt-2">
+              ESPECIALISTA TRIBUTARIO
+            </p>
+            <p className="text-navy/70 text-base sm:text-lg italic leading-relaxed mt-4 max-w-sm">
+              &ldquo;Trabajamos contigo en cada paso, como tu principal socio estratégico.&rdquo;
+            </p>
           </ScrollReveal>
 
-          {/* 3. Body text (Quote + description + CTAs) — order-3 mobile (after image), right col row 2 desktop */}
-          <ScrollReveal x={30} duration={0.7} className="order-3 lg:order-3 lg:col-start-2">
-            {/* Quote */}
-            <div className="relative mb-8 pl-5 border-l-4 border-emerald/40">
-              <Quote className="w-8 h-8 text-emerald/20 absolute -top-1 -left-1" />
-              <p className="text-navy/80 text-lg sm:text-xl italic leading-relaxed font-medium">
-                &ldquo;Trabajamos contigo en cada paso, como tu principal socio estratégico.&rdquo;
-              </p>
-            </div>
-
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              Especialistas en Asesoría Tributaria, contabilidad integral y defensa ante
-              SUNAT. Acompañamos a empresas y emprendedores con soluciones legales que
-              protegen su patrimonio y optimizan su carga tributaria, cumpliendo siempre
-              con la normativa vigente.
+          {/* RIGHT: Title + Subtitle + Social + Buttons */}
+          <ScrollReveal x={30} duration={0.7} className="flex flex-col items-center lg:items-start text-center lg:text-left w-full">
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-navy leading-tight mb-3">
+              Amigo Emprendedor
+            </h2>
+            <p className="text-navy/60 text-base sm:text-lg leading-relaxed mb-6 max-w-md">
+              Aquí encontraras contenido de valor para el fortalecimiento de tu empresa.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => openModal()}
-                className="inline-flex items-center justify-center gap-2.5 bg-emerald hover:bg-emerald/90 text-white px-7 py-4 rounded-xl text-[15px] font-bold transition-all shadow-lg shadow-emerald/25 hover:shadow-xl active:scale-[0.98]"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Consultoría Gratuita
-              </button>
-              <Link
-                href="/nosotros-contacto"
-                className="inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy-light text-white px-7 py-4 rounded-xl text-[15px] font-semibold transition-all"
-              >
-                Conoce Nuestro Equipo
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+            {/* Social icons */}
+            <div className="flex gap-3 mb-8">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    aria-label={social.label}
+                    className="w-11 h-11 bg-navy hover:bg-navy-light rounded-xl flex items-center justify-center transition-colors"
+                  >
+                    <Icon className="w-5 h-5 text-white" />
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* Action buttons */}
+            <div className="w-full max-w-sm space-y-3">
+              {actionButtons.map((btn) => {
+                const Icon = btn.icon;
+                if (btn.external) {
+                  return (
+                    <a
+                      key={btn.label}
+                      href={btn.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center gap-3 bg-navy hover:bg-navy-light text-white px-5 py-3.5 rounded-xl text-[15px] font-semibold transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
+                    >
+                      <Icon className="w-5 h-5 text-emerald flex-shrink-0" />
+                      {btn.label}
+                    </a>
+                  );
+                }
+                if (btn.action) {
+                  return (
+                    <button
+                      key={btn.label}
+                      type="button"
+                      onClick={btn.action}
+                      className="w-full flex items-center gap-3 bg-navy hover:bg-navy-light text-white px-5 py-3.5 rounded-xl text-[15px] font-semibold transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
+                    >
+                      <Icon className="w-5 h-5 text-emerald flex-shrink-0" />
+                      {btn.label}
+                    </button>
+                  );
+                }
+                return (
+                  <a
+                    key={btn.label}
+                    href={btn.href}
+                    className="w-full flex items-center gap-3 bg-navy hover:bg-navy-light text-white px-5 py-3.5 rounded-xl text-[15px] font-semibold transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
+                  >
+                    <Icon className="w-5 h-5 text-emerald flex-shrink-0" />
+                    {btn.label}
+                  </a>
+                );
+              })}
             </div>
           </ScrollReveal>
+
         </div>
       </div>
     </section>

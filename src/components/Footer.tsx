@@ -45,6 +45,13 @@ export function Footer() {
               Protegemos tu patrimonio con Asesoría Tributaria, contabilidad integral
               y defensa ante SUNAT. Más de 500 empresas confían en nosotros.
             </p>
+            <p className="text-white/40 text-sm mt-3">RUC: 20612466182</p>
+            <a
+              href="mailto:Contacto@jhonasociados.com"
+              className="text-emerald hover:text-emerald-light text-sm transition-colors inline-block mt-1"
+            >
+              Contacto@jhonasociados.com
+            </a>
           </div>
 
           {/* Quick Links */}

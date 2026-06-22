@@ -15,7 +15,7 @@ const columns = [
     icon: Eye,
     title: "Visión",
     description:
-      "Ser la firma de asesoría tributaria líder en Perú, reconocida por nuestra innovación tecnológica, especialización y compromiso con resultados medibles.",
+      "Ser la firma de Asesoría Tributaria líder en Perú, reconocida por nuestra innovación tecnológica, especialización y compromiso con resultados medibles.",
   },
   {
     icon: Heart,

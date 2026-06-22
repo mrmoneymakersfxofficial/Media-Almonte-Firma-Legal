@@ -42,7 +42,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
-              Protegemos tu patrimonio con asesoría tributaria, contabilidad integral
+              Protegemos tu patrimonio con Asesoría Tributaria, contabilidad integral
               y defensa ante SUNAT. Más de 500 empresas confían en nosotros.
             </p>
           </div>

@@ -90,7 +90,7 @@ function FounderPresentation() {
             </div>
 
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Especialistas en asesoría tributaria, contabilidad integral y defensa ante
+              Especialistas en Asesoría Tributaria, contabilidad integral y defensa ante
               SUNAT. Acompañamos a empresas y emprendedores con soluciones legales que
               protegen su patrimonio y optimizan su carga tributaria, cumpliendo siempre
               con la normativa vigente.
@@ -180,9 +180,9 @@ function ConferenceCaptureCard() {
    ════════════════════════════════════════════════════════════════ */
 function SpeakerAuthority() {
   const achievements = [
-    "Especialista en Optimización Fiscal Legal",
+    "Especialista en Tributación y Optimización Fiscal Legal",
     "Asesor de exitosos Contribuyentes",
-    "Mentor y Coach de Negocios MYPE",
+    "Mentor y Coach de PNL y Superación Personal",
   ];
 
   return (
@@ -210,8 +210,8 @@ function SpeakerAuthority() {
           {/* 3. Text body (trajectory + achievements) - order-3 mobile (after image), right col row 2 desktop */}
           <ScrollReveal x={30} duration={0.7} className="order-3 lg:order-3 lg:col-start-2">
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Con una trayectoria consolidada en asesoría tributaria, contabilidad
-              integral y defensa ante SUNAT, nuestro equipo liderado por Jhon ha
+              Con una trayectoria consolidada en Asesoría Tributaria, contabilidad
+              integral y defensa ante SUNAT, nuestro equipo liderado por Michael Jhon ha
               ayudado a miles de emprendedores y empresas a cumplir con la ley
               tributaria de forma inteligente, optimizando sus cargas fiscales y
               protegiendo su patrimonio.
@@ -220,7 +220,7 @@ function SpeakerAuthority() {
               {achievements.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-emerald flex-shrink-0 mt-0.5" />
-                  <span className="text-navy font-medium text-base sm:text-lg">
+                  <span className="text-navy font-bold text-base sm:text-lg">
                     {item}
                   </span>
                 </li>
@@ -322,7 +322,7 @@ function CompanyFormation() {
 const testimonials = [
   {
     name: "Fernando",
-    text: "Gracias a la asesoría tributaria de Jhon&Asociados, logré reducir mi carga impositiva legalmente. Su equipo me explicó cada paso con claridad y profesionalismo. Totalmente recomendados.",
+    text: "Gracias a la Asesoría Tributaria de Jhon&Asociados, logré reducir mi carga impositiva legalmente. Su equipo me explicó cada paso con claridad y profesionalismo. Totalmente recomendados.",
     stars: 5,
   },
   {
@@ -513,30 +513,22 @@ export default function Home() {
       <Hero />
       <SectionDivider from="#001528" to="#ffffff" />
 
-      {/* Section 0: Founder Presentation */}
-      <FounderPresentation />
-
-      <SectionDivider from="#ffffff" to="#f9fafb" />
-
       {/* Section 1: Conference Capture Card */}
       <ConferenceCaptureCard />
-
-      <SectionDivider from="#f9fafb" to="#ffffff" />
-
-      {/* Section 2: Speaker Authority */}
-      <SpeakerAuthority />
-
-      <SectionDivider from="#ffffff" to="#f9fafb" />
 
       {/* Section 3: Company Formation + RUC 20 Benefits */}
       <CompanyFormation />
 
-      <SectionDivider from="#f9fafb" to="#f9fafb" />
-
-      {/* Services (existing, SEO value) */}
+      {/* Services */}
       <Services />
 
       <SectionDivider from="#f9fafb" to="#ffffff" />
+
+      {/* Section 0: Founder Presentation */}
+      <FounderPresentation />
+
+      {/* Section 2: Speaker Authority */}
+      <SpeakerAuthority />
 
       {/* Section 4: Testimonials */}
       <Testimonials />

@@ -26,7 +26,7 @@ const columns = [
     icon: Eye,
     title: "Visión",
     description:
-      "Ser la firma de asesoría tributaria líder en Perú, reconocida por nuestra innovación tecnológica, especialización permanente y compromiso con resultados medibles. Aspiramos a que cada empresa peruana acceda a servicios contables de clase mundial sin importar su tamaño.",
+      "Ser la firma de Asesoría Tributaria líder en Perú, reconocida por nuestra innovación tecnológica, especialización permanente y compromiso con resultados medibles. Aspiramos a que cada empresa peruana acceda a servicios contables de clase mundial sin importar su tamaño.",
   },
 ];
 

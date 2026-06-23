@@ -94,7 +94,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative px-3 py-2 text-[13px] font-medium transition-colors duration-200 rounded-md ${
+                  className={`relative px-3 py-2 text-[15px] font-bold tracking-wide transition-colors duration-200 rounded-md ${
                     scrolled
                       ? isActive(item.href)
                         ? "text-[#008775]"
@@ -116,7 +116,7 @@ export function Header() {
               ))}
               <button
                 onClick={() => openModal()}
-                className={`ml-2 px-5 py-2 rounded-lg text-[13px] font-bold transition-all duration-200 ${
+                className={`ml-2 px-5 py-2.5 rounded-lg text-[14px] font-bold tracking-wide transition-all duration-200 ${
                   scrolled
                     ? "bg-[#008775] hover:bg-[#006655] text-white shadow-sm hover:shadow-md"
                     : "bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white border border-white/25"

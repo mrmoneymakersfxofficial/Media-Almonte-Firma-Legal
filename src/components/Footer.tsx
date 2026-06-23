@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Facebook, Instagram, Linkedin, Youtube, ArrowUp } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, ArrowUp, Video } from "lucide-react";
 import Image from "next/image";
 
 const quickLinks = [
@@ -15,9 +15,10 @@ const quickLinks = [
 
 const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/jhonasociadoscontables?igsh=MWl5cjRkOGsyd3Zy", label: "Instagram" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
   { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Video, href: "https://www.tiktok.com/@jhon_asociadoscontables?_r=1&_t=ZS-97R4afeZMIC", label: "TikTok" },
 ];
 
 export function Footer() {

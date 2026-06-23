@@ -43,8 +43,8 @@ function FounderPresentation() {
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Video, href: "#", label: "TikTok" },
+    { icon: Instagram, href: "https://www.instagram.com/jhonasociadoscontables?igsh=MWl5cjRkOGsyd3Zy", label: "Instagram" },
+    { icon: Video, href: "https://www.tiktok.com/@jhon_asociadoscontables?_r=1&_t=ZS-97R4afeZMIC", label: "TikTok" },
   ];
 
   return (
@@ -221,7 +221,7 @@ function SpeakerAuthority() {
   const achievements = [
     "Especialista en Tributación y Optimización Fiscal Legal",
     "Asesor de exitosos Contribuyentes",
-    "Mentor y Coach de PNL y Superación Personal",
+    "Mentor y Coach en PNL y Superación Personal",
   ];
 
   return (

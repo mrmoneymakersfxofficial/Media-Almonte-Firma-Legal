@@ -1227,3 +1227,200 @@ html {
     scroll-behavior: smooth;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PREMIUM VISUAL SYSTEM — Glassmorphism, Shine, Shadows, Gradients
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ─── CSS Custom Properties for Premium Palette ─── */
+:root {
+  --gold-gradient: linear-gradient(135deg, #c9a961 0%, #f4e5c2 45%, #d4af37 55%, #b87333 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #d4af37 0%, #f4e5c2 40%, #c9a961 60%, #B87333 100%);
+  --gold-glow: 0 0 20px rgba(212, 175, 55, 0.3), 0 0 60px rgba(212, 175, 55, 0.1);
+  --gold-glow-strong: 0 0 25px rgba(212, 175, 55, 0.4), 0 0 80px rgba(212, 175, 55, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(212, 175, 55, 0.12);
+  --glass-blur: 16px;
+  --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.2);
+  --card-shadow-hover: 0 12px 40px rgba(212, 175, 55, 0.12), 0 4px 16px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.15);
+  --depth-overlay: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.8) 100%);
+}
+
+/* ─── Glassmorphism Card Base ─── */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--card-shadow);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(212, 175, 55, 0.25);
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* ─── Gold Gradient Border (pseudo-element technique) ─── */
+.gold-border-gradient {
+  position: relative;
+}
+
+.gold-border-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(184, 115, 51, 0.1), rgba(212, 175, 55, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ─── CTA Button Shine Effect ─── */
+.btn-gold-primary {
+  background: var(--gold-gradient);
+  background-size: 200% 200%;
+  color: #0A0A0A;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--gold-glow);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.btn-gold-primary::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 70%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.btn-gold-primary:hover {
+  background-position: 100% 100%;
+  box-shadow: var(--gold-glow-strong);
+  transform: translateY(-1px);
+}
+
+.btn-gold-primary:hover::after {
+  left: 120%;
+}
+
+.btn-gold-primary:active {
+  transform: scale(0.97) translateY(0);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+}
+
+/* ─── CTA Button Outline Gold ─── */
+.btn-gold-outline {
+  background: rgba(212, 175, 55, 0.06);
+  border: 2px solid rgba(212, 175, 55, 0.5);
+  color: #D4AF37;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, background-color, border-color;
+}
+
+.btn-gold-outline:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: #D4AF37;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+  transform: translateY(-1px);
+}
+
+.btn-gold-outline:active {
+  transform: scale(0.97) translateY(0);
+}
+
+/* ─── Premium Card Hover ─── */
+.card-premium {
+  background: rgba(11, 26, 46, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: var(--card-shadow);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow, border-color;
+}
+
+.card-premium:hover {
+  background: rgba(11, 26, 46, 0.8);
+  border-color: rgba(212, 175, 55, 0.2);
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* ─── Stat Counter Glassmorphism ─── */
+.stat-glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.stat-glass:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(212, 175, 55, 0.25);
+  box-shadow: 0 8px 40px rgba(212, 175, 55, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* ─── Icon Glow Ring ─── */
+.icon-glow {
+  position: relative;
+}
+
+.icon-glow::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.icon-glow:hover::after {
+  opacity: 1;
+}
+
+/* ─── GPU-Accelerated Transforms ─── */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ─── Section Gradient Backgrounds ─── */
+.section-dark-gradient {
+  background: linear-gradient(180deg, #0A0A0A 0%, #0d1117 50%, #0A0A0A 100%);
+}
+
+.section-navy-gradient {
+  background: linear-gradient(180deg, #0B1A2E 0%, #0f2240 50%, #0B1A2E 100%);
+}

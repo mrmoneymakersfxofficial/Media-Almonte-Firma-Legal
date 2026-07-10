@@ -94,8 +94,11 @@ export function Hero() {
         aria-hidden="true"
       />
 
+      {/* ═══ Gold accent line at top ═══ */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] z-20" style={{ background: 'linear-gradient(90deg, transparent 0%, #D4AF37 30%, #B87333 70%, transparent 100%)' }} />
+
       {/* ═══ LAYER 1 — Dark overlay for readability ═══ */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/90 via-[#0B1A2E]/75 to-[#0B1A2E]/40" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A]/95 via-[#0B1A2E]/80 to-[#0A0A0A]/60" aria-hidden="true" />
       {/* Bottom fade for counters readability */}
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0A0A0A] to-transparent" aria-hidden="true" />
 

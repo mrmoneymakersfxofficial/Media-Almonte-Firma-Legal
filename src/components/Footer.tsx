@@ -141,9 +141,9 @@ export function Footer() {
             </p>
           </div>
           <div className="flex items-center gap-4">
-            <a href="#" className="text-white/40 hover:text-white/60 text-sm transition-colors">
+            <Link href="/politica-privacidad" className="text-white/40 hover:text-white/60 text-sm transition-colors">
               Política de Privacidad
-            </a>
+            </Link>
             <button
               onClick={scrollToTop}
               className="w-10 h-10 bg-white/10 hover:bg-[#D4AF37]/20 rounded-lg flex items-center justify-center transition-colors"

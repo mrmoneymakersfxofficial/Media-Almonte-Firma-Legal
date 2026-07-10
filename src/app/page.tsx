@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Hero } from "@/components/Hero";
 import { SectionDivider } from "@/components/SectionDivider";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Scale,
   ShieldCheck,
@@ -15,7 +17,21 @@ import {
   Building2,
   Heart,
   ArrowRight,
+  Star,
+  Quote,
+  Shield,
+  Landmark,
+  BookOpen,
+  ScaleIcon,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 /* ════════════════════════════════════════════════════════════════
    SECTION: ¿QUIÉNES SOMOS?
@@ -205,6 +221,245 @@ function PracticeAreas() {
 }
 
 /* ════════════════════════════════════════════════════════════════
+   SECTION: LO QUE DICEN NUESTROS CLIENTES (TESTIMONIALS)
+   ════════════════════════════════════════════════════════════════ */
+const testimonials = [
+  {
+    text: "Gracias a Medina Almonte logré una resolución favorable en mi caso laboral. Su equipo me mantuvo informado en cada etapa del proceso y siempre sentí que estaban de mi lado.",
+    name: "Carlos M.",
+    role: "Caso Laboral",
+  },
+  {
+    text: "La defensa penal que me brindaron fue excepcional. Desde el primer momento entendieron mi situación y actuaron con la rapidez y firmeza que se necesitaba.",
+    name: "María L.",
+    role: "Defensa Penal",
+  },
+  {
+    text: "Necesitaba blindar mi empresa legalmente y ellos me ofrecieron una solución integral. Profesionales de alto nivel que realmente conocen el derecho corporativo.",
+    name: "Roberto S.",
+    role: "Derecho Corporativo",
+  },
+  {
+    text: "Mi caso de familia era delicado y sensible. El equipo de Medina Almonte manejó todo con la discreción y empatía que necesitábamos. Estoy profundamente agradecida.",
+    name: "Ana P.",
+    role: "Derecho de Familia",
+  },
+];
+
+function TestimonialsSection() {
+  const [api, setApi] = useState<CarouselApi | null>(null);
+  const [current, setCurrent] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+  }, [api, setCurrent]);
+
+  useEffect(() => {
+    if (!api) return;
+    onSelect();
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
+    return () => {
+      api.off("select", onSelect);
+      api.off("reInit", onSelect);
+    };
+  }, [api, onSelect]);
+
+  return (
+    <section className="py-20 lg:py-28 bg-[#0A0A0A]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="inline-block text-[#B87333] font-semibold text-sm tracking-wider uppercase mb-4">
+              Testimonios
+            </span>
+            <h2
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-4"
+              style={{ fontFamily: "var(--font-playfair), serif" }}
+            >
+              <span className="text-white">Lo Que Dicen</span>{" "}
+              <span className="text-[#D4AF37]">Nuestros Clientes</span>
+            </h2>
+            <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
+              La confianza de nuestros clientes es nuestra mayor satisfacción.
+              Cada testimonio refleja nuestro compromiso con la excelencia jurídica.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.15}>
+          <div className="relative max-w-4xl mx-auto">
+            <Carousel
+              setApi={setApi}
+              opts={{
+                align: "center",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 5000,
+                  stopOnInteraction: true,
+                }),
+              ]}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {testimonials.map((t, i) => (
+                  <CarouselItem
+                    key={i}
+                    className="pl-4 md:basis-[80%] lg:basis-[70%]"
+                  >
+                    <div className="bg-[#0B1A2E] border border-[#D4AF37]/10 rounded-2xl p-8 sm:p-10 h-full">
+                      <Quote className="w-10 h-10 text-[#D4AF37]/30 mb-6" />
+                      <p
+                        className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8"
+                        style={{
+                          fontFamily: "var(--font-merriweather), serif",
+                        }}
+                      >
+                        &ldquo;{t.text}&rdquo;
+                      </p>
+                      <div className="flex items-center justify-between flex-wrap gap-4">
+                        <div>
+                          <p className="text-white font-bold text-base">
+                            {t.name}
+                          </p>
+                          <p className="text-[#B87333] text-sm">{t.role}</p>
+                        </div>
+                        <div className="flex gap-0.5">
+                          {[...Array(5)].map((_, si) => (
+                            <Star
+                              key={si}
+                              className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]"
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => api?.scrollPrev()}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-5 w-10 h-10 rounded-full bg-[#0B1A2E] border border-[#D4AF37]/20 flex items-center justify-center hover:border-[#D4AF37]/50 transition-colors"
+              aria-label="Anterior"
+            >
+              <ChevronLeft className="w-5 h-5 text-[#D4AF37]" />
+            </button>
+            <button
+              onClick={() => api?.scrollNext()}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-5 w-10 h-10 rounded-full bg-[#0B1A2E] border border-[#D4AF37]/20 flex items-center justify-center hover:border-[#D4AF37]/50 transition-colors"
+              aria-label="Siguiente"
+            >
+              <ChevronRight className="w-5 h-5 text-[#D4AF37]" />
+            </button>
+          </div>
+        </ScrollReveal>
+
+        {/* Dots */}
+        <ScrollReveal delay={0.25}>
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => api?.scrollTo(i)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  current === i
+                    ? "w-8 bg-[#D4AF37]"
+                    : "w-2 bg-[#D4AF37]/30 hover:bg-[#D4AF37]/50"
+                }`}
+                aria-label={`Ir al testimonio ${i + 1}`}
+              />
+            ))}
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SECTION: MEMBRESÍAS Y CERTIFICACIONES
+   ════════════════════════════════════════════════════════════════ */
+const memberships = [
+  {
+    icon: ScaleIcon,
+    name: "Colegio de Abogados de Lima",
+    short: "CAL",
+  },
+  {
+    icon: Landmark,
+    name: "Ministerio de Justicia del Perú",
+    short: "MINJUS",
+  },
+  {
+    icon: Shield,
+    name: "Tribunal Constitucional",
+    short: "TC",
+  },
+  {
+    icon: BookOpen,
+    name: "Poder Judicial del Perú",
+    short: "PJ",
+  },
+  {
+    icon: Scale,
+    name: "Asociación de Abogados de Lima",
+    short: "AAL",
+  },
+];
+
+function MembershipsBar() {
+  return (
+    <section className="py-16 lg:py-20 bg-[#0B1A2E]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal>
+          <div className="text-center mb-12">
+            <span className="inline-block text-[#B87333] font-semibold text-sm tracking-wider uppercase mb-4">
+              Confían en Nosotros
+            </span>
+            <h2
+              className="text-2xl sm:text-3xl font-bold leading-tight"
+              style={{ fontFamily: "var(--font-playfair), serif" }}
+            >
+              <span className="text-white">Membresías y</span>{" "}
+              <span className="text-[#D4AF37]">Certificaciones</span>
+            </h2>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.15}>
+          <div className="flex gap-6 sm:gap-8 md:gap-10 lg:gap-14 justify-center flex-wrap md:flex-nowrap overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide">
+            {memberships.map((m, i) => {
+              const Icon = m.icon;
+              return (
+                <div
+                  key={m.short}
+                  className="flex flex-col items-center gap-3 min-w-[120px] shrink-0"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-[#0A0A0A] border border-[#D4AF37]/15 flex items-center justify-center">
+                    <Icon className="w-7 h-7 text-[#D4AF37]" />
+                  </div>
+                  <div className="text-center">
+                    <p className="text-white text-sm font-medium leading-tight">
+                      {m.name}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
    SECTION: ¿POR QUÉ ELEGIRNOS?
    ════════════════════════════════════════════════════════════════ */
 function WhyChooseUs() {
@@ -309,6 +564,14 @@ export default function Home() {
 
       {/* Áreas de Práctica (Grid) */}
       <PracticeAreas />
+
+      <SectionDivider from="#0B1A2E" to="#0A0A0A" />
+
+      {/* Testimonios */}
+      <TestimonialsSection />
+
+      {/* Membresías y Certificaciones */}
+      <MembershipsBar />
 
       <SectionDivider from="#0B1A2E" to="#0A0A0A" />
 

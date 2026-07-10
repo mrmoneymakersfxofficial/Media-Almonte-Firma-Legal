@@ -131,7 +131,7 @@ body {
     color: #ffffff;
   }
   ::-moz-selection {
-    background: rgba(0, 135, 117, 0.45);
+    background: rgba(212, 175, 55, 0.45);
     color: #ffffff;
   }
 }
@@ -155,7 +155,7 @@ img, svg {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #002350;
+  background-color: #0B1A2E;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -167,7 +167,7 @@ img, svg {
   width: 45px;
   height: 45px;
   border: 4px solid rgba(255, 255, 255, 0.1);
-  border-top-color: #008775;
+  border-top-color: #D4AF37;
   border-radius: 50%;
   animation: spinPreloader 0.8s linear infinite;
 }
@@ -191,9 +191,9 @@ img, svg {
 }
 
 .header-scrolled {
-  background: #ffffff !important;
-  box-shadow: 0 1px 12px rgba(0, 35, 80, 0.08);
-  border-bottom: 1px solid rgba(0, 35, 80, 0.06) !important;
+  background: #0A0A0A !important;
+  box-shadow: 0 1px 12px rgba(212, 175, 55, 0.08);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1) !important;
 }
 
 /* ─── BRAND LOGO FIXED — Anti-crop global rules (all pages, PC + Mobile) ─── */
@@ -232,7 +232,7 @@ img, svg {
 /* Custom scrollbar — Medina Almonte brand colors (all devices) */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #002350 #f8fafc;
+  scrollbar-color: #0B1A2E #0A0A0A;
 }
 
 *::-webkit-scrollbar {
@@ -240,26 +240,26 @@ img, svg {
 }
 
 *::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #0A0A0A;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #002350;
+  background: #0B1A2E;
   border-radius: 10px;
   border: none;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #481180;
+  background: #D4AF37;
 }
 
 /* ── Founder Presentation Section ── */
 .founder-presentation-bg {
-  background: linear-gradient(180deg, #ffffff 0%, #f5f8ff 100%);
+  background: linear-gradient(180deg, #0A0A0A 0%, #0B1A2E 100%);
 }
 
 .founder-gradient-text {
-  background: linear-gradient(135deg, #002350 0%, #008775 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #B87333 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -326,7 +326,7 @@ img, svg {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #002350, #481180, #008775);
+  background: linear-gradient(135deg, #D4AF37, #B87333, #0B1A2E);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -334,19 +334,19 @@ img, svg {
 
 /* Hero gradient overlay */
 .hero-gradient {
-  background: linear-gradient(135deg, #002350 0%, #001528 40%, #481180 100%);
+  background: linear-gradient(135deg, #0B1A2E 0%, #0A0A0A 40%, #D4AF37 100%);
 }
 
 /* ─── SERVICE CARDS — Premium Redesign ─── */
 .service-card {
-  border-left: 4px solid #481180 !important;
-  box-shadow: 0 10px 25px rgba(0, 35, 80, 0.05) !important;
+  border-left: 4px solid #D4AF37 !important;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.05) !important;
   transition: all 0.3s ease-in-out !important;
 }
 
 .service-card:hover {
   transform: translateY(-5px) !important;
-  box-shadow: 0 15px 35px rgba(0, 35, 80, 0.12) !important;
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.12) !important;
 }
 
 /* Icon container — integrated seal */
@@ -354,8 +354,8 @@ img, svg {
   width: 45px !important;
   height: 45px !important;
   min-width: 45px !important;
-  background: #f8fafc !important;
-  border: 1.5px solid #002350 !important;
+  background: #0B1A2E !important;
+  border: 1.5px solid #D4AF37 !important;
   border-radius: 10px !important;
   display: flex !important;
   align-items: center !important;
@@ -364,12 +364,12 @@ img, svg {
 }
 
 .service-card:hover .service-card-icon {
-  background: #002350 !important;
-  border-color: #002350 !important;
+  background: #D4AF37 !important;
+  border-color: #B87333 !important;
 }
 
 .service-card:hover .service-card-icon svg {
-  color: #ffffff !important;
+  color: #0A0A0A !important;
 }
 
 /* Ver detalles — styled micro-button */
@@ -381,16 +381,16 @@ img, svg {
   border-radius: 8px;
   font-weight: 600;
   font-size: 16px;
-  color: #008775;
-  background: rgba(0, 135, 117, 0.06);
-  border-bottom: 2px solid rgba(0, 135, 117, 0.3);
+  color: #D4AF37;
+  background: rgba(212, 175, 55, 0.06);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.3);
   transition: all 0.2s ease-in-out;
 }
 
 .service-card-link:hover {
-  background: rgba(0, 135, 117, 0.12);
-  border-bottom-color: #008775;
-  color: #006655;
+  background: rgba(212, 175, 55, 0.12);
+  border-bottom-color: #D4AF37;
+  color: #B87333;
   transform: translateX(2px);
 }
 
@@ -418,7 +418,7 @@ img, svg {
   height: 46px !important;
   flex-shrink: 0 !important;
   border-radius: 10px !important;
-  background: rgba(0, 135, 117, 0.08) !important;
+  background: rgba(212, 175, 55, 0.08) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -431,7 +431,7 @@ img, svg {
 
 .benefit-item-title {
   font-size: 23px !important;
-  color: #002350 !important;
+  color: #D4AF37 !important;
   font-weight: 600 !important;
   margin-bottom: 6px !important;
   line-height: 1.3 !important;
@@ -439,7 +439,7 @@ img, svg {
 
 .benefit-item-desc {
   font-size: 17px !important;
-  color: #475569 !important;
+  color: #9CA3AF !important;
   line-height: 1.5 !important;
   margin: 0 !important;
 }
@@ -470,14 +470,14 @@ html.mobile-menu-open .whatsapp-float {
 }
 
 .drawer-nav-active {
-  background-color: rgba(0, 135, 117, 0.08) !important;
-  color: #002350 !important;
+  background-color: rgba(212, 175, 55, 0.08) !important;
+  color: #D4AF37 !important;
   border-radius: 8px;
 }
 
 /* Pricing card highlight */
 .pricing-recommended {
-  border: 2px solid #008775;
+  border: 2px solid #D4AF37;
   position: relative;
   overflow: visible;
 }
@@ -489,7 +489,7 @@ html.mobile-menu-open .whatsapp-float {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #008775, #00a996);
+  background: linear-gradient(90deg, #D4AF37, #B87333);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -521,7 +521,7 @@ html.mobile-menu-open .whatsapp-float {
   z-index: 0;
   overflow: hidden;
   /* Fallback color matches brand while image loads */
-  background-color: #001528;
+  background-color: #0A0A0A;
 }
 
 .hero-photo-bg::before {
@@ -532,7 +532,7 @@ html.mobile-menu-open .whatsapp-float {
   width: 100%;
   height: 100%;
   /* Default: mobile vertical image, face centered in upper area */
-  background-image: url('/jhon-hero-movil.webp');
+  background-image: url('/medina-almonte-hero-mobile.webp');
   background-size: cover;
   background-position: center 25%;
   background-repeat: no-repeat;
@@ -549,7 +549,7 @@ html.mobile-menu-open .whatsapp-float {
 /* Desktop (1024px+): horizontal image, face framed on right side — lower position for full face + hair */
 @media (min-width: 1024px) {
   .hero-photo-bg::before {
-    background-image: url('/jhon-hero-oficina.webp');
+    background-image: url('/medina-almonte-hero-desktop.webp');
     background-position: right 12% top 22%;
     filter: brightness(0.88) contrast(1.02); /* Fusiona la iluminación del retrato con la oficina nocturna */
   }
@@ -576,7 +576,7 @@ html.mobile-menu-open .whatsapp-float {
   z-index: 0;
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  background-color: #001528;
+  background-color: #0A0A0A;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
   will-change: opacity;
@@ -625,7 +625,7 @@ html.mobile-menu-open .whatsapp-float {
 /* Mobile positioning — face visible at 70% right */
 @media (max-width: 768px) {
   .hero-slide-bg[data-slide="0"] {
-    background-image: url('/jhon-hero-movil.webp') !important;
+    background-image: url('/medina-almonte-hero-mobile.webp') !important;
     background-position: center 25% !important;
     filter: none !important;
   }
@@ -673,9 +673,9 @@ html.mobile-menu-open .whatsapp-float {
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(0, 35, 80, 0.95) 0%,
-    rgba(0, 35, 80, 0.70) 45%,
-    rgba(72, 17, 128, 0.30) 100%
+    rgba(11, 26, 46, 0.95) 0%,
+    rgba(11, 26, 46, 0.70) 45%,
+    rgba(184, 115, 51, 0.30) 100%
   );
   pointer-events: none;
 }
@@ -685,9 +685,9 @@ html.mobile-menu-open .whatsapp-float {
   .hero-brand-overlay {
     background: linear-gradient(
       180deg,
-      rgba(0, 35, 80, 0.92) 0%,
-      rgba(0, 35, 80, 0.60) 45%,
-      rgba(72, 17, 128, 0.20) 100%
+      rgba(11, 26, 46, 0.92) 0%,
+      rgba(11, 26, 46, 0.60) 45%,
+      rgba(184, 115, 51, 0.20) 100%
     );
   }
 }
@@ -697,9 +697,9 @@ html.mobile-menu-open .whatsapp-float {
   .hero-brand-overlay {
     background: linear-gradient(
       90deg,
-      rgba(0, 35, 80, 0.92) 0%,
-      rgba(0, 35, 80, 0.60) 35%,
-      rgba(72, 17, 128, 0.08) 100%
+      rgba(11, 26, 46, 0.92) 0%,
+      rgba(11, 26, 46, 0.60) 35%,
+      rgba(184, 115, 51, 0.08) 100%
     ) !important;
   }
 }
@@ -820,9 +820,9 @@ html.mobile-menu-open .whatsapp-float {
   .hero-brand-overlay {
     background: linear-gradient(
       90deg,
-      rgba(0, 35, 80, 0.88) 0%,
-      rgba(0, 35, 80, 0.48) 40%,
-      rgba(72, 17, 128, 0.08) 100%
+      rgba(11, 26, 46, 0.88) 0%,
+      rgba(11, 26, 46, 0.48) 40%,
+      rgba(184, 115, 51, 0.08) 100%
     ) !important;
   }
 
@@ -1053,9 +1053,9 @@ html.mobile-menu-open .whatsapp-float {
   z-index: 1;
   background: linear-gradient(
     90deg,
-    rgba(0, 35, 80, 0.93) 0%,
-    rgba(0, 35, 80, 0.50) 35%,
-    rgba(0, 35, 80, 0.06) 100%
+    rgba(11, 26, 46, 0.93) 0%,
+    rgba(11, 26, 46, 0.50) 35%,
+    rgba(11, 26, 46, 0.06) 100%
   );
   pointer-events: none;
 }
@@ -1099,14 +1099,14 @@ span.text-emerald.uppercase {
 }
 
 .footer-credits a {
-  color: #008775 !important;
+  color: #D4AF37 !important;
   text-decoration: none !important;
   font-weight: 600 !important;
   transition: color 0.2s ease-in-out !important;
 }
 
 .footer-credits a:hover {
-  color: #002350 !important;
+  color: #B87333 !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -1163,5 +1163,67 @@ span.text-emerald.uppercase {
       rgba(11, 33, 70, 0.50) 40%,
       rgba(5, 15, 33, 0.06) 100%
     ) !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Subtle shimmer animation for gold accents
+   ═══════════════════════════════════════════════════════════════════════ */
+@keyframes gold-shimmer {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+.gold-shimmer {
+  animation: gold-shimmer 3s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   iOS / Android RESPONSIVE FIXES
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Safe area insets for notched devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .whatsapp-float {
+    bottom: calc(25px + env(safe-area-inset-bottom)) !important;
+    right: calc(25px + env(safe-area-inset-right)) !important;
+  }
+}
+
+/* Larger touch targets on iOS/Android (44px minimum) */
+@media (max-width: 768px) {
+  a, button, [role="button"], select {
+    min-height: 44px;
+  }
+  a:not([class*="inline"]), 
+  a:not([class*="inline-flex"]) {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Prevent text size adjust on orientation change (iOS) */
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Fix iOS Safari 100vh bug */
+@supports (height: 100dvh) {
+  .min-h-screen {
+    min-height: 100dvh;
+  }
+}
+
+/* Prevent rubber-banding visual glitches on iOS */
+html {
+  overscroll-behavior: none;
+}
+
+/* Smoother scrolling on iOS */
+@media (pointer: coarse) {
+  * {
+    scroll-behavior: smooth;
   }
 }

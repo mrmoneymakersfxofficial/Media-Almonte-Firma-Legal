@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     url: "https://medinaalmonte.com",
     images: [
       {
-        url: "/og-banner-jhon.png?v=2.1",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Medina Almonte Firma Legal - Abogados en Perú",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "Medina Almonte Firma Legal | Abogados en Perú",
     description:
       "Defensa legal estratégica en Derecho Civil, Penal, Laboral, Corporativo y Familiar. Protegemos tus derechos con excelencia y resultados comprobados.",
-    images: ["/og-banner-jhon.png?v=2.1"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -73,6 +73,35 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${playfair.variable} ${inter.variable} ${merriweather.variable} antialiased bg-background text-foreground`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LegalService",
+              "name": "Medina Almonte Firma Legal",
+              "url": "https://medinaalmonte.com",
+              "logo": "https://medinaalmonte.com/logo.svg",
+              "description": "Defensa legal estratégica en Derecho Civil, Penal, Laboral, Corporativo y Familiar en Perú.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Lima",
+                "addressCountry": "PE"
+              },
+              "telephone": "+51943366950",
+              "email": "contacto@medinaalmonte.com",
+              "priceRange": "$$",
+              "areaServed": "Perú",
+              "serviceType": [
+                "Derecho Civil",
+                "Derecho Penal",
+                "Derecho Laboral",
+                "Derecho Corporativo",
+                "Derecho de Familia"
+              ]
+            })
+          }}
+        />
         <Preloader />
         {children}
         <Toaster />

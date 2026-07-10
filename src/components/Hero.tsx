@@ -167,7 +167,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="hero-badge inline-flex items-center gap-2.5 bg-white/[0.06] backdrop-blur-xl border border-[#D4AF37]/20 rounded-full px-5 py-2.5 shadow-[0_0_20px_rgba(212,175,55,0.08)] gpu-accelerated"
+            className="hero-badge lg:hidden inline-flex items-center gap-2.5 bg-white/[0.06] backdrop-blur-xl border border-[#D4AF37]/20 rounded-full px-5 py-2.5 shadow-[0_0_20px_rgba(212,175,55,0.08)] gpu-accelerated"
           >
             <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">

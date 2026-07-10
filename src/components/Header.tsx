@@ -1,46 +1,150 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { Menu, X, Phone } from "lucide-react";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 
 const navLinks = [
   { name: "Inicio", href: "/" },
   { name: "Áreas de Práctica", href: "/areas-de-practica" },
   { name: "La Firma", href: "/firma" },
-  { name: "Nuestros Abogados", href: "/abogados" },
+  { name: "Abogados", href: "/abogados" },
   { name: "Resultados", href: "/resultados" },
   { name: "Contacto", href: "/contacto" },
 ];
 
+/* ─── Gold Ripple on Click ─── */
+function GoldRipple({ x, y, onDone }: { x: number; y: number; onDone: () => void }) {
+  const size = 120;
+  return (
+    <motion.span
+      className="absolute pointer-events-none rounded-full z-0"
+      initial={{ width: 0, height: 0, x: x - size / 2, y: y - size / 2, opacity: 0.7 }}
+      animate={{ width: size, height: size, opacity: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      onAnimationComplete={onDone}
+      style={{
+        background: "radial-gradient(circle, rgba(212,175,55,0.5) 0%, rgba(212,175,55,0) 70%)",
+      }}
+    />
+  );
+}
+
+/* ─── Single Nav Link with gold click effect ─── */
+function NavLink({
+  link,
+  index,
+  active,
+  scrolled,
+}: {
+  link: (typeof navLinks)[0];
+  index: number;
+  active: boolean;
+  scrolled: boolean;
+}) {
+  const [ripples, setRipples] = useState<{ id: number; x: number; y: number }[]>([]);
+  const [clicked, setClicked] = useState(false);
+  const rippleId = useRef(0);
+  const ref = useRef<HTMLAnchorElement>(null);
+
+  const handleClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const id = ++rippleId.current;
+      setRipples((prev) => [...prev, { id, x, y }]);
+      setClicked(true);
+      setTimeout(() => {
+        setRipples((prev) => prev.filter((r) => r.id !== id));
+        setClicked(false);
+      }, 700);
+    },
+    []
+  );
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 + index * 0.06, duration: 0.4, ease: "easeOut" }}
+      className="relative"
+    >
+      <Link
+        ref={ref}
+        href={link.href}
+        onClick={handleClick}
+        className={`
+          relative px-3 xl:px-4 py-1.5 text-[13px] tracking-wide font-medium
+          rounded-md transition-all duration-300 overflow-hidden select-none
+          ${
+            active
+              ? "text-amber-400"
+              : scrolled
+              ? "text-white/75 hover:text-white"
+              : "text-white/85 hover:text-white"
+          }
+        `}
+      >
+        {/* Active persistent gold bar */}
+        {active && (
+          <motion.span
+            layoutId="nav-gold-bar"
+            className="absolute bottom-0 left-2 right-2 h-[2px] rounded-full"
+            style={{
+              background: "linear-gradient(90deg, transparent, #D4AF37, #f4e5c2, #D4AF37, transparent)",
+              boxShadow: "0 0 8px rgba(212,175,55,0.6), 0 0 20px rgba(212,175,55,0.2)",
+            }}
+            transition={{ type: "spring", stiffness: 350, damping: 30 }}
+          />
+        )}
+
+        {/* Click ripple */}
+        {ripples.map((r) => (
+          <GoldRipple key={r.id} x={r.x} y={r.y} onDone={() => {}} />
+        ))}
+
+        {/* Click flash bar */}
+        {clicked && (
+          <motion.span
+            className="absolute bottom-0 left-0 right-0 h-[2px]"
+            initial={{ scaleX: 0, opacity: 1 }}
+            animate={{ scaleX: 1, opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            style={{
+              background: "linear-gradient(90deg, #B87333, #D4AF37, #f4e5c2, #D4AF37, #B87333)",
+              boxShadow: "0 2px 12px rgba(212,175,55,0.8), 0 0 30px rgba(212,175,55,0.3)",
+              transformOrigin: "center",
+            }}
+          />
+        )}
+
+        <span className="relative z-10">{link.name}</span>
+      </Link>
+    </motion.div>
+  );
+}
+
+/* ─── Main Header ─── */
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [hoveredLink, setHoveredLink] = useState<number | null>(null);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
   const pathname = usePathname();
   const { openModal } = useWhatsAppStore();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isMobileMenuOpen]);
+    document.body.style.overflow = isMobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [isMobileOpen]);
 
   function isActive(href: string) {
     if (href === "/") return pathname === "/";
@@ -48,187 +152,213 @@ export function Header() {
   }
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-slate-900/95 backdrop-blur-xl shadow-2xl shadow-black/20"
-          : "bg-gradient-to-b from-black/70 via-black/40 to-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 lg:h-24 gap-6">
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled
+            ? "bg-[#0a0e1a]/92 backdrop-blur-2xl shadow-[0_1px_0_rgba(212,175,55,0.08),0_8px_32px_rgba(0,0,0,0.4)]"
+            : "bg-gradient-to-b from-black/50 to-transparent"
+        }`}
+      >
+        {/* Subtle top gold line on scroll */}
+        <div
+          className="w-full h-[1px] transition-opacity duration-500"
+          style={{
+            opacity: isScrolled ? 1 : 0,
+            background: "linear-gradient(90deg, transparent 5%, rgba(212,175,55,0.3) 30%, rgba(244,229,194,0.5) 50%, rgba(212,175,55,0.3) 70%, transparent 95%)",
+          }}
+        />
 
-          {/* LOGO con animación */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <Link href="/" className="flex items-center gap-3 group">
-              <motion.div
-                className="w-12 h-12"
-                whileHover={{ rotate: 5, scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="w-full h-full bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-amber-500/30 transition-shadow duration-300">
-                  <span className="text-slate-900 font-bold text-2xl">M</span>
-                </div>
-              </motion.div>
-              <div className="hidden sm:block">
-                <h1 className="text-white font-serif text-xl font-bold tracking-wide">
-                  MEDINA ALMONTE
-                </h1>
-                <p className="text-amber-400 text-xs tracking-[0.2em] uppercase">
-                  Firma Legal
-                </p>
-              </div>
-            </Link>
-          </motion.div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 lg:h-[58px]">
 
-          {/* NAVEGACIÓN CON EFECTOS PRO */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link, index) => (
-              <motion.div
-                key={link.name}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-              >
-                <Link
-                  href={link.href}
-                  onMouseEnter={() => setHoveredLink(index)}
-                  onMouseLeave={() => setHoveredLink(null)}
-                  className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 group ${
-                    isActive(link.href)
-                      ? "text-amber-400"
-                      : "text-white/90 hover:text-white"
-                  }`}
-                >
-                  {/* Línea animada inferior */}
-                  <motion.span
-                    className="absolute bottom-0 left-1/2 h-0.5 bg-gradient-to-r from-amber-400 to-amber-600"
-                    animate={{
-                      width: hoveredLink === index || isActive(link.href) ? "100%" : "0%",
-                      left: hoveredLink === index || isActive(link.href) ? "0%" : "50%",
-                    }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                  />
-
-                  {/* Glow effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-amber-500/5 rounded-md -z-10"
-                    animate={{
-                      opacity: hoveredLink === index ? 1 : 0,
-                    }}
-                    transition={{ duration: 0.2 }}
-                  />
-
-                  <span className="relative z-10">{link.name}</span>
-                </Link>
-              </motion.div>
-            ))}
-          </nav>
-
-          {/* BOTÓN CTA ULTRA-PRO */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-            className="hidden lg:block"
-          >
-            <button
-              onClick={() => openModal()}
-              className="relative group inline-flex items-center gap-2 px-6 py-3
-                       bg-gradient-to-r from-amber-500 to-amber-600
-                       text-slate-900 font-bold text-sm rounded-lg
-                       overflow-hidden transition-all duration-300
-                       hover:shadow-2xl hover:shadow-amber-500/30 hover:scale-105"
+            {/* ── Logo ── */}
+            <motion.div
+              initial={{ opacity: 0, x: -15 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              {/* Shine effect */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: "100%" }}
-                transition={{ duration: 0.6 }}
-              />
-
-              <span className="relative z-10">Consulta Legal</span>
-              <ArrowRight
-                className="w-4 h-4 relative z-10 transition-transform duration-300
-                         group-hover:translate-x-1"
-              />
-            </button>
-          </motion.div>
-
-          {/* BOTÓN MÓVIL */}
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-white hover:text-amber-400
-                     transition-colors duration-200"
-            aria-label="Menú de navegación"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
-        </div>
-      </div>
-
-      {/* MENÚ MÓVIL CON ANIMACIONES */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-slate-900/98 backdrop-blur-xl border-t border-white/10
-                     overflow-hidden"
-          >
-            <div className="px-4 py-4 space-y-2">
-              {navLinks.map((link, index) => (
+              <Link href="/" className="flex items-center gap-2.5 group">
                 <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
+                  className="w-9 h-9 shrink-0"
+                  whileHover={{ scale: 1.08, rotate: 3 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 >
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 group ${
-                      isActive(link.href)
-                        ? "text-amber-400 bg-white/5"
-                        : "text-white/90 hover:text-amber-400 hover:bg-white/5"
-                    }`}
+                  <div
+                    className="w-full h-full rounded-lg flex items-center justify-center"
+                    style={{
+                      background: "linear-gradient(135deg, #D4AF37 0%, #B87333 50%, #D4AF37 100%)",
+                      boxShadow: "0 2px 8px rgba(212,175,55,0.3), inset 0 1px 0 rgba(255,255,255,0.2)",
+                    }}
                   >
-                    <motion.span
-                      className="inline-block"
-                      whileHover={{ x: 5 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {link.name}
-                    </motion.span>
-                  </Link>
+                    <span className="text-[#0a0e1a] font-bold text-base leading-none" style={{ fontFamily: "'Playfair Display', serif" }}>
+                      M
+                    </span>
+                  </div>
                 </motion.div>
+                <div className="hidden sm:block leading-none">
+                  <p className="text-white font-bold text-[15px] tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    MEDINA ALMONTE
+                  </p>
+                  <p className="text-amber-400/80 text-[9px] tracking-[0.25em] uppercase mt-0.5">
+                    Firma Legal
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* ── Desktop Nav ── */}
+            <nav className="hidden lg:flex items-center gap-0.5">
+              {navLinks.map((link, i) => (
+                <NavLink
+                  key={link.href}
+                  link={link}
+                  index={i}
+                  active={isActive(link.href)}
+                  scrolled={isScrolled}
+                />
               ))}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.05 }}
+            </nav>
+
+            {/* ── CTA ── */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.4 }}
+              className="hidden lg:flex items-center gap-3"
+            >
+              <button
+                onClick={() => openModal()}
+                className="group relative px-5 py-2 rounded-lg text-[13px] font-semibold
+                         transition-all duration-300 overflow-hidden
+                         hover:shadow-[0_0_20px_rgba(212,175,55,0.25)]"
+                style={{
+                  background: "linear-gradient(135deg, #D4AF37 0%, #c9a961 50%, #B87333 100%)",
+                  color: "#0a0e1a",
+                  boxShadow: "0 1px 4px rgba(212,175,55,0.2), inset 0 1px 0 rgba(255,255,255,0.15)",
+                }}
               >
+                {/* Hover shine */}
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12" />
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <Phone className="w-3.5 h-3.5" />
+                  Consulta Legal
+                </span>
+              </button>
+            </motion.div>
+
+            {/* ── Mobile Toggle ── */}
+            <button
+              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              className={`lg:hidden w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-200 ${
+                isScrolled
+                  ? "text-amber-400/80 hover:text-amber-400 hover:bg-amber-400/10"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
+              }`}
+              aria-label="Menú"
+            >
+              {isMobileOpen ? <X size={20} strokeWidth={2} /> : <Menu size={20} strokeWidth={2} />}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* ── Mobile Menu ── */}
+      <AnimatePresence>
+        {isMobileOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+              onClick={() => setIsMobileOpen(false)}
+            />
+            <motion.div
+              initial={{ y: "-100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-100%", opacity: 0 }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              className="fixed top-0 left-0 right-0 z-50 lg:hidden overflow-hidden"
+              style={{
+                background: "linear-gradient(180deg, #0a0e1a 0%, #060a14 100%)",
+                boxShadow: "0 4px 30px rgba(0,0,0,0.5), 0 1px 0 rgba(212,175,55,0.15)",
+              }}
+            >
+              {/* Mobile header bar */}
+              <div className="flex items-center justify-between h-14 px-4 border-b border-white/[0.06]">
+                <Link href="/" onClick={() => setIsMobileOpen(false)} className="flex items-center gap-2">
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center"
+                    style={{ background: "linear-gradient(135deg, #D4AF37, #B87333)" }}
+                  >
+                    <span className="text-[#0a0e1a] font-bold text-sm" style={{ fontFamily: "'Playfair Display', serif" }}>M</span>
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-sm" style={{ fontFamily: "'Playfair Display', serif" }}>MEDINA ALMONTE</p>
+                    <p className="text-amber-400/70 text-[8px] tracking-[0.2em] uppercase">Firma Legal</p>
+                  </div>
+                </Link>
                 <button
-                  onClick={() => { setIsMobileMenuOpen(false); openModal(); }}
-                  className="block w-full px-4 py-3 mt-4 bg-gradient-to-r from-amber-500 to-amber-600
-                           text-slate-900 font-bold rounded-lg text-center text-sm
-                           shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 transition-shadow"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="w-8 h-8 flex items-center justify-center rounded-lg text-amber-400/70 hover:text-amber-400 hover:bg-amber-400/10 transition-colors"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+
+              {/* Mobile links */}
+              <nav className="px-3 py-2 max-h-[70vh] overflow-y-auto">
+                {navLinks.map((link, index) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -15 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.05 + index * 0.04, duration: 0.3 }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsMobileOpen(false)}
+                      className={`relative flex items-center px-4 py-3 rounded-lg text-[14px] font-medium transition-all duration-200 ${
+                        isActive(link.href)
+                          ? "text-amber-400"
+                          : "text-white/60 hover:text-amber-400/90"
+                      }`}
+                    >
+                      {isActive(link.href) && (
+                        <span
+                          className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full"
+                          style={{
+                            background: "linear-gradient(180deg, #D4AF37, #B87333)",
+                            boxShadow: "0 0 8px rgba(212,175,55,0.5)",
+                          }}
+                        />
+                      )}
+                      <span className="pl-2">{link.name}</span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+
+              {/* Mobile CTA */}
+              <div className="px-4 pb-5 pt-2">
+                <button
+                  onClick={() => { setIsMobileOpen(false); openModal(); }}
+                  className="w-full py-3 rounded-lg text-[14px] font-bold transition-all duration-200"
+                  style={{
+                    background: "linear-gradient(135deg, #D4AF37 0%, #B87333 100%)",
+                    color: "#0a0e1a",
+                    boxShadow: "0 4px 16px rgba(212,175,55,0.25)",
+                  }}
                 >
                   Consulta Legal Inicial
                 </button>
-              </motion.div>
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

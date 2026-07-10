@@ -8,7 +8,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 
 export function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-[#0A0A0A]">
       <ScrollProgress />
       <Header />
       <main className="flex-1">{children}</main>

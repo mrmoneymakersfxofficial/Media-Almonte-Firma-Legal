@@ -240,9 +240,9 @@ export function Hero() {
           className="hero-counters mt-14 lg:mt-20 grid grid-cols-3 gap-3 sm:gap-6 hero-text-col"
         >
           {[
-            { value: 408, suffix: "+", label: "Empresas Formalizadas" },
-            { value: 1, suffix: "M+", label: "en Multas Evitadas" },
-            { value: 98, suffix: "%", label: "de Satisfacción" },
+            { value: 15, suffix: "+", label: "Años Defendiendo Derechos" },
+            { value: 92, suffix: "%", label: "Resoluciones Favorables" },
+            { value: 500, suffix: "+", label: "Clientes Representados" },
           ].map((item) => (
             <div
               key={item.label}

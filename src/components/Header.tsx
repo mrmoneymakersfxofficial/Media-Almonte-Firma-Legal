@@ -1,211 +1,154 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useWhatsAppStore } from "@/lib/whatsapp";
-import Image from "next/image";
 
-const navItems = [
-  { label: "Inicio", href: "/" },
-  { label: "Áreas de Práctica", href: "/areas-de-practica" },
-  { label: "La Firma", href: "/firma" },
-  { label: "Nuestros Abogados", href: "/abogados" },
-  { label: "Resultados", href: "/resultados" },
-  { label: "Contacto", href: "/contacto" },
+const navLinks = [
+  { name: "Inicio", href: "/" },
+  { name: "Áreas de Práctica", href: "/areas-de-practica" },
+  { name: "La Firma", href: "/firma" },
+  { name: "Nuestros Abogados", href: "/abogados" },
+  { name: "Resultados", href: "/resultados" },
+  { name: "Contacto", href: "/contacto" },
 ];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const { openModal } = useWhatsAppStore();
 
   useEffect(() => {
-    function handleScroll() {
+    const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-    }
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    if (isMobileOpen) {
+    if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
-      document.documentElement.classList.add("mobile-menu-open");
     } else {
       document.body.style.overflow = "";
-      document.documentElement.classList.remove("mobile-menu-open");
     }
     return () => {
       document.body.style.overflow = "";
-      document.documentElement.classList.remove("mobile-menu-open");
     };
-  }, [isMobileOpen]);
+  }, [isMobileMenuOpen]);
 
   function isActive(href: string) {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   }
 
-  const scrolled = isScrolled;
-
   return (
-    <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-300 ease-in-out ${
-          scrolled
-            ? "header-scrolled"
-            : "header-hero"
-        }`}
-      >
-        {/* Brand gradient line — smooth 4px with GPU compositing */}
-        <div
-          className={`w-full h-[4px] transition-opacity duration-300 ${
-            scrolled ? "opacity-100" : "opacity-0"
-          }`}
-          style={{
-            background: 'linear-gradient(90deg, #0f172a 0%, #B87333 30%, #D4AF37 50%, #f4e5c2 70%, #0f172a 100%)',
-            willChange: 'opacity',
-            transform: 'translateZ(0)',
-          }}
-        />
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 header-compact ${
+        isScrolled
+          ? "bg-slate-900/95 backdrop-blur-md shadow-lg py-2"
+          : "bg-gradient-to-b from-black/60 to-transparent py-3"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4">
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="navbar-brand-fixed">
+          {/* LOGO — Texto blanco + icono dorado */}
+          <Link href="/" className="flex-shrink-0">
+            <div className="flex items-center gap-3">
+              {/* Icono dorado */}
+              <div className="w-10 h-10">
+                <svg viewBox="0 0 100 100" className="w-full h-full">
+                  <path
+                    d="M50 5 L50 25 M30 15 Q50 25 70 15 M30 15 L30 45 L50 35 L70 45 L70 15 M30 45 L30 85 L50 75 L70 85 L70 45"
+                    fill="none"
+                    stroke="#D4AF37"
+                    strokeWidth="3"
+                  />
+                  <circle cx="30" cy="50" r="8" fill="#D4AF37" />
+                  <circle cx="70" cy="50" r="8" fill="#D4AF37" />
+                </svg>
+              </div>
+              {/* Texto blanco para mejor legibilidad */}
+              <div className="hidden sm:block">
+                <h1 className="text-white font-serif text-lg font-bold leading-tight">
+                  MEDINA ALMONTE
+                </h1>
+                <p className="text-amber-400 text-xs tracking-wider">
+                  FIRMA LEGAL
+                </p>
+              </div>
+            </div>
+          </Link>
 
-            {/* ── Logo ── */}
-            <Link href="/" className="flex items-center shrink-0 relative z-10">
-              <Image
-                src="https://i.imgur.com/Uf6PTZV.png"
-                alt="Medina Almonte Firma Legal"
-                width={1181}
-                height={285}
-                priority
-                className="brand-logo-fixed transition-opacity duration-300"
-              />
-            </Link>
-
-            {/* ── Desktop Nav — Ultra Premium Gold Links ── */}
-            <nav className="hidden lg:flex items-center gap-0.5">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`nav-link-premium ${
-                    scrolled ? "nav-link-gold" : "nav-link-white"
-                  } ${isActive(item.href) ? "nav-link-active" : ""}`}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <button
-                onClick={() => openModal()}
-                className={`ml-3 px-5 py-2.5 rounded-lg text-[14px] tracking-wide transition-all duration-300 ${
-                  scrolled
-                    ? "nav-cta-gold"
-                    : "bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white border border-white/25 hover:border-[#D4AF37]/40"
+          {/* NAVEGACIÓN ESCRITORIO — Compacta */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 whitespace-nowrap ${
+                  isActive(link.href)
+                    ? "text-amber-400 bg-white/5"
+                    : "text-white/90 hover:text-amber-400 hover:bg-white/5"
                 }`}
               >
-                Consulta Legal Inicial
-              </button>
-            </nav>
+                {link.name}
+              </Link>
+            ))}
+          </nav>
 
-            {/* ── Mobile Hamburger — Gold when scrolled ── */}
+          {/* BOTÓN CTA — Compacto */}
+          <div className="hidden lg:block">
             <button
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className={`lg:hidden relative z-10 flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-200 ${
-                scrolled
-                  ? "hamburger-gold"
-                  : "text-white hover:bg-white/10 active:bg-white/20"
-              }`}
-              aria-label="Menú de navegación"
+              onClick={() => openModal()}
+              className="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-semibold rounded-md transition-all duration-200 shadow-lg hover:shadow-amber-500/25"
             >
-              {isMobileOpen ? (
-                <X className="w-5 h-5" strokeWidth={2} />
-              ) : (
-                <Menu className="w-5 h-5" strokeWidth={2} />
-              )}
+              Consulta Legal
+            </button>
+          </div>
+
+          {/* BOTÓN MÓVIL */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-2 text-white hover:text-amber-400 transition-colors"
+            aria-label="Menú de navegación"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* MENÚ MÓVIL — Dropdown compacto */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-slate-900/98 backdrop-blur-md border-t border-white/10">
+          <div className="px-4 py-3 space-y-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block px-3 py-3 rounded-md text-sm font-medium transition-colors ${
+                  isActive(link.href)
+                    ? "text-amber-400 bg-white/5"
+                    : "text-white/90 hover:text-amber-400 hover:bg-white/5"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <button
+              onClick={() => { setIsMobileMenuOpen(false); openModal(); }}
+              className="block w-full px-3 py-3 mt-2 bg-amber-500 text-slate-900 font-semibold rounded-md text-center text-sm hover:bg-amber-600 transition-colors"
+            >
+              Consulta Legal Inicial
             </button>
           </div>
         </div>
-      </header>
-
-      {/* ── Mobile Drawer ── */}
-      <AnimatePresence>
-        {isMobileOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 lg:hidden"
-              onClick={() => setIsMobileOpen(false)}
-            />
-
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 w-[280px] max-w-[80vw] z-50 lg:hidden flex flex-col shadow-2xl"
-              style={{
-                background: 'linear-gradient(180deg, #0f172a 0%, #0A0A0A 100%)',
-              }}
-            >
-              {/* Drawer Header */}
-              <div className="navbar-brand-fixed px-4 border-b border-[#D4AF37]/10 shrink-0">
-                <Image
-                  src="https://i.imgur.com/Uf6PTZV.png"
-                  alt="Medina Almonte Firma Legal"
-                  width={1181}
-                  height={285}
-                  className="brand-logo-fixed"
-                />
-                <button
-                  onClick={() => setIsMobileOpen(false)}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg text-[#D4AF37]/80 hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors"
-                  aria-label="Cerrar menú"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Drawer Nav */}
-              <nav className="flex-1 overflow-y-auto px-3 py-3">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsMobileOpen(false)}
-                    className={`flex items-center px-4 py-3 rounded-lg text-[15px] font-semibold transition-all duration-300 drawer-nav-link ${
-                      isActive(item.href)
-                        ? "drawer-nav-active"
-                        : "text-white/50 hover:bg-[#D4AF37]/5 hover:text-[#D4AF37]"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-
-              {/* Drawer Footer */}
-              <div className="px-4 pb-4 pt-2 border-t border-[#D4AF37]/10 shrink-0 space-y-2">
-                <button
-                  onClick={() => { setIsMobileOpen(false); openModal(); }}
-                  className="w-full bg-[#D4AF37] hover:bg-[#B87333] text-[#0A0A0A] py-3 rounded-lg text-[15px] font-bold transition-colors"
-                >
-                  Consulta Legal Inicial
-                </button>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-    </>
+      )}
+    </header>
   );
 }

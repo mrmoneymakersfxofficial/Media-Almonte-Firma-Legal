@@ -231,6 +231,26 @@ img, svg {
   }
 }
 
+/* ─── HEADER COMPACT — Max height constraint ─── */
+.header-compact {
+  max-height: 64px;
+  overflow: hidden;
+}
+
+.header-compact:has(.lg\\:hidden + *) {
+  max-height: none;
+}
+
+/* Serif font for logo */
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Nav links: prevent text break */
+.header-compact nav > a {
+  white-space: nowrap;
+}
+
 /* Custom scrollbar — Medina Almonte brand colors (all devices) */
 * {
   scrollbar-width: thin;

@@ -28,10 +28,10 @@ export default function AreasDePracticaPage() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>
                 Áreas de Práctica
               </h1>
+              <div className="section-divider-gold mb-6" />
               <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
                 Nuestro equipo de abogados especializados cubre las principales ramas del derecho para ofrecerte una defensa legal integral.
               </p>
-              <div className="section-divider-gold mt-6" />
             </div>
           </ScrollReveal>
 

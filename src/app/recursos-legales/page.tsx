@@ -58,7 +58,7 @@ const articles = [
 export default function RecursosLegalesPage() {
   return (
     <SiteLayout>
-      <section className="bg-[#0A0A0A] min-h-screen py-24 px-4">
+      <section className="section-dark-gradient min-h-screen py-24 px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
@@ -102,13 +102,13 @@ export default function RecursosLegalesPage() {
               return (
                 <ScrollReveal key={article.slug} delay={0.1 * (index + 1)}>
                   <Link href={`/recursos-legales/${article.slug}`} className="block group">
-                    <article className="bg-[#111111] border border-white/5 rounded-2xl overflow-hidden h-full flex flex-col hover:border-[#D4AF37]/20 transition-colors duration-300">
+                    <article className="card-premium gold-border-gradient rounded-2xl overflow-hidden h-full flex flex-col">
                       {/* Icon / Illustration Area */}
                       <div
                         className={`relative h-44 bg-gradient-to-br ${article.gradient} flex items-center justify-center`}
                       >
                         <div
-                          className={`w-16 h-16 ${article.iconBg} rounded-2xl flex items-center justify-center`}
+                          className={`icon-glow w-16 h-16 ${article.iconBg} rounded-2xl flex items-center justify-center`}
                         >
                           <Icon
                             className="w-8 h-8"
@@ -120,10 +120,9 @@ export default function RecursosLegalesPage() {
                       {/* Content */}
                       <div className="p-6 flex flex-col flex-1">
                         {/* Category Tag */}
-                        <span className="inline-block self-start text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full border mb-4"
+                        <span className="gold-border-gradient rounded-full inline-block self-start text-xs font-semibold tracking-wider uppercase px-3 py-1 mb-4"
                           style={{
                             color: article.iconColor,
-                            borderColor: `${article.iconColor}30`,
                             backgroundColor: `${article.iconColor}10`,
                           }}
                         >
@@ -147,13 +146,13 @@ export default function RecursosLegalesPage() {
                         </p>
 
                         {/* Date & Link */}
-                        <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                        <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/[0.08]">
                           <span className="flex items-center gap-1.5 text-gray-600 text-xs" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
                             <Calendar className="w-3.5 h-3.5" />
                             {article.date}
                           </span>
                           <span
-                            className="flex items-center gap-1 text-[#D4AF37] text-sm font-medium group-hover:gap-2 transition-all duration-300"
+                            className="btn-gold-outline gpu-accelerated flex items-center gap-1 text-[#D4AF37] text-sm font-medium group-hover:gap-2 transition-all duration-300"
                             style={{ fontFamily: "var(--font-inter), sans-serif" }}
                           >
                             Leer más

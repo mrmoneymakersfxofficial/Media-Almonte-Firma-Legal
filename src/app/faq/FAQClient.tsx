@@ -54,7 +54,7 @@ const faqs = [
 
 export default function FAQClient() {
   return (
-    <section className="bg-[#0A0A0A] min-h-screen py-24 px-4 sm:px-6 lg:px-8">
+    <section className="section-dark-gradient min-h-screen py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -95,7 +95,7 @@ export default function FAQClient() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border-white/[0.08] px-1"
+                className="glass-card gold-border-gradient rounded-xl mb-3 px-1 gpu-accelerated"
               >
                 <AccordionTrigger
                   className="text-white hover:text-[#D4AF37] transition-colors duration-200 text-base md:text-lg font-medium py-5 gap-4 [&[data-state=open]>svg]:text-[#D4AF37]"
@@ -116,9 +116,9 @@ export default function FAQClient() {
 
         {/* CTA */}
         <ScrollReveal delay={0.4}>
-          <div className="mt-16 bg-gradient-to-br from-[#0B1A2E] to-[#0A0A0A] border border-[#D4AF37]/20 rounded-2xl p-8 md:p-10 text-center">
+          <div className="mt-16 glass-card gold-border-gradient rounded-2xl p-8 md:p-10 text-center">
             <div className="flex justify-center mb-4">
-              <div className="w-12 h-12 bg-[#D4AF37]/15 rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#D4AF37]/15 rounded-xl flex items-center justify-center icon-glow">
                 <MessageSquare className="w-6 h-6 text-[#D4AF37]" />
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function FAQClient() {
               href="https://api.whatsapp.com/send?phone=51943366950&text=Hola%2C%20tengo%20una%20consulta%20sobre%20sus%20servicios%20legales."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#c5a030] text-[#0A0A0A] font-bold text-sm px-7 py-3 rounded-xl transition-colors duration-300"
+              className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] font-bold text-sm px-7 py-3 rounded-xl"
             >
               <HelpCircle className="w-4 h-4" />
               Consultar por WhatsApp

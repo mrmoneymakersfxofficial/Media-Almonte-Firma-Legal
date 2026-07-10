@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function AbogadosPage() {
   return (
     <SiteLayout>
-      <section className="bg-[#0A0A0A] py-24 px-4">
+      <section className="section-dark-gradient py-24 px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
@@ -59,7 +59,7 @@ export default function AbogadosPage() {
           {/* Colegio de Abogados Info */}
           <ScrollReveal delay={0.2}>
             <div className="mt-16 text-center">
-              <div className="bg-[#0B1A2E] border border-[#D4AF37]/10 rounded-2xl p-8 max-w-3xl mx-auto">
+              <div className="glass-card gold-border-gradient rounded-2xl p-8 max-w-3xl mx-auto">
                 <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
                   Todos nuestros abogados se encuentran debidamente colegiados y
                   habilitados para el ejercicio profesional en el territorio

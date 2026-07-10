@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function PoliticaPrivacidadPage() {
   return (
     <SiteLayout>
-      <section className="bg-[#0A0A0A] min-h-screen py-24 px-4 sm:px-6 lg:px-8">
+      <section className="section-dark-gradient min-h-screen py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="mb-14">
@@ -173,7 +173,7 @@ export default function PoliticaPrivacidadPage() {
                   Personales del Perú:
                 </p>
                 <div className="mt-4 space-y-4">
-                  <div className="bg-[#111111] border border-white/5 rounded-xl p-5">
+                  <div className="glass-card gold-border-gradient rounded-xl p-5">
                     <h3 className="text-white font-semibold text-sm mb-1.5">
                       Consentimiento del Titular
                     </h3>
@@ -183,7 +183,7 @@ export default function PoliticaPrivacidadPage() {
                       conforme a las finalidades descritas.
                     </p>
                   </div>
-                  <div className="bg-[#111111] border border-white/5 rounded-xl p-5">
+                  <div className="glass-card gold-border-gradient rounded-xl p-5">
                     <h3 className="text-white font-semibold text-sm mb-1.5">
                       Interés Legítimo
                     </h3>
@@ -250,7 +250,7 @@ export default function PoliticaPrivacidadPage() {
                   ].map((right) => (
                     <div
                       key={right.title}
-                      className="bg-[#111111] border border-white/5 rounded-xl p-4"
+                      className="glass-card gold-border-gradient rounded-xl p-4"
                     >
                       <h3 className="text-[#D4AF37] font-semibold text-sm mb-1.5">
                         {right.title}
@@ -327,7 +327,7 @@ export default function PoliticaPrivacidadPage() {
                   Privacidad o el tratamiento de tus datos personales, no dudes en
                   contactarnos:
                 </p>
-                <div className="bg-[#111111] border border-white/5 rounded-xl p-6 space-y-3">
+                <div className="glass-card gold-border-gradient rounded-2xl p-6 space-y-3">
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="text-[#D4AF37] font-semibold w-28 shrink-0">
                       Correo:

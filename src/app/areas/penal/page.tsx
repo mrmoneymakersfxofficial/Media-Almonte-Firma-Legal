@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 export default function PenalPage() {
   return (
     <SiteLayout>
-      <section className="bg-[#0A0A0A] min-h-screen py-24 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="section-navy-gradient min-h-screen py-24 px-4">
+        <div className="max-w-4xl mx-auto text-center glass-card gold-border-gradient rounded-2xl p-6 sm:p-8">
           <ScrollReveal>
             <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">
               Área de Práctica
@@ -54,7 +54,7 @@ export default function PenalPage() {
               href="https://api.whatsapp.com/send?phone=51943366950&text=Hola%2C%20necesito%20una%20consulta%20legal%20en%20Derecho%20Penal%20-%20Medina%20Almonte%20Firma%20Legal."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#0A0A0A] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#c5a030] transition-colors duration-300"
+              className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#c5a030] transition-colors duration-300"
             >
               Consulta Legal Inicial
             </a>

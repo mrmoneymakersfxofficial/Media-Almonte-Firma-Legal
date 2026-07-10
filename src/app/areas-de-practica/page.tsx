@@ -58,7 +58,7 @@ const areas = [
 export default function AreasDePracticaPage() {
   return (
     <SiteLayout>
-      <section className="bg-[#0A0A0A] min-h-screen py-24 px-4">
+      <section className="section-dark-gradient min-h-screen py-24 px-4">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -84,9 +84,9 @@ export default function AreasDePracticaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {areas.map((area, index) => (
               <ScrollReveal key={area.slug} delay={index * 0.1}>
-                <Link href={`/areas/${area.slug}`} className="block group">
-                  <div className="relative bg-[#111111] border border-white/5 rounded-2xl p-8 h-full transition-all duration-300 hover:border-[#D4AF37]/30 hover:bg-[#141414]">
-                    <span className="text-4xl mb-4 block">{area.icon}</span>
+                <Link href={`/areas/${area.slug}`} className="block group gpu-accelerated">
+                  <div className="relative practice-card-premium gold-border-gradient rounded-2xl p-8 h-full transition-all duration-300">
+                    <div className="icon-glow inline-block mb-4"><span className="text-4xl block">{area.icon}</span></div>
                     <h3
                       className="text-xl font-semibold text-white mb-3 group-hover:text-[#D4AF37] transition-colors"
                       style={{

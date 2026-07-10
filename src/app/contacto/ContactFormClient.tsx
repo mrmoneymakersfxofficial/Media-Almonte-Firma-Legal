@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, MessageSquare } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -180,9 +181,10 @@ export default function ContactFormClient() {
   }
 
   return (
-    <section className="bg-[#0A0A0A] min-h-screen py-24 px-4 sm:px-6 lg:px-8">
+    <section className="section-dark-gradient min-h-screen py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
+        <ScrollReveal>
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-6">
             Hablemos
@@ -198,15 +200,17 @@ export default function ContactFormClient() {
             contactaremos a la brevedad para brindarte la asesoría que necesitas.
           </p>
         </div>
+        </ScrollReveal>
 
         {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
           {/* ─── FORM (left, 3 cols) ─── */}
           <div className="lg:col-span-3">
+            <ScrollReveal>
             <form
               onSubmit={handleSubmit}
               noValidate
-              className="bg-[#111111] border border-white/[0.08] rounded-2xl p-6 sm:p-8 space-y-5"
+              className="glass-card gold-border-gradient rounded-2xl p-6 sm:p-8 space-y-5 gpu-accelerated"
             >
               {/* Nombre completo */}
               <div>
@@ -338,7 +342,7 @@ export default function ContactFormClient() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full h-13 bg-[#D4AF37] hover:bg-[#c5a030] text-[#0A0A0A] font-bold text-base rounded-xl transition-colors duration-300 mt-2 cursor-pointer"
+                className="w-full h-13 btn-gold-primary gpu-accelerated text-[#0A0A0A] font-bold text-base rounded-xl transition-colors duration-300 mt-2 cursor-pointer"
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">
@@ -358,6 +362,7 @@ export default function ContactFormClient() {
                 primera consulta es gratuita.
               </p>
             </form>
+            </ScrollReveal>
           </div>
 
           {/* ─── CONTACT INFO (right, 2 cols) ─── */}
@@ -365,10 +370,10 @@ export default function ContactFormClient() {
             {contactInfo.map((item) => {
               const Icon = item.icon;
               const content = (
-                <div className="bg-[#111111] border border-white/[0.08] rounded-xl p-5 hover:border-[#D4AF37]/20 transition-colors duration-300">
+                <div className="card-premium gold-border-gradient rounded-2xl p-5 hover:border-[#D4AF37]/20 transition-colors duration-300 gpu-accelerated">
                   <div className="flex items-start gap-4">
                     <div
-                      className="shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
+                      className="icon-glow shrink-0 w-11 h-11 rounded-lg flex items-center justify-center gpu-accelerated"
                       style={{ backgroundColor: `${item.color}15` }}
                     >
                       <Icon className="w-5 h-5" style={{ color: item.color }} />
@@ -407,7 +412,8 @@ export default function ContactFormClient() {
             })}
 
             {/* CTA card */}
-            <div className="bg-gradient-to-br from-[#0B1A2E] to-[#0A0A0A] border border-[#D4AF37]/20 rounded-xl p-6 mt-2">
+            <ScrollReveal delay={0.2}>
+            <div className="glass-card gold-border-gradient rounded-2xl p-6 mt-2 gpu-accelerated">
               <div className="flex items-center gap-3 mb-3">
                 <MessageSquare className="w-5 h-5 text-[#D4AF37]" />
                 <h3
@@ -425,16 +431,18 @@ export default function ContactFormClient() {
                 href="https://api.whatsapp.com/send?phone=51943366950&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20Medina%20Almonte%20Firma%20Legal."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors duration-300"
+                className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors duration-300 gpu-accelerated"
               >
                 <CheckCircle className="w-4 h-4" />
                 Chatear por WhatsApp
               </a>
             </div>
+            </ScrollReveal>
           </div>
         </div>
 
         {/* Google Maps */}
+        <ScrollReveal delay={0.15}>
         <section className="mt-14">
           <h2
             className="text-2xl md:text-3xl font-bold text-white mb-6"
@@ -450,9 +458,10 @@ export default function ContactFormClient() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="rounded-2xl border border-white/10"
+            className="glass-card rounded-2xl overflow-hidden"
           />
         </section>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function FirmaPage() {
   return (
     <SiteLayout>
-      <section className="bg-[#0A0A0A] min-h-screen flex items-center justify-center py-24 px-4">
+      <section className="section-dark-gradient min-h-screen flex items-center justify-center py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">

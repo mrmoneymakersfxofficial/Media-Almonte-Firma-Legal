@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function ResultadosPage() {
   return (
     <SiteLayout>
-      <section className="bg-[#0A0A0A] min-h-screen flex items-center justify-center py-24 px-4">
+      <section className="section-dark-gradient min-h-screen flex items-center justify-center py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">
@@ -53,10 +53,10 @@ export default function ResultadosPage() {
               {[1, 2, 3].map((i) => (
                 <div
                   key={i}
-                  className="bg-[#111111] border border-white/5 rounded-2xl p-8 text-left"
+                  className="card-premium gold-border-gradient rounded-2xl p-8 text-left gpu-accelerated"
                 >
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] font-bold">
+                    <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] font-bold icon-glow">
                       {i}
                     </div>
                     <div className="flex-1">

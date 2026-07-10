@@ -2,15 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Preloader } from "@/components/Preloader";
-import { Oswald } from "next/font/google";
+import { Playfair_Display, Inter, Merriweather } from "next/font/google";
 
-// Oswald — condensada gótica, idéntica a News Gothic BT, misma que villamares.com.pe
-const oswald = Oswald({
-  variable: "--font-oswald",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
+// Fuentes Medina Almonte Firma Legal
+const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+const merriweather = Merriweather({ weight: ['300', '400', '700'], subsets: ['latin'], variable: '--font-merriweather', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://medinaalmonte.com"),
@@ -76,7 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${oswald.variable} antialiased bg-background text-foreground`}>
+      <body className={`${playfair.variable} ${inter.variable} ${merriweather.variable} antialiased bg-background text-foreground`}>
         <Preloader />
         {children}
         <Toaster />

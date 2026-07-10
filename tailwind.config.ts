@@ -57,6 +57,11 @@ const config: Config = {
                         'medina-cobre': '#B87333',
                         'medina-dorado': '#D4AF37',
                         'medina-dorado-light': '#F0E68C',
+                        // Premium Slate palette
+                        'slate-deep': '#0f172a',
+                        'slate-rich': '#1e293b',
+                        'gold-bright': '#f4e5c2',
+                        'gold-warm': '#c9a961',
                 },
                 fontFamily: {
                         'serif': ['Merriweather', 'serif'],
@@ -65,7 +70,21 @@ const config: Config = {
                         lg: 'var(--radius)',
                         md: 'calc(var(--radius) - 2px)',
                         sm: 'calc(var(--radius) - 4px)'
-                }
+                },
+                animation: {
+                        'gold-shimmer': 'gold-shimmer 3s ease-in-out infinite',
+                        'stat-pulse': 'stat-pulse-glow 4s ease-in-out infinite',
+                },
+                keyframes: {
+                        'gold-shimmer': {
+                                '0%, 100%': { opacity: '0.7' },
+                                '50%': { opacity: '1' },
+                        },
+                        'stat-pulse-glow': {
+                                '0%, 100%': { boxShadow: '0 4px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05)' },
+                                '50%': { boxShadow: '0 4px 30px rgba(212, 175, 55, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05)' },
+                        },
+                },
         }
   },
   plugins: [tailwindcssAnimate],

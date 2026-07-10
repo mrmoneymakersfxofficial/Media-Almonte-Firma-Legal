@@ -191,9 +191,11 @@ img, svg {
 }
 
 .header-scrolled {
-  background: #0A0A0A !important;
-  box-shadow: 0 1px 12px rgba(212, 175, 55, 0.08);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.1) !important;
+  background: rgba(15, 23, 42, 0.92) !important;
+  backdrop-filter: blur(24px) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.4) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(212, 175, 55, 0.12) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12) !important;
 }
 
 /* ─── BRAND LOGO FIXED — Anti-crop global rules (all pages, PC + Mobile) ─── */
@@ -1360,12 +1362,12 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: var(--card-shadow);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, box-shadow, border-color;
+  will-change: transform, box-shadow, border-color, background;
 }
 
 .card-premium:hover {
-  background: rgba(11, 26, 46, 0.8);
-  border-color: rgba(212, 175, 55, 0.2);
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(212, 175, 55, 0.25);
   box-shadow: var(--card-shadow-hover);
   transform: translateY(-4px) scale(1.02);
 }
@@ -1423,4 +1425,227 @@ html {
 
 .section-navy-gradient {
   background: linear-gradient(180deg, #0B1A2E 0%, #0f2240 50%, #0B1A2E 100%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   ULTRA PREMIUM NAVIGATION — Gold Shimmer + Animated Underline + Glow
+   6-layer hover effect: color transition, gold glow, light sweep,
+   animated underline, letter-spacing, background pill
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.nav-link-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              text-shadow 0.35s ease,
+              letter-spacing 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.35s ease;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ─── Gold text theme (scrolled state) ─── */
+.nav-link-gold {
+  color: rgba(212, 175, 55, 0.7);
+}
+
+.nav-link-gold:hover {
+  color: #f4e5c2;
+  text-shadow:
+    0 0 12px rgba(212, 175, 55, 0.6),
+    0 0 30px rgba(212, 175, 55, 0.2),
+    0 0 60px rgba(212, 175, 55, 0.08);
+  letter-spacing: 0.04em;
+  background: rgba(212, 175, 55, 0.07);
+}
+
+/* ─── White text theme (hero/transparent state) ─── */
+.nav-link-white {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-link-white:hover {
+  color: #D4AF37;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.35);
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ─── Layer 1: Light sweep on hover (before pseudo) ─── */
+.nav-link-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(244, 229, 194, 0.06) 35%,
+    rgba(212, 175, 55, 0.1) 50%,
+    rgba(244, 229, 194, 0.06) 65%,
+    transparent 100%
+  );
+  transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.nav-link-premium:hover::before {
+  left: 130%;
+}
+
+/* ─── Layer 2: Animated gold underline (after pseudo) ─── */
+.nav-link-premium::after {
+  content: '';
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #D4AF37 15%, #f4e5c2 50%, #D4AF37 85%, transparent 100%);
+  border-radius: 1px;
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s ease 0.1s;
+  transform: translateX(-50%);
+  box-shadow: none;
+}
+
+.nav-link-premium:hover::after {
+  width: 65%;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.6), 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+/* ─── Active state — always visible ─── */
+.nav-link-active {
+  color: #D4AF37 !important;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.35) !important;
+}
+
+.nav-link-active::after {
+  width: 65% !important;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* ─── Nav CTA Button (scrolled) — Premium gold gradient ─── */
+.nav-cta-gold {
+  background: var(--gold-gradient) !important;
+  background-size: 200% 200% !important;
+  color: #0A0A0A !important;
+  font-weight: 700 !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25), 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, box-shadow;
+}
+
+.nav-cta-gold::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 70%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.nav-cta-gold:hover {
+  background-position: 100% 100% !important;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4), 0 0 60px rgba(212, 175, 55, 0.12), 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+  transform: translateY(-1px);
+}
+
+.nav-cta-gold:hover::after {
+  left: 120%;
+}
+
+.nav-cta-gold:active {
+  transform: scale(0.97) translateY(0) !important;
+}
+
+/* ─── Hamburger menu icon (scrolled) — Gold ─── */
+.hamburger-gold {
+  color: #D4AF37 !important;
+  transition: all 0.3s ease !important;
+}
+
+.hamburger-gold:hover {
+  color: #f4e5c2 !important;
+  background: rgba(212, 175, 55, 0.08) !important;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   ENHANCED PRACTICE AREA CARDS — Gold tint hover
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.practice-card-premium {
+  background: rgba(11, 26, 46, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: var(--card-shadow);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow, border-color, background;
+  overflow: hidden;
+}
+
+.practice-card-premium::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(ellipse at 30% 0%, rgba(212, 175, 55, 0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+
+.practice-card-premium:hover {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(212, 175, 55, 0.2);
+  box-shadow: 0 16px 48px rgba(212, 175, 55, 0.1), 0 4px 16px rgba(0, 0, 0, 0.4);
+  transform: translateY(-6px) scale(1.02);
+}
+
+.practice-card-premium:hover::after {
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   STAT COUNTER ENHANCEMENT — Subtle pulse glow
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@keyframes stat-pulse-glow {
+  0%, 100% { box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05); }
+  50% { box-shadow: 0 4px 30px rgba(212, 175, 55, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05); }
+}
+
+.stat-glass {
+  animation: stat-pulse-glow 4s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   AMBIENT ENHANCEMENTS — Deeper glows, richer gradients
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.section-dark-gradient {
+  background: linear-gradient(180deg, #0f172a 0%, #0A0A0A 30%, #0d1117 70%, #0A0A0A 100%) !important;
 }

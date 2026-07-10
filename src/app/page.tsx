@@ -215,7 +215,7 @@ function PracticeAreas() {
             return (
               <ScrollReveal key={area.title} delay={0.08 * i} duration={0.6}>
                 <Link href={area.href} className="block group h-full">
-                  <div className="card-premium gold-border-gradient rounded-2xl p-7 sm:p-8 h-full">
+                  <div className="practice-card-premium gold-border-gradient rounded-2xl p-7 sm:p-8 h-full relative">
                     <div className="w-14 h-14 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center mb-5 icon-glow transition-all duration-300 group-hover:bg-[#D4AF37]/15 group-hover:scale-110">
                       <Icon className="w-7 h-7 text-[#D4AF37]" />
                     </div>
@@ -545,7 +545,7 @@ function WhyChooseUs() {
             const Icon = reason.icon;
             return (
               <ScrollReveal key={reason.title} delay={0.08 * i} duration={0.6}>
-                <div className="card-premium gold-border-gradient rounded-2xl p-7 sm:p-8 h-full group">
+                <div className="card-premium gold-border-gradient rounded-2xl p-7 sm:p-8 h-full group relative overflow-hidden">
                   <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center mb-5 icon-glow transition-all duration-300 group-hover:bg-[#D4AF37]/15 group-hover:scale-110">
                     <Icon className="w-6 h-6 text-[#D4AF37]" />
                   </div>

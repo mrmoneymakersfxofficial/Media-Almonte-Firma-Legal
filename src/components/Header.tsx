@@ -4,16 +4,17 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 import Image from "next/image";
 
 const navItems = [
   { label: "Inicio", href: "/" },
-  { label: "Constitución", href: "/constitucion-de-empresas" },
-  { label: "Contabilidad", href: "/contabilidad-tributacion" },
-  { label: "Asesoría Tributaria", href: "/defensa-tributaria-sunat" },
-  { label: "Nosotros", href: "/nosotros-contacto" },
+  { label: "Áreas de Práctica", href: "/areas-de-practica" },
+  { label: "La Firma", href: "/firma" },
+  { label: "Nuestros Abogados", href: "/abogados" },
+  { label: "Resultados", href: "/resultados" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 export function Header() {
@@ -67,7 +68,7 @@ export function Header() {
             scrolled ? "opacity-100" : "opacity-0"
           }`}
           style={{
-            background: 'linear-gradient(90deg, #002350 0%, #481180 50%, #008775 100%)',
+            background: 'linear-gradient(90deg, #0B1A2E 0%, #B87333 50%, #D4AF37 100%)',
             willChange: 'opacity',
             transform: 'translateZ(0)',
           }}
@@ -76,11 +77,11 @@ export function Header() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="navbar-brand-fixed">
 
-            {/* ── Logo: premium — nombre completo + isotype 3 barras ── */}
+            {/* ── Logo ── */}
             <Link href="/" className="flex items-center shrink-0 relative z-10">
               <Image
-                src={scrolled ? "/logo-header-noslogan.webp" : "/logo-header-white-noslogan.png"}
-                alt="Jhon&Asociados"
+                src={scrolled ? "/logo-medina-almonte.webp" : "/logo-medina-almonte-white.webp"}
+                alt="Medina Almonte Firma Legal"
                 width={925}
                 height={381}
                 priority
@@ -97,18 +98,18 @@ export function Header() {
                   className={`relative px-3 py-2 text-[15px] font-bold tracking-wide transition-colors duration-200 rounded-md ${
                     scrolled
                       ? isActive(item.href)
-                        ? "text-[#008775]"
-                        : "text-[#002350]/80 hover:text-[#008775]"
+                        ? "text-[#D4AF37]"
+                        : "text-[#0B1A2E]/80 hover:text-[#D4AF37]"
                       : isActive(item.href)
                         ? "text-white"
-                        : "text-white/80 hover:text-[#00a996]"
+                        : "text-white/80 hover:text-[#D4AF37]"
                   }`}
                 >
                   {item.label}
                   {isActive(item.href) && (
                     <span
                       className={`absolute bottom-0 left-3 right-3 h-[2px] rounded-full transition-colors duration-300 ${
-                        scrolled ? "bg-[#00a996]" : "bg-white"
+                        scrolled ? "bg-[#D4AF37]" : "bg-white"
                       }`}
                     />
                   )}
@@ -118,11 +119,11 @@ export function Header() {
                 onClick={() => openModal()}
                 className={`ml-2 px-5 py-2.5 rounded-lg text-[14px] font-bold tracking-wide transition-all duration-200 ${
                   scrolled
-                    ? "bg-[#008775] hover:bg-[#006655] text-white shadow-sm hover:shadow-md"
+                    ? "bg-[#D4AF37] hover:bg-[#B87333] text-[#0A0A0A] shadow-sm hover:shadow-md"
                     : "bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white border border-white/25"
                 }`}
               >
-                Consultoría Gratuita
+                Consulta Legal Inicial
               </button>
             </nav>
 
@@ -131,7 +132,7 @@ export function Header() {
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               className={`lg:hidden relative z-10 flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-200 ${
                 scrolled
-                  ? "text-[#002350] hover:bg-[#002350]/5 active:bg-[#002350]/10"
+                  ? "text-[#0B1A2E] hover:bg-[#0B1A2E]/5 active:bg-[#0B1A2E]/10"
                   : "text-white hover:bg-white/10 active:bg-white/20"
               }`}
               aria-label="Menú de navegación"
@@ -164,20 +165,20 @@ export function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 w-[280px] max-w-[80vw] bg-white z-50 lg:hidden flex flex-col shadow-2xl"
+              className="fixed top-0 right-0 bottom-0 w-[280px] max-w-[80vw] bg-[#0A0A0A] z-50 lg:hidden flex flex-col shadow-2xl"
             >
               {/* Drawer Header */}
-              <div className="navbar-brand-fixed px-4 border-b border-gray-100 shrink-0">
+              <div className="navbar-brand-fixed px-4 border-b border-white/10 shrink-0">
                 <Image
-                  src="/logo-header-noslogan.webp"
-                  alt="Jhon&Asociados"
+                  src="/logo-medina-almonte.webp"
+                  alt="Medina Almonte Firma Legal"
                   width={925}
                   height={381}
                   className="brand-logo-fixed"
                 />
                 <button
                   onClick={() => setIsMobileOpen(false)}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg text-[#002350] hover:bg-gray-100 transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg text-white/80 hover:bg-white/10 transition-colors"
                   aria-label="Cerrar menú"
                 >
                   <X className="w-5 h-5" />
@@ -194,7 +195,7 @@ export function Header() {
                     className={`flex items-center px-4 py-3 rounded-lg text-[15px] font-semibold transition-colors drawer-nav-link ${
                       isActive(item.href)
                         ? "drawer-nav-active"
-                        : "text-[#002350]/70 hover:bg-[#002350]/[0.04] hover:text-[#002350]"
+                        : "text-white/60 hover:bg-white/5 hover:text-[#D4AF37]"
                     }`}
                   >
                     {item.label}
@@ -203,20 +204,13 @@ export function Header() {
               </nav>
 
               {/* Drawer Footer */}
-              <div className="px-4 pb-4 pt-2 border-t border-gray-100 shrink-0 space-y-2">
+              <div className="px-4 pb-4 pt-2 border-t border-white/10 shrink-0 space-y-2">
                 <button
                   onClick={() => { setIsMobileOpen(false); openModal(); }}
-                  className="w-full bg-[#008775] hover:bg-[#006655] text-white py-3 rounded-lg text-[15px] font-bold transition-colors"
+                  className="w-full bg-[#D4AF37] hover:bg-[#B87333] text-[#0A0A0A] py-3 rounded-lg text-[15px] font-bold transition-colors"
                 >
-                  Consultoría Gratuita
+                  Consulta Legal Inicial
                 </button>
-                <a
-                  href="tel:+51943366950"
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-lg text-[14px] font-medium text-[#002350]/70 hover:bg-gray-50 transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  +51 943 366 950
-                </a>
               </div>
             </motion.div>
           </>

@@ -7,39 +7,34 @@ import { useWhatsAppStore } from "@/lib/whatsapp";
 // Rotating notification messages — each with a different intent
 const NOTIFICATIONS = [
   {
-    title: "Jhon&Asociados",
-    message: "¿Necesitas ayuda con tu empresa? Conversemos ahora",
+    title: "Medina Almonte Firma Legal",
+    message: "¿Necesitas defensa legal? Conversemos ahora",
     time: "ahora",
   },
   {
-    title: "Constitución de Empresas",
-    message: "Formaliza tu negocio desde S/ 380. ¡Consulta gratis!",
+    title: "Derecho Penal",
+    message: "Te representamos ante cualquier imputación. Defensa inmediata.",
     time: "hace 1 min",
   },
   {
-    title: "¿Inconvenientes con SUNAT?",
-    message: "Te defendemos de fiscalizaciones y cobranzas coactivas",
+    title: "Derecho Civil",
+    message: "Protegemos tus derechos en conflictos contractuales y herencias",
     time: "hace 3 min",
   },
   {
-    title: "Contabilidad Integral",
-    message: "Terceriza tus libros y declara a tiempo. Desde S/ 350/mes",
+    title: "Derecho Laboral",
+    message: "Asesoría en despidos, acoso y negociaciones laborales",
     time: "hace 5 min",
   },
   {
-    title: "Asesoría Tributaria",
-    message: "Evita multas. Consultoría gratuita sin compromiso",
+    title: "Derecho Corporativo",
+    message: "Blindamos tu empresa con contratos y compliance legal",
     time: "hace 8 min",
   },
   {
-    title: "Planillas y Laboral",
-    message: "Nosotros manejamos tu planilla. Tú creces tu negocio",
+    title: "Consulta Legal Inicial",
+    message: "Primera consulta sin costo. Agenda tu cita hoy",
     time: "hace 10 min",
-  },
-  {
-    title: "Cotización Inmediata",
-    message: "Solicita tu cotización personalizada por WhatsApp",
-    time: "hace 12 min",
   },
 ];
 
@@ -48,7 +43,7 @@ const FIRST_DELAY = 5000;        // 5s before first notification
 const CYCLE_INTERVAL = 35000;    // 35s between notifications
 const VISIBLE_DURATION = 5000;   // 5s each notification stays visible
 const VIBRATE_DURATION = 1500;   // 1.5s vibration
-const MAX_NOTIFICATIONS = 7;     // One full cycle through all messages
+const MAX_NOTIFICATIONS = 6;     // One full cycle through all messages
 
 export function WhatsAppButton() {
   const { openModal } = useWhatsAppStore();
@@ -197,7 +192,7 @@ export function WhatsAppButton() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-1/2 right-[68px] translate-y-1/2 bg-[#002350] text-white px-4 py-2 rounded-xl text-sm font-medium shadow-lg whitespace-nowrap pointer-events-none hidden sm:block"
+            className="absolute bottom-1/2 right-[68px] translate-y-1/2 bg-[#0B1A2E] text-white px-4 py-2 rounded-xl text-sm font-medium shadow-lg whitespace-nowrap pointer-events-none hidden sm:block"
           >
             ¿Necesitas ayuda?
             <div className="absolute top-1/2 -right-2 -translate-y-1/2 w-2 h-2 bg-[#002350] rotate-45" />

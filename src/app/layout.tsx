@@ -11,19 +11,18 @@ const merriweather = Merriweather({ weight: ['300', '400', '700'], subsets: ['la
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://medinaalmonte.com"),
-  title: "Medina Almonte Firma Legal | Abogados Corporativos y Tributarios",
+  title: "Medina Almonte Firma Legal | Abogados Corporativos, Civiles, Penales y Laborales en Perú",
   description:
-    "Especialistas en Derecho Corporativo, Laboral, Tributario, Civil y Penal. Confianza y autoridad legal en Perú.",
+    "Defensa legal estratégica en Derecho Civil, Penal, Laboral, Corporativo y Familiar. Protegemos tus derechos con excelencia y resultados comprobados.",
   keywords: [
     "abogados",
     "firma legal",
-    "derecho corporativo",
-    "tributario",
-    "Medina Almonte",
     "derecho civil",
     "derecho penal",
     "derecho laboral",
-    "Perú",
+    "derecho corporativo",
+    "derecho de familia",
+    "Medina Almonte",
   ],
   authors: [{ name: "Medina Almonte Firma Legal" }],
   icons: {
@@ -36,9 +35,9 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Medina Almonte Firma Legal | Abogados Corporativos y Tributarios en Perú",
+    title: "Medina Almonte Firma Legal | Abogados Corporativos, Civiles, Penales y Laborales en Perú",
     description:
-      "Especialistas en Derecho Corporativo, Laboral, Tributario, Civil y Penal. Confianza y autoridad legal en Perú.",
+      "Defensa legal estratégica en Derecho Civil, Penal, Laboral, Corporativo y Familiar. Protegemos tus derechos con excelencia y resultados comprobados.",
     type: "website",
     locale: "es_PE",
     siteName: "Medina Almonte Firma Legal",
@@ -48,16 +47,16 @@ export const metadata: Metadata = {
         url: "/og-banner-jhon.png?v=2.1",
         width: 1200,
         height: 630,
-        alt: "Medina Almonte Firma Legal - Abogados Corporativos y Tributarios en Perú",
+        alt: "Medina Almonte Firma Legal - Abogados en Perú",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medina Almonte Firma Legal | Abogados Corporativos y Tributarios",
+    title: "Medina Almonte Firma Legal | Abogados en Perú",
     description:
-      "Especialistas en Derecho Corporativo, Laboral, Tributario, Civil y Penal. Confianza y autoridad legal en Perú.",
+      "Defensa legal estratégica en Derecho Civil, Penal, Laboral, Corporativo y Familiar. Protegemos tus derechos con excelencia y resultados comprobados.",
     images: ["/og-banner-jhon.png?v=2.1"],
   },
   robots: {

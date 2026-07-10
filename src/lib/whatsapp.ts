@@ -8,17 +8,12 @@ export interface Service {
 }
 
 export const services: Service[] = [
-  { id: 1, name: "Constitución SAC", price: "S/ 1,600", priceNum: 1600 },
-  { id: 2, name: "Constitución EIRL", price: "S/ 1,600", priceNum: 1600 },
-  { id: 3, name: "Constitución SRL", price: "S/ 1,600", priceNum: 1600 },
-  { id: 4, name: "Contabilidad Integral (mensual)", price: "Desde S/ 350", priceNum: 350 },
-  { id: 5, name: "Asesoría Tributaria - Cartas Inductivas", price: "Desde S/ 200", priceNum: 200 },
-  { id: 6, name: "Asesoría Tributaria - Fiscalización", price: "Consultar", priceNum: 0 },
-  { id: 7, name: "Cobranza Coactiva", price: "Consultar", priceNum: 0 },
-  { id: 8, name: "Planilla y Laboral (mensual)", price: "Desde S/ 250", priceNum: 250 },
-  { id: 9, name: "Asesoría Inversionista", price: "Consultar", priceNum: 0 },
-  { id: 10, name: "Capacitación Tributaria", price: "Gratis", priceNum: 0 },
-  { id: 11, name: "Carta Incremento Patrimonial No Justificado", price: "Consultar", priceNum: 0 },
+  { id: 1, name: "Derecho Civil", price: "Consultar", priceNum: 0 },
+  { id: 2, name: "Derecho Penal", price: "Consultar", priceNum: 0 },
+  { id: 3, name: "Derecho Laboral", price: "Consultar", priceNum: 0 },
+  { id: 4, name: "Derecho Corporativo", price: "Consultar", priceNum: 0 },
+  { id: 5, name: "Derecho de Familia", price: "Consultar", priceNum: 0 },
+  { id: 6, name: "Consulta Legal Inicial", price: "Gratis", priceNum: 0 },
 ];
 
 interface WhatsAppState {
@@ -43,10 +38,9 @@ export function generateWhatsAppURL(
   name: string,
   notes: string
 ): string {
-  const message = `Hola *Jhon&Asociados*.
+  const message = `Hola *Medina Almonte Firma Legal*.
 
 Servicio: ${serviceName}
-Precio referencial: ${servicePrice}
 Nombre: ${name}
 Consulta: ${notes}`;
 

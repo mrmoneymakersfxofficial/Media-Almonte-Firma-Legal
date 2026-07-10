@@ -229,7 +229,7 @@ img, svg {
   }
 }
 
-/* Custom scrollbar — Jhon&Asociados brand colors (all devices) */
+/* Custom scrollbar — Medina Almonte brand colors (all devices) */
 * {
   scrollbar-width: thin;
   scrollbar-color: #002350 #f8fafc;
@@ -663,7 +663,7 @@ html.mobile-menu-open .whatsapp-float {
 }
 
 /* ─── Layer 1: Brand overlay ─── */
-/* Mobile: vertical gradient — dark top (text) → translucent bottom (Jhon visible) */
+/* Mobile: vertical gradient — dark top (text) → translucent bottom */
 .hero-brand-overlay {
   position: absolute;
   top: 0;
@@ -680,7 +680,7 @@ html.mobile-menu-open .whatsapp-float {
   pointer-events: none;
 }
 
-/* Tablet+: gradually reduce bottom darkness so Jhon is more visible */
+/* Tablet+: gradually reduce bottom darkness so hero image is more visible */
 @media (min-width: 768px) {
   .hero-brand-overlay {
     background: linear-gradient(
@@ -692,7 +692,7 @@ html.mobile-menu-open .whatsapp-float {
   }
 }
 
-/* Desktop: horizontal gradient — dark left (text) → nearly transparent right (Jhon vivid) */
+/* Desktop: horizontal gradient — dark left (text) → nearly transparent right */
 @media (min-width: 1024px) {
   .hero-brand-overlay {
     background: linear-gradient(
@@ -1046,7 +1046,7 @@ html.mobile-menu-open .whatsapp-float {
    SUBPAGE HERO — Defensa overlay only (other subpages reuse home hero classes)
    ═══════════════════════════════════════════════════════════════════════ */
 
-/* Defensa Tributaria — Darker left (urgency) but transparent right (face visible) */
+/* Section dark overlay — Darker left (urgency) but transparent right */
 .subpage-hero-overlay-defensa {
   position: absolute;
   inset: 0;

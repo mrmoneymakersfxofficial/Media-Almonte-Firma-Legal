@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    detail: "contacto@jhonasociados.com",
+    detail: "contacto@medinaalmonte.com",
     description: "Respuesta en 24h",
     color: "text-navy",
     bg: "bg-navy/10",
@@ -61,7 +61,7 @@ export function Contact() {
     e.preventDefault();
     const serviceName =
       services.find((s) => s.name === formData.service)?.name || formData.service || "General";
-    const message = `Hola *Jhon&Asociados*.
+    const message = `Hola *Medina Almonte Firma Legal*.
 
 Nombre: ${formData.name}
 Email: ${formData.email}

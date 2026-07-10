@@ -157,7 +157,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-4 text-base sm:text-lg text-[#B87333] font-semibold tracking-wide"
           >
-            Especialistas en Derecho Corporativo, Tributario y Civil.
+            Especialistas en Derecho Corporativo, Civil y Penal.
           </motion.p>
 
           {/* Description */}

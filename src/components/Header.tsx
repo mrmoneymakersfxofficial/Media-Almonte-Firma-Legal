@@ -80,10 +80,10 @@ export function Header() {
             {/* ── Logo ── */}
             <Link href="/" className="flex items-center shrink-0 relative z-10">
               <Image
-                src={scrolled ? "/logo-medina-almonte.webp" : "/logo-medina-almonte-white.webp"}
+                src="https://i.imgur.com/Uf6PTZV.png"
                 alt="Medina Almonte Firma Legal"
-                width={925}
-                height={381}
+                width={1181}
+                height={285}
                 priority
                 className="brand-logo-fixed transition-opacity duration-300"
               />
@@ -160,10 +160,10 @@ export function Header() {
               {/* Drawer Header */}
               <div className="navbar-brand-fixed px-4 border-b border-[#D4AF37]/10 shrink-0">
                 <Image
-                  src="/logo-medina-almonte.webp"
+                  src="https://i.imgur.com/Uf6PTZV.png"
                   alt="Medina Almonte Firma Legal"
-                  width={925}
-                  height={381}
+                  width={1181}
+                  height={285}
                   className="brand-logo-fixed"
                 />
                 <button

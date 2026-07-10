@@ -40,6 +40,10 @@ export default function AbogadosPage() {
               </h1>
             </ScrollReveal>
 
+            <ScrollReveal delay={0.15}>
+              <div className="section-divider-gold mb-6" />
+            </ScrollReveal>
+
             <ScrollReveal delay={0.2}>
               <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
                 Cada miembro de nuestro equipo aporta una combinación única de
@@ -59,7 +63,7 @@ export default function AbogadosPage() {
           {/* Colegio de Abogados Info */}
           <ScrollReveal delay={0.2}>
             <div className="mt-16 text-center">
-              <div className="glass-card gold-border-gradient rounded-2xl p-8 max-w-3xl mx-auto">
+              <div className="privacy-card-premium rounded-2xl p-8 max-w-3xl mx-auto">
                 <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
                   Todos nuestros abogados se encuentran debidamente colegiados y
                   habilitados para el ejercicio profesional en el territorio

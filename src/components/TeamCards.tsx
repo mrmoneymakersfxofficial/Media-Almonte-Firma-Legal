@@ -1,6 +1,7 @@
 "use client";
 
 import { MessageCircle } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const team = [
   {
@@ -39,48 +40,39 @@ export function TeamCards() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
       {team.map((member, i) => (
-        <div
-          key={member.name}
-          className="bg-[#0B1A2E] border border-[#D4AF37]/10 rounded-2xl p-6 sm:p-7 flex flex-col items-center text-center hover:border-[#D4AF37]/25 transition-colors"
-          style={{
-            animationDelay: `${0.15 * i}s`,
-          }}
-        >
-          {/* Avatar */}
-          <div className="w-24 h-24 rounded-full bg-[#0A0A0A] border-2 border-[#D4AF37]/20 flex items-center justify-center mb-5">
-            <span
-              className="text-[#D4AF37] text-xl font-bold"
+        <ScrollReveal key={member.name} delay={i * 0.1}>
+          <div className="team-card-premium rounded-2xl p-6 sm:p-7 flex flex-col items-center text-center gpu-accelerated">
+            <div className="team-avatar-ring w-24 h-24 rounded-full bg-[#0A0A0A] flex items-center justify-center mb-5">
+              <span
+                className="text-[#D4AF37] text-xl font-bold"
+                style={{ fontFamily: "var(--font-playfair), serif" }}
+              >
+                {member.initials}
+              </span>
+            </div>
+            <h3
+              className="text-white font-bold text-base sm:text-lg mb-1"
               style={{ fontFamily: "var(--font-playfair), serif" }}
             >
-              {member.initials}
-            </span>
+              {member.name}
+            </h3>
+            <p className="text-[#B87333] text-sm font-medium mb-4">
+              {member.specialty}
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+              {member.bio}
+            </p>
+            <a
+              href={generateWhatsAppURL(member.name)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="team-cta-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm w-full justify-center gpu-accelerated"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Consultar
+            </a>
           </div>
-
-          {/* Info */}
-          <h3
-            className="text-white font-bold text-base sm:text-lg mb-1"
-            style={{ fontFamily: "var(--font-playfair), serif" }}
-          >
-            {member.name}
-          </h3>
-          <p className="text-[#B87333] text-sm font-medium mb-4">
-            {member.specialty}
-          </p>
-          <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-            {member.bio}
-          </p>
-
-          {/* WhatsApp CTA */}
-          <a
-            href={generateWhatsAppURL(member.name)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#B87333] text-[#0A0A0A] px-5 py-2.5 rounded-xl text-sm font-bold transition-all shadow-lg shadow-[#D4AF37]/25 hover:shadow-xl active:scale-[0.98] w-full justify-center"
-          >
-            <MessageCircle className="w-4 h-4" />
-            Consultar
-          </a>
-        </div>
+        </ScrollReveal>
       ))}
     </div>
   );

@@ -231,14 +231,9 @@ img, svg {
   }
 }
 
-/* ─── HEADER COMPACT — Max height constraint ─── */
+/* ─── HEADER COMPACT — Smooth transitions ─── */
 .header-compact {
-  max-height: 64px;
   overflow: hidden;
-}
-
-.header-compact:has(.lg\\:hidden + *) {
-  max-height: none;
 }
 
 /* Serif font for logo */

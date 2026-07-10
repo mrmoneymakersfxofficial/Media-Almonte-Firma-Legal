@@ -42,53 +42,53 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Brand Colors - Official Jhon&Asociados */
-  --color-navy: #002350;
-  --color-navy-light: #0a3a6b;
-  --color-navy-dark: #001528;
-  --color-purple: #481180;
-  --color-purple-light: #5c1ca3;
-  --color-emerald: #008775;
-  --color-emerald-light: #00a996;
-  --color-emerald-dark: #006655;
+  /* Brand Colors - Medina Almonte Firma Legal */
+  --color-navy: #0B1A2E;
+  --color-navy-light: #142d4a;
+  --color-navy-dark: #060f1a;
+  --color-purple: #B87333;
+  --color-purple-light: #d4944f;
+  --color-emerald: #D4AF37;
+  --color-emerald-light: #F0E68C;
+  --color-emerald-dark: #b8960f;
   --color-whatsapp: #25D366;
   --color-urgent: #DC2626;
-  --color-gold: #F59E0B;
+  --color-gold: #D4AF37;
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --background: #0A0A0A;
+  --foreground: #F5F5F5;
+  --card: #0B1A2E;
+  --card-foreground: #F5F5F5;
+  --popover: #0B1A2E;
+  --popover-foreground: #F5F5F5;
+  --primary: #D4AF37;
+  --primary-foreground: #0A0A0A;
+  --secondary: #0B1A2E;
+  --secondary-foreground: #F5F5F5;
+  --muted: #1a2d45;
+  --muted-foreground: #a0a0a0;
+  --accent: #B87333;
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --border: #1e3a5f;
+  --input: #1e3a5f;
+  --ring: #D4AF37;
+  --chart-1: #D4AF37;
+  --chart-2: #B87333;
+  --chart-3: #0B1A2E;
+  --chart-4: #F0E68C;
+  --chart-5: #0A0A0A;
+  --sidebar: #060f1a;
+  --sidebar-foreground: #F5F5F5;
+  --sidebar-primary: #D4AF37;
+  --sidebar-primary-foreground: #0A0A0A;
+  --sidebar-accent: #0B1A2E;
+  --sidebar-accent-foreground: #F5F5F5;
+  --sidebar-border: #1e3a5f;
+  --sidebar-ring: #D4AF37;
 }
 
 html {

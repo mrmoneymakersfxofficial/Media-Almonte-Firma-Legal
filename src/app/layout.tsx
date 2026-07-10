@@ -13,24 +13,22 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jhonyasociados.com"),
-  title: "Jhon&Asociados | Especialistas Tributarios - Asesoría Contable y Defensa ante SUNAT en Perú",
+  metadataBase: new URL("https://medinaalmonte.com"),
+  title: "Medina Almonte Firma Legal | Abogados Corporativos y Tributarios",
   description:
-    "Jhon&Asociados: Especialistas en asesoría tributaria, contabilidad integral, constitución de empresas y defensa ante fiscalizaciones de SUNAT. Más de 500 empresas confían en nosotros. Consultoría gratuita.",
+    "Especialistas en Derecho Corporativo, Laboral, Tributario, Civil y Penal. Confianza y autoridad legal en Perú.",
   keywords: [
-    "asesoría tributaria Perú",
-    "contabilidad Lima",
-    "defensa SUNAT",
-    "constitución de empresas",
-    "Jhon y Asociados",
-    "SUNAT",
-    "tercerización contable",
-    "fiscalización tributaria",
-    "planillas Perú",
-    "cartas inductivas SUNAT",
-    "cobranza coactiva",
+    "abogados",
+    "firma legal",
+    "derecho corporativo",
+    "tributario",
+    "Medina Almonte",
+    "derecho civil",
+    "derecho penal",
+    "derecho laboral",
+    "Perú",
   ],
-  authors: [{ name: "Jhon&Asociados" }],
+  authors: [{ name: "Medina Almonte Firma Legal" }],
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },
@@ -41,28 +39,28 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Jhon&Asociados | Especialistas Tributarios y Contables en Perú",
+    title: "Medina Almonte Firma Legal | Abogados Corporativos y Tributarios en Perú",
     description:
-      "Protege tu patrimonio frente a la SUNAT. Contabilidad integral, constitución de empresas y defensa urgente ante fiscalizaciones. Más de 20 años de experiencia. Consultoría gratuita.",
+      "Especialistas en Derecho Corporativo, Laboral, Tributario, Civil y Penal. Confianza y autoridad legal en Perú.",
     type: "website",
     locale: "es_PE",
-    siteName: "Jhon&Asociados",
-    url: "https://jhonyasociados.com",
+    siteName: "Medina Almonte Firma Legal",
+    url: "https://medinaalmonte.com",
     images: [
       {
         url: "/og-banner-jhon.png?v=2.1",
         width: 1200,
         height: 630,
-        alt: "Jhon&Asociados - Especialistas Tributarios y Contables en Perú",
+        alt: "Medina Almonte Firma Legal - Abogados Corporativos y Tributarios en Perú",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jhon&Asociados | Especialistas Tributarios",
+    title: "Medina Almonte Firma Legal | Abogados Corporativos y Tributarios",
     description:
-      "Asesoría contable integral y defensa urgente ante SUNAT en el Perú. Protegemos el crecimiento de tu empresa con más de 20 años de experiencia.",
+      "Especialistas en Derecho Corporativo, Laboral, Tributario, Civil y Penal. Confianza y autoridad legal en Perú.",
     images: ["/og-banner-jhon.png?v=2.1"],
   },
   robots: {

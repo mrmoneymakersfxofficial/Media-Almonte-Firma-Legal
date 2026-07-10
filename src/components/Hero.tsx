@@ -9,8 +9,8 @@ import { useWhatsAppStore } from "@/lib/whatsapp";
 import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
 
 /* ═══════════════════════════════════════════════════════════════════════
-   HERO SLIDER — Dynamic Rotating Banner (4s infinite cycle)
-   5 slides: Inicio → Constitución → Contabilidad → Defensa → Nosotros
+   HERO SLIDER — Medina Almonte Firma Legal
+   5 slides: Inicio → Corporativo → Tributario → Civil → Nosotros
    ═══════════════════════════════════════════════════════════════════════ */
 
 const SLIDE_INTERVAL = 4000;
@@ -33,109 +33,107 @@ interface SlideData {
 const slides: SlideData[] = [
   {
     img: "/jhon-hero-oficina.webp",
-    badge: "Especialistas Tributarios en Perú",
+    badge: "Medina Almonte Firma Legal",
     h1: (
       <>
-        Protegemos tu{" "}
-        <span className="text-[#00a996]">Empresa.</span>{" "}
+        <span className="font-serif text-[#D4AF37]">Medina Almonte</span>{" "}
         <br className="hidden sm:block" />
-        Aseguramos tu{" "}
-        <span className="text-[#00a996]">Patrimonio.</span>
+        <span className="text-white">Firma Legal</span>
       </>
     ),
     subtitle:
-      "Asesoría tributaria y contable de excelencia. Cero multas SUNAT. Seguridad jurídica total.",
-    cta1: { text: "Consultoría Gratuita →", type: "whatsapp", serviceId: null },
-    cta2: { text: "Nuestros Servicios", type: "scroll" },
-    badges: ["Sin compromiso", "Respuesta inmediata", "Personalizado"],
+      "Especialistas en Derecho Corporativo, Tributario y Civil. Protegemos tus intereses con excelencia y estrategia.",
+    cta1: { text: "Agenda tu Consulta", type: "whatsapp", serviceId: null },
+    cta2: { text: "Conoce Más", type: "scroll" },
+    badges: ["Confianza", "Autoridad legal", "Resultados comprobados"],
   },
   {
     img: "/jhon-constitucion.webp",
-    badge: "Constitución de Empresas",
+    badge: "Derecho Corporativo",
     h1: (
       <>
-        Constituye tu Empresa.{" "}
+        <span className="text-white">Soluciones Legales para</span>{" "}
         <br className="hidden sm:block" />
-        <span className="text-[#00a996]">Precios a Consultar.</span>
+        <span className="font-serif text-[#D4AF37]">Tu Empresa.</span>
       </>
     ),
     subtitle:
-      "Formaliza tu negocio sin estrés, colas ni trámites complicados. Incluye Notaría y SUNARP.",
+      "Constitución de empresas, asesoría corporativa y cumplimiento regulatorio integral.",
     cta1: {
-      text: "Constituir Empresa Ahora",
-      type: "link",
-      href: "/constitucion-de-empresas",
+      text: "Consultoría Corporativa",
+      type: "whatsapp",
+      serviceId: 1,
     },
     cta2: {
-      text: "Ver Paquetes",
+      text: "Nuestros Servicios",
       type: "link",
-      href: "/constitucion-de-empresas",
+      href: "/servicios",
     },
-    badges: ["Notaría incluida", "SUNARP garantizado", "RUC + Clave SOL"],
+    badges: ["Asesoría integral", "Experiencia comprobada", "Respuesta inmediata"],
   },
   {
     img: "/jhon-contabilidad.webp",
-    badge: "Contabilidad Integral",
+    badge: "Derecho Tributario",
     h1: (
       <>
-        Tu Contabilidad en Regla.{" "}
+        <span className="text-white">Defensa Tributaria</span>{" "}
         <br className="hidden sm:block" />
-        <span className="text-[#00a996]">Sin multas de SUNAT.</span>
+        <span className="font-serif text-[#D4AF37]">Estratégica y Legal.</span>
       </>
     ),
     subtitle:
-      "Nos encargamos de tus declaraciones mensuales, libros electrónicos, SIRE y planillas.",
-    cta1: { text: "Evaluar mi Régimen MYPE", type: "whatsapp", serviceId: 4 },
+      "Optimización fiscal, defensa ante SUNAT y planificación tributaria para proteger tu patrimonio.",
+    cta1: { text: "Consultoría Tributaria", type: "whatsapp", serviceId: 4 },
     cta2: {
-      text: "Planes Mensuales",
+      text: "Ver Servicios",
       type: "link",
-      href: "/contabilidad-tributacion",
+      href: "/servicios",
     },
-    badges: ["Declaraciones mensuales", "Libros electrónicos", "Planilla laboral"],
+    badges: ["Defensa SUNAT", "Optimización fiscal", "Planificación legal"],
   },
   {
     img: "/jhon-defensa.webp",
-    badge: "Defensa Tributaria Urgente",
+    badge: "Derecho Civil y Penal",
     h1: (
       <>
-        Escudo Legal y Tributario{" "}
+        <span className="text-white">Protección Legal</span>{" "}
         <br className="hidden sm:block" />
-        Ante <span className="text-[#00a996]">Fiscalizaciones.</span>
+        <span className="font-serif text-[#D4AF37]">en Todo Momento.</span>
       </>
     ),
     subtitle:
-      "Atención urgente de cartas inductivas, cobranzas coactivas y auditorías de SUNAT.",
-    cta1: { text: "Detener Fiscalización Ya", type: "whatsapp", serviceId: 5 },
+      "Litigios civiles, defensa penal y resolución de conflictos con estrategia y profesionalismo.",
+    cta1: { text: "Consulta Urgente", type: "whatsapp", serviceId: 5 },
     cta2: {
-      text: "Casos de Defensa",
+      text: "Áreas de Práctica",
       type: "link",
-      href: "/defensa-tributaria-sunat",
+      href: "/servicios",
     },
-    badges: ["Atención urgente", "Cartas inductivas", "Cobranza coactiva"],
+    badges: ["Atención urgente", "Litigios civiles", "Defensa penal"],
   },
   {
     img: "/jhon-nosotros.webp",
-    badge: "Más de 20 años de Experiencia",
+    badge: "Autoridad y Confianza en Perú",
     h1: (
       <>
-        Especialistas Tributarios con{" "}
+        <span className="text-white">Más de 20 Años de</span>{" "}
         <br className="hidden sm:block" />
-        <span className="text-[#00a996]">más de 20 años de Éxito.</span>
+        <span className="font-serif text-[#D4AF37]">Trayectoria Legal.</span>
       </>
     ),
     subtitle:
-      "Transparencia, tecnología y resultados respaldando el crecimiento de los empresarios en el Perú.",
+      "Transparencia, tecnología y resultados. La firma que respalda el crecimiento empresarial en el Perú.",
     cta1: {
       text: "Agendar Reunión",
       type: "link",
       href: "/nosotros-contacto",
     },
     cta2: {
-      text: "Conocer Historia",
+      text: "Conócenos",
       type: "link",
       href: "/nosotros-contacto",
     },
-    badges: ["+5,000 empresas", "Transparencia total", "Resultados comprobados"],
+    badges: ["+5,000 casos", "Transparencia total", "Equipo experto"],
   },
 ];
 
@@ -154,7 +152,7 @@ function CounterItem({
     <div className="text-center">
       <span
         ref={ref}
-        className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight"
+        className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#D4AF37] tracking-tight"
       >
         {count}
         {suffix}
@@ -175,9 +173,9 @@ function CtaButton({
   const { openModal } = useWhatsAppStore();
 
   const basePrimary =
-    "inline-flex items-center justify-center gap-2.5 bg-[#008775] hover:bg-[#006655] text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#008775]/30 hover:shadow-xl hover:shadow-[#008775]/40 active:scale-[0.98]";
+    "inline-flex items-center justify-center gap-2.5 bg-[#D4AF37] hover:bg-[#B87333] text-[#0A0A0A] px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#D4AF37]/30 hover:shadow-xl hover:shadow-[#B87333]/40 active:scale-[0.98]";
   const baseSecondary =
-    "inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm";
+    "inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border-2 border-[#D4AF37]/60 hover:border-[#D4AF37] text-[#D4AF37] px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm";
   const cls = variant === "primary" ? basePrimary : baseSecondary;
 
   if (cta.type === "link") {
@@ -250,13 +248,13 @@ export function Hero() {
 
       {/* ═══ LAYER 2 — Decorative Blurs + Dot Pattern ═══ */}
       <div className="hero-decor-layer">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#481180]/12 rounded-full blur-[100px]" />
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-[#008775]/8 rounded-full blur-[100px]" />
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#0B1A2E]/50 rounded-full blur-[100px]" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-[#B87333]/8 rounded-full blur-[100px]" />
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage:
-              "radial-gradient(circle, white 1px, transparent 1px)",
+              "radial-gradient(circle, #D4AF37 1px, transparent 1px)",
             backgroundSize: "32px 32px",
           }}
         />
@@ -277,9 +275,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2"
+              className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-[#D4AF37]/25 rounded-full px-4 py-2"
             >
-              <Shield className="w-3.5 h-3.5 text-[#00a996]" />
+              <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">
                 {slide.badge}
               </span>
@@ -325,10 +323,35 @@ export function Hero() {
             >
               {slide.badges.map((badge) => (
                 <span key={badge} className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#00a996]" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
                   {badge}
                 </span>
               ))}
+            </motion.div>
+
+            {/* Social links */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+              className="hero-social mt-6 flex gap-5 text-white/50 text-sm"
+            >
+              <a
+                href="https://www.instagram.com/solucioneslegales.medinaa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#D4AF37] transition-colors"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.facebook.com/share/17zonPNHp7/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#D4AF37] transition-colors"
+              >
+                Facebook
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -347,7 +370,7 @@ export function Hero() {
           ].map((item) => (
             <div
               key={item.label}
-              className="bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center"
+              className="bg-white/[0.06] backdrop-blur-sm border border-[#D4AF37]/15 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center"
             >
               <CounterItem
                 value={item.value}
@@ -367,7 +390,7 @@ export function Hero() {
             onClick={() => setActive(index)}
             className={`transition-all duration-300 cursor-pointer ${
               index === active
-                ? "w-8 h-2.5 bg-[#00a996] rounded-full"
+                ? "w-8 h-2.5 bg-[#D4AF37] rounded-full"
                 : "w-2.5 h-2.5 bg-white/35 hover:bg-white/60 rounded-full"
             }`}
             aria-label={`Diapositiva ${index + 1}`}
@@ -379,7 +402,7 @@ export function Hero() {
       <div className="absolute bottom-0 left-0 right-0 z-30 h-[3px] bg-white/[0.08]">
         <div
           key={`progress-${active}-${isPaused ? "p" : "r"}`}
-          className={`hero-progress-fill h-full bg-gradient-to-r from-[#00a996] to-[#00c9b0] ${isPaused ? "paused" : ""}`}
+          className={`hero-progress-fill h-full bg-gradient-to-r from-[#D4AF37] to-[#F0E68C] ${isPaused ? "paused" : ""}`}
         />
       </div>
 

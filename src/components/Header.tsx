@@ -263,31 +263,36 @@ export function Header() {
         </div>
       </header>
 
-      {/* ── Mobile Menu ── */}
+      {/* ── Mobile Drawer (right-side) ── */}
       <AnimatePresence>
         {isMobileOpen && (
           <>
+            {/* Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
               onClick={() => setIsMobileOpen(false)}
+              style={{ WebkitTapHighlightColor: 'transparent' }}
             />
+            {/* Drawer panel */}
             <motion.div
-              initial={{ y: "-100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: "-100%", opacity: 0 }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed top-0 left-0 right-0 z-50 lg:hidden overflow-hidden"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 h-full w-[75%] max-w-[380px] z-50 lg:hidden overflow-y-auto overflow-x-hidden"
               style={{
-                background: "linear-gradient(180deg, #0a0e1a 0%, #060a14 100%)",
-                boxShadow: "0 4px 30px rgba(0,0,0,0.5), 0 1px 0 rgba(212,175,55,0.15)",
+                background: 'linear-gradient(180deg, #0a0e1a 0%, #060a14 100%)',
+                borderLeft: '1px solid rgba(212,175,55,0.15)',
+                boxShadow: '-8px 0 40px rgba(0,0,0,0.5)',
+                WebkitOverflowScrolling: 'touch',
               }}
             >
-              {/* Mobile header bar */}
-              <div className="flex items-center justify-between h-14 px-4 border-b border-white/[0.06]">
+              {/* Drawer header */}
+              <div className="flex items-center justify-between h-14 px-5 border-b border-white/[0.06]">
                 <Link href="/" onClick={() => setIsMobileOpen(false)} className="flex items-center gap-2">
                   <div
                     className="w-8 h-8 rounded-lg flex items-center justify-center"
@@ -302,28 +307,29 @@ export function Header() {
                 </Link>
                 <button
                   onClick={() => setIsMobileOpen(false)}
-                  className="w-8 h-8 flex items-center justify-center rounded-lg text-amber-400/70 hover:text-amber-400 hover:bg-amber-400/10 transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg text-amber-400/70 hover:text-amber-400 hover:bg-amber-400/10 transition-colors"
+                  aria-label="Cerrar menú"
                 >
                   <X size={18} />
                 </button>
               </div>
 
-              {/* Mobile links */}
-              <nav className="px-3 py-2 max-h-[70vh] overflow-y-auto">
+              {/* Drawer links */}
+              <nav className="px-4 py-4">
                 {navLinks.map((link, index) => (
                   <motion.div
                     key={link.href}
-                    initial={{ opacity: 0, x: -15 }}
+                    initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.05 + index * 0.04, duration: 0.3 }}
+                    transition={{ delay: 0.08 + index * 0.05, duration: 0.3 }}
                   >
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileOpen(false)}
-                      className={`relative flex items-center px-4 py-3 rounded-lg text-[14px] font-medium transition-all duration-200 ${
+                      className={`relative flex items-center px-4 py-3.5 rounded-lg text-[15px] font-medium transition-all duration-200 ${
                         isActive(link.href)
-                          ? "text-amber-400"
-                          : "text-white/60 hover:text-amber-400/90"
+                          ? "text-amber-400 bg-amber-400/[0.08]"
+                          : "text-white/60 hover:text-amber-400/90 hover:bg-white/[0.04]"
                       }`}
                     >
                       {isActive(link.href) && (
@@ -341,11 +347,11 @@ export function Header() {
                 ))}
               </nav>
 
-              {/* Mobile CTA */}
-              <div className="px-4 pb-5 pt-2">
+              {/* Drawer CTA */}
+              <div className="px-5 pb-6 pt-2">
                 <button
                   onClick={() => { setIsMobileOpen(false); openModal(); }}
-                  className="w-full py-3 rounded-lg text-[14px] font-bold transition-all duration-200"
+                  className="w-full py-3.5 rounded-lg text-[14px] font-bold transition-all duration-200"
                   style={{
                     background: "linear-gradient(135deg, #D4AF37 0%, #B87333 100%)",
                     color: "#0a0e1a",

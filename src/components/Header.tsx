@@ -2,10 +2,13 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { useWhatsAppStore } from "@/lib/whatsapp";
+
+const LOGO_URL = "https://i.imgur.com/FLpR46c.png";
 
 const navLinks = [
   { name: "Inicio", href: "/" },
@@ -180,30 +183,20 @@ export function Header() {
             >
               <Link href="/" className="flex items-center gap-2.5 group">
                 <motion.div
-                  className="w-9 h-9 shrink-0"
-                  whileHover={{ scale: 1.08, rotate: 3 }}
+                  className="shrink-0"
+                  whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 >
-                  <div
-                    className="w-full h-full rounded-lg flex items-center justify-center"
-                    style={{
-                      background: "linear-gradient(135deg, #D4AF37 0%, #B87333 50%, #D4AF37 100%)",
-                      boxShadow: "0 2px 8px rgba(212,175,55,0.3), inset 0 1px 0 rgba(255,255,255,0.2)",
-                    }}
-                  >
-                    <span className="text-[#0a0e1a] font-bold text-base leading-none" style={{ fontFamily: "'Playfair Display', serif" }}>
-                      M
-                    </span>
-                  </div>
+                  <Image
+                    src={LOGO_URL}
+                    alt="Medina Almonte Firma Legal"
+                    width={160}
+                    height={40}
+                    className="brand-logo-fixed h-9 sm:h-10 w-auto object-contain"
+                    style={{ width: 'auto' }}
+                    priority
+                  />
                 </motion.div>
-                <div className="hidden sm:block leading-none">
-                  <p className="text-white font-bold text-[15px] tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
-                    MEDINA ALMONTE
-                  </p>
-                  <p className="text-amber-400/80 text-[9px] tracking-[0.25em] uppercase mt-0.5">
-                    Firma Legal
-                  </p>
-                </div>
               </Link>
             </motion.div>
 
@@ -293,17 +286,15 @@ export function Header() {
             >
               {/* Drawer header */}
               <div className="flex items-center justify-between h-14 px-5 border-b border-white/[0.06]">
-                <Link href="/" onClick={() => setIsMobileOpen(false)} className="flex items-center gap-2">
-                  <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ background: "linear-gradient(135deg, #D4AF37, #B87333)" }}
-                  >
-                    <span className="text-[#0a0e1a] font-bold text-sm" style={{ fontFamily: "'Playfair Display', serif" }}>M</span>
-                  </div>
-                  <div>
-                    <p className="text-white font-bold text-sm" style={{ fontFamily: "'Playfair Display', serif" }}>MEDINA ALMONTE</p>
-                    <p className="text-amber-400/70 text-[8px] tracking-[0.2em] uppercase">Firma Legal</p>
-                  </div>
+                <Link href="/" onClick={() => setIsMobileOpen(false)} className="flex items-center">
+                  <Image
+                    src={LOGO_URL}
+                    alt="Medina Almonte"
+                    width={130}
+                    height={32}
+                    className="brand-logo-fixed h-8 w-auto object-contain"
+                    style={{ width: 'auto' }}
+                  />
                 </Link>
                 <button
                   onClick={() => setIsMobileOpen(false)}

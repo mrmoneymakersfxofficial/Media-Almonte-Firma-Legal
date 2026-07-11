@@ -39,7 +39,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-5">
               <Image
-                src="https://i.imgur.com/Uf6PTZV.png"
+                src="https://i.imgur.com/FLpR46c.png"
                 alt="Medina Almonte Firma Legal"
                 width={1181}
                 height={285}

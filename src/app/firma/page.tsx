@@ -53,6 +53,7 @@ export default function FirmaPage() {
     <SiteLayout>
       <section className="section-dark-gradient min-h-screen py-24 px-4">
         <div className="max-w-5xl mx-auto">
+          {/* Header */}
           <div className="text-center mb-20">
             <ScrollReveal>
               <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">
@@ -61,7 +62,7 @@ export default function FirmaPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h1
-                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+                className="immersive-title font-bold mb-6"
                 style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}
               >
                 Medina Almonte Firma Legal
@@ -90,8 +91,9 @@ export default function FirmaPage() {
             </ScrollReveal>
           </div>
 
+          {/* Values — no cards, icon + text direct on background */}
           <ScrollReveal delay={0.2}>
-            <div className="text-center mb-10">
+            <div className="text-center mb-12">
               <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase">
                 Nuestros Valores
               </span>
@@ -103,34 +105,40 @@ export default function FirmaPage() {
               const Icon = value.icon;
               return (
                 <ScrollReveal key={value.title} delay={0.1 * (index + 1)}>
-                  <div className="firma-value-card rounded-2xl p-6 gpu-accelerated">
-                    <div className="icon-glow inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#D4AF37]/10 mb-4">
-                      <Icon className="w-6 h-6 text-[#D4AF37]" />
+                  <div className="flex items-start gap-4">
+                    <div className="shrink-0 w-11 h-11 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center mt-0.5">
+                      <Icon className="w-5 h-5 text-[#D4AF37]" />
                     </div>
-                    <h3 className="text-white font-bold text-base mb-2" style={{ fontFamily: "var(--font-playfair), serif" }}>
-                      {value.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
+                    <div className="min-w-0">
+                      <h3 className="text-white font-bold text-base mb-2" style={{ fontFamily: "var(--font-playfair), serif" }}>
+                        {value.title}
+                      </h3>
+                      <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
+                    </div>
                   </div>
                 </ScrollReveal>
               );
             })}
           </div>
 
+          {/* Stats — no cards, just numbers on background */}
           <ScrollReveal delay={0.3}>
-            <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {[
-                { number: "15+", label: "Años de Experiencia" },
-                { number: "92%", label: "Casos Resueltos Favorablemente" },
-                { number: "500+", label: "Clientes Atendidos" },
-              ].map((stat) => (
-                <div key={stat.label} className="stat-glass glass-card rounded-2xl p-6 text-center gpu-accelerated">
-                  <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>
-                    {stat.number}
+            <div className="mt-20">
+              <hr className="subtle-divider mb-12" />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                {[
+                  { number: "15+", label: "Años de Experiencia" },
+                  { number: "92%", label: "Casos Resueltos Favorablemente" },
+                  { number: "500+", label: "Clientes Atendidos" },
+                ].map((stat) => (
+                  <div key={stat.label}>
+                    <div className="immersive-stat-number mb-2">
+                      {stat.number}
+                    </div>
+                    <p className="immersive-stat-label">{stat.label}</p>
                   </div>
-                  <p className="text-gray-400 text-sm">{stat.label}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </ScrollReveal>
         </div>

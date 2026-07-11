@@ -19,12 +19,13 @@ export default function FAQClient() {
   return (
     <section className="section-dark-gradient min-h-screen py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-16">
           <ScrollReveal>
             <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">Resuelve tus dudas</span>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>Preguntas Frecuentes</h1>
+            <h1 className="immersive-title font-bold mb-6" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>Preguntas Frecuentes</h1>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
             <div className="section-divider-gold mb-6" />
@@ -34,21 +35,30 @@ export default function FAQClient() {
           </ScrollReveal>
         </div>
 
+        {/* FAQ — no card, just accent bar on left */}
         <ScrollReveal delay={0.3}>
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="faq-item-premium faq-accent-bar rounded-xl mb-3 px-1 pl-5 gpu-accelerated">
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="faq-accent-bar border-b border-white/[0.06] rounded-none px-0 pl-5"
+              >
                 <AccordionTrigger className="text-white hover:text-[#D4AF37] transition-colors duration-200 text-base md:text-lg font-medium py-5 gap-4 [&[data-state=open]>svg]:text-[#D4AF37]">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-400 leading-relaxed text-base pb-5">{faq.answer}</AccordionContent>
+                <AccordionContent className="text-gray-400 leading-relaxed text-base pb-5">
+                  {faq.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
         </ScrollReveal>
 
+        {/* CTA — no card */}
         <ScrollReveal delay={0.4}>
-          <div className="mt-16 privacy-card-premium rounded-2xl p-8 md:p-10 text-center">
+          <div className="mt-16 text-center">
+            <hr className="subtle-divider mb-10" />
             <div className="flex justify-center mb-4">
               <div className="w-12 h-12 bg-[#D4AF37]/15 rounded-xl flex items-center justify-center icon-glow">
                 <MessageSquare className="w-6 h-6 text-[#D4AF37]" />

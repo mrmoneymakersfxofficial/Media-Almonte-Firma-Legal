@@ -96,7 +96,7 @@ html {
   -webkit-tap-highlight-color: transparent;
   max-width: 100vw;
   overflow-x: hidden;
-  font-size: 20.7px; /* 16px × 1.294 ≈ +30% global — legibilidad premium */
+  font-size: 20.7px;
 }
 
 body {
@@ -105,6 +105,75 @@ body {
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
   letter-spacing: 0.01em;
   line-height: 1.65;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   GLOBAL MOBILE UX — No overflow, word-wrap, clamp typography
+   ═══════════════════════════════════════════════════════════════════════ */
+h1, h2, h3, h4, h5, h6, p, span, a, li, td, th, label {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.immersive-section {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 640px) {
+  .immersive-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .immersive-section {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.subtle-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.15) 50%, transparent 100%);
+  margin: 2.5rem 0;
+}
+
+.immersive-stat-number {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #D4AF37;
+  font-family: var(--font-playfair), serif;
+  line-height: 1.1;
+}
+
+.immersive-stat-label {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.immersive-title {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  line-height: 1.15;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.immersive-desc {
+  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @layer base {
@@ -1263,39 +1332,33 @@ html {
   --depth-overlay: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.8) 100%);
 }
 
-/* ─── Glassmorphism Card Base ─── */
+/* ─── Glassmorphism Card Base — NEUTRALIZED ─── */
 .glass-card {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid rgba(212, 175, 55, 0.18);
-  box-shadow: var(--card-shadow);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  transition: none;
 }
 
 .glass-card:hover {
-  background: rgba(15, 23, 42, 0.85);
-  border-color: rgba(212, 175, 55, 0.38);
-  box-shadow: var(--card-shadow-hover);
-  transform: translateY(-2px) scale(1.01);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
 }
 
-/* ─── Gold Gradient Border (pseudo-element technique) ─── */
+/* ─── Gold Gradient Border — NEUTRALIZED ─── */
 .gold-border-gradient {
   position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 .gold-border-gradient::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(184, 115, 51, 0.1), rgba(212, 175, 55, 0.3));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+  display: none;
 }
 
 /* ─── CTA Button Shine Effect ─── */
@@ -1369,40 +1432,37 @@ html {
   transform: scale(0.97) translateY(0);
 }
 
-/* ─── Premium Card Hover ─── */
+/* ─── Premium Card Hover — NEUTRALIZED (no-card design) ─── */
 .card-premium {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: var(--card-shadow);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, box-shadow, border-color, background;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
 }
 
 .card-premium:hover {
-  background: rgba(15, 23, 42, 0.92);
-  border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: var(--card-shadow-hover);
-  transform: translateY(-4px) scale(1.02);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
 }
 
-/* ─── Stat Counter Glassmorphism ─── */
+/* ─── Stat Counter — NEUTRALIZED (no-card) ─── */
 .stat-glass {
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(212, 175, 55, 0.22);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, box-shadow;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  transition: none;
 }
 
 .stat-glass:hover {
-  background: rgba(15, 23, 42, 0.9);
-  border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 8px 40px rgba(212, 175, 55, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transform: translateY(-3px) scale(1.02);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
 }
 
 /* ─── Icon Glow Ring ─── */

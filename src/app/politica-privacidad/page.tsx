@@ -12,7 +12,8 @@ export default function PoliticaPrivacidadPage() {
   return (
     <SiteLayout>
       <section className="section-dark-gradient min-h-screen py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
+          {/* Header */}
           <div className="mb-14">
             <ScrollReveal>
               <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-6">Legal</span>
@@ -33,14 +34,18 @@ export default function PoliticaPrivacidadPage() {
               </p>
             </ScrollReveal>
 
+            <hr className="subtle-divider" />
+
             <ScrollReveal delay={0.2}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>1. Responsable del Tratamiento</h2>
                 <p className="text-gray-400 text-base leading-relaxed">
-                  El responsable del tratamiento de los datos personales es <span className="text-white">Medina Almonte Firma Legal</span>, con domicilio en Lima, Perú. Para cualquier consulta relacionada con el tratamiento de tus datos personales, puedes contactarnos a través de <a href="mailto:contacto@medinaalmonte.com" className="hover:text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a> o al teléfono <a href="tel:+51943366950" className="hover:text-[#D4AF37] hover:underline transition-colors">+51 943 366 950</a>.
+                  El responsable del tratamiento de los datos personales es <span className="text-white">Medina Almonte Firma Legal</span>, con domicilio en Lima, Perú. Para cualquier consulta relacionada con el tratamiento de tus datos personales, puedes contactarnos a través de <a href="mailto:contacto@medinaalmonte.com" className="text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a> o al teléfono <a href="tel:+51943366950" className="text-[#D4AF37] hover:underline transition-colors">+51 943 366 950</a>.
                 </p>
               </section>
             </ScrollReveal>
+
+            <hr className="subtle-divider" />
 
             <ScrollReveal delay={0.25}>
               <section>
@@ -55,6 +60,8 @@ export default function PoliticaPrivacidadPage() {
               </section>
             </ScrollReveal>
 
+            <hr className="subtle-divider" />
+
             <ScrollReveal delay={0.3}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>3. Finalidad del Tratamiento</h2>
@@ -68,22 +75,27 @@ export default function PoliticaPrivacidadPage() {
               </section>
             </ScrollReveal>
 
+            <hr className="subtle-divider" />
+
             <ScrollReveal delay={0.35}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>4. Base Legal del Tratamiento</h2>
                 <p className="text-gray-400 text-base leading-relaxed">El tratamiento de tus datos personales se realiza sobre las siguientes bases legales, conforme a la Ley N° 29733, Ley de Protección de Datos Personales del Perú:</p>
-                <div className="mt-4 space-y-4">
-                  <div className="privacy-card-premium rounded-xl p-5">
+                <div className="mt-6 space-y-6">
+                  <div>
                     <h3 className="text-white font-semibold text-sm mb-1.5">Consentimiento del Titular</h3>
                     <p className="text-gray-400 text-sm leading-relaxed">Cuando nos proporcionas tus datos a través del formulario de contacto, otorgas tu consentimiento expreso para que los tratemos conforme a las finalidades descritas.</p>
                   </div>
-                  <div className="privacy-card-premium rounded-xl p-5">
+                  <hr className="subtle-divider" />
+                  <div>
                     <h3 className="text-white font-semibold text-sm mb-1.5">Interés Legítimo</h3>
                     <p className="text-gray-400 text-sm leading-relaxed">También podemos tratar tus datos cuando exista un interés legítimo que no vulnere tus derechos y libertades fundamentales, como la gestión de la relación profesional y la mejora de nuestros servicios.</p>
                   </div>
                 </div>
               </section>
             </ScrollReveal>
+
+            <hr className="subtle-divider" />
 
             <ScrollReveal delay={0.4}>
               <section>
@@ -92,26 +104,30 @@ export default function PoliticaPrivacidadPage() {
               </section>
             </ScrollReveal>
 
+            <hr className="subtle-divider" />
+
             <ScrollReveal delay={0.45}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>6. Derechos del Titular</h2>
                 <p className="text-gray-400 text-base leading-relaxed mb-4">Como titular de tus datos personales, tienes derecho a ejercer los siguientes derechos ante nosotros:</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5">
                   {[
                     { title: "Acceso", desc: "Solicitar información sobre los datos que tenemos sobre ti." },
                     { title: "Rectificación", desc: "Corregir datos inexactos o incompletos." },
                     { title: "Cancelación", desc: "Solicitar la eliminación de tus datos personales." },
                     { title: "Oposición", desc: "Oponerte al tratamiento por motivos legítimos." },
                   ].map((right) => (
-                    <div key={right.title} className="right-card-premium rounded-xl p-4">
+                    <div key={right.title}>
                       <h3 className="text-[#D4AF37] font-semibold text-sm mb-1.5">{right.title}</h3>
                       <p className="text-gray-400 text-sm leading-relaxed">{right.desc}</p>
                     </div>
                   ))}
                 </div>
-                <p className="text-gray-400 text-base leading-relaxed mt-4">Para ejercer cualquiera de estos derechos, envía tu solicitud a <a href="mailto:contacto@medinaalmonte.com" className="hover:text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a> y responderemos en un plazo máximo de 30 días hábiles.</p>
+                <p className="text-gray-400 text-base leading-relaxed mt-4">Para ejercer cualquiera de estos derechos, envía tu solicitud a <a href="mailto:contacto@medinaalmonte.com" className="text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a> y responderemos en un plazo máximo de 30 días hábiles.</p>
               </section>
             </ScrollReveal>
+
+            <hr className="subtle-divider" />
 
             <ScrollReveal delay={0.5}>
               <section>
@@ -120,6 +136,8 @@ export default function PoliticaPrivacidadPage() {
               </section>
             </ScrollReveal>
 
+            <hr className="subtle-divider" />
+
             <ScrollReveal delay={0.55}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>8. Seguridad de los Datos</h2>
@@ -127,18 +145,20 @@ export default function PoliticaPrivacidadPage() {
               </section>
             </ScrollReveal>
 
+            <hr className="subtle-divider" />
+
             <ScrollReveal delay={0.6}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>9. Contacto</h2>
-                <p className="text-gray-400 text-base leading-relaxed mb-4">Si tienes cualquier pregunta o inquietud sobre esta Política de Privacidad o el tratamiento de tus datos personales, no dudes en contactarnos:</p>
-                <div className="privacy-card-premium rounded-2xl p-6 space-y-3">
+                <p className="text-gray-400 text-base leading-relaxed mb-5">Si tienes cualquier pregunta o inquietud sobre esta Política de Privacidad o el tratamiento de tus datos personales, no dudes en contactarnos:</p>
+                <div className="space-y-3">
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="text-[#D4AF37] font-semibold w-28 shrink-0">Correo:</span>
-                    <a href="mailto:contacto@medinaalmonte.com" className="hover:text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a>
+                    <a href="mailto:contacto@medinaalmonte.com" className="text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a>
                   </div>
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="text-[#D4AF37] font-semibold w-28 shrink-0">Teléfono:</span>
-                    <a href="tel:+51943366950" className="hover:text-[#D4AF37] hover:underline transition-colors">+51 943 366 950</a>
+                    <a href="tel:+51943366950" className="text-[#D4AF37] hover:underline transition-colors">+51 943 366 950</a>
                   </div>
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="text-[#D4AF37] font-semibold w-28 shrink-0">Ubicación:</span>

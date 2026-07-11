@@ -38,11 +38,12 @@ function generateWhatsAppURL(name: string): string {
 
 export function TeamCards() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+    <div className="space-y-12 md:space-y-16">
       {team.map((member, i) => (
-        <ScrollReveal key={member.name} delay={i * 0.1}>
-          <div className="team-card-premium rounded-2xl p-6 sm:p-7 flex flex-col items-center text-center gpu-accelerated">
-            <div className="team-avatar-ring w-24 h-24 rounded-full bg-[#0A0A0A] flex items-center justify-center mb-5">
+        <ScrollReveal key={member.name} delay={i * 0.08}>
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 text-center md:text-left">
+            {/* Avatar — circular, no card */}
+            <div className="team-avatar-ring w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#0A0A0A] flex items-center justify-center shrink-0">
               <span
                 className="text-[#D4AF37] text-xl font-bold"
                 style={{ fontFamily: "var(--font-playfair), serif" }}
@@ -50,28 +51,32 @@ export function TeamCards() {
                 {member.initials}
               </span>
             </div>
-            <h3
-              className="text-white font-bold text-base sm:text-lg mb-1"
-              style={{ fontFamily: "var(--font-playfair), serif" }}
-            >
-              {member.name}
-            </h3>
-            <p className="text-[#B87333] text-sm font-medium mb-4">
-              {member.specialty}
-            </p>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-              {member.bio}
-            </p>
-            <a
-              href={generateWhatsAppURL(member.name)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="team-cta-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm w-full justify-center gpu-accelerated"
-            >
-              <MessageCircle className="w-4 h-4" />
-              Consultar
-            </a>
+            {/* Info — direct on background */}
+            <div className="flex-1 min-w-0">
+              <h3
+                className="text-white font-bold text-lg sm:text-xl mb-1"
+                style={{ fontFamily: "var(--font-playfair), serif" }}
+              >
+                {member.name}
+              </h3>
+              <p className="text-[#B87333] text-sm font-medium mb-3">
+                {member.specialty}
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-xl">
+                {member.bio}
+              </p>
+              <a
+                href={generateWhatsAppURL(member.name)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="team-cta-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold gpu-accelerated"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Consultar
+              </a>
+            </div>
           </div>
+          {i < team.length - 1 && <hr className="subtle-divider mt-12 md:mt-16" />}
         </ScrollReveal>
       ))}
     </div>

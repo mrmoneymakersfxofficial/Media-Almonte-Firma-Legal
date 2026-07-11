@@ -21,11 +21,11 @@ export default function AreasDePracticaPage() {
   return (
     <SiteLayout>
       <section className="section-dark-gradient min-h-screen py-24 px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">Especialidades</span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>
+              <h1 className="immersive-title font-bold mb-6" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>
                 Áreas de Práctica
               </h1>
               <div className="section-divider-gold mb-6" />
@@ -35,23 +35,30 @@ export default function AreasDePracticaPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Areas — no cards, vertical list with spacing */}
+          <div className="space-y-10 md:space-y-14">
             {areas.map((area, index) => (
-              <ScrollReveal key={area.slug} delay={index * 0.1}>
-                <Link href={`/areas/${area.slug}`} className="block group gpu-accelerated">
-                  <div className="relative practice-card-premium gold-border-gradient rounded-2xl p-8 h-full transition-all duration-300">
-                    <div className="icon-glow inline-block mb-4"><span className="text-4xl block">{area.icon}</span></div>
-                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-[#D4AF37] transition-colors" style={{ fontFamily: "var(--font-playfair), serif" }}>
-                      {area.name}
-                    </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{area.description}</p>
-                    <div className="mt-6 flex items-center text-[#D4AF37] text-sm font-medium">
-                      <span>Conocer más</span>
-                      <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+              <ScrollReveal key={area.slug} delay={index * 0.08}>
+                <Link href={`/areas/${area.slug}`} className="block group">
+                  <div className="flex items-start gap-5 md:gap-8">
+                    <span className="text-3xl md:text-4xl shrink-0 mt-1">{area.icon}</span>
+                    <div className="flex-1 min-w-0">
+                      <h3
+                        className="immersive-title font-semibold mb-2 group-hover:text-[#D4AF37] transition-colors"
+                        style={{ color: "#fff", fontFamily: "var(--font-playfair), serif", WebkitLineClamp: 2 }}
+                      >
+                        {area.name}
+                      </h3>
+                      <p className="immersive-desc text-gray-400 leading-relaxed">{area.description}</p>
+                      <span className="inline-flex items-center text-[#D4AF37] text-sm font-medium mt-3 gap-2 group-hover:gap-3 transition-all duration-300">
+                        Conocer más
+                        <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
                     </div>
                   </div>
+                  {index < areas.length - 1 && <hr className="subtle-divider mt-10 md:mt-14" />}
                 </Link>
               </ScrollReveal>
             ))}

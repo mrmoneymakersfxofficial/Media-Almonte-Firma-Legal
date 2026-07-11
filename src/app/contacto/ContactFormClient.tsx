@@ -112,12 +112,13 @@ export default function ContactFormClient() {
   return (
     <section className="section-dark-gradient min-h-screen py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-6">
               Hablemos
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>
+            <h1 className="immersive-title font-bold mb-5" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>
               Contáctanos
             </h1>
             <div className="section-divider-gold mb-6" />
@@ -128,9 +129,10 @@ export default function ContactFormClient() {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
+          {/* Form — no card, direct on background */}
           <div className="lg:col-span-3">
             <ScrollReveal>
-              <form onSubmit={handleSubmit} noValidate className="contact-form-premium rounded-2xl p-6 sm:p-8 space-y-5 gpu-accelerated">
+              <form onSubmit={handleSubmit} noValidate className="space-y-5">
                 <div>
                   <label htmlFor="nombre" className="block text-sm font-medium text-gray-300 mb-2">Nombre completo <span className="text-red-400">*</span></label>
                   <Input id="nombre" name="nombre" type="text" required minLength={2} placeholder="Ej. Juan Pérez López" value={formData.nombre} onChange={handleChange} className="bg-[#0A0A0A] border-white/10 text-white placeholder:text-gray-600 h-12 rounded-lg focus-visible:border-[#D4AF37]/60 focus-visible:ring-[#D4AF37]/20" />
@@ -172,22 +174,20 @@ export default function ContactFormClient() {
             </ScrollReveal>
           </div>
 
-          <div className="lg:col-span-2 flex flex-col gap-5">
+          {/* Contact info — no cards, icon + text direct */}
+          <div className="lg:col-span-2 flex flex-col gap-8">
             {contactInfo.map((item, index) => {
               const Icon = item.icon;
               const content = (
                 <ScrollReveal key={item.label} delay={0.1 * (index + 1)}>
-                  <div className="contact-info-premium rounded-2xl p-5 gpu-accelerated">
-                    <div className="flex items-start gap-4">
-                      <div className="icon-glow shrink-0 w-11 h-11 rounded-lg flex items-center justify-center gpu-accelerated" style={{ backgroundColor: `${item.color}15` }}>
-                        <Icon className="w-5 h-5" style={{ color: item.color }} />
-                      </div>
-                      <div className="min-w-0">
-                        <h3 className="text-white text-sm font-semibold mb-1" style={{ fontFamily: "var(--font-playfair), serif" }}>{item.label}</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">{item.value}</p>
-                      </div>
+                  <div className="flex items-start gap-4">
+                    <Icon className="w-5 h-5 mt-0.5 shrink-0" style={{ color: item.color }} />
+                    <div className="min-w-0">
+                      <h3 className="text-white text-sm font-semibold mb-1" style={{ fontFamily: "var(--font-playfair), serif" }}>{item.label}</h3>
+                      <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">{item.value}</p>
                     </div>
                   </div>
+                  {index < contactInfo.length - 1 && <hr className="subtle-divider mt-8" />}
                 </ScrollReveal>
               );
               if (item.href) {
@@ -197,11 +197,10 @@ export default function ContactFormClient() {
             })}
 
             <ScrollReveal delay={0.2}>
-              <div className="privacy-card-premium rounded-2xl p-6 mt-2 gpu-accelerated">
+              <hr className="subtle-divider" />
+              <div className="mt-8">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="icon-glow w-10 h-10 rounded-lg flex items-center justify-center bg-[#D4AF37]/10">
-                    <MessageSquare className="w-5 h-5 text-[#D4AF37]" />
-                  </div>
+                  <MessageSquare className="w-5 h-5 text-[#D4AF37]" />
                   <h3 className="text-white text-base font-semibold" style={{ fontFamily: "var(--font-playfair), serif" }}>¿Prefieres hablar ahora?</h3>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">Escribe directamente por WhatsApp y recibe una respuesta inmediata de nuestro equipo legal.</p>
@@ -213,8 +212,10 @@ export default function ContactFormClient() {
           </div>
         </div>
 
+        {/* Map section */}
         <ScrollReveal delay={0.15}>
-          <section className="mt-14">
+          <section className="mt-20">
+            <hr className="subtle-divider mb-10" />
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-playfair), serif" }}>Encuéntranos en Lima</h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62414.07!2d-77.03!3d-12.0464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1234567890" width="100%" height="400" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="maps-premium rounded-2xl" />
           </section>

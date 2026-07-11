@@ -19,7 +19,7 @@ export default function AbogadosPage() {
   return (
     <SiteLayout>
       <section className="section-dark-gradient py-24 px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <ScrollReveal>
@@ -30,7 +30,7 @@ export default function AbogadosPage() {
 
             <ScrollReveal delay={0.1}>
               <h1
-                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+                className="immersive-title font-bold mb-6"
                 style={{
                   color: "#D4AF37",
                   fontFamily: "var(--font-playfair), serif",
@@ -57,22 +57,21 @@ export default function AbogadosPage() {
             </ScrollReveal>
           </div>
 
-          {/* Team Grid */}
+          {/* Team — no cards, vertical list */}
           <TeamCards />
 
-          {/* Colegio de Abogados Info */}
+          {/* Colegio de Abogados — no card */}
           <ScrollReveal delay={0.2}>
             <div className="mt-16 text-center">
-              <div className="privacy-card-premium rounded-2xl p-8 max-w-3xl mx-auto">
-                <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-                  Todos nuestros abogados se encuentran debidamente colegiados y
-                  habilitados para el ejercicio profesional en el territorio
-                  nacional.
-                </p>
-                <p className="text-[#D4AF37] font-semibold mt-3 text-sm sm:text-base">
-                  Registro: Colegio de Abogados de Lima — CAL
-                </p>
-              </div>
+              <hr className="subtle-divider mb-10" />
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+                Todos nuestros abogados se encuentran debidamente colegiados y
+                habilitados para el ejercicio profesional en el territorio
+                nacional.
+              </p>
+              <p className="text-[#D4AF37] font-semibold mt-3 text-sm sm:text-base">
+                Registro: Colegio de Abogados de Lima — CAL
+              </p>
             </div>
           </ScrollReveal>
         </div>

@@ -11,22 +11,23 @@ export const metadata: Metadata = {
 };
 
 const articles = [
-  { slug: "cambios-legislacion-laboral-2026", category: "Derecho Laboral", title: "Nuevos Cambios en la Legislación Laboral Peruana 2026", excerpt: "El gobierno peruano ha aprobado recientes modificaciones a la normativa laboral que afectan directamente a los contratos de trabajo temporales y los derechos de los trabajadores. En este artículo analizamos los principales cambios y su impacto práctico tanto para empleadores como para empleados, incluyendo las nuevas disposiciones sobre teletrabajo y la actualización de los montos de las indemnizaciones por despido arbitrario.", date: "15 de Junio, 2026", icon: Briefcase, gradient: "from-[#D4AF37]/20 via-[#D4AF37]/10 to-transparent", iconColor: "#D4AF37" },
-  { slug: "guia-denuncia-penal", category: "Derecho Penal", title: "Guía Completa: Cómo Actuar Ante una Denuncia Penal", excerpt: "Recibir una denuncia penal puede ser una situación abrumadora. Conocer tus derechos y los pasos a seguir desde el primer momento es fundamental para garantizar una defensa adecuada. Explicamos detalladamente el proceso penal peruano, desde la investigación fiscal hasta la etapa de juzgamiento, y las estrategias de defensa que han demostrado mayor eficacia en cada tipo de causa penal.", date: "2 de Junio, 2026", icon: Shield, gradient: "from-[#B87333]/20 via-[#B87333]/10 to-transparent", iconColor: "#B87333" },
-  { slug: "compliance-legal-peru", category: "Derecho Corporativo", title: "Protege Tu Empresa: Claves del Compliance Legal en Perú", excerpt: "El cumplimiento normativo o compliance legal se ha convertido en una necesidad imprescindible para las empresas en Perú. Desde la prevención de la responsabilidad administrativa hasta la implementación de programas de integridad, detallamos los aspectos esenciales que toda empresa debe considerar para operar dentro del marco legal vigente y evitar sanciones que puedan afectar su reputación y continuidad operativa.", date: "20 de Mayo, 2026", icon: Building2, gradient: "from-[#0B1A2E]/60 via-[#0B1A2E]/30 to-transparent", iconColor: "#4A90D9" },
+  { slug: "cambios-legislacion-laboral-2026", category: "Derecho Laboral", title: "Nuevos Cambios en la Legislación Laboral Peruana 2026", excerpt: "El gobierno peruano ha aprobado recientes modificaciones a la normativa laboral que afectan directamente a los contratos de trabajo temporales y los derechos de los trabajadores. En este artículo analizamos los principales cambios y su impacto práctico tanto para empleadores como para empleados, incluyendo las nuevas disposiciones sobre teletrabajo y la actualización de los montos de las indemnizaciones por despido arbitrario.", date: "15 de Junio, 2026", icon: Briefcase, iconColor: "#D4AF37" },
+  { slug: "guia-denuncia-penal", category: "Derecho Penal", title: "Guía Completa: Cómo Actuar Ante una Denuncia Penal", excerpt: "Recibir una denuncia penal puede ser una situación abrumadora. Conocer tus derechos y los pasos a seguir desde el primer momento es fundamental para garantizar una defensa adecuada. Explicamos detalladamente el proceso penal peruano, desde la investigación fiscal hasta la etapa de juzgamiento, y las estrategias de defensa que han demostrado mayor eficacia en cada tipo de causa penal.", date: "2 de Junio, 2026", icon: Shield, iconColor: "#B87333" },
+  { slug: "compliance-legal-peru", category: "Derecho Corporativo", title: "Protege Tu Empresa: Claves del Compliance Legal en Perú", excerpt: "El cumplimiento normativo o compliance legal se ha convertido en una necesidad imprescindible para las empresas en Perú. Desde la prevención de la responsabilidad administrativa hasta la implementación de programas de integridad, detallamos los aspectos esenciales que toda empresa debe considerar para operar dentro del marco legal vigente y evitar sanciones que puedan afectar su reputación y continuidad operativa.", date: "20 de Mayo, 2026", icon: Building2, iconColor: "#4A90D9" },
 ];
 
 export default function RecursosLegalesPage() {
   return (
     <SiteLayout>
       <section className="section-dark-gradient min-h-screen py-24 px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-3xl mx-auto">
+          {/* Header */}
           <div className="text-center mb-16">
             <ScrollReveal>
               <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">Conocimiento</span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>Recursos Legales</h1>
+              <h1 className="immersive-title font-bold mb-6" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>Recursos Legales</h1>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <div className="section-divider-gold mb-6" />
@@ -36,36 +37,49 @@ export default function RecursosLegalesPage() {
             </ScrollReveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Articles — no cards, vertical list with icon + text */}
+          <div className="space-y-12">
             {articles.map((article, index) => {
               const Icon = article.icon;
               return (
                 <ScrollReveal key={article.slug} delay={0.1 * (index + 1)}>
                   <Link href={`/recursos-legales/${article.slug}`} className="block group">
-                    <article className="article-card-premium rounded-2xl overflow-hidden h-full flex flex-col">
-                      <div className={`relative h-44 bg-gradient-to-br ${article.gradient} flex items-center justify-center`}>
-                        <div className="icon-glow w-16 h-16 rounded-2xl flex items-center justify-center" style={{ backgroundColor: `${article.iconColor}15` }}>
-                          <Icon className="w-8 h-8" style={{ color: article.iconColor }} />
+                    <div className="flex items-start gap-5 md:gap-8">
+                      <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mt-1" style={{ backgroundColor: `${article.iconColor}12` }}>
+                        <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color: article.iconColor }} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <span
+                          className="inline-block text-xs font-semibold tracking-wider uppercase mb-2"
+                          style={{ color: article.iconColor }}
+                        >
+                          {article.category}
+                        </span>
+                        <h2 className="immersive-title font-bold leading-snug group-hover:text-[#D4AF37] transition-colors duration-300 mb-2" style={{ color: "#fff", fontFamily: "var(--font-playfair), serif", WebkitLineClamp: 2 }}>
+                          {article.title}
+                        </h2>
+                        <p className="immersive-desc text-gray-400 leading-relaxed mb-3">{article.excerpt}</p>
+                        <div className="flex items-center gap-6">
+                          <span className="flex items-center gap-1.5 text-gray-500 text-xs">
+                            <Calendar className="w-3.5 h-3.5" />{article.date}
+                          </span>
+                          <span className="flex items-center gap-1.5 text-[#D4AF37] text-sm font-medium group-hover:gap-2.5 transition-all duration-300">
+                            Leer más<ArrowRight className="w-4 h-4" />
+                          </span>
                         </div>
                       </div>
-                      <div className="p-6 flex flex-col flex-1">
-                        <span className="rounded-full inline-block self-start text-xs font-semibold tracking-wider uppercase px-3 py-1 mb-4 border" style={{ color: article.iconColor, borderColor: `${article.iconColor}30`, backgroundColor: `${article.iconColor}10` }}>{article.category}</span>
-                        <h2 className="text-lg font-bold text-white mb-3 leading-snug group-hover:text-[#D4AF37] transition-colors duration-300" style={{ fontFamily: "var(--font-playfair), serif" }}>{article.title}</h2>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1 line-clamp-[4]">{article.excerpt}</p>
-                        <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/[0.06]">
-                          <span className="flex items-center gap-1.5 text-gray-500 text-xs"><Calendar className="w-3.5 h-3.5" />{article.date}</span>
-                          <span className="flex items-center gap-1 text-[#D4AF37] text-sm font-medium group-hover:gap-2 transition-all duration-300">Leer más<ArrowRight className="w-4 h-4" /></span>
-                        </div>
-                      </div>
-                    </article>
+                    </div>
+                    {index < articles.length - 1 && <hr className="subtle-divider mt-12" />}
                   </Link>
                 </ScrollReveal>
               );
             })}
           </div>
 
+          {/* CTA */}
           <ScrollReveal delay={0.3}>
             <div className="mt-16 text-center">
+              <hr className="subtle-divider mb-10" />
               <p className="text-gray-500 text-sm mb-6">¿Necesitas asesoría legal personalizada sobre algún tema?</p>
               <a href="https://api.whatsapp.com/send?phone=51943366950&text=Hola%2C%20tengo%20una%20consulta%20sobre%20sus%20artículos%20legales." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] font-bold text-sm px-8 py-3.5 rounded-xl">Consultar por WhatsApp</a>
             </div>

@@ -39,10 +39,10 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-5">
               <Image
-                src="https://i.imgur.com/FLpR46c.png"
+                src="https://i.imgur.com/Ury1Lyh.webp"
                 alt="Medina Almonte Firma Legal"
-                width={1181}
-                height={285}
+                width={320}
+                height={80}
                 className="h-[36px] sm:h-[40px] w-auto object-contain"
                 style={{ width: "auto" }}
               />

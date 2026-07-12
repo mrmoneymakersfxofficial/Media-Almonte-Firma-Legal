@@ -39,11 +39,11 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-5">
               <Image
-                src="/logo.webp"
+                src="/logo-footer.webp"
                 alt="Medina Almonte Firma Legal"
-                width={1536}
-                height={1024}
-                className="h-10 sm:h-11 w-auto object-contain"
+                width={1000}
+                height={236}
+                className="h-9 sm:h-10 w-auto object-contain"
                 style={{ width: "auto" }}
               />
             </Link>

@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 
-const LOGO_URL = "https://i.imgur.com/yWjhWfH.webp";
+const LOGO_URL = "/logo.webp";
 
 const navLinks = [
   { name: "Inicio", href: "/" },
@@ -190,9 +190,9 @@ export function Header() {
                   <Image
                     src={LOGO_URL}
                     alt="Medina Almonte Firma Legal"
-                    width={160}
-                    height={40}
-                    className="brand-logo-fixed h-9 sm:h-10 w-auto object-contain"
+                    width={1536}
+                    height={1024}
+                    className="brand-logo-fixed h-10 sm:h-11 lg:h-12 w-auto object-contain"
                     style={{ width: 'auto' }}
                     priority
                   />
@@ -290,8 +290,8 @@ export function Header() {
                   <Image
                     src={LOGO_URL}
                     alt="Medina Almonte"
-                    width={130}
-                    height={32}
+                    width={1536}
+                    height={1024}
                     className="brand-logo-fixed h-8 w-auto object-contain"
                     style={{ width: 'auto' }}
                   />

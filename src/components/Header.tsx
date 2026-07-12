@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 
-const LOGO_URL = "https://i.imgur.com/Ury1Lyh.webp";
+const LOGO_URL = "https://i.imgur.com/yWjhWfH.webp";
 
 const navLinks = [
   { name: "Inicio", href: "/" },

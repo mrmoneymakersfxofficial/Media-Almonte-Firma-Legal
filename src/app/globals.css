@@ -269,7 +269,7 @@ img, svg {
 
 /* ─── BRAND LOGO FIXED — Anti-crop global rules (all pages, PC + Mobile) ─── */
 .brand-logo-fixed {
-  height: 80px !important;
+  height: 38px !important;
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
@@ -290,7 +290,7 @@ img, svg {
    ═══════════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .brand-logo-fixed {
-    height: 52px !important;
+    height: 30px !important;
     width: auto !important;
   }
 
@@ -1026,7 +1026,7 @@ html.mobile-menu-open .whatsapp-float {
 
   /* Smaller logo on short viewports */
   .brand-logo-fixed {
-    height: 56px !important;
+    height: 34px !important;
   }
 
   .navbar-brand-fixed {
@@ -1107,7 +1107,7 @@ html.mobile-menu-open .whatsapp-float {
   }
 
   .brand-logo-fixed {
-    height: 48px !important;
+    height: 30px !important;
   }
 }
 

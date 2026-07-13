@@ -122,7 +122,7 @@ export function Hero() {
         className="absolute inset-0 gpu-accelerated"
         style={{
           background:
-            "linear-gradient(160deg, rgba(10,10,10,0.97) 0%, rgba(11,26,46,0.85) 40%, rgba(10,10,10,0.65) 70%, rgba(184,115,51,0.08) 100%)",
+            "linear-gradient(160deg, rgba(10,10,10,0.97) 0%, rgba(11,26,46,0.88) 35%, rgba(10,10,10,0.72) 65%, rgba(184,115,51,0.06) 100%)",
         }}
         aria-hidden="true"
       />

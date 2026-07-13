@@ -42,7 +42,7 @@ export function Footer() {
                 src="/logo-footer.webp"
                 alt="Medina Almonte Firma Legal"
                 width={1000}
-                height={236}
+                height={220}
                 className="h-9 sm:h-10 w-auto object-contain"
                 style={{ width: "auto" }}
               />

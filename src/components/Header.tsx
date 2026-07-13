@@ -191,7 +191,7 @@ export function Header() {
                     src={LOGO_URL}
                     alt="Medina Almonte Firma Legal"
                     width={800}
-                    height={189}
+                    height={176}
                     className="brand-logo-fixed h-8 sm:h-9 lg:h-10 w-auto object-contain"
                     style={{ width: 'auto' }}
                     priority
@@ -291,7 +291,7 @@ export function Header() {
                     src={LOGO_URL}
                     alt="Medina Almonte"
                     width={800}
-                    height={189}
+                    height={176}
                     className="brand-logo-fixed h-7 w-auto object-contain"
                     style={{ width: 'auto' }}
                   />

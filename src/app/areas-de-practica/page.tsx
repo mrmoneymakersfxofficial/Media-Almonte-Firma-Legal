@@ -29,7 +29,7 @@ export default function AreasDePracticaPage() {
                 Áreas de Práctica
               </h1>
               <div className="section-divider-gold mb-6" />
-              <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+              <p className="pro-paragraph-lg max-w-2xl mx-auto">
                 Nuestro equipo de abogados especializados cubre las principales ramas del derecho para ofrecerte una defensa legal integral.
               </p>
             </div>

@@ -39,7 +39,7 @@ export default function LaboralPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="pro-paragraph-lg max-w-3xl mx-auto mb-12">
               Asesoramos tanto a empleadores como a trabajadores en todas las
               etapas de la relación laboral. Desde la elaboración de contratos de
               trabajo y reglamentos internos hasta la defensa en litigios por

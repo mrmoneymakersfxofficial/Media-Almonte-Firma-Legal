@@ -39,7 +39,7 @@ export default function PoliticaPrivacidadPage() {
             <ScrollReveal delay={0.2}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>1. Responsable del Tratamiento</h2>
-                <p className="text-gray-400 text-base leading-relaxed">
+                <p className="pro-paragraph">
                   El responsable del tratamiento de los datos personales es <span className="text-white">Medina Almonte Firma Legal</span>, con domicilio en Lima, Perú. Para cualquier consulta relacionada con el tratamiento de tus datos personales, puedes contactarnos a través de <a href="mailto:contacto@medinaalmonte.com" className="text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a> o al teléfono <a href="tel:+51943366950" className="text-[#D4AF37] hover:underline transition-colors">+51 943 366 950</a>.
                 </p>
               </section>
@@ -50,13 +50,13 @@ export default function PoliticaPrivacidadPage() {
             <ScrollReveal delay={0.25}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>2. Datos que Recopilamos</h2>
-                <p className="text-gray-400 text-base leading-relaxed mb-4">Recopilamos únicamente los datos necesarios para atenderte adecuadamente. A través de nuestro formulario de contacto, podemos solicitar:</p>
-                <ul className="space-y-2.5 text-gray-400 text-base leading-relaxed pl-1">
+                <p className="pro-paragraph mb-4">Recopilamos únicamente los datos necesarios para atenderte adecuadamente. A través de nuestro formulario de contacto, podemos solicitar:</p>
+                <ul className="space-y-2.5 pro-paragraph pl-1">
                   {["Nombre completo", "Correo electrónico", "Número de teléfono", "Tipo de caso o área de interés legal", "Mensaje o descripción de la consulta"].map((item) => (
                     <li key={item} className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] shrink-0 mt-2.5" />{item}</li>
                   ))}
                 </ul>
-                <p className="text-gray-400 text-base leading-relaxed mt-4">No recopilamos datos sensibles (como origen racial, salud, creencias religiosas) sin tu consentimiento expreso.</p>
+                <p className="pro-paragraph mt-4">No recopilamos datos sensibles (como origen racial, salud, creencias religiosas) sin tu consentimiento expreso.</p>
               </section>
             </ScrollReveal>
 
@@ -65,13 +65,13 @@ export default function PoliticaPrivacidadPage() {
             <ScrollReveal delay={0.3}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>3. Finalidad del Tratamiento</h2>
-                <p className="text-gray-400 text-base leading-relaxed mb-4">Los datos personales que recopilamos son utilizados exclusivamente para:</p>
-                <ul className="space-y-2.5 text-gray-400 text-base leading-relaxed pl-1">
+                <p className="pro-paragraph mb-4">Los datos personales que recopilamos son utilizados exclusivamente para:</p>
+                <ul className="space-y-2.5 pro-paragraph pl-1">
                   {["Atender tu consulta legal y brindarte la asesoría solicitada.", "Comunicarnos contigo sobre nuestros servicios legales.", "Enviar información relevante sobre tu caso o áreas de tu interés.", "Mejorar nuestros servicios y la experiencia del usuario en nuestro sitio web."].map((item) => (
                     <li key={item} className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] shrink-0 mt-2.5" />{item}</li>
                   ))}
                 </ul>
-                <p className="text-gray-400 text-base leading-relaxed mt-4">No utilizaremos tus datos para fines distintos a los descritos sin tu consentimiento previo.</p>
+                <p className="pro-paragraph mt-4">No utilizaremos tus datos para fines distintos a los descritos sin tu consentimiento previo.</p>
               </section>
             </ScrollReveal>
 
@@ -80,7 +80,7 @@ export default function PoliticaPrivacidadPage() {
             <ScrollReveal delay={0.35}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>4. Base Legal del Tratamiento</h2>
-                <p className="text-gray-400 text-base leading-relaxed">El tratamiento de tus datos personales se realiza sobre las siguientes bases legales, conforme a la Ley N° 29733, Ley de Protección de Datos Personales del Perú:</p>
+                <p className="pro-paragraph">El tratamiento de tus datos personales se realiza sobre las siguientes bases legales, conforme a la Ley N° 29733, Ley de Protección de Datos Personales del Perú:</p>
                 <div className="mt-6 space-y-6">
                   <div>
                     <h3 className="text-white font-semibold text-sm mb-1.5">Consentimiento del Titular</h3>
@@ -100,7 +100,7 @@ export default function PoliticaPrivacidadPage() {
             <ScrollReveal delay={0.4}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>5. Duración del Tratamiento</h2>
-                <p className="text-gray-400 text-base leading-relaxed">Tus datos personales serán conservados durante el tiempo necesario para cumplir con la finalidad para la que fueron recopilados, y mientras no solicites su supresión. Una vez finalizada la relación profesional, los datos serán eliminados o anonimizados, salvo aquellos que deban conservarse durante el plazo de prescripción legal aplicable.</p>
+                <p className="pro-paragraph">Tus datos personales serán conservados durante el tiempo necesario para cumplir con la finalidad para la que fueron recopilados, y mientras no solicites su supresión. Una vez finalizada la relación profesional, los datos serán eliminados o anonimizados, salvo aquellos que deban conservarse durante el plazo de prescripción legal aplicable.</p>
               </section>
             </ScrollReveal>
 
@@ -109,7 +109,7 @@ export default function PoliticaPrivacidadPage() {
             <ScrollReveal delay={0.45}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>6. Derechos del Titular</h2>
-                <p className="text-gray-400 text-base leading-relaxed mb-4">Como titular de tus datos personales, tienes derecho a ejercer los siguientes derechos ante nosotros:</p>
+                <p className="pro-paragraph mb-4">Como titular de tus datos personales, tienes derecho a ejercer los siguientes derechos ante nosotros:</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5">
                   {[
                     { title: "Acceso", desc: "Solicitar información sobre los datos que tenemos sobre ti." },
@@ -123,7 +123,7 @@ export default function PoliticaPrivacidadPage() {
                     </div>
                   ))}
                 </div>
-                <p className="text-gray-400 text-base leading-relaxed mt-4">Para ejercer cualquiera de estos derechos, envía tu solicitud a <a href="mailto:contacto@medinaalmonte.com" className="text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a> y responderemos en un plazo máximo de 30 días hábiles.</p>
+                <p className="pro-paragraph mt-4">Para ejercer cualquiera de estos derechos, envía tu solicitud a <a href="mailto:contacto@medinaalmonte.com" className="text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a> y responderemos en un plazo máximo de 30 días hábiles.</p>
               </section>
             </ScrollReveal>
 
@@ -132,7 +132,7 @@ export default function PoliticaPrivacidadPage() {
             <ScrollReveal delay={0.5}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>7. Transferencia de Datos</h2>
-                <p className="text-gray-400 text-base leading-relaxed"><span className="text-white font-medium">No se realizan transferencias internacionales de datos personales.</span> Toda la información que recopilamos se almacena y procesa dentro del territorio peruano, en cumplimiento de la normativa vigente de protección de datos.</p>
+                <p className="pro-paragraph"><span className="text-white font-medium">No se realizan transferencias internacionales de datos personales.</span> Toda la información que recopilamos se almacena y procesa dentro del territorio peruano, en cumplimiento de la normativa vigente de protección de datos.</p>
               </section>
             </ScrollReveal>
 
@@ -141,7 +141,7 @@ export default function PoliticaPrivacidadPage() {
             <ScrollReveal delay={0.55}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>8. Seguridad de los Datos</h2>
-                <p className="text-gray-400 text-base leading-relaxed">Adoptamos las medidas técnicas y organizativas necesarias para proteger tus datos personales contra accesos no autorizados, pérdida, alteración o destrucción. Estas medidas incluyen protocolos de seguridad en nuestros sistemas, capacitación de nuestro personal y restricciones de acceso a la información.</p>
+                <p className="pro-paragraph">Adoptamos las medidas técnicas y organizativas necesarias para proteger tus datos personales contra accesos no autorizados, pérdida, alteración o destrucción. Estas medidas incluyen protocolos de seguridad en nuestros sistemas, capacitación de nuestro personal y restricciones de acceso a la información.</p>
               </section>
             </ScrollReveal>
 
@@ -150,7 +150,7 @@ export default function PoliticaPrivacidadPage() {
             <ScrollReveal delay={0.6}>
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>9. Contacto</h2>
-                <p className="text-gray-400 text-base leading-relaxed mb-5">Si tienes cualquier pregunta o inquietud sobre esta Política de Privacidad o el tratamiento de tus datos personales, no dudes en contactarnos:</p>
+                <p className="pro-paragraph mb-5">Si tienes cualquier pregunta o inquietud sobre esta Política de Privacidad o el tratamiento de tus datos personales, no dudes en contactarnos:</p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="text-[#D4AF37] font-semibold w-28 shrink-0">Correo:</span>

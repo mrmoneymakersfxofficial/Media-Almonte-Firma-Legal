@@ -39,7 +39,7 @@ export default function CivilPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="pro-paragraph-lg max-w-3xl mx-auto mb-12">
               Nuestro equipo de Derecho Civil cuenta con amplia experiencia en la
               redacción, revisión y negociación de contratos, así como en la
               resolución de controversias vinculadas a obligaciones, derechos

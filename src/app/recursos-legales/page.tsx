@@ -33,7 +33,7 @@ export default function RecursosLegalesPage() {
               <div className="section-divider-gold mb-6" />
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">Accede a nuestra biblioteca de artículos, guías y análisis jurídicos. En Medina Almonte Firma Legal creemos que un cliente informado toma mejores decisiones. Nuestro equipo publica regularmente contenido actualizado sobre las principales novedades legales, reformas legislativas y buenas prácticas en las distintas ramas del derecho peruano.</p>
+              <p className="pro-paragraph-lg max-w-3xl mx-auto">Accede a nuestra biblioteca de artículos, guías y análisis jurídicos. En Medina Almonte Firma Legal creemos que un cliente informado toma mejores decisiones. Nuestro equipo publica regularmente contenido actualizado sobre las principales novedades legales, reformas legislativas y buenas prácticas en las distintas ramas del derecho peruano.</p>
             </ScrollReveal>
           </div>
 

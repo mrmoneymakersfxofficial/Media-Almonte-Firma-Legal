@@ -62,7 +62,7 @@ export function TeamCards() {
               <p className="text-[#B87333] text-sm font-medium mb-3">
                 {member.specialty}
               </p>
-              <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-xl">
+              <p className="pro-paragraph-sm mb-5 max-w-xl">
                 {member.bio}
               </p>
               <a

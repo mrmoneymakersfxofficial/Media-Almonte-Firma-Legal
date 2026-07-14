@@ -151,13 +151,19 @@ export function WhatsAppButton() {
             <div className="absolute bottom-0 right-[24px] translate-y-full">
               <div
                 className="w-3 h-3 rotate-45"
-                style={{ backgroundColor: "#FFFFFF", boxShadow: "2px 2px 4px rgba(0,0,0,0.08)" }}
+                style={{ backgroundColor: "#0B1A2E", boxShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
               />
             </div>
             {/* Bubble content */}
-            <div className="bg-white rounded-xl shadow-2xl p-4 border border-gray-100 relative overflow-hidden">
-              {/* Green accent bar at top */}
-              <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: "#25D366" }} />
+            <div
+              className="rounded-xl shadow-2xl p-4 border relative overflow-hidden"
+              style={{
+                backgroundColor: '#0B1A2E',
+                borderColor: 'rgba(212,175,55,0.25)',
+              }}
+            >
+              {/* Gold accent bar at top */}
+              <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, #D4AF37, #f4e5c2, #B87333)' }} />
               <div className="flex gap-3 items-start pt-1">
                 {/* Mini WhatsApp icon */}
                 <div
@@ -173,12 +179,12 @@ export function WhatsAppButton() {
                   </svg>
                 </div>
                 <div className="min-w-0">
-                  <p className="text-sm font-bold text-gray-900 leading-tight">{currentNotif.title}</p>
-                  <p className="text-xs text-gray-500 mt-1 leading-relaxed">{currentNotif.message}</p>
+                  <p className="text-sm font-bold leading-tight" style={{ color: '#D4AF37' }}>{currentNotif.title}</p>
+                  <p className="text-xs mt-1 leading-relaxed" style={{ color: '#e2e8f0' }}>{currentNotif.message}</p>
                 </div>
               </div>
               {/* Time ago */}
-              <p className="text-[10px] text-gray-400 mt-2.5 text-right">{currentNotif.time}</p>
+              <p className="text-[10px] mt-2.5 text-right" style={{ color: '#94a3b8' }}>{currentNotif.time}</p>
             </div>
           </motion.div>
         )}

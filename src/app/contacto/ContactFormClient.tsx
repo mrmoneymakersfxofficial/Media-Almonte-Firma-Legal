@@ -122,7 +122,7 @@ export default function ContactFormClient() {
               Contáctanos
             </h1>
             <div className="section-divider-gold mb-6" />
-            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            <p className="pro-paragraph-lg max-w-2xl mx-auto">
               Cuéntanos tu situación legal. Completa el formulario y te contactaremos a la brevedad para brindarte la asesoría que necesitas.
             </p>
           </div>

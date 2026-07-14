@@ -32,7 +32,7 @@ export default function ResultadosPage() {
               <div className="section-divider-gold mb-6" />
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">Nuestra firma cuenta con una sólida trayectoria de casos resueltos con éxito en diversas áreas del derecho. Cada resultado favorable refleja nuestro compromiso con la excelencia, la preparación meticulosa y la defensa incansable de los intereses de nuestros clientes.</p>
+              <p className="pro-paragraph-lg max-w-3xl mx-auto">Nuestra firma cuenta con una sólida trayectoria de casos resueltos con éxito en diversas áreas del derecho. Cada resultado favorable refleja nuestro compromiso con la excelencia, la preparación meticulosa y la defensa incansable de los intereses de nuestros clientes.</p>
             </ScrollReveal>
           </div>
 
@@ -73,7 +73,7 @@ export default function ResultadosPage() {
                         <Icon className="w-3.5 h-3.5" />{caseItem.result}
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm leading-relaxed">{caseItem.description}</p>
+                    <p className="pro-paragraph-sm">{caseItem.description}</p>
                   </div>
                   {index < cases.length - 1 && <hr className="subtle-divider mt-10" />}
                 </ScrollReveal>

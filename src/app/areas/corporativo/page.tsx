@@ -39,7 +39,7 @@ export default function CorporativoPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="pro-paragraph-lg max-w-3xl mx-auto mb-12">
               Brindamos asesoría legal integral a empresas de todos los tamaños,
               desde la constitución societaria hasta operaciones complejas de
               reestructuración, fusiones y adquisiciones. Nuestro enfoque se

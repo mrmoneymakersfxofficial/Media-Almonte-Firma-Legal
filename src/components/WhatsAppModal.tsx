@@ -95,11 +95,12 @@ export function WhatsAppModal() {
                   <select
                     value={effectiveSelectedId || ""}
                     onChange={(e) => setSelectedId(Number(e.target.value) || null)}
-                    className="w-full h-10 rounded-lg border border-gray-300 bg-white px-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald/50 focus:border-emerald transition-all"
+                    className="w-full h-10 rounded-lg border border-gray-300 bg-white px-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald/50 focus:border-emerald transition-all appearance-none"
+                    style={{ colorScheme: 'light' }}
                   >
-                    <option value="">-- Seleccione un servicio --</option>
+                    <option value="" style={{ color: '#6b7280' }}>-- Seleccione un servicio --</option>
                     {services.map((s) => (
-                      <option key={s.id} value={s.id}>
+                      <option key={s.id} value={s.id} style={{ color: '#111827' }}>
                         {s.name} — {s.price}
                       </option>
                     ))}

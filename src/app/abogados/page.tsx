@@ -45,7 +45,7 @@ export default function AbogadosPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+              <p className="pro-paragraph-lg max-w-3xl mx-auto">
                 Cada miembro de nuestro equipo aporta una combinación única de
                 experiencia, especialización y pasión por el derecho. Nuestros
                 abogados cuentan con formación de primer nivel y una trayectoria
@@ -64,7 +64,7 @@ export default function AbogadosPage() {
           <ScrollReveal delay={0.2}>
             <div className="mt-16 text-center">
               <hr className="subtle-divider mb-10" />
-              <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+              <p className="pro-paragraph-sm">
                 Todos nuestros abogados se encuentran debidamente colegiados y
                 habilitados para el ejercicio profesional en el territorio
                 nacional.

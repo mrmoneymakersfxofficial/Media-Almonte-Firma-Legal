@@ -77,7 +77,7 @@ export default function FirmaPage() {
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+              <p className="pro-paragraph-lg max-w-3xl mx-auto">
                 Medina Almonte Firma Legal es un estudio jurídico de primer nivel
                 con sede en Perú, dedicado a brindar soluciones legales
                 estratégicas e integrales. Con un equipo de abogados
@@ -113,7 +113,7 @@ export default function FirmaPage() {
                       <h3 className="text-white font-bold text-base mb-2" style={{ fontFamily: "var(--font-playfair), serif" }}>
                         {value.title}
                       </h3>
-                      <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
+                      <p className="pro-paragraph-sm">{value.description}</p>
                     </div>
                   </div>
                 </ScrollReveal>

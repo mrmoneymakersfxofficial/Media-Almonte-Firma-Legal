@@ -88,7 +88,7 @@ function WhoWeAre() {
                 <br />
                 <span className="text-white">tu Principal Estratega Legal</span>
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-8 text-base sm:text-lg">
+              <p className="pro-paragraph-lg mb-8">
                 En Medina Almonte Firma Legal entendemos que cada caso es
                 único. Por eso, diseñamos defensas a medida, con un enfoque
                 humano y una estrategia jurídica impecable. Representamos tus
@@ -121,7 +121,7 @@ function WhoWeAre() {
                       >
                         {item.title}
                       </h3>
-                      <p className="text-gray-400 text-sm sm:text-[15px] leading-relaxed">
+                      <p className="pro-paragraph-sm">
                         {item.description}
                       </p>
                     </div>
@@ -225,7 +225,7 @@ function PracticeAreas() {
                     >
                       {area.title}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                    <p className="pro-paragraph-sm mb-6">
                       {area.description}
                     </p>
                     <span className="inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-sm group-hover:gap-3 transition-all duration-300">
@@ -312,7 +312,7 @@ function TestimonialsSection() {
                 Nuestros Clientes
               </span>
             </h2>
-            <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
+            <p className="pro-paragraph-lg">
               La confianza de nuestros clientes es nuestra mayor satisfacción.
               Cada testimonio refleja nuestro compromiso con la excelencia
               jurídica.
@@ -337,7 +337,7 @@ function TestimonialsSection() {
                     <div className="glass-card gold-border-gradient rounded-2xl p-8 sm:p-10 h-full">
                       <Quote className="w-10 h-10 text-[#D4AF37]/25 mb-6" />
                       <p
-                        className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8"
+                        className="pro-paragraph-lg mb-8"
                         style={{
                           fontFamily: "var(--font-merriweather), serif",
                         }}
@@ -443,7 +443,7 @@ function MembershipsBar() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.15}>
-          <div className="flex gap-6 sm:gap-8 md:gap-10 lg:gap-14 justify-center flex-wrap md:flex-nowrap overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide">
+          <div className="flex gap-6 sm:gap-8 md:gap-10 lg:gap-14 justify-center flex-wrap md:flex-nowrap overflow-x-auto md:overflow-visible pb-4 md:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {memberships.map((m) => {
               const Icon = m.icon;
               return (
@@ -555,7 +555,7 @@ function WhyChooseUs() {
                   >
                     {reason.title}
                   </h3>
-                  <p className="text-gray-400 text-sm sm:text-[15px] leading-relaxed">
+                  <p className="pro-paragraph-sm">
                     {reason.description}
                   </p>
                 </div>

@@ -168,8 +168,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, td, th, label {
 }
 
 .immersive-desc {
-  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-  line-height: 1.6;
+  font-size: clamp(0.875rem, 2.2vw, 0.95rem);
+  line-height: 1.7;
+  letter-spacing: 0.008em;
+  color: rgba(203, 213, 225, 0.82);
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
@@ -315,31 +317,89 @@ img, svg {
   white-space: nowrap;
 }
 
-/* Custom scrollbar — Medina Almonte brand colors (all devices) */
+/* Custom scrollbar — Golden ultra-pro Medina Almonte brand */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #0B1A2E #0A0A0A;
+  scrollbar-color: rgba(212, 175, 55, 0.5) rgba(10, 10, 10, 0.8);
 }
 
 *::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: rgba(10, 10, 10, 0.8);
+  border-left: 1px solid rgba(212, 175, 55, 0.06);
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #0B1A2E;
+  background: linear-gradient(180deg, #B87333 0%, #D4AF37 50%, #c9a961 100%);
   border-radius: 10px;
   border: none;
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.25);
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+  background: linear-gradient(180deg, #c9a961 0%, #f4e5c2 50%, #D4AF37 100%);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
 }
 
-/* ── Founder Presentation Section ── */
+/* ── Mobile-First Ultra-Pro Typography ── */
+/* Global paragraph optimization: shorter, scannable, modern on mobile */
+
+/* Base paragraph style for all body text on the site */
+@layer base {
+  /* Make all paragraphs on the site more mobile-friendly */
+  p {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    orphans: 2;
+    widows: 2;
+  }
+}
+
+/* Mobile text utility classes */
+.pro-paragraph {
+  font-size: clamp(0.938rem, 2.2vw, 1rem);       /* 15px → 16px mobile-first */
+  line-height: 1.7;
+  letter-spacing: 0.008em;
+  color: rgba(203, 213, 225, 0.88);
+}
+
+.pro-paragraph-lg {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);        /* 16px → 18px */
+  line-height: 1.7;
+  letter-spacing: 0.005em;
+  color: rgba(203, 213, 225, 0.88);
+}
+
+.pro-paragraph-sm {
+  font-size: clamp(0.813rem, 2vw, 0.875rem);      /* 13px → 14px */
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  color: rgba(203, 213, 225, 0.78);
+}
+
+/* Mobile: break long paragraphs into more breathable spacing */
+@media (max-width: 767px) {
+  .pro-paragraph,
+  .pro-paragraph-lg {
+    margin-bottom: 1.25rem !important;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Section heading subtitle — smaller, lighter, more elegant on mobile */
+.pro-subtitle {
+  font-size: clamp(0.938rem, 2.2vw, 1.125rem);
+  line-height: 1.6;
+  letter-spacing: 0.015em;
+  font-weight: 400;
+  color: rgba(203, 213, 225, 0.75);
+}
+
+/* Founder Presentation Section ── */
 .founder-presentation-bg {
   background: linear-gradient(180deg, #0A0A0A 0%, #0B1A2E 100%);
 }

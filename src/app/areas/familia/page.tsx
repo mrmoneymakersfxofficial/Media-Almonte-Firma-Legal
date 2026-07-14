@@ -40,7 +40,7 @@ export default function FamiliaPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="pro-paragraph-lg max-w-3xl mx-auto mb-12">
               Entendemos que los asuntos de familia requieren sensibilidad,
               confidencialidad y un trato humano. Acompañamos a nuestros clientes
               en procesos de divorcio, separación, custodia de menores,

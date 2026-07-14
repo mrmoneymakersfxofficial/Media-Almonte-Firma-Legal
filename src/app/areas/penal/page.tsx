@@ -39,7 +39,7 @@ export default function PenalPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="pro-paragraph-lg max-w-3xl mx-auto mb-12">
               En el área de Derecho Penal brindamos una defensa agresiva y
               estratégica, tanto en la etapa de investigación preliminar como en
               el proceso penal propiamente dicho. Nos especializamos en delitos

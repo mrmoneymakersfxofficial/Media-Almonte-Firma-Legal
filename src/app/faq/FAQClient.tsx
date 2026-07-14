@@ -31,7 +31,7 @@ export default function FAQClient() {
             <div className="section-divider-gold mb-6" />
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">Encuentra respuestas a las consultas más comunes sobre nuestros servicios legales. Si no encuentras lo que buscas, no dudes en contactarnos directamente.</p>
+            <p className="pro-paragraph-lg max-w-2xl mx-auto">Encuentra respuestas a las consultas más comunes sobre nuestros servicios legales. Si no encuentras lo que buscas, no dudes en contactarnos directamente.</p>
           </ScrollReveal>
         </div>
 
@@ -47,7 +47,7 @@ export default function FAQClient() {
                 <AccordionTrigger className="text-white hover:text-[#D4AF37] transition-colors duration-200 text-base md:text-lg font-medium py-5 gap-4 [&[data-state=open]>svg]:text-[#D4AF37]">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-400 leading-relaxed text-base pb-5">
+                <AccordionContent className="pro-paragraph pb-5">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -65,7 +65,7 @@ export default function FAQClient() {
               </div>
             </div>
             <h3 className="text-white text-xl md:text-2xl font-bold mb-3" style={{ fontFamily: "var(--font-playfair), serif" }}>¿No encontraste tu respuesta?</h3>
-            <p className="text-gray-400 text-base leading-relaxed mb-6 max-w-lg mx-auto">Nuestro equipo está listo para resolver todas tus consultas. Escríbenos y recibe orientación legal personalizada.</p>
+            <p className="pro-paragraph mb-6 max-w-lg mx-auto">Nuestro equipo está listo para resolver todas tus consultas. Escríbenos y recibe orientación legal personalizada.</p>
             <a href="https://api.whatsapp.com/send?phone=51943366950&text=Hola%2C%20tengo%20una%20consulta%20sobre%20sus%20servicios%20legales." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] font-bold text-sm px-7 py-3 rounded-xl">
               <HelpCircle className="w-4 h-4" />Consultar por WhatsApp
             </a>

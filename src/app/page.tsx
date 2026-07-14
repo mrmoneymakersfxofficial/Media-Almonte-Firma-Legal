@@ -110,11 +110,11 @@ function WhoWeAre() {
               const Icon = item.icon;
               return (
                 <ScrollReveal key={item.title} delay={0.12 * i} duration={0.6}>
-                  <div className="card-premium gold-border-gradient rounded-2xl p-6 sm:p-7 flex items-start gap-5 group">
+                  <div className="card-premium gold-border-gradient rounded-2xl p-6 sm:p-7 flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4 sm:gap-5 group">
                     <div className="w-12 h-12 shrink-0 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center icon-glow transition-all duration-300 group-hover:bg-[#D4AF37]/15 group-hover:scale-110">
                       <Icon className="w-6 h-6 text-[#D4AF37]" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <h3
                         className="text-white font-bold text-lg mb-1.5"
                         style={{ fontFamily: "var(--font-playfair), serif" }}

@@ -44,8 +44,8 @@ export default function RecursosLegalesPage() {
               return (
                 <ScrollReveal key={article.slug} delay={0.1 * (index + 1)}>
                   <Link href={`/recursos-legales/${article.slug}`} className="block group">
-                    <div className="flex items-start gap-5 md:gap-8">
-                      <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mt-1" style={{ backgroundColor: `${article.iconColor}12` }}>
+                    <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-4 md:gap-8">
+                      <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${article.iconColor}12` }}>
                         <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color: article.iconColor }} />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -59,7 +59,7 @@ export default function RecursosLegalesPage() {
                           {article.title}
                         </h2>
                         <p className="immersive-desc text-gray-400 leading-relaxed mb-3">{article.excerpt}</p>
-                        <div className="flex items-center gap-6">
+                        <div className="flex items-center justify-center md:justify-start gap-6">
                           <span className="flex items-center gap-1.5 text-gray-500 text-xs">
                             <Calendar className="w-3.5 h-3.5" />{article.date}
                           </span>

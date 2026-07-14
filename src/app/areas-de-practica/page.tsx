@@ -40,8 +40,8 @@ export default function AreasDePracticaPage() {
             {areas.map((area, index) => (
               <ScrollReveal key={area.slug} delay={index * 0.08}>
                 <Link href={`/areas/${area.slug}`} className="block group">
-                  <div className="flex items-start gap-5 md:gap-8">
-                    <span className="text-3xl md:text-4xl shrink-0 mt-1">{area.icon}</span>
+                  <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-3 md:gap-8">
+                    <span className="text-3xl md:text-4xl shrink-0">{area.icon}</span>
                     <div className="flex-1 min-w-0">
                       <h3
                         className="immersive-title font-semibold mb-2 group-hover:text-[#D4AF37] transition-colors"
@@ -50,7 +50,7 @@ export default function AreasDePracticaPage() {
                         {area.name}
                       </h3>
                       <p className="immersive-desc text-gray-400 leading-relaxed">{area.description}</p>
-                      <span className="inline-flex items-center text-[#D4AF37] text-sm font-medium mt-3 gap-2 group-hover:gap-3 transition-all duration-300">
+                      <span className="inline-flex items-center justify-center text-[#D4AF37] text-sm font-medium mt-3 gap-2 group-hover:gap-3 transition-all duration-300">
                         Conocer más
                         <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

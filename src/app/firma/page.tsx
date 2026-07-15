@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/SiteLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { Shield, Users, Target, Award, Scale, BookOpen } from "lucide-react";
+import { Shield, Users, Target, Award, Scale, BookOpen, Crown, Briefcase, GraduationCap } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "La Firma | Medina Almonte Firma Legal",
+  title: "La Firma | Medina Almonte — Lawyers Firm",
   description:
-    "Conoce Medina Almonte Firma Legal. Más que abogados, tu principal estratega legal en Perú. Especialistas en Derecho Penal, Familia y Civil.",
+    "Conoce Medina Almonte — Lawyers Firm. Más que abogados, tu principal estratega legal en Perú. Especialistas en Derecho Penal, Familia y Civil.",
   keywords: [
     "Medina Almonte",
     "firma legal Perú",
-    "abogados penales",
+    "abogados penal",
     "estudio jurídico",
+    "Eduardo Medina Almonte",
   ],
 };
 
@@ -19,7 +20,7 @@ const values = [
   {
     icon: Shield,
     title: "Ética Profesional",
-    description: "Cada acción se rige por los más altos estándares éticos, garantizando transparencia y confianza en la relación con nuestros clientes.",
+    description: "Cada acción se rige por los más altos estándares éticos, garantizando transparencia y confianza absoluta en la relación con nuestros clientes.",
   },
   {
     icon: Target,
@@ -51,7 +52,154 @@ const values = [
 export default function FirmaPage() {
   return (
     <SiteLayout>
-      <section className="section-dark-gradient min-h-screen py-24 px-4">
+      {/* ═══════════════════════════════════════════════════════════════
+          CEO / FOUNDING PARTNER — Ultra Premium Section
+          ═══════════════════════════════════════════════════════════════ */}
+      <section className="relative py-24 lg:py-32 overflow-hidden" style={{ background: "linear-gradient(180deg, #0A0A0A 0%, #0d1117 40%, #0B1A2E 70%, #0A0A0A 100%)" }}>
+        {/* Decorative ambient */}
+        <div
+          className="absolute -top-60 -right-60 w-[600px] h-[600px] rounded-full blur-[160px] gpu-accelerated"
+          style={{ background: "radial-gradient(circle, rgba(212,175,55,0.04) 0%, transparent 70%)" }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full blur-[120px] gpu-accelerated"
+          style={{ background: "radial-gradient(circle, rgba(184,115,51,0.04) 0%, transparent 70%)" }}
+          aria-hidden="true"
+        />
+
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
+              {/* Avatar */}
+              <div className="shrink-0">
+                <div className="relative">
+                  {/* Outer glow ring */}
+                  <div
+                    className="absolute -inset-4 rounded-full gpu-accelerated"
+                    style={{
+                      background: "conic-gradient(from 0deg, rgba(212,175,55,0.3), rgba(184,115,51,0.1), rgba(212,175,55,0.3))",
+                      filter: "blur(20px)",
+                    }}
+                    aria-hidden="true"
+                  />
+                  {/* Gold border ring */}
+                  <div
+                    className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full flex items-center justify-center"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(212,175,55,0.2), rgba(184,115,51,0.1))",
+                      border: "2px solid rgba(212,175,55,0.3)",
+                    }}
+                  >
+                    <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-[#0A0A0A] flex items-center justify-center">
+                      <span
+                        className="text-5xl sm:text-6xl font-bold"
+                        style={{
+                          fontFamily: "var(--font-playfair), serif",
+                          background: "linear-gradient(135deg, #c9a961, #d4af37, #B87333)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                      >
+                        EM
+                      </span>
+                    </div>
+                  </div>
+                  {/* CEO badge floating */}
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
+                    <div
+                      className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg gpu-accelerated"
+                      style={{
+                        background: "linear-gradient(135deg, #D4AF37, #B87333)",
+                        color: "#0A0A0A",
+                        boxShadow: "0 4px 20px rgba(212,175,55,0.3)",
+                      }}
+                    >
+                      <Crown className="w-3 h-3" />
+                      Socio Fundador & CEO
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bio content */}
+              <div className="text-center lg:text-left flex-1">
+                <ScrollReveal delay={0.1}>
+                  <h1
+                    className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.15] mb-2"
+                    style={{
+                      fontFamily: "var(--font-playfair), serif",
+                      background: "linear-gradient(135deg, #c9a961, #d4af37, #B87333)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    Dr. Eduardo Medina Almonte
+                  </h1>
+                </ScrollReveal>
+
+                <ScrollReveal delay={0.15}>
+                  <p className="text-[#B87333] font-semibold text-base sm:text-lg mb-6 tracking-wide">
+                    Socio Fundador & Managing Partner — Medina Almonte Lawyers Firm
+                  </p>
+                </ScrollReveal>
+
+                <ScrollReveal delay={0.2}>
+                  <div className="subtle-divider mb-6" />
+                </ScrollReveal>
+
+                <ScrollReveal delay={0.25}>
+                  <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
+                    Abogado peruano con más de una década de experiencia en el ejercicio jurídico,
+                    especializado en Derecho Penal, Derecho de Familia y Derecho Civil. Fundador de
+                    <strong className="text-white"> Medina Almonte — Lawyers Firm</strong>, un estudio
+                    jurídico concebido bajo los más altos estándares de excelencia profesional, ética
+                    y compromiso con los resultados.
+                  </p>
+                </ScrollReveal>
+
+                <ScrollReveal delay={0.3}>
+                  <p className="text-gray-400 text-base leading-relaxed mb-8">
+                    Su visión estratégica ha permitido a la firma alcanzar una tasa de resolución
+                    favorable superior al 92%, atendiendo a más de 500 clientes en toda la República
+                    del Perú. El Dr. Medina Almonte es miembro activo del Colegio de Abogados de Lima
+                    y ha participado como ponente en diversos seminarios de derecho penal y derecho
+                    de familia a nivel nacional.
+                  </p>
+                </ScrollReveal>
+
+                {/* Credentials pills */}
+                <ScrollReveal delay={0.35}>
+                  <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+                    {[
+                      { icon: GraduationCap, text: "Colegio de Abogados de Lima" },
+                      { icon: Briefcase, text: "10+ Años de Experiencia" },
+                      { icon: Scale, text: "Especialista en Litigación" },
+                      { icon: Award, text: "500+ Casos Atendidos" },
+                    ].map((cred) => {
+                      const Icon = cred.icon;
+                      return (
+                        <div
+                          key={cred.text}
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-medium text-white/70 border border-white/[0.08] bg-white/[0.03]"
+                        >
+                          <Icon className="w-3.5 h-3.5 text-[#D4AF37]/70" />
+                          {cred.text}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </ScrollReveal>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          ABOUT THE FIRM
+          ═══════════════════════════════════════════════════════════════ */}
+      <section className="section-dark-gradient py-24 px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-20">
@@ -65,7 +213,7 @@ export default function FirmaPage() {
                 className="immersive-title font-bold mb-6"
                 style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}
               >
-                Medina Almonte Firma Legal
+                Medina Almonte — Lawyers Firm
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
@@ -77,9 +225,9 @@ export default function FirmaPage() {
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <p className="pro-paragraph-lg max-w-3xl mx-auto">
-                Medina Almonte Firma Legal es un estudio jurídico de primer nivel
-                con sede en Perú, dedicado a brindar soluciones legales
+              <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+                Medina Almonte — Lawyers Firm es un estudio jurídico de primer nivel
+                con sede en Lima, Perú, dedicado a brindar soluciones legales
                 estratégicas e integrales. Con un equipo de abogados
                 altamente calificados y una trayectoria comprobada, nos
                 comprometemos con la excelencia, la ética profesional y la
@@ -91,7 +239,7 @@ export default function FirmaPage() {
             </ScrollReveal>
           </div>
 
-          {/* Values — no cards, icon + text direct on background */}
+          {/* Values */}
           <ScrollReveal delay={0.2}>
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase">
@@ -105,15 +253,15 @@ export default function FirmaPage() {
               const Icon = value.icon;
               return (
                 <ScrollReveal key={value.title} delay={0.1 * (index + 1)}>
-                  <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-3 sm:gap-4">
-                    <div className="shrink-0 w-11 h-11 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center">
+                  <div className="flex items-start gap-4">
+                    <div className="shrink-0 w-11 h-11 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center mt-0.5">
                       <Icon className="w-5 h-5 text-[#D4AF37]" />
                     </div>
                     <div className="min-w-0">
                       <h3 className="text-white font-bold text-base mb-2" style={{ fontFamily: "var(--font-playfair), serif" }}>
                         {value.title}
                       </h3>
-                      <p className="pro-paragraph-sm">{value.description}</p>
+                      <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -121,7 +269,7 @@ export default function FirmaPage() {
             })}
           </div>
 
-          {/* Stats — no cards, just numbers on background */}
+          {/* Stats */}
           <ScrollReveal delay={0.3}>
             <div className="mt-20">
               <hr className="subtle-divider mb-12" />

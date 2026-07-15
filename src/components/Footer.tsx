@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Facebook, Instagram, ArrowUp } from "lucide-react";
+import { Facebook, Instagram, ArrowUp, FileText } from "lucide-react";
 import Image from "next/image";
 
 const quickLinks = [
@@ -17,6 +17,11 @@ const practiceAreas = [
   { label: "Derecho Penal", href: "/areas/penal" },
   { label: "Derecho de Familia", href: "/areas/familia" },
   { label: "Derecho Civil", href: "/areas/civil" },
+];
+
+const legalLinks = [
+  { label: "Libro de Reclamaciones", href: "/libro-de-reclamaciones" },
+  { label: "Política de Privacidad", href: "/politica-privacidad" },
 ];
 
 const socialLinks = [
@@ -38,7 +43,7 @@ export function Footer() {
             <Link href="/" className="inline-block mb-5">
               <Image
                 src="/logo-footer.webp"
-                alt="Medina Almonte Firma Legal"
+                alt="Medina Almonte Lawyers Firm"
                 width={1000}
                 height={220}
                 className="h-9 sm:h-10 w-auto object-contain"
@@ -48,9 +53,12 @@ export function Footer() {
             <p className="text-white/60 text-sm leading-relaxed">
               Defensa legal estratégica en Derecho Penal, Familia y Civil. Confianza, autoridad y resultados comprobados en Perú.
             </p>
+            <p className="text-white/40 text-xs mt-3 tracking-wider uppercase font-medium">
+              MEDINA ALMONTE — LAWYERS FIRM
+            </p>
             <a
               href="mailto:contacto@medinaalmonte.com"
-              className="text-white/60 hover:text-[#D4AF37] text-sm transition-colors inline-block mt-3"
+              className="text-white/60 hover:text-[#D4AF37] text-sm transition-colors inline-block mt-2"
             >
               contacto@medinaalmonte.com
             </a>
@@ -75,12 +83,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Áreas de Práctica */}
+          {/* Áreas de Práctica + Legal */}
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-wider text-white/80 mb-4">
               Áreas de Práctica
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2.5 mb-6">
               {practiceAreas.map((area) => (
                 <li key={area.href}>
                   <Link
@@ -88,6 +96,23 @@ export function Footer() {
                     className="text-white/60 hover:text-[#D4AF37] text-sm transition-colors"
                   >
                     {area.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h4 className="font-semibold text-sm uppercase tracking-wider text-white/80 mb-3">
+              Legal
+            </h4>
+            <ul className="space-y-2.5">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white/60 hover:text-[#D4AF37] text-sm transition-colors flex items-center gap-1.5"
+                  >
+                    <FileText className="w-3 h-3" />
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -132,7 +157,7 @@ export function Footer() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col items-center gap-2">
             <p className="text-white/40 text-sm">
-              © 2026 Medina Almonte Firma Legal. Todos los derechos reservados.
+              © 2026 Medina Almonte — Lawyers Firm. Todos los derechos reservados.
             </p>
             <p className="footer-credits">
               Diseñado y desarrollado por <a href="https://www.fastpagepro.com" target="_blank" rel="noopener noreferrer">FastPagePro</a>
@@ -141,6 +166,10 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <Link href="/politica-privacidad" className="text-white/40 hover:text-white/60 text-sm transition-colors">
               Política de Privacidad
+            </Link>
+            <Link href="/libro-de-reclamaciones" className="text-white/40 hover:text-white/60 text-sm transition-colors flex items-center gap-1">
+              <FileText className="w-3 h-3" />
+              Libro de Reclamaciones
             </Link>
             <button
               onClick={scrollToTop}

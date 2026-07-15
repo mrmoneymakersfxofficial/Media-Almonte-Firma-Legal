@@ -12,20 +12,20 @@ const merriweather = Merriweather({ weight: ['300', '400', '700'], subsets: ['la
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://medinaalmonte.com"),
-  title: "Medina Almonte Firma Legal | Abogados Penales, Familia y Civil en Perú",
+  title: "Medina Almonte — Lawyers Firm | Abogados Penales, Familia y Civil en Perú",
   description:
-    "Defensa legal estratégica en Derecho Penal, Familia y Civil. Protegemos tus derechos con excelencia y resultados comprobados.",
+    "Defensa legal estratégica en Derecho Penal, Familia y Civil. Medina Almonte — Lawyers Firm. Protegemos tus derechos con excelencia y resultados comprobados en Perú.",
   keywords: [
     "abogados",
     "firma legal",
     "derecho civil",
     "derecho penal",
-    
-    
     "derecho de familia",
     "Medina Almonte",
+    "Eduardo Medina Almonte",
+    "Lawyers Firm Peru",
   ],
-  authors: [{ name: "Medina Almonte Firma Legal" }],
+  authors: [{ name: "Medina Almonte — Lawyers Firm" }],
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },
@@ -36,12 +36,12 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Medina Almonte Firma Legal | Abogados Penales, Familia y Civil en Perú",
+    title: "Medina Almonte — Lawyers Firm | Abogados Penales, Familia y Civil en Perú",
     description:
-      "Defensa legal estratégica en Derecho Penal, Familia y Civil. Protegemos tus derechos con excelencia y resultados comprobados.",
+      "Defensa legal estratégica en Derecho Penal, Familia y Civil. Protegemos tus derechos con excelencia y resultados comprobados en Perú.",
     type: "website",
     locale: "es_PE",
-    siteName: "Medina Almonte Firma Legal",
+    siteName: "Medina Almonte — Lawyers Firm",
     url: "https://medinaalmonte.com",
     images: [
       {
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medina Almonte Firma Legal | Abogados en Perú",
+    title: "Medina Almonte — Lawyers Firm | Abogados en Perú",
     description:
-      "Defensa legal estratégica en Derecho Penal, Familia y Civil. Protegemos tus derechos con excelencia y resultados comprobados.",
+      "Defensa legal estratégica en Derecho Penal, Familia y Civil. Protegemos tus derechos con excelencia y resultados comprobados en Perú.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -80,10 +80,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LegalService",
-              "name": "Medina Almonte Firma Legal",
+              "name": "Medina Almonte — Lawyers Firm",
               "url": "https://medinaalmonte.com",
               "logo": "https://medinaalmonte.com/logo.svg",
-              "description": "Defensa legal estratégica en Derecho Penal, Familia y Civil en Perú.",
+              "description": "Defensa legal estratégica en Derecho Penal, Familia y Civil en Perú. Medina Almonte — Lawyers Firm.",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Lima",

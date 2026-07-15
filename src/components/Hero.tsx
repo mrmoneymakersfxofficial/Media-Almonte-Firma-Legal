@@ -33,7 +33,7 @@ function CounterItem({
           ref={ref}
           className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight"
           style={{
-            background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
+            background: "linear-gradient(135deg, #c9a961, #d4af37)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
@@ -113,7 +113,7 @@ export function Hero() {
         className="absolute top-0 left-0 right-0 h-[2px] z-20 gpu-accelerated"
         style={{
           background:
-            "linear-gradient(90deg, transparent 0%, #D4AF37 30%, #f4e5c2 50%, #B87333 70%, transparent 100%)",
+            "linear-gradient(90deg, transparent 0%, #D4AF37 30%, #c9a961 50%, #B87333 70%, transparent 100%)",
         }}
       />
 
@@ -183,7 +183,7 @@ export function Hero() {
             className="hero-h1 mt-7 text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight"
             style={{
               fontFamily: "var(--font-playfair), serif",
-              background: "linear-gradient(135deg, #f4e5c2 0%, #d4af37 40%, #B87333 100%)",
+              background: "linear-gradient(135deg, #c9a961 0%, #d4af37 40%, #B87333 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
@@ -213,7 +213,7 @@ export function Hero() {
               fontFamily: "var(--font-inter), sans-serif",
             }}
           >
-            Especialistas en Derecho Corporativo, Civil y Penal.
+            Especialistas en Derecho Penal, Familia y Civil.
           </motion.p>
 
           {/* Description */}
@@ -302,7 +302,7 @@ export function Hero() {
           className="hero-counters mt-14 lg:mt-20 grid grid-cols-3 gap-3 sm:gap-5 hero-text-col"
         >
           {[
-            { value: 15, suffix: "+", label: "Años de Experiencia", icon: Clock },
+            { value: 10, suffix: "+", label: "Años de Experiencia", icon: Clock },
             { value: 92, suffix: "%", label: "Casos Ganados", icon: TrendingUp },
             { value: 500, suffix: "+", label: "Clientes Satisfechos", icon: Users },
           ].map((item, i) => (

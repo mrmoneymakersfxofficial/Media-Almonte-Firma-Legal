@@ -5,16 +5,14 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Áreas de Práctica | Medina Almonte Firma Legal",
-  description: "Conoce nuestras áreas de especialización: Derecho Civil, Penal, Laboral, Corporativo y Familia. Soluciones legales integrales en Perú.",
-  keywords: ["áreas de práctica", "derecho civil", "derecho penal", "derecho laboral", "derecho corporativo", "derecho de familia"],
+  description: "Conoce nuestras áreas de especialización: Derecho Penal, Familia y Civil. Soluciones legales integrales en Perú.",
+  keywords: ["áreas de práctica", "derecho civil", "derecho penal", "derecho de familia", "abogados Perú"],
 };
 
 const areas = [
+  { name: "Derecho Penal", slug: "penal", description: "Defensa penal, delitos contra el patrimonio, investigaciones y protección de derechos fundamentales.", icon: "🛡️" },
+  { name: "Derecho de Familia", slug: "familia", description: "Divorcios, custodia, pensiones alimenticias, herencias y sucesiones con total discreción.", icon: "👨‍👩‍👧‍👦" },
   { name: "Derecho Civil", slug: "civil", description: "Contratos, responsabilidad civil, propiedad y resoluciones de conflictos contractuales.", icon: "⚖️" },
-  { name: "Derecho Penal", slug: "penal", description: "Defensa penal, delitos corporativos, investigaciones y protección de derechos fundamentales.", icon: "🛡️" },
-  { name: "Derecho Laboral", slug: "laboral", description: "Relaciones laborales, negociaciones colectivas, despido y seguridad social.", icon: "📋" },
-  { name: "Derecho Corporativo", slug: "corporativo", description: "Constitución de empresas, gobernanza corporativa, fusiones y adquisiciones.", icon: "🏢" },
-  { name: "Derecho de Familia", slug: "familia", description: "Divorcios, custodia, pensiones alimenticias, herencias y sucesiones.", icon: "👨‍👩‍👧‍👦" },
 ];
 
 export default function AreasDePracticaPage() {

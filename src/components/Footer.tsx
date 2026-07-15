@@ -14,11 +14,9 @@ const quickLinks = [
 ];
 
 const practiceAreas = [
-  { label: "Derecho Civil", href: "/areas/civil" },
   { label: "Derecho Penal", href: "/areas/penal" },
-  { label: "Derecho Laboral", href: "/areas/laboral" },
-  { label: "Derecho Corporativo", href: "/areas/corporativo" },
   { label: "Derecho de Familia", href: "/areas/familia" },
+  { label: "Derecho Civil", href: "/areas/civil" },
 ];
 
 const socialLinks = [
@@ -48,7 +46,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
-              Defensa legal estratégica en Derecho Civil, Penal, Laboral, Corporativo y Familiar. Confianza, autoridad y resultados comprobados en Perú.
+              Defensa legal estratégica en Derecho Penal, Familia y Civil. Confianza, autoridad y resultados comprobados en Perú.
             </p>
             <a
               href="mailto:contacto@medinaalmonte.com"
@@ -102,7 +100,7 @@ export function Footer() {
               Contacto
             </h4>
             <div className="space-y-3 text-sm text-white/60 mb-6">
-              <p>+51 943 366 950</p>
+              <p>+51 977 186 734</p>
               <p>contacto@medinaalmonte.com</p>
               <p>Lima, Perú</p>
             </div>

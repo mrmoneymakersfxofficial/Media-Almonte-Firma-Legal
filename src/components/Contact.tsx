@@ -10,7 +10,7 @@ const contactInfo = [
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    detail: "+51 943 366 950",
+    detail: "+51 977 186 734",
     description: "Respuesta inmediata",
     color: "text-whatsapp",
     bg: "bg-whatsapp/10",
@@ -34,8 +34,8 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Horario",
-    detail: "Lun - Vie: 8:00 - 18:00",
-    description: "Sáb: 9:00 - 13:00",
+    detail: "Lun - Vie: 9:00 - 17:00",
+    description: "Atención presencial y virtual",
     color: "text-emerald",
     bg: "bg-emerald/10",
   },
@@ -68,7 +68,7 @@ Email: ${formData.email}
 Servicio de interés: ${serviceName}
 Mensaje: ${formData.message}`;
 
-    const url = `https://api.whatsapp.com/send?phone=51943366950&text=${encodeURIComponent(message)}`;
+    const url = `https://api.whatsapp.com/send?phone=51977186734&text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   }
 

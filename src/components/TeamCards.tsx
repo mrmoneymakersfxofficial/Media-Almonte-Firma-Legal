@@ -6,13 +6,13 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const team = [
   {
     name: "Dr. Ricardo Medina Almonte",
-    specialty: "Director General",
-    bio: "Abogado con más de 15 años de experiencia en litigios corporativos, civiles y penales. Fundador de la firma con una visión estratégica del derecho.",
+    specialty: "Director General — Derecho Penal",
+    bio: "Abogado con más de 10 años de experiencia en litigios penales, civiles y de familia. Fundador de la firma con una visión estratégica del derecho.",
     initials: "RM",
   },
   {
     name: "Dra. Sofía Castillo",
-    specialty: "Derecho Civil y Familia",
+    specialty: "Derecho de Familia y Civil",
     bio: "Especialista en derecho de familia y sucesiones. Reconocida por su enfoque empático y resultados favorables en casos complejos.",
     initials: "SC",
   },
@@ -22,18 +22,12 @@ const team = [
     bio: "Defensor penal con trayectoria en casos de alta complejidad. Experto en investigaciones y garantías constitucionales.",
     initials: "AM",
   },
-  {
-    name: "Dra. Valentina Rojas",
-    specialty: "Derecho Laboral y Corporativo",
-    bio: "Abogada laboral y corporativa con amplia experiencia en compliance, contratos y negociaciones colectivas.",
-    initials: "VR",
-  },
 ];
 
 function generateWhatsAppURL(name: string): string {
   const message = `Hola *Medina Almonte Firma Legal*. Me gustaría consultar sobre los servicios del Dr./Dra. ${name}.`;
   const encodedMessage = encodeURIComponent(message);
-  return `https://api.whatsapp.com/send?phone=51943366950&text=${encodedMessage}`;
+  return `https://api.whatsapp.com/send?phone=51977186734&text=${encodedMessage}`;
 }
 
 export function TeamCards() {

@@ -51,7 +51,7 @@ export default function PenalPage() {
 
           <ScrollReveal delay={0.3}>
             <a
-              href="https://api.whatsapp.com/send?phone=51943366950&text=Hola%2C%20necesito%20una%20consulta%20legal%20en%20Derecho%20Penal%20-%20Medina%20Almonte%20Firma%20Legal."
+              href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20una%20consulta%20legal%20en%20Derecho%20Penal%20-%20Medina%20Almonte%20Firma%20Legal."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#c5a030] transition-colors duration-300"

@@ -17,24 +17,19 @@ const NOTIFICATIONS = [
     time: "hace 1 min",
   },
   {
-    title: "Derecho Civil",
-    message: "Protegemos tus derechos en conflictos contractuales y herencias",
+    title: "Derecho de Familia",
+    message: "Divorcios, custodia y pensiones. Acompañamiento total.",
     time: "hace 3 min",
   },
   {
-    title: "Derecho Laboral",
-    message: "Asesoría en despidos, acoso y negociaciones laborales",
+    title: "Derecho Civil",
+    message: "Protegemos tus derechos en conflictos contractuales y herencias",
     time: "hace 5 min",
-  },
-  {
-    title: "Derecho Corporativo",
-    message: "Blindamos tu empresa con contratos y compliance legal",
-    time: "hace 8 min",
   },
   {
     title: "Consulta Legal Inicial",
     message: "Primera consulta sin costo. Agenda tu cita hoy",
-    time: "hace 10 min",
+    time: "hace 8 min",
   },
 ];
 
@@ -43,7 +38,7 @@ const FIRST_DELAY = 5000;        // 5s before first notification
 const CYCLE_INTERVAL = 35000;    // 35s between notifications
 const VISIBLE_DURATION = 5000;   // 5s each notification stays visible
 const VIBRATE_DURATION = 1500;   // 1.5s vibration
-const MAX_NOTIFICATIONS = 6;     // One full cycle through all messages
+const MAX_NOTIFICATIONS = 5;     // One full cycle through all messages
 
 export function WhatsAppButton() {
   const { openModal } = useWhatsAppStore();

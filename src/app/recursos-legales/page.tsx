@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Briefcase, Shield, Building2, ArrowRight, Calendar } from "lucide-react";
+import { Shield, Heart, ArrowRight, Calendar } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 };
 
 const articles = [
-  { slug: "cambios-legislacion-laboral-2026", category: "Derecho Laboral", title: "Nuevos Cambios en la Legislación Laboral Peruana 2026", excerpt: "El gobierno peruano ha aprobado recientes modificaciones a la normativa laboral que afectan directamente a los contratos de trabajo temporales y los derechos de los trabajadores. En este artículo analizamos los principales cambios y su impacto práctico tanto para empleadores como para empleados, incluyendo las nuevas disposiciones sobre teletrabajo y la actualización de los montos de las indemnizaciones por despido arbitrario.", date: "15 de Junio, 2026", icon: Briefcase, iconColor: "#D4AF37" },
-  { slug: "guia-denuncia-penal", category: "Derecho Penal", title: "Guía Completa: Cómo Actuar Ante una Denuncia Penal", excerpt: "Recibir una denuncia penal puede ser una situación abrumadora. Conocer tus derechos y los pasos a seguir desde el primer momento es fundamental para garantizar una defensa adecuada. Explicamos detalladamente el proceso penal peruano, desde la investigación fiscal hasta la etapa de juzgamiento, y las estrategias de defensa que han demostrado mayor eficacia en cada tipo de causa penal.", date: "2 de Junio, 2026", icon: Shield, iconColor: "#B87333" },
-  { slug: "compliance-legal-peru", category: "Derecho Corporativo", title: "Protege Tu Empresa: Claves del Compliance Legal en Perú", excerpt: "El cumplimiento normativo o compliance legal se ha convertido en una necesidad imprescindible para las empresas en Perú. Desde la prevención de la responsabilidad administrativa hasta la implementación de programas de integridad, detallamos los aspectos esenciales que toda empresa debe considerar para operar dentro del marco legal vigente y evitar sanciones que puedan afectar su reputación y continuidad operativa.", date: "20 de Mayo, 2026", icon: Building2, iconColor: "#4A90D9" },
+  { slug: "guia-denuncia-penal", category: "Derecho Penal", title: "Guía Completa: Cómo Actuar Ante una Denuncia Penal", excerpt: "Recibir una denuncia penal puede ser una situación abrumadora. Conocer tus derechos y los pasos a seguir desde el primer momento es fundamental para garantizar una defensa adecuada. Explicamos detalladamente el proceso penal peruano, desde la investigación fiscal hasta la etapa de juzgamiento, y las estrategias de defensa que han demostrado mayor eficacia en cada tipo de causa penal.", date: "15 de Junio, 2026", icon: Shield, iconColor: "#D4AF37" },
+  { slug: "proceso-divorcio-peru", category: "Derecho de Familia", title: "Todo lo que Debes Saber sobre el Proceso de Divorcio en Perú", excerpt: "El proceso de divorcio en Perú puede variar significativamente dependiendo de si se trata de un divorcio por causal o de mutuo acuerdo. En esta guía detallamos los requisitos, plazos, costos y cada etapa del proceso para que puedas tomar decisiones informadas. Incluimos información sobre custodia, pensión alimenticia y liquidación de bienes gananciales.", date: "2 de Junio, 2026", icon: Heart, iconColor: "#B87333" },
+  { slug: "guia-contratos-civiles", category: "Derecho Civil", title: "Contratos Civiles en Perú: Claves para Proteger tus Derechos", excerpt: "Los contratos civiles son la base de las relaciones jurídicas entre personas y empresas. Explicamos los elementos esenciales de un contrato válido, los tipos de contratos más comunes en Perú, las cláusulas que no deben faltar y cómo actuar ante un incumplimiento contractual. Conoce tus herramientas legales para blindar tus acuerdos.", date: "20 de Mayo, 2026", icon: Shield, iconColor: "#D4AF37" },
 ];
 
 export default function RecursosLegalesPage() {
@@ -81,7 +81,7 @@ export default function RecursosLegalesPage() {
             <div className="mt-16 text-center">
               <hr className="subtle-divider mb-10" />
               <p className="text-gray-500 text-sm mb-6">¿Necesitas asesoría legal personalizada sobre algún tema?</p>
-              <a href="https://api.whatsapp.com/send?phone=51943366950&text=Hola%2C%20tengo%20una%20consulta%20sobre%20sus%20artículos%20legales." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] font-bold text-sm px-8 py-3.5 rounded-xl">Consultar por WhatsApp</a>
+              <a href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20tengo%20una%20consulta%20sobre%20sus%20artículos%20legales." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] font-bold text-sm px-8 py-3.5 rounded-xl">Consultar por WhatsApp</a>
             </div>
           </ScrollReveal>
         </div>

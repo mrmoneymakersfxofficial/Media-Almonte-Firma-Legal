@@ -6,11 +6,11 @@ import { Shield, Users, Target, Award, Scale, BookOpen } from "lucide-react";
 export const metadata: Metadata = {
   title: "La Firma | Medina Almonte Firma Legal",
   description:
-    "Conoce Medina Almonte Firma Legal. Más que abogados, tu principal estratega legal en Perú. Especialistas en Derecho Corporativo, Civil, Penal, Laboral y Familia.",
+    "Conoce Medina Almonte Firma Legal. Más que abogados, tu principal estratega legal en Perú. Especialistas en Derecho Penal, Familia y Civil.",
   keywords: [
     "Medina Almonte",
     "firma legal Perú",
-    "abogados corporativos",
+    "abogados penales",
     "estudio jurídico",
   ],
 };
@@ -34,7 +34,7 @@ const values = [
   {
     icon: Award,
     title: "Excelencia Jurídica",
-    description: "Más de 15 años de experiencia y formación continua nos permiten ofrecer un servicio legal de primer nivel en todas las ramas del derecho.",
+    description: "Más de 10 años de experiencia y formación continua nos permiten ofrecer un servicio legal de primer nivel en todas las ramas del derecho.",
   },
   {
     icon: Scale,
@@ -127,7 +127,7 @@ export default function FirmaPage() {
               <hr className="subtle-divider mb-12" />
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
                 {[
-                  { number: "15+", label: "Años de Experiencia" },
+                  { number: "10+", label: "Años de Experiencia" },
                   { number: "92%", label: "Casos Resueltos Favorablemente" },
                   { number: "500+", label: "Clientes Atendidos" },
                 ].map((stat) => (

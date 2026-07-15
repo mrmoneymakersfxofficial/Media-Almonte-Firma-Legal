@@ -98,7 +98,7 @@ function NavLink({
             layoutId="nav-gold-bar"
             className="absolute bottom-0 left-2 right-2 h-[2px] rounded-full"
             style={{
-              background: "linear-gradient(90deg, transparent, #D4AF37, #f4e5c2, #D4AF37, transparent)",
+              background: "linear-gradient(90deg, transparent, #D4AF37, #c9a961, #D4AF37, transparent)",
               boxShadow: "0 0 8px rgba(212,175,55,0.6), 0 0 20px rgba(212,175,55,0.2)",
             }}
             transition={{ type: "spring", stiffness: 350, damping: 30 }}
@@ -118,7 +118,7 @@ function NavLink({
             animate={{ scaleX: 1, opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             style={{
-              background: "linear-gradient(90deg, #B87333, #D4AF37, #f4e5c2, #D4AF37, #B87333)",
+              background: "linear-gradient(90deg, #B87333, #D4AF37, #c9a961, #D4AF37, #B87333)",
               boxShadow: "0 2px 12px rgba(212,175,55,0.8), 0 0 30px rgba(212,175,55,0.3)",
               transformOrigin: "center",
             }}

@@ -40,7 +40,7 @@ export default function PoliticaPrivacidadPage() {
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>1. Responsable del Tratamiento</h2>
                 <p className="pro-paragraph">
-                  El responsable del tratamiento de los datos personales es <span className="text-white">Medina Almonte Firma Legal</span>, con domicilio en Lima, Perú. Para cualquier consulta relacionada con el tratamiento de tus datos personales, puedes contactarnos a través de <a href="mailto:contacto@medinaalmonte.com" className="text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a> o al teléfono <a href="tel:+51943366950" className="text-[#D4AF37] hover:underline transition-colors">+51 943 366 950</a>.
+                  El responsable del tratamiento de los datos personales es <span className="text-white">Medina Almonte Firma Legal</span>, con domicilio en Lima, Perú. Para cualquier consulta relacionada con el tratamiento de tus datos personales, puedes contactarnos a través de <a href="mailto:contacto@medinaalmonte.com" className="text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a> o al teléfono <a href="tel:+51977186734" className="text-[#D4AF37] hover:underline transition-colors">+51 977 186 734</a>.
                 </p>
               </section>
             </ScrollReveal>
@@ -158,7 +158,7 @@ export default function PoliticaPrivacidadPage() {
                   </div>
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="text-[#D4AF37] font-semibold w-28 shrink-0">Teléfono:</span>
-                    <a href="tel:+51943366950" className="text-[#D4AF37] hover:underline transition-colors">+51 943 366 950</a>
+                    <a href="tel:+51977186734" className="text-[#D4AF37] hover:underline transition-colors">+51 977 186 734</a>
                   </div>
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="text-[#D4AF37] font-semibold w-28 shrink-0">Ubicación:</span>

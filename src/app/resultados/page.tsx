@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 const cases = [
-  { id: 1, title: "Resolución Favorable en Litigio Corporativo", category: "Derecho Corporativo", description: "Representación exitosa en un conflicto societario de alta complejidad, logrando una resolución que protegió los intereses de nuestro cliente corporativo.", result: "Resolución Favorable", icon: Trophy },
-  { id: 2, title: "Absolución en Proceso Penal Complejo", category: "Derecho Penal", description: "Defensa penal estratégica que resultó en la absolución completa de los cargos imputados, demostrando la inocencia de nuestro cliente ante el Poder Judicial.", result: "Absolución Completa", icon: TrendingUp },
-  { id: 3, title: "Conciliación en Disputa Laboral", category: "Derecho Laboral", description: "Negociación y conciliación exitosa en un caso de despido arbitrario, obteniendo una indemnización justa y reintegro laboral para el trabajador.", result: "Conciliación Exitosa", icon: CheckCircle },
+  { id: 1, title: "Absolución en Proceso Penal Complejo", category: "Derecho Penal", description: "Defensa penal estratégica que resultó en la absolución completa de los cargos imputados, demostrando la inocencia de nuestro cliente ante el Poder Judicial.", result: "Absolución Completa", icon: TrendingUp },
+  { id: 2, title: "Resolución Favorable en Custodia", category: "Derecho de Familia", description: "Logramos la custodia compartida en un caso de alta complejidad, protegiendo el bienestar de los menores y los derechos de nuestro cliente ante el juzgado de familia.", result: "Custodia Compartida", icon: Trophy },
+  { id: 3, title: "Resolución en Conflicto Contractual", category: "Derecho Civil", description: "Negociación y resolución exitosa en un conflicto civil por incumplimiento contractual, obteniendo una compensación justa para nuestro cliente.", result: "Resolución Favorable", icon: CheckCircle },
 ];
 
 export default function ResultadosPage() {
@@ -42,7 +42,7 @@ export default function ResultadosPage() {
               {[
                 { number: "500+", label: "Casos Gestionados" },
                 { number: "92%", label: "Tasa de Éxito" },
-                { number: "15+", label: "Años de Experiencia" },
+                { number: "10+", label: "Años de Experiencia" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <div className="immersive-stat-number mb-1" style={{ fontSize: "clamp(1.5rem, 4vw, 2.5rem)" }}>{stat.number}</div>
@@ -86,7 +86,7 @@ export default function ResultadosPage() {
             <div className="mt-16 text-center">
               <hr className="subtle-divider mb-10" />
               <p className="text-gray-500 text-sm mb-6">¿Tienes un caso que necesita representación legal de primer nivel?</p>
-              <a href="https://api.whatsapp.com/send?phone=51943366950&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20Medina%20Almonte%20Firma%20Legal." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] font-bold text-sm px-8 py-3.5 rounded-xl">Consultar por WhatsApp</a>
+              <a href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20Medina%20Almonte%20Firma%20Legal." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] font-bold text-sm px-8 py-3.5 rounded-xl">Consultar por WhatsApp</a>
             </div>
           </ScrollReveal>
         </div>

@@ -13,8 +13,6 @@ import {
   ShieldCheck,
   FileText,
   Handshake,
-  Users,
-  Building2,
   Heart,
   ArrowRight,
   Star,
@@ -78,7 +76,7 @@ function WhoWeAre() {
               >
                 <span
                   style={{
-                    background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
+                    background: "linear-gradient(135deg, #c9a961, #d4af37)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                   }}
@@ -141,44 +139,28 @@ function WhoWeAre() {
    ════════════════════════════════════════════════════════════════ */
 const practiceAreas = [
   {
+    icon: ShieldCheck,
+    title: "Derecho Penal",
+    description:
+      "Te representamos ante cualquier imputación o investigación penal. Defendemos tu libertad y tu buen nombre con estrategia y firmeza.",
+    cta: "Defensa Penal",
+    href: "/areas/penal",
+  },
+  {
+    icon: Heart,
+    title: "Derecho de Familia",
+    description:
+      "Te acompañamos en procesos de divorcio, custodia, pensiones alimenticias y sucesiones con total discreción y empatía.",
+    cta: "Familia y Sucesiones",
+    href: "/areas/familia",
+  },
+  {
     icon: FileText,
     title: "Derecho Civil",
     description:
       "Defendemos tus derechos en conflictos contractuales, propiedad, herencias y responsabilidad civil con estrategia probada.",
     cta: "Asesoría Civil",
     href: "/areas/civil",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Derecho Penal",
-    description:
-      "Te representamos ante cualquier imputación o investigación penal. Defendemos tu libertad y tu buen nombre.",
-    cta: "Defensa Penal",
-    href: "/areas/penal",
-  },
-  {
-    icon: Users,
-    title: "Derecho Laboral",
-    description:
-      "Protegemos tus derechos como trabajador o empleador. Asesoría en despidos, acoso y negociaciones colectivas.",
-    cta: "Asesoría Laboral",
-    href: "/areas/laboral",
-  },
-  {
-    icon: Building2,
-    title: "Derecho Corporativo",
-    description:
-      "Blindamos tu empresa con contratos seguros, compliance normativo y asesoría legal integral para tu crecimiento.",
-    cta: "Protege tu Empresa",
-    href: "/areas/corporativo",
-  },
-  {
-    icon: Heart,
-    title: "Derecho de Familia",
-    description:
-      "Te acompañamos en procesos de divorcio, custodia, pensiones alimenticias y sucesiones con total discreción.",
-    cta: "Familia y Sucesiones",
-    href: "/areas/familia",
   },
 ];
 
@@ -198,7 +180,7 @@ function PracticeAreas() {
               <span className="text-white">Defendemos tus Derechos en</span>{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
+                  background: "linear-gradient(135deg, #c9a961, #d4af37)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -209,7 +191,7 @@ function PracticeAreas() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {practiceAreas.map((area, i) => {
             const Icon = area.icon;
             return (
@@ -248,23 +230,23 @@ function PracticeAreas() {
    ════════════════════════════════════════════════════════════════ */
 const testimonials = [
   {
-    text: "Gracias a Medina Almonte logré una resolución favorable en mi caso laboral. Su equipo me mantuvo informado en cada etapa del proceso y siempre sentí que estaban de mi lado.",
-    name: "Carlos M.",
-    role: "Caso Laboral",
-  },
-  {
     text: "La defensa penal que me brindaron fue excepcional. Desde el primer momento entendieron mi situación y actuaron con la rapidez y firmeza que se necesitaba.",
     name: "María L.",
     role: "Defensa Penal",
   },
   {
-    text: "Necesitaba blindar mi empresa legalmente y ellos me ofrecieron una solución integral. Profesionales de alto nivel que realmente conocen el derecho corporativo.",
-    name: "Roberto S.",
-    role: "Derecho Corporativo",
-  },
-  {
     text: "Mi caso de familia era delicado y sensible. El equipo de Medina Almonte manejó todo con la discreción y empatía que necesitábamos. Estoy profundamente agradecida.",
     name: "Ana P.",
+    role: "Derecho de Familia",
+  },
+  {
+    text: "Tuve un conflicto civil por una herencia y me dieron una solución rápida y favorable. Su equipo es muy profesional y siempre me mantuvieron informado.",
+    name: "Carlos M.",
+    role: "Derecho Civil",
+  },
+  {
+    text: "Me sentí acompañado en todo momento durante mi proceso de divorcio. La atención fue personalizada y los resultados superaron mis expectativas.",
+    name: "Roberto S.",
     role: "Derecho de Familia",
   },
 ];
@@ -304,7 +286,7 @@ function TestimonialsSection() {
               <span className="text-white">Lo Que Dicen</span>{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
+                  background: "linear-gradient(135deg, #c9a961, #d4af37)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -431,7 +413,7 @@ function MembershipsBar() {
               <span className="text-white">Membresías y</span>{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
+                  background: "linear-gradient(135deg, #c9a961, #d4af37)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -529,7 +511,7 @@ function WhyChooseUs() {
               <span className="text-white">Una Firma Legal con</span>{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
+                  background: "linear-gradient(135deg, #c9a961, #d4af37)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}

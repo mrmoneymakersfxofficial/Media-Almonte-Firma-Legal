@@ -49,7 +49,7 @@
   --color-purple: #B87333;
   --color-purple-light: #d4944f;
   --color-emerald: #D4AF37;
-  --color-emerald-light: #F0E68C;
+  --color-emerald-light: #c9a961;
   --color-emerald-dark: #b8960f;
   --color-whatsapp: #25D366;
   --color-urgent: #DC2626;
@@ -79,7 +79,7 @@
   --chart-1: #D4AF37;
   --chart-2: #B87333;
   --chart-3: #0B1A2E;
-  --chart-4: #F0E68C;
+  --chart-4: #c9a961;
   --chart-5: #0A0A0A;
   --sidebar: #060f1a;
   --sidebar-foreground: #F5F5F5;
@@ -1380,8 +1380,8 @@ html {
 
 /* ─── CSS Custom Properties for Premium Palette ─── */
 :root {
-  --gold-gradient: linear-gradient(135deg, #c9a961 0%, #f4e5c2 45%, #d4af37 55%, #b87333 100%);
-  --gold-gradient-hover: linear-gradient(135deg, #d4af37 0%, #f4e5c2 40%, #c9a961 60%, #B87333 100%);
+  --gold-gradient: linear-gradient(135deg, #c9a961 0%, #c9a961 45%, #d4af37 55%, #b87333 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #d4af37 0%, #c9a961 40%, #c9a961 60%, #B87333 100%);
   --gold-glow: 0 0 20px rgba(212, 175, 55, 0.3), 0 0 60px rgba(212, 175, 55, 0.1);
   --gold-glow-strong: 0 0 25px rgba(212, 175, 55, 0.4), 0 0 80px rgba(212, 175, 55, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
   --glass-bg: rgba(255, 255, 255, 0.04);
@@ -1590,7 +1590,7 @@ html {
 }
 
 .nav-link-gold:hover {
-  color: #f4e5c2;
+  color: #c9a961;
   text-shadow:
     0 0 12px rgba(212, 175, 55, 0.6),
     0 0 30px rgba(212, 175, 55, 0.2),
@@ -1644,7 +1644,7 @@ html {
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent 0%, #D4AF37 15%, #f4e5c2 50%, #D4AF37 85%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, #D4AF37 15%, #c9a961 50%, #D4AF37 85%, transparent 100%);
   border-radius: 1px;
   transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.45s ease 0.1s;
@@ -1722,7 +1722,7 @@ html {
 }
 
 .hamburger-gold:hover {
-  color: #f4e5c2 !important;
+  color: #c9a961 !important;
   background: rgba(212, 175, 55, 0.08) !important;
   text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
 }
@@ -1843,7 +1843,7 @@ html {
   position: absolute;
   inset: -3px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #c9a961, #D4AF37, #f4e5c2, #D4AF37, #c9a961);
+  background: linear-gradient(135deg, #c9a961, #D4AF37, #c9a961, #D4AF37, #c9a961);
   z-index: -1;
   opacity: 0.6;
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -1856,7 +1856,7 @@ html {
 
 /* Team CTA button premium */
 .team-cta-gold {
-  background: linear-gradient(135deg, #c9a961 0%, #D4AF37 50%, #f4e5c2 100%);
+  background: linear-gradient(135deg, #c9a961 0%, #D4AF37 50%, #c9a961 100%);
   color: #0A0A0A;
   font-weight: 700;
   position: relative;
@@ -1922,7 +1922,7 @@ html {
   bottom: 12px;
   width: 3px;
   border-radius: 2px;
-  background: linear-gradient(180deg, #c9a961, #D4AF37, #f4e5c2);
+  background: linear-gradient(180deg, #c9a961, #D4AF37, #c9a961);
   opacity: 0.5;
   transition: opacity 0.3s ease;
 }
@@ -2039,7 +2039,7 @@ html {
 }
 
 .case-number-gold {
-  background: linear-gradient(135deg, #c9a961, #D4AF37, #f4e5c2);
+  background: linear-gradient(135deg, #c9a961, #D4AF37, #c9a961);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

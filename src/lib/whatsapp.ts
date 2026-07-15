@@ -8,12 +8,10 @@ export interface Service {
 }
 
 export const services: Service[] = [
-  { id: 1, name: "Derecho Civil", price: "Consultar", priceNum: 0 },
-  { id: 2, name: "Derecho Penal", price: "Consultar", priceNum: 0 },
-  { id: 3, name: "Derecho Laboral", price: "Consultar", priceNum: 0 },
-  { id: 4, name: "Derecho Corporativo", price: "Consultar", priceNum: 0 },
-  { id: 5, name: "Derecho de Familia", price: "Consultar", priceNum: 0 },
-  { id: 6, name: "Consulta Legal Inicial", price: "Gratis", priceNum: 0 },
+  { id: 1, name: "Derecho Penal", price: "Consultar", priceNum: 0 },
+  { id: 2, name: "Derecho de Familia", price: "Consultar", priceNum: 0 },
+  { id: 3, name: "Derecho Civil", price: "Consultar", priceNum: 0 },
+  { id: 4, name: "Consulta Legal Inicial", price: "Gratis", priceNum: 0 },
 ];
 
 interface WhatsAppState {
@@ -45,5 +43,5 @@ Nombre: ${name}
 Consulta: ${notes}`;
 
   const encodedMessage = encodeURIComponent(message);
-  return `https://api.whatsapp.com/send?phone=51943366950&text=${encodedMessage}`;
+  return `https://api.whatsapp.com/send?phone=51977186734&text=${encodedMessage}`;
 }

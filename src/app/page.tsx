@@ -6,6 +6,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { Hero } from "@/components/Hero";
 import { SectionDivider } from "@/components/SectionDivider";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { BrandIdentity } from "@/components/BrandIdentity";
 import { motion } from "framer-motion";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -589,6 +590,9 @@ export default function Home() {
       <MembershipsBar />
 
       <SectionDivider from="#0B1A2E" to="#0A0A0A" />
+
+      {/* Identidad de Marca */}
+      <BrandIdentity />
 
       {/* ¿Por qué Elegirnos? */}
       <WhyChooseUs />

@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Derecho Penal | Medina Almonte Firma Legal",
+  title: "Derecho Penal | MEDINA ALMONTE — Lawyers Firm",
   description:
     "Defensa penal especializada: delitos corporativos, investigaciones fiscales, protección de derechos fundamentales y defensa en procesos penales en Perú.",
   keywords: [
@@ -39,7 +39,7 @@ export default function PenalPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <p className="pro-paragraph-lg max-w-3xl mx-auto mb-12">
+            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-12">
               En el área de Derecho Penal brindamos una defensa agresiva y
               estratégica, tanto en la etapa de investigación preliminar como en
               el proceso penal propiamente dicho. Nos especializamos en delitos
@@ -51,7 +51,7 @@ export default function PenalPage() {
 
           <ScrollReveal delay={0.3}>
             <a
-              href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20una%20consulta%20legal%20en%20Derecho%20Penal%20-%20Medina%20Almonte%20Firma%20Legal."
+              href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20una%20consulta%20legal%20en%20Derecho%20Penal%20-%20MEDINA%20ALMONTE%20Lawyers%20Firm."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#c5a030] transition-colors duration-300"

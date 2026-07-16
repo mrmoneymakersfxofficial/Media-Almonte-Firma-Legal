@@ -98,7 +98,7 @@ function NavLink({
             layoutId="nav-gold-bar"
             className="absolute bottom-0 left-2 right-2 h-[2px] rounded-full"
             style={{
-              background: "linear-gradient(90deg, transparent, #D4AF37, #c9a961, #D4AF37, transparent)",
+              background: "linear-gradient(90deg, transparent, #D4AF37, #f4e5c2, #D4AF37, transparent)",
               boxShadow: "0 0 8px rgba(212,175,55,0.6), 0 0 20px rgba(212,175,55,0.2)",
             }}
             transition={{ type: "spring", stiffness: 350, damping: 30 }}
@@ -118,7 +118,7 @@ function NavLink({
             animate={{ scaleX: 1, opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             style={{
-              background: "linear-gradient(90deg, #B87333, #D4AF37, #c9a961, #D4AF37, #B87333)",
+              background: "linear-gradient(90deg, #a08520, #D4AF37, #f4e5c2, #D4AF37, #a08520)",
               boxShadow: "0 2px 12px rgba(212,175,55,0.8), 0 0 30px rgba(212,175,55,0.3)",
               transformOrigin: "center",
             }}
@@ -189,7 +189,7 @@ export function Header() {
                 >
                   <Image
                     src={LOGO_URL}
-                    alt="Medina Almonte Firma Legal"
+                    alt="MEDINA ALMONTE — Lawyers Firm"
                     width={800}
                     height={176}
                     className="brand-logo-fixed h-8 sm:h-9 lg:h-10 w-auto object-contain"
@@ -226,7 +226,7 @@ export function Header() {
                          transition-all duration-300 overflow-hidden
                          hover:shadow-[0_0_20px_rgba(212,175,55,0.25)]"
                 style={{
-                  background: "linear-gradient(135deg, #D4AF37 0%, #c9a961 50%, #B87333 100%)",
+                  background: "linear-gradient(135deg, #D4AF37 0%, #c9a961 50%, #a08520 100%)",
                   color: "#0a0e1a",
                   boxShadow: "0 1px 4px rgba(212,175,55,0.2), inset 0 1px 0 rgba(255,255,255,0.15)",
                 }}
@@ -327,7 +327,7 @@ export function Header() {
                         <span
                           className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full"
                           style={{
-                            background: "linear-gradient(180deg, #D4AF37, #B87333)",
+                            background: "linear-gradient(180deg, #D4AF37, #a08520)",
                             boxShadow: "0 0 8px rgba(212,175,55,0.5)",
                           }}
                         />
@@ -344,7 +344,7 @@ export function Header() {
                   onClick={() => { setIsMobileOpen(false); openModal(); }}
                   className="w-full py-3.5 rounded-lg text-[14px] font-bold transition-all duration-200"
                   style={{
-                    background: "linear-gradient(135deg, #D4AF37 0%, #B87333 100%)",
+                    background: "linear-gradient(135deg, #D4AF37 0%, #a08520 100%)",
                     color: "#0a0e1a",
                     boxShadow: "0 4px 16px rgba(212,175,55,0.25)",
                   }}

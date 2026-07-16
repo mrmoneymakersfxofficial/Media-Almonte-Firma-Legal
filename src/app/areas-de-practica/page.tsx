@@ -4,15 +4,17 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Áreas de Práctica | Medina Almonte Firma Legal",
-  description: "Conoce nuestras áreas de especialización: Derecho Penal, Familia y Civil. Soluciones legales integrales en Perú.",
-  keywords: ["áreas de práctica", "derecho civil", "derecho penal", "derecho de familia", "abogados Perú"],
+  title: "Áreas de Práctica | MEDINA ALMONTE — Lawyers Firm",
+  description: "Conoce nuestras áreas de especialización: Derecho Civil, Penal, Laboral, Corporativo y Familia. Soluciones legales integrales en Perú.",
+  keywords: ["áreas de práctica", "derecho civil", "derecho penal", "derecho laboral", "derecho corporativo", "derecho de familia"],
 };
 
 const areas = [
-  { name: "Derecho Penal", slug: "penal", description: "Defensa penal, delitos contra el patrimonio, investigaciones y protección de derechos fundamentales.", icon: "🛡️" },
-  { name: "Derecho de Familia", slug: "familia", description: "Divorcios, custodia, pensiones alimenticias, herencias y sucesiones con total discreción.", icon: "👨‍👩‍👧‍👦" },
   { name: "Derecho Civil", slug: "civil", description: "Contratos, responsabilidad civil, propiedad y resoluciones de conflictos contractuales.", icon: "⚖️" },
+  { name: "Derecho Penal", slug: "penal", description: "Defensa penal, delitos corporativos, investigaciones y protección de derechos fundamentales.", icon: "🛡️" },
+  { name: "Derecho Laboral", slug: "laboral", description: "Relaciones laborales, negociaciones colectivas, despido y seguridad social.", icon: "📋" },
+  { name: "Derecho Corporativo", slug: "corporativo", description: "Constitución de empresas, gobernanza corporativa, fusiones y adquisiciones.", icon: "🏢" },
+  { name: "Derecho de Familia", slug: "familia", description: "Divorcios, custodia, pensiones alimenticias, herencias y sucesiones.", icon: "👨‍👩‍👧‍👦" },
 ];
 
 export default function AreasDePracticaPage() {
@@ -27,7 +29,7 @@ export default function AreasDePracticaPage() {
                 Áreas de Práctica
               </h1>
               <div className="section-divider-gold mb-6" />
-              <p className="pro-paragraph-lg max-w-2xl mx-auto">
+              <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
                 Nuestro equipo de abogados especializados cubre las principales ramas del derecho para ofrecerte una defensa legal integral.
               </p>
             </div>
@@ -38,8 +40,8 @@ export default function AreasDePracticaPage() {
             {areas.map((area, index) => (
               <ScrollReveal key={area.slug} delay={index * 0.08}>
                 <Link href={`/areas/${area.slug}`} className="block group">
-                  <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-3 md:gap-8">
-                    <span className="text-3xl md:text-4xl shrink-0">{area.icon}</span>
+                  <div className="flex items-start gap-5 md:gap-8">
+                    <span className="text-3xl md:text-4xl shrink-0 mt-1">{area.icon}</span>
                     <div className="flex-1 min-w-0">
                       <h3
                         className="immersive-title font-semibold mb-2 group-hover:text-[#D4AF37] transition-colors"
@@ -48,7 +50,7 @@ export default function AreasDePracticaPage() {
                         {area.name}
                       </h3>
                       <p className="immersive-desc text-gray-400 leading-relaxed">{area.description}</p>
-                      <span className="inline-flex items-center justify-center text-[#D4AF37] text-sm font-medium mt-3 gap-2 group-hover:gap-3 transition-all duration-300">
+                      <span className="inline-flex items-center text-[#D4AF37] text-sm font-medium mt-3 gap-2 group-hover:gap-3 transition-all duration-300">
                         Conocer más
                         <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

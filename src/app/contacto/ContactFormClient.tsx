@@ -25,9 +25,11 @@ interface FormErrors {
 }
 
 const CASE_TYPES = [
-  "Derecho Penal",
-  "Derecho de Familia",
   "Derecho Civil",
+  "Derecho Penal",
+  "Derecho Laboral",
+  "Derecho Corporativo",
+  "Derecho de Familia",
   "Consulta General",
 ];
 
@@ -66,8 +68,8 @@ function FieldError({ message }: { message?: string }) {
 const contactInfo = [
   { icon: Phone, label: "WhatsApp", value: "+51 977 186 734", href: "https://api.whatsapp.com/send?phone=51977186734", color: "#25D366" },
   { icon: Mail, label: "Correo Electrónico", value: "contacto@medinaalmonte.com", href: "mailto:contacto@medinaalmonte.com", color: "#D4AF37" },
-  { icon: MapPin, label: "Ubicación", value: "Lima, Perú", href: undefined, color: "#B87333" },
-  { icon: Clock, label: "Horario de Atención", value: "Lunes a Viernes\n9:00 am – 5:00 pm", href: undefined, color: "#D4AF37" },
+  { icon: MapPin, label: "Ubicación", value: "Lima, Perú", href: undefined, color: "#C0C0C0" },
+  { icon: Clock, label: "Horario de Atención", value: "Lun–Vie 8:00–18:00\nSáb 9:00–13:00", href: undefined, color: "#D4AF37" },
 ];
 
 export default function ContactFormClient() {
@@ -91,7 +93,7 @@ export default function ContactFormClient() {
     if (Object.keys(validationErrors).length > 0) return;
     setIsSubmitting(true);
     const message = [
-      `Hola *Medina Almonte Firma Legal*,`,
+      `Hola *MEDINA ALMONTE — Lawyers Firm*,`,
       ``,
       `*Nombre:* ${formData.nombre.trim()}`,
       `*Teléfono:* +51 ${formData.telefono.replace(/\D/g, "")}`,
@@ -120,7 +122,7 @@ export default function ContactFormClient() {
               Contáctanos
             </h1>
             <div className="section-divider-gold mb-6" />
-            <p className="pro-paragraph-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
               Cuéntanos tu situación legal. Completa el formulario y te contactaremos a la brevedad para brindarte la asesoría que necesitas.
             </p>
           </div>
@@ -141,7 +143,7 @@ export default function ContactFormClient() {
                     <label htmlFor="telefono" className="block text-sm font-medium text-gray-300 mb-2">Teléfono <span className="text-red-400">*</span></label>
                     <div className="relative">
                       <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm pointer-events-none">+51</span>
-                      <Input id="telefono" name="telefono" type="tel" required pattern="[0-9]{9}" placeholder="977 186 734" value={formData.telefono} onChange={handleChange} className="bg-[#0A0A0A] border-white/10 text-white placeholder:text-gray-600 h-12 rounded-lg pl-12 focus-visible:border-[#D4AF37]/60 focus-visible:ring-[#D4AF37]/20" />
+                      <Input id="telefono" name="telefono" type="tel" required pattern="[0-9]{9}" placeholder="943 366 950" value={formData.telefono} onChange={handleChange} className="bg-[#0A0A0A] border-white/10 text-white placeholder:text-gray-600 h-12 rounded-lg pl-12 focus-visible:border-[#D4AF37]/60 focus-visible:ring-[#D4AF37]/20" />
                     </div>
                     <FieldError message={errors.telefono} />
                   </div>
@@ -202,76 +204,13 @@ export default function ContactFormClient() {
                   <h3 className="text-white text-base font-semibold" style={{ fontFamily: "var(--font-playfair), serif" }}>¿Prefieres hablar ahora?</h3>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">Escribe directamente por WhatsApp y recibe una respuesta inmediata de nuestro equipo legal.</p>
-                <a href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20Medina%20Almonte%20Firma%20Legal." target="_blank" rel="noopener noreferrer" className="team-cta-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold gpu-accelerated">
+                <a href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20MEDINA%20ALMONTE%20Lawyers%20Firm." target="_blank" rel="noopener noreferrer" className="team-cta-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold gpu-accelerated">
                   <CheckCircle className="w-4 h-4" />Chatear por WhatsApp
                 </a>
               </div>
             </ScrollReveal>
           </div>
         </div>
-
-        {/* Offices section — 3 offices placeholder */}
-        <ScrollReveal delay={0.15}>
-          <section className="mt-20">
-            <hr className="subtle-divider mb-10" />
-            <div className="text-center mb-10">
-              <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-4">
-                Nuestras Sedes
-              </span>
-              <h2
-                className="text-2xl md:text-3xl font-bold text-white mb-4"
-                style={{ fontFamily: "var(--font-playfair), serif" }}
-              >
-                Tres Oficinas para Atenderte
-              </h2>
-              <p className="text-gray-400 text-base leading-relaxed max-w-2xl mx-auto">
-                Contamos con tres sedes estratégicamente ubicadas en Lima para brindarte una atención cercana y accesible.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              {[
-                {
-                  name: "Oficina Principal",
-                  address: "Dirección pendiente por confirmar",
-                  phone: "+51 977 186 734",
-                  status: "Próximamente",
-                },
-                {
-                  name: "Oficina Norte",
-                  address: "Dirección pendiente por confirmar",
-                  phone: "+51 977 186 734",
-                  status: "Próximamente",
-                },
-                {
-                  name: "Oficina Sur",
-                  address: "Dirección pendiente por confirmar",
-                  phone: "+51 977 186 734",
-                  status: "Próximamente",
-                },
-              ].map((office, idx) => (
-                <ScrollReveal key={office.name} delay={0.1 * (idx + 1)}>
-                  <div className="text-center p-6 sm:p-8 rounded-2xl border border-[#D4AF37]/10 bg-white/[0.02]">
-                    <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center mx-auto mb-4">
-                      <MapPin className="w-6 h-6 text-[#D4AF37]" />
-                    </div>
-                    <h3
-                      className="text-white font-bold text-lg mb-2"
-                      style={{ fontFamily: "var(--font-playfair), serif" }}
-                    >
-                      {office.name}
-                    </h3>
-                    <p className="text-gray-500 text-sm mb-1">{office.address}</p>
-                    <p className="text-[#B87333] text-sm font-medium mb-3">{office.phone}</p>
-                    <span className="inline-block px-3 py-1 rounded-full border border-[#D4AF37]/20 text-[#D4AF37] text-xs font-medium">
-                      {office.status}
-                    </span>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </section>
-        </ScrollReveal>
 
         {/* Map section */}
         <ScrollReveal delay={0.15}>

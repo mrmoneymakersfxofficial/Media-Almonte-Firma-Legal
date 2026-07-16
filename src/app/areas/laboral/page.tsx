@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Derecho Laboral | Medina Almonte Firma Legal",
+  title: "Derecho Laboral | MEDINA ALMONTE — Lawyers Firm",
   description:
     "Asesoría laboral integral: relaciones laborales, negociaciones colectivas, despido, seguridad social y derecho sindical en Perú.",
   keywords: [
@@ -39,7 +39,7 @@ export default function LaboralPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <p className="pro-paragraph-lg max-w-3xl mx-auto mb-12">
+            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-12">
               Asesoramos tanto a empleadores como a trabajadores en todas las
               etapas de la relación laboral. Desde la elaboración de contratos de
               trabajo y reglamentos internos hasta la defensa en litigios por
@@ -51,7 +51,7 @@ export default function LaboralPage() {
 
           <ScrollReveal delay={0.3}>
             <a
-              href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20una%20consulta%20legal%20en%20Derecho%20Laboral%20-%20Medina%20Almonte%20Firma%20Legal."
+              href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20una%20consulta%20legal%20en%20Derecho%20Laboral%20-%20MEDINA%20ALMONTE%20Lawyers%20Firm."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#c5a030] transition-colors duration-300"

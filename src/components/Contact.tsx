@@ -61,7 +61,7 @@ export function Contact() {
     e.preventDefault();
     const serviceName =
       services.find((s) => s.name === formData.service)?.name || formData.service || "General";
-    const message = `Hola *Medina Almonte Firma Legal*.
+    const message = `Hola *MEDINA ALMONTE — Lawyers Firm*.
 
 Nombre: ${formData.name}
 Email: ${formData.email}

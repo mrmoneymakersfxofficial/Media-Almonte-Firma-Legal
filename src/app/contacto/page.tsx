@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import ContactFormClient from "./ContactFormClient";
 
 export const metadata: Metadata = {
-  title: "Contacto | Medina Almonte Firma Legal",
+  title: "Contacto | MEDINA ALMONTE — Lawyers Firm",
   description:
     "Contáctanos para una consulta legal inicial. Estamos disponibles para atenderte y brindarte la asesoría que necesitas en Derecho Civil, Penal, Laboral, Corporativo y de Familia.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "asesoría legal",
   ],
   openGraph: {
-    title: "Contacto | Medina Almonte Firma Legal",
+    title: "Contacto | MEDINA ALMONTE — Lawyers Firm",
     description:
       "Escríbenos y recibe asesoría legal profesional. Tu primera consulta es gratuita.",
     url: "https://medinaalmonte.com/contacto",

@@ -4,13 +4,13 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { TeamCards } from "@/components/TeamCards";
 
 export const metadata: Metadata = {
-  title: "Nuestros Abogados | Medina Almonte — Lawyers Firm",
+  title: "Nuestros Abogados | MEDINA ALMONTE — Lawyers Firm",
   description:
-    "Conoce al equipo de Medina Almonte — Lawyers Firm. Profesionales comprometidos con la ética jurídica en Perú.",
+    "Conoce al equipo de abogados de MEDINA ALMONTE — Lawyers Firm. Profesionales comprometidos con la excelencia jurídica en Perú.",
   keywords: [
     "abogados Perú",
     "equipo jurídico",
-    "Eduardo Medina Almonte",
+    "abogados especializados",
     "Medina Almonte",
   ],
 };
@@ -45,7 +45,7 @@ export default function AbogadosPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <p className="pro-paragraph-lg max-w-3xl mx-auto">
+              <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
                 Cada miembro de nuestro equipo aporta una combinación única de
                 experiencia, especialización y pasión por el derecho. Nuestros
                 abogados cuentan con formación de primer nivel y una trayectoria
@@ -64,13 +64,13 @@ export default function AbogadosPage() {
           <ScrollReveal delay={0.2}>
             <div className="mt-16 text-center">
               <hr className="subtle-divider mb-10" />
-              <p className="pro-paragraph-sm">
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
                 Todos nuestros abogados se encuentran debidamente colegiados y
                 habilitados para el ejercicio profesional en el territorio
                 nacional.
               </p>
               <p className="text-[#D4AF37] font-semibold mt-3 text-sm sm:text-base">
-                Registro: Colegio de Abogados del Callao — CAC
+                Registro: Colegio de Abogados de Lima — CAL
               </p>
             </div>
           </ScrollReveal>

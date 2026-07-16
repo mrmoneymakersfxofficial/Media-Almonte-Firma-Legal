@@ -5,27 +5,25 @@ import { Toaster } from "@/components/ui/toaster";
 import { Preloader } from "@/components/Preloader";
 import { Playfair_Display, Inter, Merriweather } from "next/font/google";
 
-// Fuentes Medina Almonte Firma Legal
+// Fuentes MEDINA ALMONTE — Lawyers Firm
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 const merriweather = Merriweather({ weight: ['300', '400', '700'], subsets: ['latin'], variable: '--font-merriweather', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://medinaalmonte.com"),
-  title: "Medina Almonte — Lawyers Firm | Abogados Penales, Familia y Civil en Perú",
+  title: "MEDINA ALMONTE — Lawyers Firm | Abogados Civiles, Penales y de Familia en Perú",
   description:
-    "Defensa legal estratégica en Derecho Penal, Familia y Civil. Medina Almonte — Lawyers Firm. Protegemos tus derechos con excelencia y resultados comprobados en Perú.",
+    "Defensa legal estratégica en Derecho Civil, Penal y de Familia. Protegemos tus derechos con excelencia y resultados comprobados.",
   keywords: [
     "abogados",
-    "firma legal",
+    "lawyers firm",
     "derecho civil",
     "derecho penal",
     "derecho de familia",
     "Medina Almonte",
-    "Eduardo Medina Almonte",
-    "Lawyers Firm Peru",
   ],
-  authors: [{ name: "Medina Almonte — Lawyers Firm" }],
+  authors: [{ name: "MEDINA ALMONTE — Lawyers Firm" }],
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },
@@ -36,28 +34,28 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Medina Almonte — Lawyers Firm | Abogados Penales, Familia y Civil en Perú",
+    title: "MEDINA ALMONTE — Lawyers Firm | Abogados Civiles, Penales y de Familia en Perú",
     description:
-      "Defensa legal estratégica en Derecho Penal, Familia y Civil. Protegemos tus derechos con excelencia y resultados comprobados en Perú.",
+      "Defensa legal estratégica en Derecho Civil, Penal y de Familia. Protegemos tus derechos con excelencia y resultados comprobados.",
     type: "website",
     locale: "es_PE",
-    siteName: "Medina Almonte — Lawyers Firm",
+    siteName: "MEDINA ALMONTE — Lawyers Firm",
     url: "https://medinaalmonte.com",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Medina Almonte Firma Legal - Abogados en Perú",
+        alt: "MEDINA ALMONTE — Lawyers Firm - Abogados en Perú",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medina Almonte — Lawyers Firm | Abogados en Perú",
+    title: "MEDINA ALMONTE — Lawyers Firm | Abogados en Perú",
     description:
-      "Defensa legal estratégica en Derecho Penal, Familia y Civil. Protegemos tus derechos con excelencia y resultados comprobados en Perú.",
+      "Defensa legal estratégica en Derecho Civil, Penal y de Familia. Protegemos tus derechos con excelencia y resultados comprobados.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -80,10 +78,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LegalService",
-              "name": "Medina Almonte — Lawyers Firm",
+              "name": "MEDINA ALMONTE — Lawyers Firm",
               "url": "https://medinaalmonte.com",
               "logo": "https://medinaalmonte.com/logo.svg",
-              "description": "Defensa legal estratégica en Derecho Penal, Familia y Civil en Perú. Medina Almonte — Lawyers Firm.",
+              "description": "Defensa legal estratégica en Derecho Civil, Penal y de Familia en Perú.",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Lima",
@@ -94,9 +92,9 @@ export default function RootLayout({
               "priceRange": "$$",
               "areaServed": "Perú",
               "serviceType": [
+                "Derecho Civil",
                 "Derecho Penal",
-                "Derecho de Familia",
-                "Derecho Civil"
+                "Derecho de Familia"
               ]
             })
           }}

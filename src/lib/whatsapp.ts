@@ -36,7 +36,7 @@ export function generateWhatsAppURL(
   name: string,
   notes: string
 ): string {
-  const message = `Hola *Medina Almonte Firma Legal*.
+  const message = `Hola *MEDINA ALMONTE — Lawyers Firm*.
 
 Servicio: ${serviceName}
 Nombre: ${name}

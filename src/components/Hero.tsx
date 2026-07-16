@@ -9,7 +9,7 @@ import { useWhatsAppStore } from "@/lib/whatsapp";
 import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
 
 /* ═══════════════════════════════════════════════════════════════════════
-   HERO — Medina Almonte Firma Legal · Premium Visual Upgrade
+   HERO — MEDINA ALMONTE — Lawyers Firm · Premium Visual Upgrade
    ═══════════════════════════════════════════════════════════════════════ */
 
 /* ═══ Counter component — Glassmorphism + Lucide Icon ═══ */
@@ -113,7 +113,7 @@ export function Hero() {
         className="absolute top-0 left-0 right-0 h-[2px] z-20 gpu-accelerated"
         style={{
           background:
-            "linear-gradient(90deg, transparent 0%, #D4AF37 30%, #f4e5c2 50%, #B87333 70%, transparent 100%)",
+            "linear-gradient(90deg, transparent 0%, #D4AF37 30%, #f4e5c2 50%, #a08520 70%, transparent 100%)",
         }}
       />
 
@@ -122,7 +122,7 @@ export function Hero() {
         className="absolute inset-0 gpu-accelerated"
         style={{
           background:
-            "linear-gradient(160deg, rgba(10,10,10,0.97) 0%, rgba(11,26,46,0.88) 35%, rgba(10,10,10,0.72) 65%, rgba(184,115,51,0.06) 100%)",
+            "linear-gradient(160deg, rgba(10,10,10,0.97) 0%, rgba(11,26,46,0.88) 35%, rgba(10,10,10,0.72) 65%, rgba(11,26,46,0.08) 100%)",
         }}
         aria-hidden="true"
       />
@@ -143,10 +143,10 @@ export function Hero() {
           className="absolute -top-60 -right-60 w-[600px] h-[600px] rounded-full blur-[140px] gpu-accelerated"
           style={{ background: "radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%)" }}
         />
-        {/* Copper glow bottom-left */}
+        {/* Navy glow bottom-left */}
         <div
           className="absolute -bottom-60 -left-60 w-[500px] h-[500px] rounded-full blur-[120px] gpu-accelerated"
-          style={{ background: "radial-gradient(circle, rgba(184,115,51,0.05) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(11,26,46,0.08) 0%, transparent 70%)" }}
         />
         {/* Dot grid pattern */}
         <div
@@ -171,7 +171,7 @@ export function Hero() {
           >
             <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">
-              Medina Almonte Firma Legal
+              MEDINA ALMONTE — Lawyers Firm
             </span>
           </motion.div>
 
@@ -183,7 +183,7 @@ export function Hero() {
             className="hero-h1 mt-7 text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight"
             style={{
               fontFamily: "var(--font-playfair), serif",
-              background: "linear-gradient(135deg, #f4e5c2 0%, #d4af37 40%, #B87333 100%)",
+              background: "linear-gradient(135deg, #f4e5c2 0%, #d4af37 40%, #a08520 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
@@ -199,21 +199,21 @@ export function Hero() {
             className="mt-2 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-[1.15] tracking-tight"
             style={{ fontFamily: "var(--font-playfair), serif" }}
           >
-            Firma Legal
+            Lawyers Firm
           </motion.h2>
 
-          {/* Value line — Copper accent */}
+          {/* Value line — Silver accent */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-5 text-base sm:text-lg font-semibold tracking-wide"
             style={{
-              color: "#B87333",
+              color: "#C0C0C0",
               fontFamily: "var(--font-inter), sans-serif",
             }}
           >
-            Especialistas en Derecho Penal, Familia y Civil.
+            Especialistas en Derecho Penal, de Familia y Civil.
           </motion.p>
 
           {/* Description */}
@@ -302,7 +302,7 @@ export function Hero() {
           className="hero-counters mt-14 lg:mt-20 grid grid-cols-3 gap-3 sm:gap-5 hero-text-col"
         >
           {[
-            { value: 10, suffix: "+", label: "Años de Servicio Público", icon: Clock },
+            { value: 15, suffix: "+", label: "Años de Experiencia", icon: Clock },
             { value: 92, suffix: "%", label: "Casos Ganados", icon: TrendingUp },
             { value: 500, suffix: "+", label: "Clientes Satisfechos", icon: Users },
           ].map((item, i) => (

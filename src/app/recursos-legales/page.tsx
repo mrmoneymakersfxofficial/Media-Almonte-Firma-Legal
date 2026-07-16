@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Shield, Heart, ArrowRight, Calendar } from "lucide-react";
+import { Briefcase, Shield, Building2, ArrowRight, Calendar } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Recursos Legales | Medina Almonte Firma Legal",
-  description: "Artículos, guías y recursos legales de Medina Almonte Firma Legal. Mantente informado sobre las últimas novedades jurídicas en Perú.",
+  title: "Recursos Legales | MEDINA ALMONTE — Lawyers Firm",
+  description: "Artículos, guías y recursos legales de MEDINA ALMONTE — Lawyers Firm. Mantente informado sobre las últimas novedades jurídicas en Perú.",
   keywords: ["recursos legales", "artículos jurídicos", "guías legales Perú", "blog jurídico"],
 };
 
 const articles = [
-  { slug: "guia-denuncia-penal", category: "Derecho Penal", title: "Guía Completa: Cómo Actuar Ante una Denuncia Penal", excerpt: "Recibir una denuncia penal puede ser una situación abrumadora. Conocer tus derechos y los pasos a seguir desde el primer momento es fundamental para garantizar una defensa adecuada. Explicamos detalladamente el proceso penal peruano, desde la investigación fiscal hasta la etapa de juzgamiento, y las estrategias de defensa que han demostrado mayor eficacia en cada tipo de causa penal.", date: "15 de Junio, 2026", icon: Shield, iconColor: "#D4AF37" },
-  { slug: "proceso-divorcio-peru", category: "Derecho de Familia", title: "Todo lo que Debes Saber sobre el Proceso de Divorcio en Perú", excerpt: "El proceso de divorcio en Perú puede variar significativamente dependiendo de si se trata de un divorcio por causal o de mutuo acuerdo. En esta guía detallamos los requisitos, plazos, costos y cada etapa del proceso para que puedas tomar decisiones informadas. Incluimos información sobre custodia, pensión alimenticia y liquidación de bienes gananciales.", date: "2 de Junio, 2026", icon: Heart, iconColor: "#B87333" },
-  { slug: "guia-contratos-civiles", category: "Derecho Civil", title: "Contratos Civiles en Perú: Claves para Proteger tus Derechos", excerpt: "Los contratos civiles son la base de las relaciones jurídicas entre personas y empresas. Explicamos los elementos esenciales de un contrato válido, los tipos de contratos más comunes en Perú, las cláusulas que no deben faltar y cómo actuar ante un incumplimiento contractual. Conoce tus herramientas legales para blindar tus acuerdos.", date: "20 de Mayo, 2026", icon: Shield, iconColor: "#D4AF37" },
+  { slug: "cambios-legislacion-laboral-2026", category: "Derecho Laboral", title: "Nuevos Cambios en la Legislación Laboral Peruana 2026", excerpt: "El gobierno peruano ha aprobado recientes modificaciones a la normativa laboral que afectan directamente a los contratos de trabajo temporales y los derechos de los trabajadores. En este artículo analizamos los principales cambios y su impacto práctico tanto para empleadores como para empleados, incluyendo las nuevas disposiciones sobre teletrabajo y la actualización de los montos de las indemnizaciones por despido arbitrario.", date: "15 de Junio, 2026", icon: Briefcase, iconColor: "#D4AF37" },
+  { slug: "guia-denuncia-penal", category: "Derecho Penal", title: "Guía Completa: Cómo Actuar Ante una Denuncia Penal", excerpt: "Recibir una denuncia penal puede ser una situación abrumadora. Conocer tus derechos y los pasos a seguir desde el primer momento es fundamental para garantizar una defensa adecuada. Explicamos detalladamente el proceso penal peruano, desde la investigación fiscal hasta la etapa de juzgamiento, y las estrategias de defensa que han demostrado mayor eficacia en cada tipo de causa penal.", date: "2 de Junio, 2026", icon: Shield, iconColor: "#C0C0C0" },
+  { slug: "compliance-legal-peru", category: "Derecho Corporativo", title: "Protege Tu Empresa: Claves del Compliance Legal en Perú", excerpt: "El cumplimiento normativo o compliance legal se ha convertido en una necesidad imprescindible para las empresas en Perú. Desde la prevención de la responsabilidad administrativa hasta la implementación de programas de integridad, detallamos los aspectos esenciales que toda empresa debe considerar para operar dentro del marco legal vigente y evitar sanciones que puedan afectar su reputación y continuidad operativa.", date: "20 de Mayo, 2026", icon: Building2, iconColor: "#4A90D9" },
 ];
 
 export default function RecursosLegalesPage() {
@@ -33,7 +33,7 @@ export default function RecursosLegalesPage() {
               <div className="section-divider-gold mb-6" />
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <p className="pro-paragraph-lg max-w-3xl mx-auto">Accede a nuestra biblioteca de artículos, guías y análisis jurídicos. En Medina Almonte Firma Legal creemos que un cliente informado toma mejores decisiones. Nuestro equipo publica regularmente contenido actualizado sobre las principales novedades legales, reformas legislativas y buenas prácticas en las distintas ramas del derecho peruano.</p>
+              <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">Accede a nuestra biblioteca de artículos, guías y análisis jurídicos. En MEDINA ALMONTE — Lawyers Firm creemos que un cliente informado toma mejores decisiones. Nuestro equipo publica regularmente contenido actualizado sobre las principales novedades legales, reformas legislativas y buenas prácticas en las distintas ramas del derecho peruano.</p>
             </ScrollReveal>
           </div>
 
@@ -44,8 +44,8 @@ export default function RecursosLegalesPage() {
               return (
                 <ScrollReveal key={article.slug} delay={0.1 * (index + 1)}>
                   <Link href={`/recursos-legales/${article.slug}`} className="block group">
-                    <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-4 md:gap-8">
-                      <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${article.iconColor}12` }}>
+                    <div className="flex items-start gap-5 md:gap-8">
+                      <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mt-1" style={{ backgroundColor: `${article.iconColor}12` }}>
                         <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color: article.iconColor }} />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -59,7 +59,7 @@ export default function RecursosLegalesPage() {
                           {article.title}
                         </h2>
                         <p className="immersive-desc text-gray-400 leading-relaxed mb-3">{article.excerpt}</p>
-                        <div className="flex items-center justify-center md:justify-start gap-6">
+                        <div className="flex items-center gap-6">
                           <span className="flex items-center gap-1.5 text-gray-500 text-xs">
                             <Calendar className="w-3.5 h-3.5" />{article.date}
                           </span>

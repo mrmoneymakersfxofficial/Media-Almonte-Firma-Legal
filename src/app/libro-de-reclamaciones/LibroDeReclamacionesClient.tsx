@@ -591,7 +591,7 @@ export function LibroDeReclamacionesClient() {
                             <div
                               className="absolute top-2 right-2 w-3 h-3 rounded-full"
                               style={{
-                                background: "linear-gradient(135deg, #D4AF37, #B87333)",
+                                background: "linear-gradient(135deg, #D4AF37, #a08520)",
                                 boxShadow: "0 0 8px rgba(212,175,55,0.4)",
                               }}
                             />

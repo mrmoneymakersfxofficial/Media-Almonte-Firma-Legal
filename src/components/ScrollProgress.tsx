@@ -33,7 +33,7 @@ export function ScrollProgress() {
         ref={barRef}
         className="h-[3px] w-0"
         style={{
-          background: "linear-gradient(90deg, #B87333 0%, #c9a961 25%, #D4AF37 50%, #c9a961 75%, #B87333 100%)",
+          background: "linear-gradient(90deg, #a08520 0%, #c9a961 25%, #D4AF37 50%, #c9a961 75%, #a08520 100%)",
           willChange: "width",
           transform: "translateZ(0)",
           boxShadow: "0 0 12px rgba(212,175,55,0.6), 0 0 4px rgba(212,175,55,0.8)",

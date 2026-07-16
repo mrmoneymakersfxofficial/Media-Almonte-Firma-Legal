@@ -158,7 +158,7 @@ export function WhatsAppButton() {
               }}
             >
               {/* Gold accent bar at top */}
-              <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, #D4AF37, #f4e5c2, #B87333)' }} />
+              <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, #D4AF37, #f4e5c2, #a08520)' }} />
               <div className="flex gap-3 items-start pt-1">
                 {/* Mini WhatsApp icon */}
                 <div

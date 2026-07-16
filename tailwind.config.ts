@@ -51,12 +51,13 @@ const config: Config = {
                                 '4': 'hsl(var(--chart-4))',
                                 '5': 'hsl(var(--chart-5))'
                         },
-                        // NUEVA MARCA: Medina Almonte Firma Legal
+                        // NUEVA MARCA: MEDINA ALMONTE — Lawyers Firm
                         'medina-negro': '#0A0A0A',
                         'medina-azul': '#0B1A2E',
-                        'medina-cobre': '#B87333',
                         'medina-dorado': '#D4AF37',
-                        'medina-dorado-light': '#F0E68C',
+                        'medina-dorado-dark': '#a08520',
+                        'medina-dorado-light': '#f4e5c2',
+                        'medina-plata': '#C0C0C0',
                         // Premium Slate palette
                         'slate-deep': '#0f172a',
                         'slate-rich': '#1e293b',

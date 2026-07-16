@@ -85,7 +85,7 @@ function NavLink({
           rounded-md transition-all duration-300 overflow-hidden select-none
           ${
             active
-              ? "text-amber-400"
+              ? "text-[#D4AF37]"
               : scrolled
               ? "text-white/75 hover:text-white"
               : "text-white/85 hover:text-white"
@@ -245,7 +245,7 @@ export function Header() {
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               className={`lg:hidden w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-200 ${
                 isScrolled
-                  ? "text-amber-400/80 hover:text-amber-400 hover:bg-amber-400/10"
+                  ? "text-[#D4AF37]/80 hover:text-[#D4AF37] hover:bg-[#D4AF37]/10"
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
               aria-label="Menú"
@@ -298,7 +298,7 @@ export function Header() {
                 </Link>
                 <button
                   onClick={() => setIsMobileOpen(false)}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg text-amber-400/70 hover:text-amber-400 hover:bg-amber-400/10 transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg text-[#D4AF37]/70 hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors"
                   aria-label="Cerrar menú"
                 >
                   <X size={18} />
@@ -319,8 +319,8 @@ export function Header() {
                       onClick={() => setIsMobileOpen(false)}
                       className={`relative flex items-center px-4 py-3.5 rounded-lg text-[15px] font-medium transition-all duration-200 ${
                         isActive(link.href)
-                          ? "text-amber-400 bg-amber-400/[0.08]"
-                          : "text-white/60 hover:text-amber-400/90 hover:bg-white/[0.04]"
+                          ? "text-[#D4AF37] bg-[#D4AF37]/[0.08]"
+                          : "text-white/60 hover:text-[#D4AF37]/90 hover:bg-white/[0.04]"
                       }`}
                     >
                       {isActive(link.href) && (

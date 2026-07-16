@@ -16,7 +16,7 @@ export function BrandIdentity() {
         className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full blur-[140px] gpu-accelerated"
         style={{
           background:
-            "radial-gradient(circle, rgba(184,115,51,0.05) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
@@ -24,7 +24,7 @@ export function BrandIdentity() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-block text-[#B87333] font-semibold text-sm tracking-wider uppercase mb-4">
+            <span className="inline-block text-[#C0C0C0] font-semibold text-sm tracking-wider uppercase mb-4">
               Identidad Institucional
             </span>
             <h2
@@ -59,7 +59,7 @@ export function BrandIdentity() {
               {/* Gold accent corners */}
               <div className="absolute -inset-3 sm:-inset-4 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                 style={{
-                  background: "linear-gradient(135deg, rgba(212,175,55,0.15) 0%, transparent 30%, transparent 70%, rgba(184,115,51,0.15) 100%)",
+                  background: "linear-gradient(135deg, rgba(212,175,55,0.15) 0%, transparent 30%, transparent 70%, rgba(160,133,32,0.15) 100%)",
                   borderRadius: "1rem",
                 }}
                 aria-hidden="true"
@@ -98,7 +98,7 @@ export function BrandIdentity() {
               <div
                 className="absolute -bottom-px left-1/2 -translate-x-1/2 w-24 h-[2px] rounded-full gpu-accelerated"
                 style={{
-                  background: "linear-gradient(90deg, transparent, #B87333, transparent)",
+                  background: "linear-gradient(90deg, transparent, #D4AF37, transparent)",
                 }}
                 aria-hidden="true"
               />

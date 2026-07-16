@@ -6,22 +6,22 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const team = [
   {
     name: "Dr. Eduardo Medina Almonte",
-    specialty: "Socio Fundador & CEO",
-    bio: "Abogado con más de 10 años de experiencia en litigios penales, civiles y de familia. Fundador de Medina Almonte — Lawyers Firm con una visión estratégica del derecho y un compromiso inquebrantable con la justicia. Bajo su liderazgo, la firma ha logrado resultados favorables en más del 92% de los casos atendidos, consolidándose como referente en el ejercicio jurídico peruano.",
+    specialty: "Fundador — Derecho Penal, Familia y Civil",
+    bio: "Abogado que actualmente ejerce la profesión legal, tras más de 10 años como servidor público del Poder Judicial y del Ministerio Público. Miembro activo del Colegio de Abogados del Callao. Cuenta con estudios de posgrado en materia penal, pasantías nacionales e internacionales (Colombia), y ha impartido clases en la Pontificia Universidad Católica del Perú (PUCP).",
     initials: "EM",
     isCEO: true,
   },
   {
     name: "Dra. Sofía Castillo",
     specialty: "Derecho Civil y Familia",
-    bio: "Especialista en derecho de familia y sucesiones. Reconocida por su enfoque empático y resultados favorables en casos complejos de divorcio, custodia y pensiones alimenticias.",
+    bio: "Abogada con formación en derecho de familia y sucesiones. Reconocida por su enfoque empático y resultados favorables en casos de divorcio, custodia y pensiones alimenticias.",
     initials: "SC",
     isCEO: false,
   },
   {
     name: "Dr. Andrés Mendoza",
     specialty: "Derecho Penal",
-    bio: "Defensor penal con trayectoria en casos de alta complejidad. Experto en investigaciones preliminares, garantías constitucionales y litigación oral.",
+    bio: "Abogado penalista con trayectoria en casos de alta complejidad. Conocimiento en investigaciones preliminares y garantías constitucionales.",
     initials: "AM",
     isCEO: false,
   },
@@ -38,23 +38,26 @@ export function TeamCards() {
     <div className="space-y-12 md:space-y-16">
       {team.map((member, i) => (
         <ScrollReveal key={member.name} delay={i * 0.08}>
-          <div className={`flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 text-center md:text-left ${member.isCEO ? 'relative' : ''}`}>
+          <div
+            className={`flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 text-center md:text-left ${member.isCEO ? "relative" : ""}`}
+          >
             {/* CEO badge */}
             {member.isCEO && (
               <div className="absolute -top-3 left-1/2 md:left-0 md:-translate-x-0 -translate-x-1/2 z-10">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest"
+                <div
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest"
                   style={{
                     background: "linear-gradient(135deg, #D4AF37, #B87333)",
                     color: "#0A0A0A",
                   }}
                 >
                   <Crown className="w-3 h-3" />
-                  Socio Fundador
+                  Fundador
                 </div>
               </div>
             )}
 
-            {/* Avatar — circular */}
+            {/* Avatar */}
             <div className="team-avatar-ring w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#0A0A0A] flex items-center justify-center shrink-0">
               <span
                 className="text-[#D4AF37] text-xl font-bold"

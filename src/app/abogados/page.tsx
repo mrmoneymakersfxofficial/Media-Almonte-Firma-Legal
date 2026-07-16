@@ -4,13 +4,13 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { TeamCards } from "@/components/TeamCards";
 
 export const metadata: Metadata = {
-  title: "Nuestros Abogados | Medina Almonte Firma Legal",
+  title: "Nuestros Abogados | Medina Almonte — Lawyers Firm",
   description:
-    "Conoce al equipo de abogados de Medina Almonte Firma Legal. Profesionales comprometidos con la excelencia jurídica en Perú.",
+    "Conoce al equipo de Medina Almonte — Lawyers Firm. Profesionales comprometidos con la ética jurídica en Perú.",
   keywords: [
     "abogados Perú",
     "equipo jurídico",
-    "abogados especializados",
+    "Eduardo Medina Almonte",
     "Medina Almonte",
   ],
 };
@@ -70,7 +70,7 @@ export default function AbogadosPage() {
                 nacional.
               </p>
               <p className="text-[#D4AF37] font-semibold mt-3 text-sm sm:text-base">
-                Registro: Colegio de Abogados de Lima — CAL
+                Registro: Colegio de Abogados del Callao — CAC
               </p>
             </div>
           </ScrollReveal>

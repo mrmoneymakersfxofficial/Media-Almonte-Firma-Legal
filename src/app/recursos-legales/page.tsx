@@ -5,14 +5,14 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Recursos Legales | MEDINA ALMONTE — Lawyers Firm",
-  description: "Artículos, guías y recursos legales de MEDINA ALMONTE — Lawyers Firm. Mantente informado sobre las últimas novedades jurídicas en Perú.",
+  title: "Recursos Legales | Medina Almonte Firma Legal",
+  description: "Artículos, guías y recursos legales de Medina Almonte Firma Legal. Mantente informado sobre las últimas novedades jurídicas en Perú.",
   keywords: ["recursos legales", "artículos jurídicos", "guías legales Perú", "blog jurídico"],
 };
 
 const articles = [
-  { slug: "cambios-legislacion-laboral-2026", category: "Derecho Laboral", title: "Nuevos Cambios en la Legislación Laboral Peruana 2026", excerpt: "El gobierno peruano ha aprobado recientes modificaciones a la normativa laboral que afectan directamente a los contratos de trabajo temporales y los derechos de los trabajadores. En este artículo analizamos los principales cambios y su impacto práctico tanto para empleadores como para empleados, incluyendo las nuevas disposiciones sobre teletrabajo y la actualización de los montos de las indemnizaciones por despido arbitrario.", date: "15 de Junio, 2026", icon: Briefcase, iconColor: "#D4AF37" },
-  { slug: "guia-denuncia-penal", category: "Derecho Penal", title: "Guía Completa: Cómo Actuar Ante una Denuncia Penal", excerpt: "Recibir una denuncia penal puede ser una situación abrumadora. Conocer tus derechos y los pasos a seguir desde el primer momento es fundamental para garantizar una defensa adecuada. Explicamos detalladamente el proceso penal peruano, desde la investigación fiscal hasta la etapa de juzgamiento, y las estrategias de defensa que han demostrado mayor eficacia en cada tipo de causa penal.", date: "2 de Junio, 2026", icon: Shield, iconColor: "#C0C0C0" },
+  { slug: "cambios-legislacion-laboral-2026", category: "Derecho Laboral", title: "Nuevos Cambios en la Legislación Laboral Peruana 2026", excerpt: "El gobierno peruano ha aprobado recientes modificaciones a la normativa laboral que afectan directamente a los contratos de trabajo temporales y los derechos de los trabajadores. En este artículo analizamos los principales cambios y su impacto práctico tanto para empleadores como para empleados, incluyendo las nuevas disposiciones sobre teletrabajo y la actualización de los montos de las indemnizaciones por despido arbitrario.", date: "15 de Junio, 2026", icon: Briefcase, iconColor: "#C9A961" },
+  { slug: "guia-denuncia-penal", category: "Derecho Penal", title: "Guía Completa: Cómo Actuar Ante una Denuncia Penal", excerpt: "Recibir una denuncia penal puede ser una situación abrumadora. Conocer tus derechos y los pasos a seguir desde el primer momento es fundamental para garantizar una defensa adecuada. Explicamos detalladamente el proceso penal peruano, desde la investigación fiscal hasta la etapa de juzgamiento, y las estrategias de defensa que han demostrado mayor eficacia en cada tipo de causa penal.", date: "2 de Junio, 2026", icon: Shield, iconColor: "#8B6F47" },
   { slug: "compliance-legal-peru", category: "Derecho Corporativo", title: "Protege Tu Empresa: Claves del Compliance Legal en Perú", excerpt: "El cumplimiento normativo o compliance legal se ha convertido en una necesidad imprescindible para las empresas en Perú. Desde la prevención de la responsabilidad administrativa hasta la implementación de programas de integridad, detallamos los aspectos esenciales que toda empresa debe considerar para operar dentro del marco legal vigente y evitar sanciones que puedan afectar su reputación y continuidad operativa.", date: "20 de Mayo, 2026", icon: Building2, iconColor: "#4A90D9" },
 ];
 
@@ -24,16 +24,16 @@ export default function RecursosLegalesPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">Conocimiento</span>
+              <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9A961]/30 text-[#C9A961] text-sm font-medium tracking-wider uppercase mb-8">Conocimiento</span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h1 className="immersive-title font-bold mb-6" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>Recursos Legales</h1>
+              <h1 className="immersive-title font-bold mb-6" style={{ color: "#C9A961", fontFamily: "var(--font-playfair), serif" }}>Recursos Legales</h1>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <div className="section-divider-gold mb-6" />
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">Accede a nuestra biblioteca de artículos, guías y análisis jurídicos. En MEDINA ALMONTE — Lawyers Firm creemos que un cliente informado toma mejores decisiones. Nuestro equipo publica regularmente contenido actualizado sobre las principales novedades legales, reformas legislativas y buenas prácticas en las distintas ramas del derecho peruano.</p>
+              <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">Accede a nuestra biblioteca de artículos, guías y análisis jurídicos. En Medina Almonte Firma Legal creemos que un cliente informado toma mejores decisiones. Nuestro equipo publica regularmente contenido actualizado sobre las principales novedades legales, reformas legislativas y buenas prácticas en las distintas ramas del derecho peruano.</p>
             </ScrollReveal>
           </div>
 
@@ -55,7 +55,7 @@ export default function RecursosLegalesPage() {
                         >
                           {article.category}
                         </span>
-                        <h2 className="immersive-title font-bold leading-snug group-hover:text-[#D4AF37] transition-colors duration-300 mb-2" style={{ color: "#fff", fontFamily: "var(--font-playfair), serif", WebkitLineClamp: 2 }}>
+                        <h2 className="immersive-title font-bold leading-snug group-hover:text-[#C9A961] transition-colors duration-300 mb-2" style={{ color: "#fff", fontFamily: "var(--font-playfair), serif", WebkitLineClamp: 2 }}>
                           {article.title}
                         </h2>
                         <p className="immersive-desc text-gray-400 leading-relaxed mb-3">{article.excerpt}</p>
@@ -63,7 +63,7 @@ export default function RecursosLegalesPage() {
                           <span className="flex items-center gap-1.5 text-gray-500 text-xs">
                             <Calendar className="w-3.5 h-3.5" />{article.date}
                           </span>
-                          <span className="flex items-center gap-1.5 text-[#D4AF37] text-sm font-medium group-hover:gap-2.5 transition-all duration-300">
+                          <span className="flex items-center gap-1.5 text-[#C9A961] text-sm font-medium group-hover:gap-2.5 transition-all duration-300">
                             Leer más<ArrowRight className="w-4 h-4" />
                           </span>
                         </div>
@@ -81,7 +81,7 @@ export default function RecursosLegalesPage() {
             <div className="mt-16 text-center">
               <hr className="subtle-divider mb-10" />
               <p className="text-gray-500 text-sm mb-6">¿Necesitas asesoría legal personalizada sobre algún tema?</p>
-              <a href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20tengo%20una%20consulta%20sobre%20sus%20artículos%20legales." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] font-bold text-sm px-8 py-3.5 rounded-xl">Consultar por WhatsApp</a>
+              <a href="https://api.whatsapp.com/send?phone=51943366950&text=Hola%2C%20tengo%20una%20consulta%20sobre%20sus%20artículos%20legales." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0F0F0F] font-bold text-sm px-8 py-3.5 rounded-xl">Consultar por WhatsApp</a>
             </div>
           </ScrollReveal>
         </div>

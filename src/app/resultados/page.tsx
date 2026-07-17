@@ -4,8 +4,8 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Trophy, TrendingUp, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Casos y Resultados | MEDINA ALMONTE — Lawyers Firm",
-  description: "Conoce los casos de éxito y resultados obtenidos por MEDINA ALMONTE — Lawyers Firm. Nuestra trayectoria habla por nosotros.",
+  title: "Casos y Resultados | Medina Almonte Firma Legal",
+  description: "Conoce los casos de éxito y resultados obtenidos por Medina Almonte Firma Legal. Nuestra trayectoria habla por nosotros.",
   keywords: ["casos de éxito", "resultados jurídicos", "sentencias favorables", "abogados Perú"],
 };
 
@@ -23,10 +23,10 @@ export default function ResultadosPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">Trayectoria</span>
+              <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9A961]/30 text-[#C9A961] text-sm font-medium tracking-wider uppercase mb-8">Trayectoria</span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h1 className="immersive-title font-bold mb-6" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>Casos y Resultados</h1>
+              <h1 className="immersive-title font-bold mb-6" style={{ color: "#C9A961", fontFamily: "var(--font-playfair), serif" }}>Casos y Resultados</h1>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <div className="section-divider-gold mb-6" />
@@ -60,14 +60,14 @@ export default function ResultadosPage() {
               const Icon = caseItem.icon;
               return (
                 <ScrollReveal key={caseItem.id} delay={0.1 * (index + 1)}>
-                  <div className="border-l-[3px] border-[#D4AF37]/50 pl-5 sm:pl-8 py-2">
+                  <div className="border-l-[3px] border-[#C9A961]/50 pl-5 sm:pl-8 py-2">
                     <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 mb-3">
                       <div className="flex-1 min-w-0">
                         <span className="case-number-gold text-sm font-medium text-gray-500" style={{ fontFamily: "var(--font-playfair), serif" }}>
                           CASO {String(caseItem.id).padStart(2, '0')}
                         </span>
                         <h3 className="text-white font-bold text-base sm:text-lg mt-1 leading-snug" style={{ fontFamily: "var(--font-playfair), serif" }}>{caseItem.title}</h3>
-                        <p className="text-[#C0C0C0] text-sm font-medium mt-1">{caseItem.category}</p>
+                        <p className="text-[#8B6F47] text-sm font-medium mt-1">{caseItem.category}</p>
                       </div>
                       <span className="case-badge-victory shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5 self-start sm:mt-1">
                         <Icon className="w-3.5 h-3.5" />{caseItem.result}
@@ -86,7 +86,7 @@ export default function ResultadosPage() {
             <div className="mt-16 text-center">
               <hr className="subtle-divider mb-10" />
               <p className="text-gray-500 text-sm mb-6">¿Tienes un caso que necesita representación legal de primer nivel?</p>
-              <a href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20MEDINA%20ALMONTE%20Lawyers%20Firm." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] font-bold text-sm px-8 py-3.5 rounded-xl">Consultar por WhatsApp</a>
+              <a href="https://api.whatsapp.com/send?phone=51943366950&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20Medina%20Almonte%20Firma%20Legal." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0F0F0F] font-bold text-sm px-8 py-3.5 rounded-xl">Consultar por WhatsApp</a>
             </div>
           </ScrollReveal>
         </div>

@@ -51,18 +51,15 @@ const config: Config = {
                                 '4': 'hsl(var(--chart-4))',
                                 '5': 'hsl(var(--chart-5))'
                         },
-                        // NUEVA MARCA: MEDINA ALMONTE — Lawyers Firm
-                        'medina-negro': '#0A0A0A',
-                        'medina-azul': '#0B1A2E',
-                        'medina-dorado': '#D4AF37',
-                        'medina-dorado-dark': '#a08520',
-                        'medina-dorado-light': '#f4e5c2',
-                        'medina-plata': '#C0C0C0',
-                        // Premium Slate palette
-                        'slate-deep': '#0f172a',
-                        'slate-rich': '#1e293b',
-                        'gold-bright': '#f4e5c2',
-                        'gold-warm': '#c9a961',
+                        // PALETA COBRE/BRONCE — MEDINA ALMONTE
+                        'medina-negro': '#0F0F0F',
+                        'medina-azul': '#1B2A49',
+                        'medina-azul-oscuro': '#0F172A',
+                        'medina-cobre': '#C9A961',
+                        'medina-cobre-oscuro': '#8B6F47',
+                        'medina-bronce': '#B8956A',
+                        'medina-beige': '#D4C4B0',
+                        'medina-gris': '#2D2D2D',
                 },
                 fontFamily: {
                         'serif': ['Merriweather', 'serif'],
@@ -83,7 +80,7 @@ const config: Config = {
                         },
                         'stat-pulse-glow': {
                                 '0%, 100%': { boxShadow: '0 4px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05)' },
-                                '50%': { boxShadow: '0 4px 30px rgba(212, 175, 55, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05)' },
+                                '50%': { boxShadow: '0 4px 30px rgba(201, 169, 97, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05)' },
                         },
                 },
         }

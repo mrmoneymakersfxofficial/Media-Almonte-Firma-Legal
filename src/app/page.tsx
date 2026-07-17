@@ -69,7 +69,7 @@ function WhoWeAre() {
           {/* Texto */}
           <ScrollReveal>
             <div>
-              <span className="inline-block text-[#C0C0C0] font-semibold text-sm tracking-wider uppercase mb-4">
+              <span className="inline-block text-[#8B6F47] font-semibold text-sm tracking-wider uppercase mb-4">
                 Sobre Nosotros
               </span>
               <h2
@@ -78,7 +78,7 @@ function WhoWeAre() {
               >
                 <span
                   style={{
-                    background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
+                    background: "linear-gradient(135deg, #D4C4B0, #C9A961)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                   }}
@@ -89,7 +89,7 @@ function WhoWeAre() {
                 <span className="text-white">tu Principal Estratega Legal</span>
               </h2>
               <p className="text-gray-400 leading-relaxed mb-8 text-base sm:text-lg">
-                En MEDINA ALMONTE — Lawyers Firm entendemos que cada caso es
+                En Medina Almonte Firma Legal entendemos que cada caso es
                 único. Por eso, diseñamos defensas a medida, con un enfoque
                 humano y una estrategia jurídica impecable. Representamos tus
                 intereses con la firmeza y la ética que tu situación requiere.
@@ -111,8 +111,8 @@ function WhoWeAre() {
               return (
                 <ScrollReveal key={item.title} delay={0.12 * i} duration={0.6}>
                   <div className="card-premium gold-border-gradient rounded-2xl p-6 sm:p-7 flex items-start gap-5 group">
-                    <div className="w-12 h-12 shrink-0 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center icon-glow transition-all duration-300 group-hover:bg-[#D4AF37]/15 group-hover:scale-110">
-                      <Icon className="w-6 h-6 text-[#D4AF37]" />
+                    <div className="w-12 h-12 shrink-0 rounded-xl bg-[#C9A961]/10 flex items-center justify-center icon-glow transition-all duration-300 group-hover:bg-[#C9A961]/15 group-hover:scale-110">
+                      <Icon className="w-6 h-6 text-[#C9A961]" />
                     </div>
                     <div>
                       <h3
@@ -188,7 +188,7 @@ function PracticeAreas() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-block text-[#C0C0C0] font-semibold text-sm tracking-wider uppercase mb-4">
+            <span className="inline-block text-[#8B6F47] font-semibold text-sm tracking-wider uppercase mb-4">
               Áreas de Práctica
             </span>
             <h2
@@ -198,7 +198,7 @@ function PracticeAreas() {
               <span className="text-white">Defendemos tus Derechos en</span>{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
+                  background: "linear-gradient(135deg, #D4C4B0, #C9A961)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -216,8 +216,8 @@ function PracticeAreas() {
               <ScrollReveal key={area.title} delay={0.08 * i} duration={0.6}>
                 <Link href={area.href} className="block group h-full">
                   <div className="practice-card-premium gold-border-gradient rounded-2xl p-7 sm:p-8 h-full relative">
-                    <div className="w-14 h-14 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center mb-5 icon-glow transition-all duration-300 group-hover:bg-[#D4AF37]/15 group-hover:scale-110">
-                      <Icon className="w-7 h-7 text-[#D4AF37]" />
+                    <div className="w-14 h-14 rounded-xl bg-[#C9A961]/10 flex items-center justify-center mb-5 icon-glow transition-all duration-300 group-hover:bg-[#C9A961]/15 group-hover:scale-110">
+                      <Icon className="w-7 h-7 text-[#C9A961]" />
                     </div>
                     <h3
                       className="text-white font-bold text-lg sm:text-xl mb-3"
@@ -228,7 +228,7 @@ function PracticeAreas() {
                     <p className="text-gray-400 text-sm leading-relaxed mb-6">
                       {area.description}
                     </p>
-                    <span className="inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-sm group-hover:gap-3 transition-all duration-300">
+                    <span className="inline-flex items-center gap-2 text-[#C9A961] font-semibold text-sm group-hover:gap-3 transition-all duration-300">
                       {area.cta}
                       <ArrowRight className="w-4 h-4" />
                     </span>
@@ -294,7 +294,7 @@ function TestimonialsSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-block text-[#C0C0C0] font-semibold text-sm tracking-wider uppercase mb-4">
+            <span className="inline-block text-[#8B6F47] font-semibold text-sm tracking-wider uppercase mb-4">
               Testimonios
             </span>
             <h2
@@ -304,7 +304,7 @@ function TestimonialsSection() {
               <span className="text-white">Lo Que Dicen</span>{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
+                  background: "linear-gradient(135deg, #D4C4B0, #C9A961)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -335,7 +335,7 @@ function TestimonialsSection() {
                     className="pl-4 md:basis-[80%] lg:basis-[70%]"
                   >
                     <div className="glass-card gold-border-gradient rounded-2xl p-8 sm:p-10 h-full">
-                      <Quote className="w-10 h-10 text-[#D4AF37]/25 mb-6" />
+                      <Quote className="w-10 h-10 text-[#C9A961]/25 mb-6" />
                       <p
                         className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8"
                         style={{
@@ -349,13 +349,13 @@ function TestimonialsSection() {
                           <p className="text-white font-bold text-base">
                             {t.name}
                           </p>
-                          <p className="text-[#C0C0C0] text-sm">{t.role}</p>
+                          <p className="text-[#8B6F47] text-sm">{t.role}</p>
                         </div>
                         <div className="flex gap-0.5">
                           {[...Array(5)].map((_, si) => (
                             <Star
                               key={si}
-                              className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]"
+                              className="w-4 h-4 fill-[#C9A961] text-[#C9A961]"
                             />
                           ))}
                         </div>
@@ -368,17 +368,17 @@ function TestimonialsSection() {
 
             <button
               onClick={() => api?.scrollPrev()}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-5 w-10 h-10 rounded-full glass-card flex items-center justify-center hover:border-[#D4AF37]/50 transition-colors gpu-accelerated"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-5 w-10 h-10 rounded-full glass-card flex items-center justify-center hover:border-[#C9A961]/50 transition-colors gpu-accelerated"
               aria-label="Anterior"
             >
-              <ChevronLeft className="w-5 h-5 text-[#D4AF37]" />
+              <ChevronLeft className="w-5 h-5 text-[#C9A961]" />
             </button>
             <button
               onClick={() => api?.scrollNext()}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-5 w-10 h-10 rounded-full glass-card flex items-center justify-center hover:border-[#D4AF37]/50 transition-colors gpu-accelerated"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-5 w-10 h-10 rounded-full glass-card flex items-center justify-center hover:border-[#C9A961]/50 transition-colors gpu-accelerated"
               aria-label="Siguiente"
             >
-              <ChevronRight className="w-5 h-5 text-[#D4AF37]" />
+              <ChevronRight className="w-5 h-5 text-[#C9A961]" />
             </button>
           </div>
         </ScrollReveal>
@@ -391,8 +391,8 @@ function TestimonialsSection() {
                 onClick={() => api?.scrollTo(i)}
                 className={`h-2 rounded-full transition-all duration-300 gpu-accelerated ${
                   current === i
-                    ? "w-8 bg-[#D4AF37]"
-                    : "w-2 bg-[#D4AF37]/30 hover:bg-[#D4AF37]/50"
+                    ? "w-8 bg-[#C9A961]"
+                    : "w-2 bg-[#C9A961]/30 hover:bg-[#C9A961]/50"
                 }`}
                 aria-label={`Ir al testimonio ${i + 1}`}
               />
@@ -421,7 +421,7 @@ function MembershipsBar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-12">
-            <span className="inline-block text-[#C0C0C0] font-semibold text-sm tracking-wider uppercase mb-4">
+            <span className="inline-block text-[#8B6F47] font-semibold text-sm tracking-wider uppercase mb-4">
               Confían en Nosotros
             </span>
             <h2
@@ -431,7 +431,7 @@ function MembershipsBar() {
               <span className="text-white">Membresías y</span>{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
+                  background: "linear-gradient(135deg, #D4C4B0, #C9A961)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -452,7 +452,7 @@ function MembershipsBar() {
                   className="flex flex-col items-center gap-3 min-w-[120px] shrink-0 group"
                 >
                   <div className="w-16 h-16 rounded-2xl glass-card flex items-center justify-center transition-all duration-300 group-hover:scale-105 gpu-accelerated">
-                    <Icon className="w-7 h-7 text-[#D4AF37]" />
+                    <Icon className="w-7 h-7 text-[#C9A961]" />
                   </div>
                   <p className="text-white/70 text-sm font-medium leading-tight text-center group-hover:text-white transition-colors">
                     {m.name}
@@ -499,7 +499,7 @@ function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#0A0A0A] relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-[#0F0F0F] relative overflow-hidden">
       {/* Decorative ambient blurs */}
       <div
         className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full blur-[120px] gpu-accelerated"
@@ -511,7 +511,7 @@ function WhyChooseUs() {
       <div
         className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full blur-[120px] gpu-accelerated"
         style={{
-          background: "radial-gradient(circle, rgba(11,26,46,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(184,115,51,0.06) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
@@ -519,17 +519,17 @@ function WhyChooseUs() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-block text-[#C0C0C0] font-semibold text-sm tracking-wider uppercase mb-4">
+            <span className="inline-block text-[#8B6F47] font-semibold text-sm tracking-wider uppercase mb-4">
               Nuestra Diferencia
             </span>
             <h2
               className="text-2xl sm:text-3xl lg:text-[2.5rem] font-bold leading-[1.15]"
               style={{ fontFamily: "var(--font-playfair), serif" }}
             >
-              <span className="text-white">Un Lawyers Firm con</span>{" "}
+              <span className="text-white">Una Firma Legal con</span>{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
+                  background: "linear-gradient(135deg, #D4C4B0, #C9A961)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -546,8 +546,8 @@ function WhyChooseUs() {
             return (
               <ScrollReveal key={reason.title} delay={0.08 * i} duration={0.6}>
                 <div className="card-premium gold-border-gradient rounded-2xl p-7 sm:p-8 h-full group relative overflow-hidden">
-                  <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center mb-5 icon-glow transition-all duration-300 group-hover:bg-[#D4AF37]/15 group-hover:scale-110">
-                    <Icon className="w-6 h-6 text-[#D4AF37]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#C9A961]/10 flex items-center justify-center mb-5 icon-glow transition-all duration-300 group-hover:bg-[#C9A961]/15 group-hover:scale-110">
+                    <Icon className="w-6 h-6 text-[#C9A961]" />
                   </div>
                   <h3
                     className="text-white font-bold text-lg sm:text-xl mb-3"
@@ -588,17 +588,17 @@ export default function Home() {
   return (
     <SiteLayout>
       <Hero />
-      <SectionDivider from="#0A0A0A" to="#0A0A0A" />
+      <SectionDivider from="#0F0F0F" to="#0F0F0F" />
 
       {/* ¿Quiénes Somos? */}
       <WhoWeAre />
 
-      <SectionDivider from="#0A0A0A" to="#0B1A2E" />
+      <SectionDivider from="#0F0F0F" to="#1B2A49" />
 
       {/* Áreas de Práctica (Grid) */}
       <PracticeAreas />
 
-      <SectionDivider from="#0B1A2E" to="#0A0A0A" />
+      <SectionDivider from="#1B2A49" to="#0F0F0F" />
 
       {/* Testimonios */}
       <TestimonialsSection />
@@ -606,7 +606,7 @@ export default function Home() {
       {/* Membresías y Certificaciones */}
       <MembershipsBar />
 
-      <SectionDivider from="#0B1A2E" to="#0A0A0A" />
+      <SectionDivider from="#1B2A49" to="#0F0F0F" />
 
       {/* ¿Por qué Elegirnos? */}
       <WhyChooseUs />

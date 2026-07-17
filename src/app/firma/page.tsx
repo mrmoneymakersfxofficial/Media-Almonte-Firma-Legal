@@ -4,13 +4,13 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Shield, Users, Target, Award, Scale, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "La Firma | MEDINA ALMONTE — Lawyers Firm",
+  title: "La Firma | Medina Almonte Firma Legal",
   description:
-    "Conoce MEDINA ALMONTE — Lawyers Firm. Más que abogados, tu principal estratega legal en Perú. Especialistas en Derecho Civil, Penal y de Familia.",
+    "Conoce Medina Almonte Firma Legal. Más que abogados, tu principal estratega legal en Perú. Especialistas en Derecho Corporativo, Civil, Penal, Laboral y Familia.",
   keywords: [
     "Medina Almonte",
-    "lawyers firm Perú",
-    "abogados",
+    "firma legal Perú",
+    "abogados corporativos",
     "estudio jurídico",
   ],
 };
@@ -34,7 +34,7 @@ const values = [
   {
     icon: Award,
     title: "Excelencia Jurídica",
-    description: "Nuestra formación continua y experiencia en el sector público y privado nos permiten ofrecer un servicio jurídico de primer nivel.",
+    description: "Más de 15 años de experiencia y formación continua nos permiten ofrecer un servicio legal de primer nivel en todas las ramas del derecho.",
   },
   {
     icon: Scale,
@@ -56,16 +56,16 @@ export default function FirmaPage() {
           {/* Header */}
           <div className="text-center mb-20">
             <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">
+              <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9A961]/30 text-[#C9A961] text-sm font-medium tracking-wider uppercase mb-8">
                 Sobre Nosotros
               </span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h1
                 className="immersive-title font-bold mb-6"
-                style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}
+                style={{ color: "#C9A961", fontFamily: "var(--font-playfair), serif" }}
               >
-                MEDINA ALMONTE — Lawyers Firm
+                Medina Almonte Firma Legal
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
@@ -78,57 +78,23 @@ export default function FirmaPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-                MEDINA ALMONTE — Lawyers Firm es un estudio jurídico
+                Medina Almonte Firma Legal es un estudio jurídico de primer nivel
                 con sede en Perú, dedicado a brindar soluciones legales
-                estratégicas e integrales. Nos comprometemos con la
-                excelencia, la ética profesional y la obtención de
-                resultados concretos para nuestros clientes. Nuestro
-                enfoque combina la experiencia jurídica con una visión
-                moderna del derecho, adaptándonos a las necesidades de
-                cada caso con innovación y dedicación.
+                estratégicas e integrales. Con un equipo de abogados
+                altamente calificados y una trayectoria comprobada, nos
+                comprometemos con la excelencia, la ética profesional y la
+                obtención de resultados concretos para nuestros clientes.
+                Nuestro enfoque combina la experiencia jurídica con una
+                visión moderna del derecho, adaptándonos a las necesidades
+                de cada caso con innovación y dedicación.
               </p>
             </ScrollReveal>
           </div>
 
-          {/* Founder Section */}
-          <ScrollReveal delay={0.2}>
-            <div className="text-center mb-12">
-              <span className="inline-block px-4 py-1.5 rounded-full border border-[#C0C0C0]/30 text-[#C0C0C0] text-sm font-medium tracking-wider uppercase">
-                Nuestro Fundador
-              </span>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={0.25}>
-            <div className="max-w-3xl mx-auto mb-20">
-              <div className="flex flex-col items-center text-center">
-                <div className="team-avatar-ring w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#0A0A0A] flex items-center justify-center shrink-0 mb-6">
-                  <span
-                    className="text-[#D4AF37] text-2xl font-bold"
-                    style={{ fontFamily: "var(--font-playfair), serif" }}
-                  >
-                    EM
-                  </span>
-                </div>
-                <h3
-                  className="text-white font-bold text-xl sm:text-2xl mb-2"
-                  style={{ fontFamily: "var(--font-playfair), serif" }}
-                >
-                  Dr. Eduardo Medina Almonte
-                </h3>
-                <p className="text-[#C0C0C0] text-sm font-medium mb-6">
-                  Abogado — Fundador
-                </p>
-                <p className="text-gray-400 text-base md:text-lg leading-relaxed">
-                  Medina Almonte es un abogado que actualmente ejerce la profesión legal, tras una destacada trayectoria como servidor público del Poder Judicial y del Ministerio Público, donde desempeñó funciones durante más de 10 años. Es miembro activo del Colegio de Abogados del Callao. Cuenta con estudios de posgrado en materia penal y ha realizado pasantías nacionales e internacionales, incluyendo una en Colombia. Ha impartido clases en la Pontificia Universidad Católica del Perú (PUCP). Su enfoque profesional se centra en Derecho Penal, Derecho de Familia y Derecho Civil.
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
-
           {/* Values — no cards, icon + text direct on background */}
           <ScrollReveal delay={0.2}>
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-1.5 rounded-full border border-[#C0C0C0]/30 text-[#C0C0C0] text-sm font-medium tracking-wider uppercase">
+              <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9A961]/30 text-[#C9A961] text-sm font-medium tracking-wider uppercase">
                 Nuestros Valores
               </span>
             </div>
@@ -140,8 +106,8 @@ export default function FirmaPage() {
               return (
                 <ScrollReveal key={value.title} delay={0.1 * (index + 1)}>
                   <div className="flex items-start gap-4">
-                    <div className="shrink-0 w-11 h-11 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center mt-0.5">
-                      <Icon className="w-5 h-5 text-[#D4AF37]" />
+                    <div className="shrink-0 w-11 h-11 rounded-lg bg-[#C9A961]/10 flex items-center justify-center mt-0.5">
+                      <Icon className="w-5 h-5 text-[#C9A961]" />
                     </div>
                     <div className="min-w-0">
                       <h3 className="text-white font-bold text-base mb-2" style={{ fontFamily: "var(--font-playfair), serif" }}>
@@ -154,6 +120,27 @@ export default function FirmaPage() {
               );
             })}
           </div>
+
+          {/* Stats — no cards, just numbers on background */}
+          <ScrollReveal delay={0.3}>
+            <div className="mt-20">
+              <hr className="subtle-divider mb-12" />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                {[
+                  { number: "15+", label: "Años de Experiencia" },
+                  { number: "92%", label: "Casos Resueltos Favorablemente" },
+                  { number: "500+", label: "Clientes Atendidos" },
+                ].map((stat) => (
+                  <div key={stat.label}>
+                    <div className="immersive-stat-number mb-2">
+                      {stat.number}
+                    </div>
+                    <p className="immersive-stat-label">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </SiteLayout>

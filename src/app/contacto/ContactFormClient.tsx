@@ -66,10 +66,10 @@ function FieldError({ message }: { message?: string }) {
 }
 
 const contactInfo = [
-  { icon: Phone, label: "WhatsApp", value: "+51 977 186 734", href: "https://api.whatsapp.com/send?phone=51977186734", color: "#25D366" },
-  { icon: Mail, label: "Correo Electrónico", value: "contacto@medinaalmonte.com", href: "mailto:contacto@medinaalmonte.com", color: "#D4AF37" },
-  { icon: MapPin, label: "Ubicación", value: "Lima, Perú", href: undefined, color: "#C0C0C0" },
-  { icon: Clock, label: "Horario de Atención", value: "Lun–Vie 8:00–18:00\nSáb 9:00–13:00", href: undefined, color: "#D4AF37" },
+  { icon: Phone, label: "WhatsApp", value: "+51 943 366 950", href: "https://api.whatsapp.com/send?phone=51943366950", color: "#25D366" },
+  { icon: Mail, label: "Correo Electrónico", value: "contacto@medinaalmonte.com", href: "mailto:contacto@medinaalmonte.com", color: "#C9A961" },
+  { icon: MapPin, label: "Ubicación", value: "Lima, Perú", href: undefined, color: "#8B6F47" },
+  { icon: Clock, label: "Horario de Atención", value: "Lun–Vie 8:00–18:00\nSáb 9:00–13:00", href: undefined, color: "#C9A961" },
 ];
 
 export default function ContactFormClient() {
@@ -93,7 +93,7 @@ export default function ContactFormClient() {
     if (Object.keys(validationErrors).length > 0) return;
     setIsSubmitting(true);
     const message = [
-      `Hola *MEDINA ALMONTE — Lawyers Firm*,`,
+      `Hola *Medina Almonte Firma Legal*,`,
       ``,
       `*Nombre:* ${formData.nombre.trim()}`,
       `*Teléfono:* +51 ${formData.telefono.replace(/\D/g, "")}`,
@@ -102,7 +102,7 @@ export default function ContactFormClient() {
       `*Mensaje:* ${formData.mensaje.trim()}`,
     ].join("\n");
     const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://api.whatsapp.com/send?phone=51977186734&text=${encodedMessage}`;
+    const whatsappURL = `https://api.whatsapp.com/send?phone=51943366950&text=${encodedMessage}`;
     toast({ title: "¡Mensaje preparado!", description: "Se abrirá WhatsApp con tu consulta. Nuestro equipo te responderá pronto." });
     window.open(whatsappURL, "_blank", "noopener,noreferrer");
     setFormData({ nombre: "", telefono: "", email: "", tipoCaso: "", mensaje: "" });
@@ -115,10 +115,10 @@ export default function ContactFormClient() {
         {/* Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9A961]/30 text-[#C9A961] text-sm font-medium tracking-wider uppercase mb-6">
               Hablemos
             </span>
-            <h1 className="immersive-title font-bold mb-5" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>
+            <h1 className="immersive-title font-bold mb-5" style={{ color: "#C9A961", fontFamily: "var(--font-playfair), serif" }}>
               Contáctanos
             </h1>
             <div className="section-divider-gold mb-6" />
@@ -135,7 +135,7 @@ export default function ContactFormClient() {
               <form onSubmit={handleSubmit} noValidate className="space-y-5">
                 <div>
                   <label htmlFor="nombre" className="block text-sm font-medium text-gray-300 mb-2">Nombre completo <span className="text-red-400">*</span></label>
-                  <Input id="nombre" name="nombre" type="text" required minLength={2} placeholder="Ej. Juan Pérez López" value={formData.nombre} onChange={handleChange} className="bg-[#0A0A0A] border-white/10 text-white placeholder:text-gray-600 h-12 rounded-lg focus-visible:border-[#D4AF37]/60 focus-visible:ring-[#D4AF37]/20" />
+                  <Input id="nombre" name="nombre" type="text" required minLength={2} placeholder="Ej. Juan Pérez López" value={formData.nombre} onChange={handleChange} className="bg-[#0F0F0F] border-white/10 text-white placeholder:text-gray-600 h-12 rounded-lg focus-visible:border-[#C9A961]/60 focus-visible:ring-[#C9A961]/20" />
                   <FieldError message={errors.nombre} />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -143,19 +143,19 @@ export default function ContactFormClient() {
                     <label htmlFor="telefono" className="block text-sm font-medium text-gray-300 mb-2">Teléfono <span className="text-red-400">*</span></label>
                     <div className="relative">
                       <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm pointer-events-none">+51</span>
-                      <Input id="telefono" name="telefono" type="tel" required pattern="[0-9]{9}" placeholder="943 366 950" value={formData.telefono} onChange={handleChange} className="bg-[#0A0A0A] border-white/10 text-white placeholder:text-gray-600 h-12 rounded-lg pl-12 focus-visible:border-[#D4AF37]/60 focus-visible:ring-[#D4AF37]/20" />
+                      <Input id="telefono" name="telefono" type="tel" required pattern="[0-9]{9}" placeholder="943 366 950" value={formData.telefono} onChange={handleChange} className="bg-[#0F0F0F] border-white/10 text-white placeholder:text-gray-600 h-12 rounded-lg pl-12 focus-visible:border-[#C9A961]/60 focus-visible:ring-[#C9A961]/20" />
                     </div>
                     <FieldError message={errors.telefono} />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">Correo electrónico <span className="text-red-400">*</span></label>
-                    <Input id="email" name="email" type="email" required placeholder="correo@ejemplo.com" value={formData.email} onChange={handleChange} className="bg-[#0A0A0A] border-white/10 text-white placeholder:text-gray-600 h-12 rounded-lg focus-visible:border-[#D4AF37]/60 focus-visible:ring-[#D4AF37]/20" />
+                    <Input id="email" name="email" type="email" required placeholder="correo@ejemplo.com" value={formData.email} onChange={handleChange} className="bg-[#0F0F0F] border-white/10 text-white placeholder:text-gray-600 h-12 rounded-lg focus-visible:border-[#C9A961]/60 focus-visible:ring-[#C9A961]/20" />
                     <FieldError message={errors.email} />
                   </div>
                 </div>
                 <div>
                   <label htmlFor="tipoCaso" className="block text-sm font-medium text-gray-300 mb-2">Tipo de caso <span className="text-red-400">*</span></label>
-                  <select id="tipoCaso" name="tipoCaso" required value={formData.tipoCaso} onChange={handleChange} className="w-full bg-[#0A0A0A] border border-white/10 text-white h-12 rounded-lg px-3 text-sm focus:outline-none focus:border-[#D4AF37]/60 focus:ring-2 focus:ring-[#D4AF37]/20 appearance-none cursor-pointer" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`, backgroundRepeat: "no-repeat", backgroundPosition: "right 12px center" }}>
+                  <select id="tipoCaso" name="tipoCaso" required value={formData.tipoCaso} onChange={handleChange} className="w-full bg-[#0F0F0F] border border-white/10 text-white h-12 rounded-lg px-3 text-sm focus:outline-none focus:border-[#C9A961]/60 focus:ring-2 focus:ring-[#C9A961]/20 appearance-none cursor-pointer" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`, backgroundRepeat: "no-repeat", backgroundPosition: "right 12px center" }}>
                     <option value="" disabled className="text-gray-600">Selecciona una opción</option>
                     {CASE_TYPES.map((tipo) => (<option key={tipo} value={tipo} className="bg-[#111111]">{tipo}</option>))}
                   </select>
@@ -163,11 +163,11 @@ export default function ContactFormClient() {
                 </div>
                 <div>
                   <label htmlFor="mensaje" className="block text-sm font-medium text-gray-300 mb-2">Mensaje <span className="text-red-400">*</span></label>
-                  <Textarea id="mensaje" name="mensaje" required minLength={10} rows={5} placeholder="Describe brevemente tu situación legal o consulta..." value={formData.mensaje} onChange={handleChange} className="bg-[#0A0A0A] border-white/10 text-white placeholder:text-gray-600 rounded-lg resize-none focus-visible:border-[#D4AF37]/60 focus-visible:ring-[#D4AF37]/20 min-h-[120px]" />
+                  <Textarea id="mensaje" name="mensaje" required minLength={10} rows={5} placeholder="Describe brevemente tu situación legal o consulta..." value={formData.mensaje} onChange={handleChange} className="bg-[#0F0F0F] border-white/10 text-white placeholder:text-gray-600 rounded-lg resize-none focus-visible:border-[#C9A961]/60 focus-visible:ring-[#C9A961]/20 min-h-[120px]" />
                   <FieldError message={errors.mensaje} />
                 </div>
-                <Button type="submit" disabled={isSubmitting} className="w-full h-13 btn-gold-primary gpu-accelerated text-[#0A0A0A] font-bold text-base rounded-xl transition-colors duration-300 mt-2 cursor-pointer">
-                  {isSubmitting ? (<span className="flex items-center gap-2"><span className="w-4 h-4 border-2 border-[#0A0A0A]/30 border-t-[#0A0A0A] rounded-full animate-spin" />Enviando...</span>) : (<span className="flex items-center gap-2"><Send className="w-4 h-4" />Enviar Consulta por WhatsApp</span>)}
+                <Button type="submit" disabled={isSubmitting} className="w-full h-13 btn-gold-primary gpu-accelerated text-[#0F0F0F] font-bold text-base rounded-xl transition-colors duration-300 mt-2 cursor-pointer">
+                  {isSubmitting ? (<span className="flex items-center gap-2"><span className="w-4 h-4 border-2 border-[#0F0F0F]/30 border-t-[#0F0F0F] rounded-full animate-spin" />Enviando...</span>) : (<span className="flex items-center gap-2"><Send className="w-4 h-4" />Enviar Consulta por WhatsApp</span>)}
                 </Button>
                 <p className="text-gray-600 text-xs text-center pt-1">Al enviar, se abrirá WhatsApp con tu consulta prellenada. Tu primera consulta es gratuita.</p>
               </form>
@@ -200,11 +200,11 @@ export default function ContactFormClient() {
               <hr className="subtle-divider" />
               <div className="mt-8">
                 <div className="flex items-center gap-3 mb-3">
-                  <MessageSquare className="w-5 h-5 text-[#D4AF37]" />
+                  <MessageSquare className="w-5 h-5 text-[#C9A961]" />
                   <h3 className="text-white text-base font-semibold" style={{ fontFamily: "var(--font-playfair), serif" }}>¿Prefieres hablar ahora?</h3>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">Escribe directamente por WhatsApp y recibe una respuesta inmediata de nuestro equipo legal.</p>
-                <a href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20MEDINA%20ALMONTE%20Lawyers%20Firm." target="_blank" rel="noopener noreferrer" className="team-cta-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold gpu-accelerated">
+                <a href="https://api.whatsapp.com/send?phone=51943366950&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20Medina%20Almonte%20Firma%20Legal." target="_blank" rel="noopener noreferrer" className="team-cta-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold gpu-accelerated">
                   <CheckCircle className="w-4 h-4" />Chatear por WhatsApp
                 </a>
               </div>

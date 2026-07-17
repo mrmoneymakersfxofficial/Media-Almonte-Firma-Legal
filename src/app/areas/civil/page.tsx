@@ -21,7 +21,7 @@ export default function CivilPage() {
       <section className="section-navy-gradient min-h-screen py-24 px-4">
         <div className="max-w-4xl mx-auto text-center glass-card gold-border-gradient rounded-2xl p-6 sm:p-8">
           <ScrollReveal>
-            <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">
+            <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9A961]/30 text-[#C9A961] text-sm font-medium tracking-wider uppercase mb-8">
               Área de Práctica
             </span>
           </ScrollReveal>
@@ -30,7 +30,7 @@ export default function CivilPage() {
             <h1
               className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
               style={{
-                color: "#D4AF37",
+                color: "#C9A961",
                 fontFamily: "var(--font-playfair), serif",
               }}
             >
@@ -55,7 +55,7 @@ export default function CivilPage() {
               href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20una%20consulta%20legal%20en%20Derecho%20Civil%20-%20MEDINA%20ALMONTE%20Lawyers%20Firm."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0A0A0A] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#c5a030] transition-colors duration-300"
+              className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0F0F0F] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#c5a030] transition-colors duration-300"
             >
               Consulta Legal Inicial
             </a>

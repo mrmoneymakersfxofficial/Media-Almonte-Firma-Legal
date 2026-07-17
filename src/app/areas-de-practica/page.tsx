@@ -24,8 +24,8 @@ export default function AreasDePracticaPage() {
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">Especialidades</span>
-              <h1 className="immersive-title font-bold mb-6" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>
+              <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9A961]/30 text-[#C9A961] text-sm font-medium tracking-wider uppercase mb-8">Especialidades</span>
+              <h1 className="immersive-title font-bold mb-6" style={{ color: "#C9A961", fontFamily: "var(--font-playfair), serif" }}>
                 Áreas de Práctica
               </h1>
               <div className="section-divider-gold mb-6" />
@@ -44,13 +44,13 @@ export default function AreasDePracticaPage() {
                     <span className="text-3xl md:text-4xl shrink-0 mt-1">{area.icon}</span>
                     <div className="flex-1 min-w-0">
                       <h3
-                        className="immersive-title font-semibold mb-2 group-hover:text-[#D4AF37] transition-colors"
+                        className="immersive-title font-semibold mb-2 group-hover:text-[#C9A961] transition-colors"
                         style={{ color: "#fff", fontFamily: "var(--font-playfair), serif", WebkitLineClamp: 2 }}
                       >
                         {area.name}
                       </h3>
                       <p className="immersive-desc text-gray-400 leading-relaxed">{area.description}</p>
-                      <span className="inline-flex items-center text-[#D4AF37] text-sm font-medium mt-3 gap-2 group-hover:gap-3 transition-all duration-300">
+                      <span className="inline-flex items-center text-[#C9A961] text-sm font-medium mt-3 gap-2 group-hover:gap-3 transition-all duration-300">
                         Conocer más
                         <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

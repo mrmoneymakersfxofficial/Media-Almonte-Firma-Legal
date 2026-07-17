@@ -23,7 +23,7 @@ export default function AbogadosPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-8">
+              <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9A961]/30 text-[#C9A961] text-sm font-medium tracking-wider uppercase mb-8">
                 El Equipo
               </span>
             </ScrollReveal>
@@ -32,7 +32,7 @@ export default function AbogadosPage() {
               <h1
                 className="immersive-title font-bold mb-6"
                 style={{
-                  color: "#D4AF37",
+                  color: "#C9A961",
                   fontFamily: "var(--font-playfair), serif",
                 }}
               >
@@ -69,7 +69,7 @@ export default function AbogadosPage() {
                 habilitados para el ejercicio profesional en el territorio
                 nacional.
               </p>
-              <p className="text-[#D4AF37] font-semibold mt-3 text-sm sm:text-base">
+              <p className="text-[#C9A961] font-semibold mt-3 text-sm sm:text-base">
                 Registro: Colegio de Abogados de Lima — CAL
               </p>
             </div>

@@ -3,8 +3,8 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidad | MEDINA ALMONTE — Lawyers Firm",
-  description: "Política de Privacidad de MEDINA ALMONTE — Lawyers Firm. Conoce cómo recopilamos, usamos y protegemos tus datos personales.",
+  title: "Política de Privacidad | Medina Almonte Firma Legal",
+  description: "Política de Privacidad de Medina Almonte Firma Legal. Conoce cómo recopilamos, usamos y protegemos tus datos personales.",
   keywords: ["política de privacidad", "protección de datos", "datos personales", "privacidad abogados"],
 };
 
@@ -16,10 +16,10 @@ export default function PoliticaPrivacidadPage() {
           {/* Header */}
           <div className="mb-14">
             <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium tracking-wider uppercase mb-6">Legal</span>
+              <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9A961]/30 text-[#C9A961] text-sm font-medium tracking-wider uppercase mb-6">Legal</span>
             </ScrollReveal>
             <ScrollReveal delay={0.05}>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5" style={{ color: "#D4AF37", fontFamily: "var(--font-playfair), serif" }}>Política de Privacidad</h1>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5" style={{ color: "#C9A961", fontFamily: "var(--font-playfair), serif" }}>Política de Privacidad</h1>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <div className="section-divider-gold mb-4" style={{ margin: 0 }} />
@@ -30,7 +30,7 @@ export default function PoliticaPrivacidadPage() {
           <div className="space-y-10">
             <ScrollReveal delay={0.15}>
               <p className="text-gray-300 text-base leading-relaxed">
-                En <span className="text-white font-semibold">MEDINA ALMONTE — Lawyers Firm</span>, nos comprometemos a proteger la privacidad de las personas que interactúan con nuestros servicios. Esta Política de Privacidad explica cómo recopilamos, utilizamos y protegemos tus datos personales cuando visitas nuestro sitio web o nos contactas a través de nuestros canales de atención.
+                En <span className="text-white font-semibold">Medina Almonte Firma Legal</span>, nos comprometemos a proteger la privacidad de las personas que interactúan con nuestros servicios. Esta Política de Privacidad explica cómo recopilamos, utilizamos y protegemos tus datos personales cuando visitas nuestro sitio web o nos contactas a través de nuestros canales de atención.
               </p>
             </ScrollReveal>
 
@@ -40,7 +40,7 @@ export default function PoliticaPrivacidadPage() {
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>1. Responsable del Tratamiento</h2>
                 <p className="text-gray-400 text-base leading-relaxed">
-                  El responsable del tratamiento de los datos personales es <span className="text-white">MEDINA ALMONTE — Lawyers Firm</span>, con domicilio en Lima, Perú. Para cualquier consulta relacionada con el tratamiento de tus datos personales, puedes contactarnos a través de <a href="mailto:contacto@medinaalmonte.com" className="text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a> o al teléfono <a href="tel:+51977186734" className="text-[#D4AF37] hover:underline transition-colors">+51 977 186 734</a>.
+                  El responsable del tratamiento de los datos personales es <span className="text-white">Medina Almonte Firma Legal</span>, con domicilio en Lima, Perú. Para cualquier consulta relacionada con el tratamiento de tus datos personales, puedes contactarnos a través de <a href="mailto:contacto@medinaalmonte.com" className="text-[#C9A961] hover:underline transition-colors">contacto@medinaalmonte.com</a> o al teléfono <a href="tel:+51943366950" className="text-[#C9A961] hover:underline transition-colors">+51 943 366 950</a>.
                 </p>
               </section>
             </ScrollReveal>
@@ -53,7 +53,7 @@ export default function PoliticaPrivacidadPage() {
                 <p className="text-gray-400 text-base leading-relaxed mb-4">Recopilamos únicamente los datos necesarios para atenderte adecuadamente. A través de nuestro formulario de contacto, podemos solicitar:</p>
                 <ul className="space-y-2.5 text-gray-400 text-base leading-relaxed pl-1">
                   {["Nombre completo", "Correo electrónico", "Número de teléfono", "Tipo de caso o área de interés legal", "Mensaje o descripción de la consulta"].map((item) => (
-                    <li key={item} className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] shrink-0 mt-2.5" />{item}</li>
+                    <li key={item} className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[#C9A961] shrink-0 mt-2.5" />{item}</li>
                   ))}
                 </ul>
                 <p className="text-gray-400 text-base leading-relaxed mt-4">No recopilamos datos sensibles (como origen racial, salud, creencias religiosas) sin tu consentimiento expreso.</p>
@@ -68,7 +68,7 @@ export default function PoliticaPrivacidadPage() {
                 <p className="text-gray-400 text-base leading-relaxed mb-4">Los datos personales que recopilamos son utilizados exclusivamente para:</p>
                 <ul className="space-y-2.5 text-gray-400 text-base leading-relaxed pl-1">
                   {["Atender tu consulta legal y brindarte la asesoría solicitada.", "Comunicarnos contigo sobre nuestros servicios legales.", "Enviar información relevante sobre tu caso o áreas de tu interés.", "Mejorar nuestros servicios y la experiencia del usuario en nuestro sitio web."].map((item) => (
-                    <li key={item} className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] shrink-0 mt-2.5" />{item}</li>
+                    <li key={item} className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[#C9A961] shrink-0 mt-2.5" />{item}</li>
                   ))}
                 </ul>
                 <p className="text-gray-400 text-base leading-relaxed mt-4">No utilizaremos tus datos para fines distintos a los descritos sin tu consentimiento previo.</p>
@@ -118,12 +118,12 @@ export default function PoliticaPrivacidadPage() {
                     { title: "Oposición", desc: "Oponerte al tratamiento por motivos legítimos." },
                   ].map((right) => (
                     <div key={right.title}>
-                      <h3 className="text-[#D4AF37] font-semibold text-sm mb-1.5">{right.title}</h3>
+                      <h3 className="text-[#C9A961] font-semibold text-sm mb-1.5">{right.title}</h3>
                       <p className="text-gray-400 text-sm leading-relaxed">{right.desc}</p>
                     </div>
                   ))}
                 </div>
-                <p className="text-gray-400 text-base leading-relaxed mt-4">Para ejercer cualquiera de estos derechos, envía tu solicitud a <a href="mailto:contacto@medinaalmonte.com" className="text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a> y responderemos en un plazo máximo de 30 días hábiles.</p>
+                <p className="text-gray-400 text-base leading-relaxed mt-4">Para ejercer cualquiera de estos derechos, envía tu solicitud a <a href="mailto:contacto@medinaalmonte.com" className="text-[#C9A961] hover:underline transition-colors">contacto@medinaalmonte.com</a> y responderemos en un plazo máximo de 30 días hábiles.</p>
               </section>
             </ScrollReveal>
 
@@ -153,15 +153,15 @@ export default function PoliticaPrivacidadPage() {
                 <p className="text-gray-400 text-base leading-relaxed mb-5">Si tienes cualquier pregunta o inquietud sobre esta Política de Privacidad o el tratamiento de tus datos personales, no dudes en contactarnos:</p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
-                    <span className="text-[#D4AF37] font-semibold w-28 shrink-0">Correo:</span>
-                    <a href="mailto:contacto@medinaalmonte.com" className="text-[#D4AF37] hover:underline transition-colors">contacto@medinaalmonte.com</a>
+                    <span className="text-[#C9A961] font-semibold w-28 shrink-0">Correo:</span>
+                    <a href="mailto:contacto@medinaalmonte.com" className="text-[#C9A961] hover:underline transition-colors">contacto@medinaalmonte.com</a>
                   </div>
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
-                    <span className="text-[#D4AF37] font-semibold w-28 shrink-0">Teléfono:</span>
-                    <a href="tel:+51977186734" className="text-[#D4AF37] hover:underline transition-colors">+51 977 186 734</a>
+                    <span className="text-[#C9A961] font-semibold w-28 shrink-0">Teléfono:</span>
+                    <a href="tel:+51943366950" className="text-[#C9A961] hover:underline transition-colors">+51 943 366 950</a>
                   </div>
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
-                    <span className="text-[#D4AF37] font-semibold w-28 shrink-0">Ubicación:</span>
+                    <span className="text-[#C9A961] font-semibold w-28 shrink-0">Ubicación:</span>
                     <span>Lima, Perú</span>
                   </div>
                 </div>

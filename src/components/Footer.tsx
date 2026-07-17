@@ -51,7 +51,7 @@ export function Footer() {
             </p>
             <a
               href="mailto:contacto@medinaalmonte.com"
-              className="text-white/60 hover:text-[#D4AF37] text-sm transition-colors inline-block mt-3"
+              className="text-white/60 hover:text-[#C9A961] text-sm transition-colors inline-block mt-3"
             >
               contacto@medinaalmonte.com
             </a>
@@ -67,7 +67,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white/60 hover:text-[#D4AF37] text-sm transition-colors"
+                    className="text-white/60 hover:text-[#C9A961] text-sm transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -86,7 +86,7 @@ export function Footer() {
                 <li key={area.href}>
                   <Link
                     href={area.href}
-                    className="text-white/60 hover:text-[#D4AF37] text-sm transition-colors"
+                    className="text-white/60 hover:text-[#C9A961] text-sm transition-colors"
                   >
                     {area.label}
                   </Link>
@@ -117,7 +117,7 @@ export function Footer() {
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-10 h-10 bg-white/10 hover:bg-[#D4AF37]/20 rounded-lg flex items-center justify-center transition-colors"
+                    className="w-10 h-10 bg-white/10 hover:bg-[#C9A961]/20 rounded-lg flex items-center justify-center transition-colors"
                   >
                     <Icon className="w-4 h-4 text-white/70" />
                   </a>
@@ -145,7 +145,7 @@ export function Footer() {
             </Link>
             <button
               onClick={scrollToTop}
-              className="w-10 h-10 bg-white/10 hover:bg-[#D4AF37]/20 rounded-lg flex items-center justify-center transition-colors"
+              className="w-10 h-10 bg-white/10 hover:bg-[#C9A961]/20 rounded-lg flex items-center justify-center transition-colors"
               aria-label="Ir arriba"
             >
               <ArrowUp className="w-4 h-4" />

@@ -30,7 +30,7 @@ function GoldRipple({ x, y, onDone }: { x: number; y: number; onDone: () => void
       transition={{ duration: 0.6, ease: "easeOut" }}
       onAnimationComplete={onDone}
       style={{
-        background: "radial-gradient(circle, rgba(212,175,55,0.5) 0%, rgba(212,175,55,0) 70%)",
+        background: "radial-gradient(circle, rgba(201,169,97,0.5) 0%, rgba(201,169,97,0) 70%)",
       }}
     />
   );
@@ -85,7 +85,7 @@ function NavLink({
           rounded-md transition-all duration-300 overflow-hidden select-none
           ${
             active
-              ? "text-[#D4AF37]"
+              ? "text-amber-400"
               : scrolled
               ? "text-white/75 hover:text-white"
               : "text-white/85 hover:text-white"
@@ -98,8 +98,8 @@ function NavLink({
             layoutId="nav-gold-bar"
             className="absolute bottom-0 left-2 right-2 h-[2px] rounded-full"
             style={{
-              background: "linear-gradient(90deg, transparent, #D4AF37, #f4e5c2, #D4AF37, transparent)",
-              boxShadow: "0 0 8px rgba(212,175,55,0.6), 0 0 20px rgba(212,175,55,0.2)",
+              background: "linear-gradient(90deg, transparent, #C9A961, #D4C4B0, #C9A961, transparent)",
+              boxShadow: "0 0 8px rgba(201,169,97,0.6), 0 0 20px rgba(201,169,97,0.2)",
             }}
             transition={{ type: "spring", stiffness: 350, damping: 30 }}
           />
@@ -118,8 +118,8 @@ function NavLink({
             animate={{ scaleX: 1, opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             style={{
-              background: "linear-gradient(90deg, #a08520, #D4AF37, #f4e5c2, #D4AF37, #a08520)",
-              boxShadow: "0 2px 12px rgba(212,175,55,0.8), 0 0 30px rgba(212,175,55,0.3)",
+              background: "linear-gradient(90deg, #8B6F47, #C9A961, #D4C4B0, #C9A961, #8B6F47)",
+              boxShadow: "0 2px 12px rgba(201,169,97,0.8), 0 0 30px rgba(201,169,97,0.3)",
               transformOrigin: "center",
             }}
           />
@@ -159,7 +159,7 @@ export function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-[#0a0e1a]/92 backdrop-blur-2xl shadow-[0_1px_0_rgba(212,175,55,0.08),0_8px_32px_rgba(0,0,0,0.4)]"
+            ? "bg-[#0a0e1a]/92 backdrop-blur-2xl shadow-[0_1px_0_rgba(201,169,97,0.08),0_8px_32px_rgba(0,0,0,0.4)]"
             : "bg-gradient-to-b from-black/50 to-transparent"
         }`}
       >
@@ -168,7 +168,7 @@ export function Header() {
           className="w-full h-[1px] transition-opacity duration-500"
           style={{
             opacity: isScrolled ? 1 : 0,
-            background: "linear-gradient(90deg, transparent 5%, rgba(212,175,55,0.3) 30%, rgba(244,229,194,0.5) 50%, rgba(212,175,55,0.3) 70%, transparent 95%)",
+            background: "linear-gradient(90deg, transparent 5%, rgba(201,169,97,0.3) 30%, rgba(212,196,176,0.5) 50%, rgba(201,169,97,0.3) 70%, transparent 95%)",
           }}
         />
 
@@ -189,7 +189,7 @@ export function Header() {
                 >
                   <Image
                     src={LOGO_URL}
-                    alt="MEDINA ALMONTE — Lawyers Firm"
+                    alt="Medina Almonte Firma Legal"
                     width={800}
                     height={176}
                     className="brand-logo-fixed h-8 sm:h-9 lg:h-10 w-auto object-contain"
@@ -224,11 +224,11 @@ export function Header() {
                 onClick={() => openModal()}
                 className="group relative px-5 py-2 rounded-lg text-[13px] font-semibold
                          transition-all duration-300 overflow-hidden
-                         hover:shadow-[0_0_20px_rgba(212,175,55,0.25)]"
+                         hover:shadow-[0_0_20px_rgba(201,169,97,0.25)]"
                 style={{
-                  background: "linear-gradient(135deg, #D4AF37 0%, #c9a961 50%, #a08520 100%)",
+                  background: "linear-gradient(135deg, #C9A961 0%, #B8956A 50%, #8B6F47 100%)",
                   color: "#0a0e1a",
-                  boxShadow: "0 1px 4px rgba(212,175,55,0.2), inset 0 1px 0 rgba(255,255,255,0.15)",
+                  boxShadow: "0 1px 4px rgba(201,169,97,0.2), inset 0 1px 0 rgba(255,255,255,0.15)",
                 }}
               >
                 {/* Hover shine */}
@@ -245,7 +245,7 @@ export function Header() {
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               className={`lg:hidden w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-200 ${
                 isScrolled
-                  ? "text-[#D4AF37]/80 hover:text-[#D4AF37] hover:bg-[#D4AF37]/10"
+                  ? "text-amber-400/80 hover:text-amber-400 hover:bg-amber-400/10"
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
               aria-label="Menú"
@@ -279,7 +279,7 @@ export function Header() {
               className="fixed top-0 right-0 h-full w-[75%] max-w-[380px] z-50 lg:hidden overflow-y-auto overflow-x-hidden"
               style={{
                 background: 'linear-gradient(180deg, #0a0e1a 0%, #060a14 100%)',
-                borderLeft: '1px solid rgba(212,175,55,0.15)',
+                borderLeft: '1px solid rgba(201,169,97,0.15)',
                 boxShadow: '-8px 0 40px rgba(0,0,0,0.5)',
                 WebkitOverflowScrolling: 'touch',
               }}
@@ -298,7 +298,7 @@ export function Header() {
                 </Link>
                 <button
                   onClick={() => setIsMobileOpen(false)}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg text-[#D4AF37]/70 hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg text-amber-400/70 hover:text-amber-400 hover:bg-amber-400/10 transition-colors"
                   aria-label="Cerrar menú"
                 >
                   <X size={18} />
@@ -319,16 +319,16 @@ export function Header() {
                       onClick={() => setIsMobileOpen(false)}
                       className={`relative flex items-center px-4 py-3.5 rounded-lg text-[15px] font-medium transition-all duration-200 ${
                         isActive(link.href)
-                          ? "text-[#D4AF37] bg-[#D4AF37]/[0.08]"
-                          : "text-white/60 hover:text-[#D4AF37]/90 hover:bg-white/[0.04]"
+                          ? "text-amber-400 bg-amber-400/[0.08]"
+                          : "text-white/60 hover:text-amber-400/90 hover:bg-white/[0.04]"
                       }`}
                     >
                       {isActive(link.href) && (
                         <span
                           className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full"
                           style={{
-                            background: "linear-gradient(180deg, #D4AF37, #a08520)",
-                            boxShadow: "0 0 8px rgba(212,175,55,0.5)",
+                            background: "linear-gradient(180deg, #C9A961, #8B6F47)",
+                            boxShadow: "0 0 8px rgba(201,169,97,0.5)",
                           }}
                         />
                       )}
@@ -344,9 +344,9 @@ export function Header() {
                   onClick={() => { setIsMobileOpen(false); openModal(); }}
                   className="w-full py-3.5 rounded-lg text-[14px] font-bold transition-all duration-200"
                   style={{
-                    background: "linear-gradient(135deg, #D4AF37 0%, #a08520 100%)",
+                    background: "linear-gradient(135deg, #C9A961 0%, #8B6F47 100%)",
                     color: "#0a0e1a",
-                    boxShadow: "0 4px 16px rgba(212,175,55,0.25)",
+                    boxShadow: "0 4px 16px rgba(201,169,97,0.25)",
                   }}
                 >
                   Consulta Legal Inicial

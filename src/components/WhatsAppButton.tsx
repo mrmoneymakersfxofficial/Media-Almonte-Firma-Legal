@@ -193,7 +193,7 @@ export function WhatsAppButton() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-1/2 right-[76px] translate-y-1/2 bg-[#0B1A2E] text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-xl whitespace-nowrap pointer-events-none hidden sm:block border border-[#D4AF37]/20"
+            className="absolute bottom-1/2 right-[76px] translate-y-1/2 bg-[#1B2A49] text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-xl whitespace-nowrap pointer-events-none hidden sm:block border border-[#C9A961]/20"
           >
             ¿Necesitas ayuda?
             <div className="absolute top-1/2 -right-2 -translate-y-1/2 w-2 h-2 bg-[#002350] rotate-45" />

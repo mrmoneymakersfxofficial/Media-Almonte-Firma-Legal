@@ -5,17 +5,35 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 const team = [
   {
-    name: "Dr. Eduardo Medina Almonte",
-    specialty: "Derecho Penal, Civil y de Familia",
-    bio: "Abogado con trayectoria en el Poder Judicial y Ministerio Público. Posgrado en materia penal, pasantías internacionales y docencia en la PUCP.",
-    initials: "EM",
+    name: "Dr. Ricardo Medina Almonte",
+    specialty: "Director General",
+    bio: "Abogado con más de 15 años de experiencia en litigios corporativos, civiles y penales. Fundador de la firma con una visión estratégica del derecho.",
+    initials: "RM",
+  },
+  {
+    name: "Dra. Sofía Castillo",
+    specialty: "Derecho Civil y Familia",
+    bio: "Especialista en derecho de familia y sucesiones. Reconocida por su enfoque empático y resultados favorables en casos complejos.",
+    initials: "SC",
+  },
+  {
+    name: "Dr. Andrés Mendoza",
+    specialty: "Derecho Penal",
+    bio: "Defensor penal con trayectoria en casos de alta complejidad. Experto en investigaciones y garantías constitucionales.",
+    initials: "AM",
+  },
+  {
+    name: "Dra. Valentina Rojas",
+    specialty: "Derecho Laboral y Corporativo",
+    bio: "Abogada laboral y corporativa con amplia experiencia en compliance, contratos y negociaciones colectivas.",
+    initials: "VR",
   },
 ];
 
 function generateWhatsAppURL(name: string): string {
-  const message = `Hola *MEDINA ALMONTE — Lawyers Firm*. Me gustaría consultar sobre los servicios del Dr./Dra. ${name}.`;
+  const message = `Hola *Medina Almonte Firma Legal*. Me gustaría consultar sobre los servicios del Dr./Dra. ${name}.`;
   const encodedMessage = encodeURIComponent(message);
-  return `https://api.whatsapp.com/send?phone=51977186734&text=${encodedMessage}`;
+  return `https://api.whatsapp.com/send?phone=51943366950&text=${encodedMessage}`;
 }
 
 export function TeamCards() {
@@ -25,9 +43,9 @@ export function TeamCards() {
         <ScrollReveal key={member.name} delay={i * 0.08}>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 text-center md:text-left">
             {/* Avatar — circular, no card */}
-            <div className="team-avatar-ring w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#0A0A0A] flex items-center justify-center shrink-0">
+            <div className="team-avatar-ring w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#0F0F0F] flex items-center justify-center shrink-0">
               <span
-                className="text-[#D4AF37] text-xl font-bold"
+                className="text-[#C9A961] text-xl font-bold"
                 style={{ fontFamily: "var(--font-playfair), serif" }}
               >
                 {member.initials}
@@ -41,7 +59,7 @@ export function TeamCards() {
               >
                 {member.name}
               </h3>
-              <p className="text-[#C0C0C0] text-sm font-medium mb-3">
+              <p className="text-[#8B6F47] text-sm font-medium mb-3">
                 {member.specialty}
               </p>
               <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-xl">
@@ -58,6 +76,7 @@ export function TeamCards() {
               </a>
             </div>
           </div>
+          {i < team.length - 1 && <hr className="subtle-divider mt-12 md:mt-16" />}
         </ScrollReveal>
       ))}
     </div>

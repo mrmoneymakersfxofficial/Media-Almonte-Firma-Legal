@@ -99,12 +99,12 @@ export function Hero() {
       {/* ═══ BACKGROUND — Mobile (portrait) / Desktop (landscape) ═══ */}
       <div
         className="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/medina-almonte-hero-mobile.webp')", filter: "brightness(1.15) contrast(1.05)" }}
+        style={{ backgroundImage: "url('/medina-almonte-hero-mobile.webp')", filter: "brightness(1.05) contrast(1.05)" }}
         aria-hidden="true"
       />
       <div
         className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/medina-almonte-hero-desktop.webp')", filter: "brightness(1.15) contrast(1.05)" }}
+        style={{ backgroundImage: "url('/medina-almonte-hero-desktop.webp')", filter: "brightness(1.05) contrast(1.05)" }}
         aria-hidden="true"
       />
 
@@ -122,7 +122,7 @@ export function Hero() {
         className="absolute inset-0 gpu-accelerated"
         style={{
           background:
-            "linear-gradient(160deg, rgba(10,10,10,0.40) 0%, rgba(11,26,46,0.28) 35%, rgba(10,10,10,0.18) 65%, rgba(184,115,51,0.03) 100%)",
+            "linear-gradient(160deg, rgba(10,10,10,0.50) 0%, rgba(11,26,46,0.38) 35%, rgba(10,10,10,0.28) 65%, rgba(27,42,73,0.04) 100%)",
         }}
         aria-hidden="true"
       />

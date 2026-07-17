@@ -99,12 +99,12 @@ export function Hero() {
       {/* ═══ BACKGROUND — Mobile (portrait) / Desktop (landscape) ═══ */}
       <div
         className="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/medina-almonte-hero-mobile.webp')", filter: "brightness(1.4) contrast(1.1)" }}
+        style={{ backgroundImage: "url('/medina-almonte-hero-mobile.webp')", filter: "brightness(1.15) contrast(1.05)" }}
         aria-hidden="true"
       />
       <div
         className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/medina-almonte-hero-desktop.webp')", filter: "brightness(1.4) contrast(1.1)" }}
+        style={{ backgroundImage: "url('/medina-almonte-hero-desktop.webp')", filter: "brightness(1.15) contrast(1.05)" }}
         aria-hidden="true"
       />
 
@@ -202,14 +202,14 @@ export function Hero() {
             Firma Legal
           </motion.h2>
 
-          {/* Value line — Copper accent */}
+          {/* Value line — Silver accent */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-5 text-base sm:text-lg font-semibold tracking-wide"
             style={{
-              color: "#B87333",
+              color: "#C0C0C0",
               fontFamily: "var(--font-inter), sans-serif",
             }}
           >

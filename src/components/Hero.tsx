@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, CheckCircle2, Clock, TrendingUp, Users } from "lucide-react";
@@ -93,20 +93,55 @@ function CtaButton({
    ═══════════════════════════════════════════════════════════════════════ */
 export function Hero() {
   const { openModal } = useWhatsAppStore();
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  const desktopSlides = [
+    "/medina-almonte-hero-desktop.webp",
+    "/medina-almonte-hero-desktop-2.webp",
+  ];
+  const mobileSlides = [
+    "/medina-almonte-hero-mobile-1.webp",
+    "/medina-almonte-hero-mobile-2.webp",
+  ];
+
+  const advance = useCallback(() => {
+    setSlideIndex((prev) => (prev + 1) % 2);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(advance, 2800);
+    return () => clearInterval(timer);
+  }, [advance]);
 
   return (
     <section className="relative flex overflow-hidden min-h-[100svh] hero-fade-top">
-      {/* ═══ BACKGROUND — Mobile (portrait) / Desktop (landscape) ═══ */}
-      <div
-        className="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/medina-almonte-hero-mobile.webp')", filter: "brightness(1.05) contrast(1.05)" }}
-        aria-hidden="true"
-      />
-      <div
-        className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/medina-almonte-hero-desktop.webp')", filter: "brightness(1.05) contrast(1.05)" }}
-        aria-hidden="true"
-      />
+      {/* ═══ BACKGROUND SLIDESHOW — Premium Crossfade ═══ */}
+      {/* Mobile slides */}
+      {mobileSlides.map((src, i) => (
+        <div
+          key={`mobile-${i}`}
+          className="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat transition-opacity duration-[1200ms] ease-in-out"
+          style={{
+            backgroundImage: `url('${src}')`,
+            filter: "brightness(1.05) contrast(1.05)",
+            opacity: slideIndex === i ? 1 : 0,
+          }}
+          aria-hidden="true"
+        />
+      ))}
+      {/* Desktop slides */}
+      {desktopSlides.map((src, i) => (
+        <div
+          key={`desktop-${i}`}
+          className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat transition-opacity duration-[1200ms] ease-in-out"
+          style={{
+            backgroundImage: `url('${src}')`,
+            filter: "brightness(1.05) contrast(1.05)",
+            opacity: slideIndex === i ? 1 : 0,
+          }}
+          aria-hidden="true"
+        />
+      ))}
 
       {/* ═══ Gold accent line at top ═══ */}
       <div

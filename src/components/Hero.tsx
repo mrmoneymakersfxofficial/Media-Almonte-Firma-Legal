@@ -28,12 +28,12 @@ function CounterItem({
   return (
     <div className="text-center">
       <div className="flex items-center justify-center mb-2">
-        <Icon className="w-4 h-4 text-[#C9A961]/50 mr-1.5" />
+        <Icon className="w-4 h-4 text-[#D4AF37]/50 mr-1.5" />
         <span
           ref={ref}
           className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight"
           style={{
-            background: "linear-gradient(135deg, #D4C4B0, #C9A961)",
+            background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
@@ -99,12 +99,12 @@ export function Hero() {
       {/* ═══ BACKGROUND — Mobile (portrait) / Desktop (landscape) ═══ */}
       <div
         className="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/medina-almonte-hero-mobile.webp')" }}
+        style={{ backgroundImage: "url('/medina-almonte-hero-mobile.webp')", filter: "brightness(1.4) contrast(1.1)" }}
         aria-hidden="true"
       />
       <div
         className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/medina-almonte-hero-desktop.webp')" }}
+        style={{ backgroundImage: "url('/medina-almonte-hero-desktop.webp')", filter: "brightness(1.4) contrast(1.1)" }}
         aria-hidden="true"
       />
 
@@ -113,25 +113,25 @@ export function Hero() {
         className="absolute top-0 left-0 right-0 h-[2px] z-20 gpu-accelerated"
         style={{
           background:
-            "linear-gradient(90deg, transparent 0%, #C9A961 30%, #D4C4B0 50%, #8B6F47 70%, transparent 100%)",
+            "linear-gradient(90deg, transparent 0%, #D4AF37 30%, #f4e5c2 50%, #B87333 70%, transparent 100%)",
         }}
       />
 
-      {/* ═══ LAYER 1 — Premium Dark Overlay with depth ═══ */}
+      {/* ═══ LAYER 1 — Lighter overlay so background image is visible ═══ */}
       <div
         className="absolute inset-0 gpu-accelerated"
         style={{
           background:
-            "linear-gradient(160deg, rgba(10,10,10,0.97) 0%, rgba(11,26,46,0.88) 35%, rgba(10,10,10,0.72) 65%, rgba(184,115,51,0.06) 100%)",
+            "linear-gradient(160deg, rgba(10,10,10,0.40) 0%, rgba(11,26,46,0.28) 35%, rgba(10,10,10,0.18) 65%, rgba(184,115,51,0.03) 100%)",
         }}
         aria-hidden="true"
       />
       {/* Bottom depth fade for counters */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-64 gpu-accelerated"
+        className="absolute bottom-0 left-0 right-0 h-48 gpu-accelerated"
         style={{
           background:
-            "linear-gradient(to top, #0F0F0F 0%, rgba(10,10,10,0.8) 40%, transparent 100%)",
+            "linear-gradient(to top, rgba(15,15,15,0.85) 0%, rgba(10,10,10,0.35) 40%, transparent 100%)",
         }}
         aria-hidden="true"
       />
@@ -141,7 +141,7 @@ export function Hero() {
         {/* Large ambient glow — gold */}
         <div
           className="absolute -top-60 -right-60 w-[600px] h-[600px] rounded-full blur-[140px] gpu-accelerated"
-          style={{ background: "radial-gradient(circle, rgba(201,169,97,0.06) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%)" }}
         />
         {/* Copper glow bottom-left */}
         <div
@@ -153,7 +153,7 @@ export function Hero() {
           className="absolute inset-0 opacity-[0.025] gpu-accelerated"
           style={{
             backgroundImage:
-              "radial-gradient(circle, #C9A961 0.8px, transparent 0.8px)",
+              "radial-gradient(circle, #D4AF37 0.8px, transparent 0.8px)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -167,9 +167,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="hero-badge lg:hidden inline-flex items-center gap-2.5 bg-white/[0.06] backdrop-blur-xl border border-[#C9A961]/20 rounded-full px-5 py-2.5 shadow-[0_0_20px_rgba(201,169,97,0.08)] gpu-accelerated"
+            className="hero-badge lg:hidden inline-flex items-center gap-2.5 bg-white/[0.06] backdrop-blur-xl border border-[#D4AF37]/20 rounded-full px-5 py-2.5 shadow-[0_0_20px_rgba(212,175,55,0.08)] gpu-accelerated"
           >
-            <Shield className="w-3.5 h-3.5 text-[#C9A961]" />
+            <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">
               Medina Almonte Firma Legal
             </span>
@@ -183,7 +183,7 @@ export function Hero() {
             className="hero-h1 mt-7 text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight"
             style={{
               fontFamily: "var(--font-playfair), serif",
-              background: "linear-gradient(135deg, #D4C4B0 0%, #C9A961 40%, #8B6F47 100%)",
+              background: "linear-gradient(135deg, #f4e5c2 0%, #d4af37 40%, #B87333 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
@@ -209,7 +209,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-5 text-base sm:text-lg font-semibold tracking-wide"
             style={{
-              color: "#8B6F47",
+              color: "#B87333",
               fontFamily: "var(--font-inter), sans-serif",
             }}
           >
@@ -261,7 +261,7 @@ export function Hero() {
             {["Confianza", "Autoridad legal", "Resultados comprobados"].map(
               (badge) => (
                 <span key={badge} className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A961]/80" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]/80" />
                   {badge}
                 </span>
               )
@@ -279,7 +279,7 @@ export function Hero() {
               href="https://www.instagram.com/solucioneslegales.medinaa"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#C9A961] transition-colors duration-300"
+              className="hover:text-[#D4AF37] transition-colors duration-300"
             >
               Instagram
             </a>
@@ -287,7 +287,7 @@ export function Hero() {
               href="https://www.facebook.com/share/17zonPNHp7/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#C9A961] transition-colors duration-300"
+              className="hover:text-[#D4AF37] transition-colors duration-300"
             >
               Facebook
             </a>

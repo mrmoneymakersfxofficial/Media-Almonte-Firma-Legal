@@ -143,7 +143,6 @@ export function TeamCards() {
         images={galleryImages}
         openAtIndex={lightboxIndex}
         onClose={() => setLightboxIndex(null)}
-        onIndexChange={(i) => setLightboxIndex(i)}
       />
     </div>
   );

@@ -1,8 +1,37 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import {
+  GalleryLightbox,
+  GalleryZoomHint,
+  type GalleryImage,
+} from "@/components/GalleryLightbox";
+
+const galleryImages: GalleryImage[] = [
+  {
+    src: "/images/abogados/equipo-1.webp",
+    alt: "Equipo Medina Almonte 1",
+    caption: "Equipo legal de Medina Almonte — Lawyers Firm en sesión de trabajo.",
+  },
+  {
+    src: "/images/abogados/equipo-2.webp",
+    alt: "Equipo Medina Almonte 2",
+    caption: "Coordinación de casos y estrategia procesal del estudio.",
+  },
+  {
+    src: "/images/abogados/equipo-3.webp",
+    alt: "Equipo Medina Almonte 3",
+    caption: "Atención personalizada al cliente en las oficinas del estudio.",
+  },
+  {
+    src: "/images/abogados/equipo-4.webp",
+    alt: "Equipo Medina Almonte 4",
+    caption: "Dirección y representación legal a cargo del Dr. Eduardo Medina Almonte.",
+  },
+];
 
 const team = [
   {
@@ -26,6 +55,8 @@ function generateWhatsAppURL(name: string): string {
 }
 
 export function TeamCards() {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
   return (
     <div className="space-y-12 md:space-y-16">
       {team.map((member, i) => (
@@ -70,35 +101,50 @@ export function TeamCards() {
         </ScrollReveal>
       ))}
 
-      {/* Galería de fotos del equipo */}
+      {/* Galería de fotos del equipo — lightbox premium tipo Instagram */}
       <ScrollReveal delay={0.2}>
         <div className="mt-8">
           <p className="text-center text-[#8B6F47] text-sm font-medium tracking-wider uppercase mb-6">
             Galería del Estudio
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { src: "/images/abogados/equipo-1.webp", alt: "Equipo Medina Almonte 1" },
-              { src: "/images/abogados/equipo-2.webp", alt: "Equipo Medina Almonte 2" },
-              { src: "/images/abogados/equipo-3.webp", alt: "Equipo Medina Almonte 3" },
-              { src: "/images/abogados/equipo-4.webp", alt: "Equipo Medina Almonte 4" },
-            ].map((img, idx) => (
-              <div
+            {galleryImages.map((img, idx) => (
+              <button
                 key={idx}
-                className="relative aspect-square rounded-2xl overflow-hidden glass-card"
+                type="button"
+                onClick={() => setLightboxIndex(idx)}
+                aria-label={`Abrir galería en imagen ${idx + 1}: ${img.alt}`}
+                className="group relative aspect-square rounded-2xl overflow-hidden glass-card cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A961]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A]"
               >
                 <Image
                   src={img.src}
                   alt={img.alt}
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
-              </div>
+                <GalleryZoomHint />
+                {/* Gold border on hover */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    boxShadow: "inset 0 0 0 1px rgba(201,169,97,0.45)",
+                  }}
+                />
+              </button>
             ))}
           </div>
         </div>
       </ScrollReveal>
+
+      {/* Lightbox modal */}
+      <GalleryLightbox
+        images={galleryImages}
+        openAtIndex={lightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+        onIndexChange={(i) => setLightboxIndex(i)}
+      />
     </div>
   );
 }

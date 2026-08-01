@@ -54,3 +54,6 @@ server.log
 /skills/---
 .next/
 test_logo*
+
+# user uploads - not for repo
+/upload/

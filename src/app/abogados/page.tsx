@@ -6,7 +6,7 @@ import { TeamCards } from "@/components/TeamCards";
 export const metadata: Metadata = {
   title: "Nuestros Abogados | MEDINA ALMONTE — Lawyers Firm",
   description:
-    "Conoce al equipo de abogados de MEDINA ALMONTE — Lawyers Firm. Profesionales comprometidos con la excelencia jurídica en Perú.",
+    "Conoce al equipo de abogados de MEDINA ALMONTE — Lawyers Firm, liderado por el Dr. Eduardo Medina Almonte, socio fundador con más de 10 años de experiencia en el Rubro Legal.",
   keywords: [
     "abogados Perú",
     "equipo jurídico",
@@ -70,7 +70,7 @@ export default function AbogadosPage() {
                 nacional.
               </p>
               <p className="text-[#C9A961] font-semibold mt-3 text-sm sm:text-base">
-                Registro: Colegio de Abogados de Lima — CAL
+                Registro: Colegio de Abogados del Callao — CAC
               </p>
             </div>
           </ScrollReveal>

@@ -3,8 +3,8 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidad | Medina Almonte Firma Legal",
-  description: "Política de Privacidad de Medina Almonte Firma Legal. Conoce cómo recopilamos, usamos y protegemos tus datos personales.",
+  title: "Política de Privacidad | MEDINA ALMONTE — Lawyers Firm",
+  description: "Política de Privacidad de MEDINA ALMONTE — Lawyers Firm. Conoce cómo recopilamos, usamos y protegemos tus datos personales.",
   keywords: ["política de privacidad", "protección de datos", "datos personales", "privacidad abogados"],
 };
 
@@ -30,7 +30,7 @@ export default function PoliticaPrivacidadPage() {
           <div className="space-y-10">
             <ScrollReveal delay={0.15}>
               <p className="text-gray-300 text-base leading-relaxed">
-                En <span className="text-white font-semibold">Medina Almonte Firma Legal</span>, nos comprometemos a proteger la privacidad de las personas que interactúan con nuestros servicios. Esta Política de Privacidad explica cómo recopilamos, utilizamos y protegemos tus datos personales cuando visitas nuestro sitio web o nos contactas a través de nuestros canales de atención.
+                En <span className="text-white font-semibold">MEDINA ALMONTE — Lawyers Firm</span>, nos comprometemos a proteger la privacidad de las personas que interactúan con nuestros servicios. Esta Política de Privacidad explica cómo recopilamos, utilizamos y protegemos tus datos personales cuando visitas nuestro sitio web o nos contactas a través de nuestros canales de atención.
               </p>
             </ScrollReveal>
 
@@ -40,7 +40,7 @@ export default function PoliticaPrivacidadPage() {
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>1. Responsable del Tratamiento</h2>
                 <p className="text-gray-400 text-base leading-relaxed">
-                  El responsable del tratamiento de los datos personales es <span className="text-white">Medina Almonte Firma Legal</span>, con domicilio en Lima, Perú. Para cualquier consulta relacionada con el tratamiento de tus datos personales, puedes contactarnos a través de <a href="mailto:contacto@medinaalmonte.com" className="text-[#C9A961] hover:underline transition-colors">contacto@medinaalmonte.com</a> o al teléfono <a href="tel:+51943366950" className="text-[#C9A961] hover:underline transition-colors">+51 943 366 950</a>.
+                  El responsable del tratamiento de los datos personales es <span className="text-white">MEDINA ALMONTE — Lawyers Firm</span>, con domicilio en Lima, Perú. Para cualquier consulta relacionada con el tratamiento de tus datos personales, puedes contactarnos a través de <a href="mailto:contacto@medinaalmonte.com" className="text-[#C9A961] hover:underline transition-colors">contacto@medinaalmonte.com</a> o al teléfono <a href="tel:+51977186734" className="text-[#C9A961] hover:underline transition-colors">+51 977 186 734</a>.
                 </p>
               </section>
             </ScrollReveal>
@@ -158,7 +158,7 @@ export default function PoliticaPrivacidadPage() {
                   </div>
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="text-[#C9A961] font-semibold w-28 shrink-0">Teléfono:</span>
-                    <a href="tel:+51943366950" className="text-[#C9A961] hover:underline transition-colors">+51 943 366 950</a>
+                    <a href="tel:+51977186734" className="text-[#C9A961] hover:underline transition-colors">+51 977 186 734</a>
                   </div>
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="text-[#C9A961] font-semibold w-28 shrink-0">Ubicación:</span>

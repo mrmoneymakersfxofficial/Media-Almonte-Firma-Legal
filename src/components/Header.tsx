@@ -189,7 +189,7 @@ export function Header() {
                 >
                   <Image
                     src={LOGO_URL}
-                    alt="Medina Almonte Firma Legal"
+                    alt="MEDINA ALMONTE — Lawyers Firm"
                     width={800}
                     height={176}
                     className="brand-logo-fixed h-8 sm:h-9 lg:h-10 w-auto object-contain"
@@ -289,7 +289,7 @@ export function Header() {
                 <Link href="/" onClick={() => setIsMobileOpen(false)} className="flex items-center">
                   <Image
                     src={LOGO_URL}
-                    alt="Medina Almonte"
+                    alt="MEDINA ALMONTE — Lawyers Firm"
                     width={800}
                     height={176}
                     className="brand-logo-fixed h-7 w-auto object-contain"

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contacto | MEDINA ALMONTE — Lawyers Firm",
     description:
-      "Escríbenos y recibe asesoría legal profesional. Tu primera consulta es gratuita.",
+      "Escríbenos y recibe asesoría legal profesional. Ofrecemos consultas legales ilimitadas luego de la contratación profesional.",
     url: "https://medinaalmonte.com/contacto",
   },
 };

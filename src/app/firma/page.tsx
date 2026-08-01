@@ -4,14 +4,15 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Shield, Users, Target, Award, Scale, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "La Firma | Medina Almonte Firma Legal",
+  title: "La Firma | MEDINA ALMONTE — Lawyers Firm",
   description:
-    "Conoce Medina Almonte Firma Legal. Más que abogados, tu principal estratega legal en Perú. Especialistas en Derecho Corporativo, Civil, Penal, Laboral y Familia.",
+    "Conoce MEDINA ALMONTE — Lawyers Firm. Más que abogados, tu principal estratega legal en Perú. Especialistas en Derecho Civil, Penal y Familia.",
   keywords: [
     "Medina Almonte",
+    "Lawyers Firm",
     "firma legal Perú",
-    "abogados corporativos",
     "estudio jurídico",
+    "abogados Perú",
   ],
 };
 
@@ -34,12 +35,12 @@ const values = [
   {
     icon: Award,
     title: "Excelencia Jurídica",
-    description: "Más de 15 años de experiencia y formación continua nos permiten ofrecer un servicio legal de primer nivel en todas las ramas del derecho.",
+    description: "Más de 10 años de experiencia en el Rubro Legal y formación continua nos permiten ofrecer un servicio legal de primer nivel en las áreas de derecho que practicamos.",
   },
   {
     icon: Scale,
     title: "Justicia Accesible",
-    description: "Creemos que todos merecen una defensa de calidad. Ofrecemos planes de pago flexibles y la primera consulta completamente gratuita.",
+    description: "Creemos que todos merecen una defensa de calidad. Ofrecemos planes de pago flexibles y consultas legales ilimitadas luego de la contratación profesional.",
   },
   {
     icon: BookOpen,
@@ -65,7 +66,7 @@ export default function FirmaPage() {
                 className="immersive-title font-bold mb-6"
                 style={{ color: "#C9A961", fontFamily: "var(--font-playfair), serif" }}
               >
-                Medina Almonte Firma Legal
+                MEDINA ALMONTE — Lawyers Firm
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
@@ -78,7 +79,7 @@ export default function FirmaPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-                Medina Almonte Firma Legal es un estudio jurídico de primer nivel
+                MEDINA ALMONTE — Lawyers Firm es un estudio jurídico de primer nivel
                 con sede en Perú, dedicado a brindar soluciones legales
                 estratégicas e integrales. Con un equipo de abogados
                 altamente calificados y una trayectoria comprobada, nos
@@ -127,7 +128,7 @@ export default function FirmaPage() {
               <hr className="subtle-divider mb-12" />
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
                 {[
-                  { number: "15+", label: "Años de Experiencia" },
+                  { number: "10+", label: "Años de Experiencia" },
                   { number: "92%", label: "Casos Resueltos Favorablemente" },
                   { number: "500+", label: "Clientes Atendidos" },
                 ].map((stat) => (

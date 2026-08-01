@@ -5,11 +5,13 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "Derecho Penal | MEDINA ALMONTE — Lawyers Firm",
   description:
-    "Defensa penal especializada: delitos corporativos, investigaciones fiscales, protección de derechos fundamentales y defensa en procesos penales en Perú.",
+    "Defensa penal especializada: detención en flagrancia, investigación preliminar, proceso penal, delitos de corrupción de funcionarios, lavado de activos y crimen organizado en Perú.",
   keywords: [
     "derecho penal Perú",
     "defensa penal",
-    "delitos corporativos",
+    "delitos corrupción funcionarios",
+    "lavado de activos",
+    "crimen organizado",
     "abogado penalista",
     "proceso penal",
   ],
@@ -40,12 +42,14 @@ export default function PenalPage() {
 
           <ScrollReveal delay={0.2}>
             <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-12">
-              En el área de Derecho Penal brindamos una defensa agresiva y
-              estratégica, tanto en la etapa de investigación preliminar como en
-              el proceso penal propiamente dicho. Nos especializamos en delitos
-              corporativos, blancos, económicos y financieros, así como en la
-              protección de los derechos fundamentales de nuestros clientes
-              durante todo el procedimiento.
+              En el área de Derecho Penal brindamos una defensa agresiva,
+              práctica y estratégica, desde la detención en casos de flagrancia,
+              como en la investigación durante las etapas de los diferentes
+              procesos penales. Otorgamos asesoría integral en delitos de
+              corrupción de funcionarios, lavado de activos, crimen organizado,
+              así como los diferentes tipos penales, aplicando la reserva de la
+              información, protección de datos así como la confidencialidad y
+              lealtad que nos caracteriza para con nuestros clientes.
             </p>
           </ScrollReveal>
 

@@ -1,39 +1,28 @@
 "use client";
 
+import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const team = [
   {
-    name: "Dr. Ricardo Medina Almonte",
-    specialty: "Director General",
-    bio: "Abogado con más de 15 años de experiencia en litigios corporativos, civiles y penales. Fundador de la firma con una visión estratégica del derecho.",
-    initials: "RM",
+    name: "Dr. Eduardo Medina Almonte",
+    specialty: "Socio Fundador — Derecho Civil, Penal y de Familia",
+    bio: "Abogado con más de 10 años de experiencia en el Rubro Legal, en su condición de ex servidor público del Poder Judicial y Ministerio Público. Cuenta con estudios de postgrado y capacitaciones nacionales y extranjeras. Socio Fundador de la firma con una visión estratégica y práctica del Derecho.",
+    photo: "/images/abogados/abogado-principal.webp",
   },
   {
-    name: "Dra. Sofía Castillo",
-    specialty: "Derecho Civil y Familia",
-    bio: "Especialista en derecho de familia y sucesiones. Reconocida por su enfoque empático y resultados favorables en casos complejos.",
-    initials: "SC",
-  },
-  {
-    name: "Dr. Andrés Mendoza",
-    specialty: "Derecho Penal",
-    bio: "Defensor penal con trayectoria en casos de alta complejidad. Experto en investigaciones y garantías constitucionales.",
-    initials: "AM",
-  },
-  {
-    name: "Dra. Valentina Rojas",
-    specialty: "Derecho Laboral y Corporativo",
-    bio: "Abogada laboral y corporativa con amplia experiencia en compliance, contratos y negociaciones colectivas.",
-    initials: "VR",
+    name: "Equipo Medina Almonte",
+    specialty: "Equipo Legal Multidisciplinario",
+    bio: "Equipo de abogados asociados especializados en las áreas Civil, Penal y de Familia, con formación continua y compromiso con la ética profesional. Trabajamos de forma colaborativa bajo la dirección del Dr. Eduardo Medina Almonte para garantizar representación legal excepcional y personalizada en cada caso.",
+    photo: "/images/abogados/equipo-1.webp",
   },
 ];
 
 function generateWhatsAppURL(name: string): string {
-  const message = `Hola *Medina Almonte Firma Legal*. Me gustaría consultar sobre los servicios del Dr./Dra. ${name}.`;
+  const message = `Hola *MEDINA ALMONTE — Lawyers Firm*. Me gustaría consultar sobre los servicios de ${name}.`;
   const encodedMessage = encodeURIComponent(message);
-  return `https://api.whatsapp.com/send?phone=51943366950&text=${encodedMessage}`;
+  return `https://api.whatsapp.com/send?phone=51977186734&text=${encodedMessage}`;
 }
 
 export function TeamCards() {
@@ -42,14 +31,15 @@ export function TeamCards() {
       {team.map((member, i) => (
         <ScrollReveal key={member.name} delay={i * 0.08}>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 text-center md:text-left">
-            {/* Avatar — circular, no card */}
-            <div className="team-avatar-ring w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#0F0F0F] flex items-center justify-center shrink-0">
-              <span
-                className="text-[#C9A961] text-xl font-bold"
-                style={{ fontFamily: "var(--font-playfair), serif" }}
-              >
-                {member.initials}
-              </span>
+            {/* Photo — circular, WebP optimized */}
+            <div className="team-avatar-ring w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-[#0F0F0F] flex items-center justify-center shrink-0 relative">
+              <Image
+                src={member.photo}
+                alt={member.name}
+                fill
+                sizes="(max-width: 768px) 128px, 160px"
+                className="object-cover rounded-full"
+              />
             </div>
             {/* Info — direct on background */}
             <div className="flex-1 min-w-0">
@@ -79,6 +69,36 @@ export function TeamCards() {
           {i < team.length - 1 && <hr className="subtle-divider mt-12 md:mt-16" />}
         </ScrollReveal>
       ))}
+
+      {/* Galería de fotos del equipo */}
+      <ScrollReveal delay={0.2}>
+        <div className="mt-8">
+          <p className="text-center text-[#8B6F47] text-sm font-medium tracking-wider uppercase mb-6">
+            Galería del Estudio
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { src: "/images/abogados/equipo-1.webp", alt: "Equipo Medina Almonte 1" },
+              { src: "/images/abogados/equipo-2.webp", alt: "Equipo Medina Almonte 2" },
+              { src: "/images/abogados/equipo-3.webp", alt: "Equipo Medina Almonte 3" },
+              { src: "/images/abogados/equipo-4.webp", alt: "Equipo Medina Almonte 4" },
+            ].map((img, idx) => (
+              <div
+                key={idx}
+                className="relative aspect-square rounded-2xl overflow-hidden glass-card"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </ScrollReveal>
     </div>
   );
 }

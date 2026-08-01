@@ -206,7 +206,7 @@ export function Hero() {
           >
             <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">
-              Medina Almonte Firma Legal
+              MEDINA ALMONTE — Lawyers Firm
             </span>
           </motion.div>
 
@@ -248,7 +248,7 @@ export function Hero() {
               fontFamily: "var(--font-inter), sans-serif",
             }}
           >
-            Especialistas en Derecho Corporativo, Civil y Penal.
+            Especialistas en Derecho Penal, Familia y Civil.
           </motion.p>
 
           {/* Description */}

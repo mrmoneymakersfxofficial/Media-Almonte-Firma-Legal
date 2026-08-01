@@ -52,7 +52,7 @@ function WhoWeAre() {
       icon: ShieldCheck,
       title: "Defensa Agresiva",
       description:
-        "Protegemos tus derechos sin titubeos, con la firmeza que tu caso requiere. Nuestro equipo litiga con estrategia probada, preparación exhaustiva y una red de contactos institucionales que fortalece tu posición.",
+        "Protegemos tus derechos sin titubeos, con la firmeza que tu caso requiere. Nuestro equipo litiga con estrategia probada, preparación exhaustiva y una red de contactos profesionales (peritos especializados: Medicina Legal, Grafotecnico, Antrometrica, psicologica y otros) que fortalece tu posición.",
     },
     {
       icon: Handshake,
@@ -89,7 +89,7 @@ function WhoWeAre() {
                 <span className="text-white">tu Principal Estratega Legal</span>
               </h2>
               <p className="text-gray-400 leading-relaxed mb-8 text-base sm:text-lg">
-                En Medina Almonte Firma Legal entendemos que cada caso es
+                En MEDINA ALMONTE — Lawyers Firm entendemos que cada caso es
                 único. Por eso, diseñamos defensas a medida, con un enfoque
                 humano y una estrategia jurídica impecable. Representamos tus
                 intereses con la firmeza y la ética que tu situación requiere.
@@ -155,22 +155,6 @@ const practiceAreas = [
       "Te representamos ante cualquier imputación o investigación penal. Defendemos tu libertad y tu buen nombre.",
     cta: "Defensa Penal",
     href: "/areas/penal",
-  },
-  {
-    icon: Users,
-    title: "Derecho Laboral",
-    description:
-      "Protegemos tus derechos como trabajador o empleador. Asesoría en despidos, acoso y negociaciones colectivas.",
-    cta: "Asesoría Laboral",
-    href: "/areas/laboral",
-  },
-  {
-    icon: Building2,
-    title: "Derecho Corporativo",
-    description:
-      "Blindamos tu empresa con contratos seguros, compliance normativo y asesoría legal integral para tu crecimiento.",
-    cta: "Protege tu Empresa",
-    href: "/areas/corporativo",
   },
   {
     icon: Heart,
@@ -248,23 +232,23 @@ function PracticeAreas() {
    ════════════════════════════════════════════════════════════════ */
 const testimonials = [
   {
-    text: "Gracias a Medina Almonte logré una resolución favorable en mi caso laboral. Su equipo me mantuvo informado en cada etapa del proceso y siempre sentí que estaban de mi lado.",
-    name: "Carlos M.",
-    role: "Caso Laboral",
+    text: "Los abogados de la firma legal Medina Almonte me ayudaron a redactar los contratos para todos los inquilinos de mi multifamiliar, para estar seguros de precarios...",
+    name: "Cliente satisfecho",
+    role: "Derecho Civil",
   },
   {
-    text: "La defensa penal que me brindaron fue excepcional. Desde el primer momento entendieron mi situación y actuaron con la rapidez y firmeza que se necesitaba.",
-    name: "María L.",
-    role: "Defensa Penal",
+    text: "El Dr. Medina y su equipo me ayudaron a reunirme otra vez con mi hijo y darle una segunda oportunidad a mi familia con su libertad...",
+    name: "Cliente satisfecho",
+    role: "Derecho Penal",
   },
   {
-    text: "Necesitaba blindar mi empresa legalmente y ellos me ofrecieron una solución integral. Profesionales de alto nivel que realmente conocen el derecho corporativo.",
-    name: "Roberto S.",
-    role: "Derecho Corporativo",
+    text: "El equipo de trabajo de este grupo de trabajo me habló con sinceridad, diciéndome lo malo y lo bueno, y con ellos y Dios mediante, mi esposo pudo recuperar su libertad y estar otra vez juntos con mis hijas...",
+    name: "Cliente satisfecho",
+    role: "Derecho Penal",
   },
   {
-    text: "Mi caso de familia era delicado y sensible. El equipo de Medina Almonte manejó todo con la discreción y empatía que necesitábamos. Estoy profundamente agradecida.",
-    name: "Ana P.",
+    text: "El Dr. Eduardo me asesoró correctamente en todo momento y junto a su equipo pude conseguir una Sentencia de Alimentos justa para mis hijos y el reconocimiento de su apellido.",
+    name: "Cliente satisfecho",
     role: "Derecho de Familia",
   },
 ];
@@ -408,11 +392,11 @@ function TestimonialsSection() {
    SECTION: MEMBRESÍAS Y CERTIFICACIONES
    ════════════════════════════════════════════════════════════════ */
 const memberships = [
-  { icon: ScaleIcon, name: "Colegio de Abogados de Lima", short: "CAL" },
-  { icon: Landmark, name: "Ministerio de Justicia", short: "MINJUS" },
-  { icon: Shield, name: "Tribunal Constitucional", short: "TC" },
-  { icon: BookOpen, name: "Poder Judicial del Perú", short: "PJ" },
-  { icon: Scale, name: "Asociación de Abogados de Lima", short: "AAL" },
+  { icon: ScaleIcon, name: "Colegio de Abogados del Callao", short: "CAC", url: "https://www.cacallao.org.pe/" },
+  { icon: Landmark, name: "Ministerio de Justicia", short: "MINJUS", url: "https://www.gob.pe/minjus" },
+  { icon: Shield, name: "Tribunal Constitucional", short: "TC", url: "https://www.tc.gob.pe/" },
+  { icon: BookOpen, name: "Poder Judicial del Perú", short: "PJ", url: "https://www.pj.gob.pe/" },
+  { icon: Scale, name: "Colegio de Abogados del Callao", short: "CAC", url: "https://www.cacallao.org.pe/" },
 ];
 
 function MembershipsBar() {
@@ -444,12 +428,15 @@ function MembershipsBar() {
 
         <ScrollReveal delay={0.15}>
           <div className="flex gap-6 sm:gap-8 md:gap-10 lg:gap-14 justify-center flex-wrap md:flex-nowrap overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide">
-            {memberships.map((m) => {
+            {memberships.map((m, idx) => {
               const Icon = m.icon;
               return (
-                <div
-                  key={m.short}
-                  className="flex flex-col items-center gap-3 min-w-[120px] shrink-0 group"
+                <a
+                  key={`${m.short}-${idx}`}
+                  href={m.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center gap-3 min-w-[120px] shrink-0 group cursor-pointer"
                 >
                   <div className="w-16 h-16 rounded-2xl glass-card flex items-center justify-center transition-all duration-300 group-hover:scale-105 gpu-accelerated">
                     <Icon className="w-7 h-7 text-[#C9A961]" />
@@ -457,7 +444,7 @@ function MembershipsBar() {
                   <p className="text-white/70 text-sm font-medium leading-tight text-center group-hover:text-white transition-colors">
                     {m.name}
                   </p>
-                </div>
+                </a>
               );
             })}
           </div>

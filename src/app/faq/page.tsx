@@ -5,7 +5,7 @@ import FAQClient from "./FAQClient";
 export const metadata: Metadata = {
   title: "Preguntas Frecuentes | MEDINA ALMONTE — Lawyers Firm",
   description:
-    "Encuentra respuestas a las consultas más comunes sobre nuestros servicios legales en Perú. Consultas gratuitas, áreas de práctica, tiempos de proceso y más.",
+    "Encuentra respuestas a las consultas más comunes sobre nuestros servicios legales en Perú. Consultas legales ilimitadas luego de la contratación, áreas de práctica, tiempos de proceso y más.",
   keywords: [
     "preguntas frecuentes",
     "FAQ abogados",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Preguntas Frecuentes | MEDINA ALMONTE — Lawyers Firm",
     description:
-      "Resuelve tus dudas sobre nuestros servicios legales. Tu primera consulta es gratuita.",
+      "Resuelve tus dudas sobre nuestros servicios legales. Ofrecemos consultas legales ilimitadas luego de la contratación profesional.",
     url: "https://medinaalmonte.com/faq",
   },
 };

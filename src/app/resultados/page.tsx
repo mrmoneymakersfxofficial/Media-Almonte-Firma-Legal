@@ -4,15 +4,16 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Trophy, TrendingUp, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Casos y Resultados | Medina Almonte Firma Legal",
-  description: "Conoce los casos de éxito y resultados obtenidos por Medina Almonte Firma Legal. Nuestra trayectoria habla por nosotros.",
+  title: "Casos y Resultados | MEDINA ALMONTE — Lawyers Firm",
+  description: "Conoce los casos de éxito y resultados obtenidos por MEDINA ALMONTE — Lawyers Firm. Nuestra trayectoria habla por nosotros.",
   keywords: ["casos de éxito", "resultados jurídicos", "sentencias favorables", "abogados Perú"],
 };
 
 const cases = [
-  { id: 1, title: "Resolución Favorable en Litigio Corporativo", category: "Derecho Corporativo", description: "Representación exitosa en un conflicto societario de alta complejidad, logrando una resolución que protegió los intereses de nuestro cliente corporativo.", result: "Resolución Favorable", icon: Trophy },
-  { id: 2, title: "Absolución en Proceso Penal Complejo", category: "Derecho Penal", description: "Defensa penal estratégica que resultó en la absolución completa de los cargos imputados, demostrando la inocencia de nuestro cliente ante el Poder Judicial.", result: "Absolución Completa", icon: TrendingUp },
-  { id: 3, title: "Conciliación en Disputa Laboral", category: "Derecho Laboral", description: "Negociación y conciliación exitosa en un caso de despido arbitrario, obteniendo una indemnización justa y reintegro laboral para el trabajador.", result: "Conciliación Exitosa", icon: CheckCircle },
+  { id: 1, title: "Sentencia de Alimentos Justa para Mis Hijos", category: "Derecho de Familia", description: "Asesoría legal integral que permitió obtener una sentencia de alimentos justa para los hijos del cliente, así como el reconocimiento del apellido paterno, garantizando sus derechos alimentarios y de identidad.", result: "Sentencia Favorable", icon: Trophy },
+  { id: 2, title: "Absolución en Proceso Penal Complejo", category: "Derecho Penal", description: "Defensa penal estratégica que resultó en la absolución completa de los cargos imputados, demostrando la inocencia de nuestro cliente ante el Poder Judicial y permitiendo su reincorporación a la vida familiar.", result: "Absolución Completa", icon: TrendingUp },
+  { id: 3, title: "Recuperación de Libertad y Reunificación Familiar", category: "Derecho Penal", description: "Defensa penal exitosa que permitió a nuestro cliente recuperar su libertad y reunirse nuevamente con sus hijas, gracias a una estrategia legal sólida y sostenida en cada etapa del proceso.", result: "Libertad Recuperada", icon: CheckCircle },
+  { id: 4, title: "Contratos Seguros para Inquilinos de Multifamiliar", category: "Derecho Civil", description: "Redacción y revisión de contratos de arrendamiento para todos los inquilinos de un multifamiliar, brindando seguridad jurídica al propietario y previniendo situaciones de precariedad legal.", result: "Seguridad Jurídica", icon: Trophy },
 ];
 
 export default function ResultadosPage() {
@@ -42,7 +43,7 @@ export default function ResultadosPage() {
               {[
                 { number: "500+", label: "Casos Gestionados" },
                 { number: "92%", label: "Tasa de Éxito" },
-                { number: "15+", label: "Años de Experiencia" },
+                { number: "10+", label: "Años de Experiencia" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <div className="immersive-stat-number mb-1" style={{ fontSize: "clamp(1.5rem, 4vw, 2.5rem)" }}>{stat.number}</div>
@@ -86,7 +87,7 @@ export default function ResultadosPage() {
             <div className="mt-16 text-center">
               <hr className="subtle-divider mb-10" />
               <p className="text-gray-500 text-sm mb-6">¿Tienes un caso que necesita representación legal de primer nivel?</p>
-              <a href="https://api.whatsapp.com/send?phone=51943366950&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20Medina%20Almonte%20Firma%20Legal." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0F0F0F] font-bold text-sm px-8 py-3.5 rounded-xl">Consultar por WhatsApp</a>
+              <a href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20MEDINA%20ALMONTE%20Lawyers%20Firm." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0F0F0F] font-bold text-sm px-8 py-3.5 rounded-xl">Consultar por WhatsApp</a>
             </div>
           </ScrollReveal>
         </div>

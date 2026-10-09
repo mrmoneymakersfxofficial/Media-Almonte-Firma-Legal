@@ -1,47 +1,54 @@
-"use client";
-
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Hero } from "@/components/Hero";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { SectionDivider } from "@/components/SectionDivider";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { motion } from "framer-motion";
-import Autoplay from "embla-carousel-autoplay";
 import {
   Scale,
   ShieldCheck,
   FileText,
   Handshake,
-  Users,
-  Building2,
   Heart,
   ArrowRight,
-  Star,
-  Quote,
   Shield,
   Landmark,
   BookOpen,
   ScaleIcon,
-  ChevronLeft,
-  ChevronRight,
   TrendingUp,
   UserCheck,
   Clock,
   DollarSign,
 } from "lucide-react";
+import { sanityFetch } from "@/sanity/live";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  type CarouselApi,
-} from "@/components/ui/carousel";
+  SITE_SETTINGS_QUERY,
+  HERO_SETTINGS_QUERY,
+  ABOUT_SECTION_QUERY,
+  PRACTICE_AREAS_QUERY,
+  TESTIMONIALS_QUERY,
+} from "@/sanity/queries";
+import { ve } from "@/lib/ve";
+import type {
+  SiteSettings,
+  HeroSettings,
+  AboutSection,
+  PracticeArea,
+  Testimonial,
+} from "@/sanity/types";
 
 /* ════════════════════════════════════════════════════════════════
    SECTION: ¿QUIÉNES SOMOS?
    ════════════════════════════════════════════════════════════════ */
-function WhoWeAre() {
-  const values = [
+function WhoWeAre({ aboutSection }: { aboutSection?: AboutSection }) {
+  const badge = aboutSection?.badge || "Sobre Nosotros";
+  const heading = aboutSection?.heading || "Más que Abogados,";
+  const subheading = aboutSection?.subheading || "tu Principal Estratega Legal";
+  const content =
+    aboutSection?.content ||
+    "En MEDINA ALMONTE — Lawyers Firm entendemos que cada caso es único. Por eso, diseñamos defensas a medida, con un enfoque humano y una estrategia jurídica impecable. Representamos tus intereses con la firmeza y la ética que tu situación requiere.";
+
+  const defaultValues = [
     {
       icon: Scale,
       title: "Ética y Transparencia",
@@ -62,41 +69,60 @@ function WhoWeAre() {
     },
   ];
 
+  const pillars =
+    aboutSection?.pillars && aboutSection.pillars.length > 0
+      ? aboutSection.pillars.map((p, i) => ({
+          icon: i === 0 ? Scale : i === 1 ? ShieldCheck : Handshake,
+          title: p.title,
+          description: p.description,
+        }))
+      : defaultValues;
+
   return (
-    <section className="py-20 lg:py-28 section-dark-gradient">
+    <section id="nosotros" className="py-20 lg:py-28 section-dark-gradient">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Texto */}
           <ScrollReveal>
             <div>
-              <span className="inline-block text-[#8B6F47] font-semibold text-sm tracking-wider uppercase mb-4">
-                Sobre Nosotros
+              <span
+                className="inline-block text-[#8B6F47] font-semibold text-sm tracking-wider uppercase mb-4 cursor-pointer"
+                {...ve("aboutSection", "aboutSection", "badge")}
+              >
+                {badge}
               </span>
               <h2
                 className="text-2xl sm:text-3xl lg:text-[2.5rem] font-bold leading-[1.15] mb-6"
                 style={{ fontFamily: "var(--font-playfair), serif" }}
               >
                 <span
+                  className="cursor-pointer"
                   style={{
                     background: "linear-gradient(135deg, #D4C4B0, #C9A961)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                   }}
+                  {...ve("aboutSection", "aboutSection", "heading")}
                 >
-                  Más que Abogados,
+                  {heading}
                 </span>
                 <br />
-                <span className="text-white">tu Principal Estratega Legal</span>
+                <span
+                  className="text-white cursor-pointer"
+                  {...ve("aboutSection", "aboutSection", "subheading")}
+                >
+                  {subheading}
+                </span>
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-8 text-base sm:text-lg">
-                En MEDINA ALMONTE — Lawyers Firm entendemos que cada caso es
-                único. Por eso, diseñamos defensas a medida, con un enfoque
-                humano y una estrategia jurídica impecable. Representamos tus
-                intereses con la firmeza y la ética que tu situación requiere.
+              <p
+                className="text-gray-400 leading-relaxed mb-8 text-base sm:text-lg cursor-pointer"
+                {...ve("aboutSection", "aboutSection", "content")}
+              >
+                {content}
               </p>
               <Link
                 href="/abogados"
-                className="btn-gold-primary inline-flex items-center gap-2.5 px-7 py-4 rounded-xl text-[15px] font-bold gpu-accelerated"
+                className="btn-gold-primary inline-flex items-center gap-2.5 px-7 py-4 rounded-xl text-[15px] font-bold gpu-accelerated cursor-pointer"
               >
                 Conoce a Nuestro Equipo
                 <ArrowRight className="w-4 h-4" />
@@ -104,9 +130,9 @@ function WhoWeAre() {
             </div>
           </ScrollReveal>
 
-          {/* Valores */}
+          {/* Valores / Pilares */}
           <div className="space-y-5">
-            {values.map((item, i) => {
+            {pillars.map((item, i) => {
               const Icon = item.icon;
               return (
                 <ScrollReveal key={item.title} delay={0.12 * i} duration={0.6}>
@@ -116,12 +142,16 @@ function WhoWeAre() {
                     </div>
                     <div>
                       <h3
-                        className="text-white font-bold text-lg mb-1.5"
+                        className="text-white font-bold text-lg mb-1.5 cursor-pointer"
                         style={{ fontFamily: "var(--font-playfair), serif" }}
+                        {...ve("aboutSection", "aboutSection", `pillars[${i}].title`)}
                       >
                         {item.title}
                       </h3>
-                      <p className="text-gray-400 text-sm sm:text-[15px] leading-relaxed">
+                      <p
+                        className="text-gray-400 text-sm sm:text-[15px] leading-relaxed cursor-pointer"
+                        {...ve("aboutSection", "aboutSection", `pillars[${i}].description`)}
+                      >
                         {item.description}
                       </p>
                     </div>
@@ -139,36 +169,53 @@ function WhoWeAre() {
 /* ════════════════════════════════════════════════════════════════
    SECTION: ÁREAS DE PRÁCTICA (GRID) — Premium Cards
    ════════════════════════════════════════════════════════════════ */
-const practiceAreas = [
-  {
-    icon: FileText,
-    title: "Derecho Civil",
-    description:
-      "Defendemos tus derechos en conflictos contractuales, propiedad, herencias y responsabilidad civil con estrategia probada.",
-    cta: "Asesoría Civil",
-    href: "/areas/civil",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Derecho Penal",
-    description:
-      "Te representamos ante cualquier imputación o investigación penal. Defendemos tu libertad y tu buen nombre.",
-    cta: "Defensa Penal",
-    href: "/areas/penal",
-  },
-  {
-    icon: Heart,
-    title: "Derecho de Familia",
-    description:
-      "Te acompañamos en procesos de divorcio, custodia, pensiones alimenticias y sucesiones con total discreción.",
-    cta: "Familia y Sucesiones",
-    href: "/areas/familia",
-  },
-];
+function PracticeAreas({ practiceAreas }: { practiceAreas?: PracticeArea[] }) {
+  const defaultAreas = [
+    {
+      _id: "practiceArea-civil",
+      icon: FileText,
+      title: "Derecho Civil",
+      shortDescription:
+        "Defendemos tus derechos en conflictos contractuales, propiedad, herencias y responsabilidad civil con estrategia probada.",
+      cta: "Asesoría Civil",
+      href: "/areas/civil",
+    },
+    {
+      _id: "practiceArea-penal",
+      icon: ShieldCheck,
+      title: "Derecho Penal",
+      shortDescription:
+        "Te representamos ante cualquier imputación o investigación penal. Defendemos tu libertad y tu buen nombre.",
+      cta: "Defensa Penal",
+      href: "/areas/penal",
+    },
+    {
+      _id: "practiceArea-familia",
+      icon: Heart,
+      title: "Derecho de Familia",
+      shortDescription:
+        "Te acompañamos en procesos de divorcio, custodia, pensiones alimenticias y sucesiones con total discreción.",
+      cta: "Familia y Sucesiones",
+      href: "/areas/familia",
+    },
+  ];
 
-function PracticeAreas() {
+  const items =
+    practiceAreas && practiceAreas.length > 0
+      ? practiceAreas.map((pa, idx) => ({
+          _id: pa._id,
+          icon: idx === 0 ? FileText : idx === 1 ? ShieldCheck : Heart,
+          title: pa.title,
+          shortDescription:
+            pa.shortDescription ||
+            "Defensa y asesoría legal personalizada con enfoque estratégico y ético.",
+          cta: `Asesoría en ${pa.title}`,
+          href: `/areas/${pa.slug || "civil"}`,
+        }))
+      : defaultAreas;
+
   return (
-    <section className="py-20 lg:py-28 section-navy-gradient">
+    <section id="areas" className="py-20 lg:py-28 section-navy-gradient">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -194,23 +241,27 @@ function PracticeAreas() {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
-          {practiceAreas.map((area, i) => {
+          {items.map((area, i) => {
             const Icon = area.icon;
             return (
-              <ScrollReveal key={area.title} delay={0.08 * i} duration={0.6}>
+              <ScrollReveal key={area._id || area.title} delay={0.08 * i} duration={0.6}>
                 <Link href={area.href} className="block group h-full">
                   <div className="practice-card-premium gold-border-gradient rounded-2xl p-7 sm:p-8 h-full relative">
                     <div className="w-14 h-14 rounded-xl bg-[#C9A961]/10 flex items-center justify-center mb-5 icon-glow transition-all duration-300 group-hover:bg-[#C9A961]/15 group-hover:scale-110">
                       <Icon className="w-7 h-7 text-[#C9A961]" />
                     </div>
                     <h3
-                      className="text-white font-bold text-lg sm:text-xl mb-3"
+                      className="text-white font-bold text-lg sm:text-xl mb-3 cursor-pointer"
                       style={{ fontFamily: "var(--font-playfair), serif" }}
+                      {...ve(area._id, "practiceArea", "title")}
                     >
                       {area.title}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                      {area.description}
+                    <p
+                      className="text-gray-400 text-sm leading-relaxed mb-6 cursor-pointer"
+                      {...ve(area._id, "practiceArea", "shortDescription")}
+                    >
+                      {area.shortDescription}
                     </p>
                     <span className="inline-flex items-center gap-2 text-[#C9A961] font-semibold text-sm group-hover:gap-3 transition-all duration-300">
                       {area.cta}
@@ -222,167 +273,6 @@ function PracticeAreas() {
             );
           })}
         </div>
-      </div>
-    </section>
-  );
-}
-
-/* ════════════════════════════════════════════════════════════════
-   SECTION: TESTIMONIOS — Carousel
-   ════════════════════════════════════════════════════════════════ */
-const testimonials = [
-  {
-    text: "Los abogados de la firma legal Medina Almonte me ayudaron a redactar los contratos para todos los inquilinos de mi multifamiliar, para estar seguros de precarios...",
-    name: "Cliente satisfecho",
-    role: "Derecho Civil",
-  },
-  {
-    text: "El Dr. Medina y su equipo me ayudaron a reunirme otra vez con mi hijo y darle una segunda oportunidad a mi familia con su libertad...",
-    name: "Cliente satisfecho",
-    role: "Derecho Penal",
-  },
-  {
-    text: "El equipo de trabajo de este grupo de trabajo me habló con sinceridad, diciéndome lo malo y lo bueno, y con ellos y Dios mediante, mi esposo pudo recuperar su libertad y estar otra vez juntos con mis hijas...",
-    name: "Cliente satisfecho",
-    role: "Derecho Penal",
-  },
-  {
-    text: "El Dr. Eduardo me asesoró correctamente en todo momento y junto a su equipo pude conseguir una Sentencia de Alimentos justa para mis hijos y el reconocimiento de su apellido.",
-    name: "Cliente satisfecho",
-    role: "Derecho de Familia",
-  },
-];
-
-function TestimonialsSection() {
-  const [api, setApi] = useState<CarouselApi | null>(null);
-  const [current, setCurrent] = useState(0);
-
-  const onSelect = useCallback(() => {
-    if (!api) return;
-    setCurrent(api.selectedScrollSnap());
-  }, [api, setCurrent]);
-
-  useEffect(() => {
-    if (!api) return;
-    onSelect();
-    api.on("select", onSelect);
-    api.on("reInit", onSelect);
-    return () => {
-      api.off("select", onSelect);
-      api.off("reInit", onSelect);
-    };
-  }, [api, onSelect]);
-
-  return (
-    <section className="py-20 lg:py-28 section-dark-gradient">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-block text-[#8B6F47] font-semibold text-sm tracking-wider uppercase mb-4">
-              Testimonios
-            </span>
-            <h2
-              className="text-2xl sm:text-3xl lg:text-[2.5rem] font-bold leading-[1.15] mb-4"
-              style={{ fontFamily: "var(--font-playfair), serif" }}
-            >
-              <span className="text-white">Lo Que Dicen</span>{" "}
-              <span
-                style={{
-                  background: "linear-gradient(135deg, #D4C4B0, #C9A961)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                Nuestros Clientes
-              </span>
-            </h2>
-            <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
-              La confianza de nuestros clientes es nuestra mayor satisfacción.
-              Cada testimonio refleja nuestro compromiso con la excelencia
-              jurídica.
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.15}>
-          <div className="relative max-w-4xl mx-auto">
-            <Carousel
-              setApi={setApi}
-              opts={{ align: "center", loop: true }}
-              plugins={[Autoplay({ delay: 5000, stopOnInteraction: true })]}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {testimonials.map((t, i) => (
-                  <CarouselItem
-                    key={i}
-                    className="pl-4 md:basis-[80%] lg:basis-[70%]"
-                  >
-                    <div className="glass-card gold-border-gradient rounded-2xl p-8 sm:p-10 h-full">
-                      <Quote className="w-10 h-10 text-[#C9A961]/25 mb-6" />
-                      <p
-                        className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8"
-                        style={{
-                          fontFamily: "var(--font-merriweather), serif",
-                        }}
-                      >
-                        &ldquo;{t.text}&rdquo;
-                      </p>
-                      <div className="flex items-center justify-between flex-wrap gap-4">
-                        <div>
-                          <p className="text-white font-bold text-base">
-                            {t.name}
-                          </p>
-                          <p className="text-[#8B6F47] text-sm">{t.role}</p>
-                        </div>
-                        <div className="flex gap-0.5">
-                          {[...Array(5)].map((_, si) => (
-                            <Star
-                              key={si}
-                              className="w-4 h-4 fill-[#C9A961] text-[#C9A961]"
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
-
-            <button
-              onClick={() => api?.scrollPrev()}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-5 w-10 h-10 rounded-full glass-card flex items-center justify-center hover:border-[#C9A961]/50 transition-colors gpu-accelerated"
-              aria-label="Anterior"
-            >
-              <ChevronLeft className="w-5 h-5 text-[#C9A961]" />
-            </button>
-            <button
-              onClick={() => api?.scrollNext()}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-5 w-10 h-10 rounded-full glass-card flex items-center justify-center hover:border-[#C9A961]/50 transition-colors gpu-accelerated"
-              aria-label="Siguiente"
-            >
-              <ChevronRight className="w-5 h-5 text-[#C9A961]" />
-            </button>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.25}>
-          <div className="flex justify-center gap-2 mt-8">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => api?.scrollTo(i)}
-                className={`h-2 rounded-full transition-all duration-300 gpu-accelerated ${
-                  current === i
-                    ? "w-8 bg-[#C9A961]"
-                    : "w-2 bg-[#C9A961]/30 hover:bg-[#C9A961]/50"
-                }`}
-                aria-label={`Ir al testimonio ${i + 1}`}
-              />
-            ))}
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );
@@ -487,7 +377,6 @@ function WhyChooseUs() {
 
   return (
     <section className="py-20 lg:py-28 bg-[#0F0F0F] relative overflow-hidden">
-      {/* Decorative ambient blurs */}
       <div
         className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full blur-[120px] gpu-accelerated"
         style={{
@@ -556,7 +445,7 @@ function WhyChooseUs() {
           <div className="text-center mt-14">
             <Link
               href="/contacto"
-              className="btn-gold-primary inline-flex items-center justify-center gap-2.5 px-8 sm:px-10 py-4 rounded-xl text-[15px] sm:text-lg font-bold gpu-accelerated"
+              className="btn-gold-primary inline-flex items-center justify-center gap-2.5 px-8 sm:px-10 py-4 rounded-xl text-[15px] sm:text-lg font-bold gpu-accelerated cursor-pointer"
             >
               Agenda una Cita
               <ArrowRight className="w-5 h-5" />
@@ -569,26 +458,40 @@ function WhyChooseUs() {
 }
 
 /* ════════════════════════════════════════════════════════════════
-   HOME PAGE
+   HOME PAGE (Server Component)
    ════════════════════════════════════════════════════════════════ */
-export default function Home() {
+export default async function Home() {
+  const [
+    { data: siteSettings },
+    { data: heroSettings },
+    { data: aboutSection },
+    { data: practiceAreas },
+    { data: testimonials },
+  ] = await Promise.all([
+    sanityFetch<SiteSettings>({ query: SITE_SETTINGS_QUERY }),
+    sanityFetch<HeroSettings>({ query: HERO_SETTINGS_QUERY }),
+    sanityFetch<AboutSection>({ query: ABOUT_SECTION_QUERY }),
+    sanityFetch<PracticeArea[]>({ query: PRACTICE_AREAS_QUERY }),
+    sanityFetch<Testimonial[]>({ query: TESTIMONIALS_QUERY }),
+  ]);
+
   return (
-    <SiteLayout>
-      <Hero />
+    <SiteLayout siteSettings={siteSettings}>
+      <Hero heroSettings={heroSettings} />
       <SectionDivider from="#0F0F0F" to="#0F0F0F" />
 
       {/* ¿Quiénes Somos? */}
-      <WhoWeAre />
+      <WhoWeAre aboutSection={aboutSection} />
 
       <SectionDivider from="#0F0F0F" to="#1B2A49" />
 
       {/* Áreas de Práctica (Grid) */}
-      <PracticeAreas />
+      <PracticeAreas practiceAreas={practiceAreas} />
 
       <SectionDivider from="#1B2A49" to="#0F0F0F" />
 
       {/* Testimonios */}
-      <TestimonialsSection />
+      <TestimonialsSection testimonials={testimonials} />
 
       {/* Membresías y Certificaciones */}
       <MembershipsBar />

@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { Facebook, Instagram, ArrowUp } from "lucide-react";
 import Image from "next/image";
+import { ve } from "@/lib/ve";
+import type { SiteSettings } from "@/sanity/types";
 
-const quickLinks = [
+const defaultQuickLinks = [
   { label: "Inicio", href: "/" },
   { label: "Áreas de Práctica", href: "/areas-de-practica" },
   { label: "La Firma", href: "/firma" },
@@ -20,15 +22,23 @@ const practiceAreas = [
   { label: "Derecho de Familia", href: "/areas/familia" },
 ];
 
-const socialLinks = [
+const defaultSocialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/share/17zonPNHp7/", label: "Facebook" },
   { icon: Instagram, href: "https://www.instagram.com/solucioneslegales.medinaa", label: "Instagram" },
 ];
 
-export function Footer() {
+export function Footer({ siteSettings }: { siteSettings?: SiteSettings }) {
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
+
+  const email = siteSettings?.email || "firmalegalmedinaalmonte@gmail.com";
+  const phone = siteSettings?.phone || "+51 977 186 734";
+  const address = siteSettings?.address || "Lima, Perú";
+  const description =
+    siteSettings?.description ||
+    "Defensa legal estratégica en Derecho Civil, Penal y de Familia. MEDINA ALMONTE — Lawyers Firm, Perú.";
+  const logoSrc = siteSettings?.logoUrl || "/logo-footer.webp";
 
   return (
     <footer className="bg-[#060f1a] text-white">
@@ -36,24 +46,25 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-5">
+            <Link href="/" className="inline-block mb-5" {...ve("siteSettings", "siteSettings", "companyName")}>
               <Image
-                src="/logo-footer.webp"
-                alt="MEDINA ALMONTE — Lawyers Firm"
+                src={logoSrc}
+                alt={siteSettings?.companyName || "MEDINA ALMONTE — Lawyers Firm"}
                 width={1000}
                 height={220}
                 className="h-9 sm:h-10 w-auto object-contain"
                 style={{ width: "auto" }}
               />
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed">
-              Defensa legal estratégica en Derecho Civil, Penal y de Familia. MEDINA ALMONTE — Lawyers Firm, Perú.
+            <p className="text-white/60 text-sm leading-relaxed" {...ve("siteSettings", "siteSettings", "description")}>
+              {description}
             </p>
             <a
-              href="mailto:firmalegalmedinaalmonte@gmail.com"
+              href={`mailto:${email}`}
               className="text-white/60 hover:text-[#C9A961] text-sm transition-colors inline-block mt-3"
+              {...ve("siteSettings", "siteSettings", "email")}
             >
-              firmalegalmedinaalmonte@gmail.com
+              {email}
             </a>
           </div>
 
@@ -63,7 +74,7 @@ export function Footer() {
               Navegación
             </h4>
             <ul className="space-y-2.5">
-              {quickLinks.map((link) => (
+              {defaultQuickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -101,22 +112,24 @@ export function Footer() {
               Contacto
             </h4>
             <div className="space-y-3 text-sm text-white/60 mb-6">
-              <p>+51 977 186 734</p>
-              <p>firmalegalmedinaalmonte@gmail.com</p>
-              <p>Lima, Perú</p>
+              <p {...ve("siteSettings", "siteSettings", "phone")}>{phone}</p>
+              <p {...ve("siteSettings", "siteSettings", "email")}>{email}</p>
+              <p {...ve("siteSettings", "siteSettings", "address")}>{address}</p>
             </div>
 
             <h4 className="font-semibold text-sm uppercase tracking-wider text-white/80 mb-3">
               Síguenos
             </h4>
             <div className="flex gap-3">
-              {socialLinks.map((social) => {
+              {defaultSocialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
                   <a
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-white/10 hover:bg-[#C9A961]/20 rounded-lg flex items-center justify-center transition-colors"
                   >
                     <Icon className="w-4 h-4 text-white/70" />
@@ -133,24 +146,19 @@ export function Footer() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col items-center gap-2">
             <p className="text-white/40 text-sm">
-              © 2026 MEDINA ALMONTE — Lawyers Firm. Todos los derechos reservados.
+              © {new Date().getFullYear()} {siteSettings?.companyName || "MEDINA ALMONTE — Lawyers Firm"}. Todos los derechos reservados.
             </p>
             <p className="footer-credits">
               Diseñado y desarrollado por <a href="https://www.fastpagepro.com" target="_blank" rel="noopener noreferrer">FastPagePro</a>
             </p>
           </div>
-          <div className="flex items-center gap-4">
-            <Link href="/politica-privacidad" className="text-white/40 hover:text-white/60 text-sm transition-colors">
-              Política de Privacidad
-            </Link>
-            <button
-              onClick={scrollToTop}
-              className="w-10 h-10 bg-white/10 hover:bg-[#C9A961]/20 rounded-lg flex items-center justify-center transition-colors"
-              aria-label="Ir arriba"
-            >
-              <ArrowUp className="w-4 h-4" />
-            </button>
-          </div>
+          <button
+            onClick={scrollToTop}
+            aria-label="Volver arriba"
+            className="w-10 h-10 bg-white/5 hover:bg-[#C9A961]/20 rounded-lg flex items-center justify-center transition-colors text-white/60 hover:text-[#C9A961] cursor-pointer"
+          >
+            <ArrowUp className="w-4 h-4" />
+          </button>
         </div>
       </div>
     </footer>

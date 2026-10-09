@@ -7,10 +7,12 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { useWhatsAppStore } from "@/lib/whatsapp";
+import { ve } from "@/lib/ve";
+import type { SiteSettings } from "@/sanity/types";
 
-const LOGO_URL = "/logo.webp";
+const DEFAULT_LOGO_URL = "/logo.webp";
 
-const navLinks = [
+const DEFAULT_NAV_LINKS = [
   { name: "Inicio", href: "/" },
   { name: "Áreas de Práctica", href: "/areas-de-practica" },
   { name: "La Firma", href: "/firma" },
@@ -43,7 +45,7 @@ function NavLink({
   active,
   scrolled,
 }: {
-  link: (typeof navLinks)[0];
+  link: { name: string; href: string };
   index: number;
   active: boolean;
   scrolled: boolean;
@@ -132,11 +134,17 @@ function NavLink({
 }
 
 /* ─── Main Header ─── */
-export function Header() {
+export function Header({ siteSettings }: { siteSettings?: SiteSettings }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const pathname = usePathname();
   const { openModal } = useWhatsAppStore();
+
+  const logoSrc = siteSettings?.logoUrl || DEFAULT_LOGO_URL;
+  const navItems =
+    siteSettings?.nav && siteSettings.nav.length > 0
+      ? siteSettings.nav.map((item) => ({ name: item.label, href: item.url }))
+      : DEFAULT_NAV_LINKS;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
@@ -180,6 +188,7 @@ export function Header() {
               initial={{ opacity: 0, x: -15 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
+              {...ve("siteSettings", "siteSettings", "companyName")}
             >
               <Link href="/" className="flex items-center gap-2.5 group">
                 <motion.div
@@ -188,8 +197,8 @@ export function Header() {
                   transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 >
                   <Image
-                    src={LOGO_URL}
-                    alt="MEDINA ALMONTE — Lawyers Firm"
+                    src={logoSrc}
+                    alt={siteSettings?.companyName || "MEDINA ALMONTE — Lawyers Firm"}
                     width={800}
                     height={176}
                     className="brand-logo-fixed h-8 sm:h-9 lg:h-10 w-auto object-contain"
@@ -202,7 +211,7 @@ export function Header() {
 
             {/* ── Desktop Nav ── */}
             <nav className="hidden lg:flex items-center gap-0.5">
-              {navLinks.map((link, i) => (
+              {navItems.map((link, i) => (
                 <NavLink
                   key={link.href}
                   link={link}
@@ -219,11 +228,12 @@ export function Header() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 0.4 }}
               className="hidden lg:flex items-center gap-3"
+              {...ve("siteSettings", "siteSettings", "phone")}
             >
               <button
                 onClick={() => openModal()}
                 className="group relative px-5 py-2 rounded-lg text-[13px] font-semibold
-                         transition-all duration-300 overflow-hidden
+                         transition-all duration-300 overflow-hidden cursor-pointer
                          hover:shadow-[0_0_20px_rgba(201,169,97,0.25)]"
                 style={{
                   background: "linear-gradient(135deg, #C9A961 0%, #B8956A 50%, #8B6F47 100%)",
@@ -243,7 +253,7 @@ export function Header() {
             {/* ── Mobile Toggle ── */}
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className={`lg:hidden w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-200 ${
+              className={`lg:hidden w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-200 cursor-pointer ${
                 isScrolled
                   ? "text-amber-400/80 hover:text-amber-400 hover:bg-amber-400/10"
                   : "text-white/80 hover:text-white hover:bg-white/10"
@@ -288,8 +298,8 @@ export function Header() {
               <div className="flex items-center justify-between h-14 px-5 border-b border-white/[0.06]">
                 <Link href="/" onClick={() => setIsMobileOpen(false)} className="flex items-center">
                   <Image
-                    src={LOGO_URL}
-                    alt="MEDINA ALMONTE — Lawyers Firm"
+                    src={logoSrc}
+                    alt={siteSettings?.companyName || "MEDINA ALMONTE — Lawyers Firm"}
                     width={800}
                     height={176}
                     className="brand-logo-fixed h-7 w-auto object-contain"
@@ -298,7 +308,7 @@ export function Header() {
                 </Link>
                 <button
                   onClick={() => setIsMobileOpen(false)}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg text-amber-400/70 hover:text-amber-400 hover:bg-amber-400/10 transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg text-amber-400/70 hover:text-amber-400 hover:bg-amber-400/10 transition-colors cursor-pointer"
                   aria-label="Cerrar menú"
                 >
                   <X size={18} />
@@ -307,7 +317,7 @@ export function Header() {
 
               {/* Drawer links */}
               <nav className="px-4 py-4">
-                {navLinks.map((link, index) => (
+                {navItems.map((link, index) => (
                   <motion.div
                     key={link.href}
                     initial={{ opacity: 0, x: 20 }}
@@ -342,7 +352,7 @@ export function Header() {
               <div className="px-5 pb-6 pt-2">
                 <button
                   onClick={() => { setIsMobileOpen(false); openModal(); }}
-                  className="w-full py-3.5 rounded-lg text-[14px] font-bold transition-all duration-200"
+                  className="w-full py-3.5 rounded-lg text-[14px] font-bold transition-all duration-200 cursor-pointer"
                   style={{
                     background: "linear-gradient(135deg, #C9A961 0%, #8B6F47 100%)",
                     color: "#0a0e1a",

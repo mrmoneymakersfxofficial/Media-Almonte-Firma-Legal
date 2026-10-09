@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { SiteLayout } from "@/components/SiteLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Shield, Users, Target, Award, Scale, BookOpen } from "lucide-react";
+import { sanityFetch } from "@/sanity/live";
+import { ABOUT_SECTION_QUERY, SITE_SETTINGS_QUERY } from "@/sanity/queries";
+import { ve } from "@/lib/ve";
+import type { AboutSection, SiteSettings } from "@/sanity/types";
 
 export const metadata: Metadata = {
   title: "La Firma | MEDINA ALMONTE — Lawyers Firm",
@@ -16,7 +20,7 @@ export const metadata: Metadata = {
   ],
 };
 
-const values = [
+const DEFAULT_VALUES = [
   {
     icon: Shield,
     title: "Ética Profesional",
@@ -49,50 +53,77 @@ const values = [
   },
 ];
 
-export default function FirmaPage() {
+export default async function FirmaPage() {
+  const [{ data: aboutSection }, { data: siteSettings }] = await Promise.all([
+    sanityFetch<AboutSection>({ query: ABOUT_SECTION_QUERY }),
+    sanityFetch<SiteSettings>({ query: SITE_SETTINGS_QUERY }),
+  ]);
+
+  const badge = aboutSection?.badge || "Sobre Nosotros";
+  const heading = aboutSection?.heading || "MEDINA ALMONTE — Lawyers Firm";
+  const subheading = aboutSection?.subheading || "Más que Abogados, tu Principal Estratega Legal";
+  const content =
+    aboutSection?.content ||
+    "MEDINA ALMONTE — Lawyers Firm es un estudio jurídico de primer nivel con sede en Perú, dedicado a brindar soluciones legales estratégicas e integrales. Con un equipo de abogados altamente calificados y una trayectoria comprobada, nos comprometemos con la excelencia, la ética profesional y la obtención de resultados concretos para nuestros clientes.";
+
+  const values =
+    aboutSection?.pillars && aboutSection.pillars.length > 0
+      ? aboutSection.pillars.map((p, i) => {
+          const icons = [Shield, Target, Users, Award, Scale, BookOpen];
+          return {
+            icon: icons[i % icons.length],
+            title: p.title,
+            description: p.description,
+          };
+        })
+      : DEFAULT_VALUES;
+
   return (
-    <SiteLayout>
+    <SiteLayout siteSettings={siteSettings}>
       <section className="section-dark-gradient min-h-screen py-24 px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-20">
             <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9A961]/30 text-[#C9A961] text-sm font-medium tracking-wider uppercase mb-8">
-                Sobre Nosotros
+              <span
+                className="inline-block px-4 py-1.5 rounded-full border border-[#C9A961]/30 text-[#C9A961] text-sm font-medium tracking-wider uppercase mb-8 cursor-pointer"
+                {...ve("aboutSection", "aboutSection", "badge")}
+              >
+                {badge}
               </span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h1
-                className="immersive-title font-bold mb-6"
+                className="immersive-title font-bold mb-6 cursor-pointer"
                 style={{ color: "#C9A961", fontFamily: "var(--font-playfair), serif" }}
+                {...ve("aboutSection", "aboutSection", "heading")}
               >
-                MEDINA ALMONTE — Lawyers Firm
+                {heading}
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <div className="section-divider-gold mb-6" />
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-white mb-10" style={{ fontFamily: "var(--font-playfair), serif" }}>
-                Más que Abogados, tu Principal Estratega Legal
+              <h2
+                className="text-xl md:text-2xl lg:text-3xl font-light text-white mb-10 cursor-pointer"
+                style={{ fontFamily: "var(--font-playfair), serif" }}
+                {...ve("aboutSection", "aboutSection", "subheading")}
+              >
+                {subheading}
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-                MEDINA ALMONTE — Lawyers Firm es un estudio jurídico de primer nivel
-                con sede en Perú, dedicado a brindar soluciones legales
-                estratégicas e integrales. Con un equipo de abogados
-                altamente calificados y una trayectoria comprobada, nos
-                comprometemos con la excelencia, la ética profesional y la
-                obtención de resultados concretos para nuestros clientes.
-                Nuestro enfoque combina la experiencia jurídica con una
-                visión moderna del derecho, adaptándonos a las necesidades
-                de cada caso con innovación y dedicación.
+              <p
+                className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto cursor-pointer"
+                {...ve("aboutSection", "aboutSection", "content")}
+              >
+                {content}
               </p>
             </ScrollReveal>
           </div>
 
-          {/* Values — no cards, icon + text direct on background */}
+          {/* Values */}
           <ScrollReveal delay={0.2}>
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9A961]/30 text-[#C9A961] text-sm font-medium tracking-wider uppercase">
@@ -111,10 +142,19 @@ export default function FirmaPage() {
                       <Icon className="w-5 h-5 text-[#C9A961]" />
                     </div>
                     <div className="min-w-0">
-                      <h3 className="text-white font-bold text-base mb-2" style={{ fontFamily: "var(--font-playfair), serif" }}>
+                      <h3
+                        className="text-white font-bold text-base mb-2 cursor-pointer"
+                        style={{ fontFamily: "var(--font-playfair), serif" }}
+                        {...ve("aboutSection", "aboutSection", `pillars[${index}].title`)}
+                      >
                         {value.title}
                       </h3>
-                      <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
+                      <p
+                        className="text-gray-400 text-sm leading-relaxed cursor-pointer"
+                        {...ve("aboutSection", "aboutSection", `pillars[${index}].description`)}
+                      >
+                        {value.description}
+                      </p>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -122,7 +162,7 @@ export default function FirmaPage() {
             })}
           </div>
 
-          {/* Stats — no cards, just numbers on background */}
+          {/* Stats */}
           <ScrollReveal delay={0.3}>
             <div className="mt-20">
               <hr className="subtle-divider mb-12" />

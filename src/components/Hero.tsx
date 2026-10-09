@@ -7,9 +7,11 @@ import { ArrowRight, Shield, CheckCircle2, Clock, TrendingUp, Users, Volume2, Vo
 import { useCountUp } from "@/hooks/use-count-up";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
+import { ve } from "@/lib/ve";
+import type { HeroSettings } from "@/sanity/types";
 
 /* ═══════════════════════════════════════════════════════════════════════
-   HERO — Medina Almonte Firma Legal · Premium Visual Upgrade
+   HERO — Medina Almonte Firma Legal · Real-Time Visual Editing
    ═══════════════════════════════════════════════════════════════════════ */
 
 /* ═══ Counter component — Glassmorphism + Lucide Icon ═══ */
@@ -18,15 +20,17 @@ function CounterItem({
   suffix,
   label,
   icon: Icon,
+  veProps,
 }: {
   value: number;
   suffix: string;
   label: string;
   icon: React.ElementType;
+  veProps?: Record<string, string>;
 }) {
   const { count, ref } = useCountUp(value, 2500);
   return (
-    <div className="text-center">
+    <div className="text-center" {...veProps}>
       <div className="flex items-center justify-center mb-2">
         <Icon className="w-4 h-4 text-[#FFD700]/70 mr-1.5" />
         <span
@@ -56,11 +60,13 @@ function CtaButton({
   variant,
   onClick,
   href,
+  veProps,
 }: {
   text: string;
   variant: "primary" | "secondary";
   onClick?: () => void;
   href?: string;
+  veProps?: Record<string, string>;
 }) {
   const cls =
     variant === "primary"
@@ -69,7 +75,7 @@ function CtaButton({
 
   const inner = (
     <>
-      {text}
+      <span {...veProps}>{text}</span>
       {variant === "primary" && <ArrowRight className="w-4 h-4" />}
     </>
   );
@@ -89,10 +95,16 @@ function CtaButton({
   );
 }
 
+const DEFAULT_COUNTERS = [
+  { value: 15, suffix: "+", label: "Años de Experiencia", icon: Clock },
+  { value: 92, suffix: "%", label: "Casos Ganados", icon: TrendingUp },
+  { value: 500, suffix: "+", label: "Clientes Satisfechos", icon: Users },
+];
+
 /* ═══════════════════════════════════════════════════════════════════════
    HERO COMPONENT
    ═══════════════════════════════════════════════════════════════════════ */
-export function Hero() {
+export function Hero({ heroSettings }: { heroSettings?: HeroSettings }) {
   const { openModal } = useWhatsAppStore();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
@@ -108,10 +120,38 @@ export function Hero() {
     }
   }, []);
 
+  const badgeText = heroSettings?.badge || "MEDINA ALMONTE — Lawyers Firm";
+  const title1 = heroSettings?.titlePart1 || "Medina Almonte";
+  const title2 = heroSettings?.titlePart2 || "Firma Legal";
+  const tagline = heroSettings?.tagline || "Especialistas en Derecho Penal, Familia y Civil.";
+  const description =
+    heroSettings?.description ||
+    "Protegemos tus intereses con excelencia y estrategia. Confianza, autoridad legal y resultados comprobados.";
+  const ctaPrimary = heroSettings?.ctaPrimaryText || "Agenda tu Consulta";
+  const ctaSecondary = heroSettings?.ctaSecondaryText || "Conoce Más";
+  const trustBadges =
+    heroSettings?.trustBadges && heroSettings.trustBadges.length > 0
+      ? heroSettings.trustBadges
+      : ["Confianza", "Autoridad legal", "Resultados comprobados"];
+  const videoSrc = heroSettings?.backgroundVideoUrl || "/video-1.mp4";
+
+  const counters =
+    heroSettings?.statCounters && heroSettings.statCounters.length > 0
+      ? heroSettings.statCounters.map((sc, i) => {
+          const fallbackIcon = i === 0 ? Clock : i === 1 ? TrendingUp : Users;
+          return {
+            value: sc.value,
+            suffix: sc.suffix || "+",
+            label: sc.label,
+            icon: fallbackIcon,
+          };
+        })
+      : DEFAULT_COUNTERS;
+
   return (
     <section className="relative flex overflow-hidden min-h-[100svh] hero-fade-top">
       {/* ═══ BACKGROUND VIDEO — video 1 ═══ */}
-      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true" {...ve("heroSettings", "heroSettings", "backgroundVideoUrl")}>
         <video
           ref={videoRef}
           autoPlay
@@ -122,7 +162,7 @@ export function Hero() {
           poster="/hero-video-poster.webp"
           className="w-full h-full object-cover md:object-[68%_center] object-center filter brightness-[0.92] contrast-[1.08]"
         >
-          <source src="/video-1.mp4" type="video/mp4" />
+          <source src={videoSrc} type="video/mp4" />
         </video>
       </div>
 
@@ -146,7 +186,6 @@ export function Hero() {
       />
 
       {/* ═══ LAYER 1B — Lateral Editorial Shade (PC only) ═══ */}
-      {/* Keeps text 100% crisp while letting the 3D gold logo shine unobstructed on the right */}
       <div
         className="absolute inset-0 hidden md:block gpu-accelerated"
         style={{
@@ -168,17 +207,14 @@ export function Hero() {
 
       {/* ═══ LAYER 2 — Decorative Elements ═══ */}
       <div className="hero-decor-layer">
-        {/* Large ambient glow — pure gold */}
         <div
           className="absolute -top-60 -right-60 w-[600px] h-[600px] rounded-full blur-[140px] gpu-accelerated"
           style={{ background: "radial-gradient(circle, rgba(255,215,0,0.08) 0%, transparent 70%)" }}
         />
-        {/* Warm gold glow bottom-left */}
         <div
           className="absolute -bottom-60 -left-60 w-[500px] h-[500px] rounded-full blur-[120px] gpu-accelerated"
           style={{ background: "radial-gradient(circle, rgba(218,165,32,0.07) 0%, transparent 70%)" }}
         />
-        {/* Dot grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.025] gpu-accelerated"
           style={{
@@ -198,10 +234,11 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="hero-badge lg:hidden inline-flex items-center gap-2.5 bg-white/[0.06] backdrop-blur-xl border border-[#FFD700]/30 rounded-full px-5 py-2.5 shadow-[0_0_20px_rgba(255,215,0,0.12)] gpu-accelerated"
+            {...ve("heroSettings", "heroSettings", "badge")}
           >
             <Shield className="w-3.5 h-3.5 text-[#FFD700]" />
             <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">
-              MEDINA ALMONTE — Lawyers Firm
+              {badgeText}
             </span>
           </motion.div>
 
@@ -210,7 +247,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="hero-h1 mt-7 text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight"
+            className="hero-h1 mt-7 text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight cursor-pointer"
             style={{
               fontFamily: "var(--font-playfair), serif",
               background: "linear-gradient(135deg, #FFF6D1 0%, #FFD700 25%, #DFB143 50%, #FFF2B2 75%, #B8860B 100%)",
@@ -218,8 +255,9 @@ export function Hero() {
               WebkitTextFillColor: "transparent",
               filter: "drop-shadow(0 2px 14px rgba(255, 215, 0, 0.35))",
             }}
+            {...ve("heroSettings", "heroSettings", "titlePart1")}
           >
-            Medina Almonte
+            {title1}
           </motion.h1>
 
           {/* H2 — Subtitle */}
@@ -227,10 +265,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-2 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-[1.15] tracking-tight"
+            className="mt-2 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-[1.15] tracking-tight cursor-pointer"
             style={{ fontFamily: "var(--font-playfair), serif" }}
+            {...ve("heroSettings", "heroSettings", "titlePart2")}
           >
-            Firma Legal
+            {title2}
           </motion.h2>
 
           {/* Value line — Silver accent */}
@@ -243,8 +282,9 @@ export function Hero() {
               color: "#C0C0C0",
               fontFamily: "var(--font-inter), sans-serif",
             }}
+            {...ve("heroSettings", "heroSettings", "tagline")}
           >
-            Especialistas en Derecho Penal, Familia y Civil.
+            {tagline}
           </motion.p>
 
           {/* Description */}
@@ -254,11 +294,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="mt-3 text-[15px] sm:text-[17px] lg:text-[18px] text-white/75 max-w-xl leading-relaxed"
             style={{ fontFamily: "var(--font-inter), sans-serif" }}
+            {...ve("heroSettings", "heroSettings", "description")}
           >
-            Protegemos tus intereses con excelencia y estrategia.{" "}
-            <span className="text-white/95 font-medium">
-              Confianza, autoridad legal y resultados comprobados.
-            </span>
+            {description}
           </motion.p>
 
           {/* CTAs — Premium Buttons */}
@@ -269,16 +307,18 @@ export function Hero() {
             className="hero-ctas mt-10 flex flex-col sm:flex-row gap-4"
           >
             <CtaButton
-              text="Agenda tu Consulta"
+              text={ctaPrimary}
               variant="primary"
               onClick={() => openModal()}
+              veProps={ve("heroSettings", "heroSettings", "ctaPrimaryText")}
             />
             <CtaButton
-              text="Conoce Más"
+              text={ctaSecondary}
               variant="secondary"
               onClick={() =>
                 window.scrollBy({ top: window.innerHeight, behavior: "smooth" })
               }
+              veProps={ve("heroSettings", "heroSettings", "ctaSecondaryText")}
             />
           </motion.div>
 
@@ -288,15 +328,14 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.55 }}
             className="hero-trust mt-8 flex flex-wrap gap-x-5 gap-y-2.5 text-white/40 text-xs sm:text-sm"
+            {...ve("heroSettings", "heroSettings", "trustBadges")}
           >
-            {["Confianza", "Autoridad legal", "Resultados comprobados"].map(
-              (badge) => (
-                <span key={badge} className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]/80" />
-                  {badge}
-                </span>
-              )
-            )}
+            {trustBadges.map((badge, idx) => (
+              <span key={badge} className="flex items-center gap-1.5" {...ve("heroSettings", "heroSettings", `trustBadges[${idx}]`)}>
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]/80" />
+                {badge}
+              </span>
+            ))}
           </motion.div>
 
           {/* Social links */}
@@ -332,11 +371,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="hero-counters mt-14 lg:mt-20 grid grid-cols-3 gap-3 sm:gap-5 hero-text-col max-w-xl"
         >
-          {[
-            { value: 15, suffix: "+", label: "Años de Experiencia", icon: Clock },
-            { value: 92, suffix: "%", label: "Casos Ganados", icon: TrendingUp },
-            { value: 500, suffix: "+", label: "Clientes Satisfechos", icon: Users },
-          ].map((item, i) => (
+          {counters.map((item, i) => (
             <motion.div
               key={item.label}
               initial={{ opacity: 0, y: 20 }}
@@ -353,6 +388,7 @@ export function Hero() {
                 suffix={item.suffix}
                 label={item.label}
                 icon={item.icon}
+                veProps={ve("heroSettings", "heroSettings", `statCounters[${i}]`)}
               />
             </motion.div>
           ))}

@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { SiteLayout } from "@/components/SiteLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Trophy, TrendingUp, CheckCircle } from "lucide-react";
+import { sanityFetch } from "@/sanity/live";
+import { TESTIMONIALS_QUERY, SITE_SETTINGS_QUERY } from "@/sanity/queries";
+import { ve } from "@/lib/ve";
+import type { Testimonial, SiteSettings } from "@/sanity/types";
 
 export const metadata: Metadata = {
   title: "Casos y Resultados | MEDINA ALMONTE — Lawyers Firm",
@@ -9,16 +13,33 @@ export const metadata: Metadata = {
   keywords: ["casos de éxito", "resultados jurídicos", "sentencias favorables", "abogados Perú"],
 };
 
-const cases = [
-  { id: 1, title: "Sentencia de Alimentos Justa para Mis Hijos", category: "Derecho de Familia", description: "Asesoría legal integral que permitió obtener una sentencia de alimentos justa para los hijos del cliente, así como el reconocimiento del apellido paterno, garantizando sus derechos alimentarios y de identidad.", result: "Sentencia Favorable", icon: Trophy },
-  { id: 2, title: "Absolución en Proceso Penal Complejo", category: "Derecho Penal", description: "Defensa penal estratégica que resultó en la absolución completa de los cargos imputados, demostrando la inocencia de nuestro cliente ante el Poder Judicial y permitiendo su reincorporación a la vida familiar.", result: "Absolución Completa", icon: TrendingUp },
-  { id: 3, title: "Recuperación de Libertad y Reunificación Familiar", category: "Derecho Penal", description: "Defensa penal exitosa que permitió a nuestro cliente recuperar su libertad y reunirse nuevamente con sus hijas, gracias a una estrategia legal sólida y sostenida en cada etapa del proceso.", result: "Libertad Recuperada", icon: CheckCircle },
-  { id: 4, title: "Contratos Seguros para Inquilinos de Multifamiliar", category: "Derecho Civil", description: "Redacción y revisión de contratos de arrendamiento para todos los inquilinos de un multifamiliar, brindando seguridad jurídica al propietario y previniendo situaciones de precariedad legal.", result: "Seguridad Jurídica", icon: Trophy },
+const DEFAULT_CASES = [
+  { _id: "testimonial-4", title: "Sentencia de Alimentos Justa para Mis Hijos", category: "Derecho de Familia", description: "Asesoría legal integral que permitió obtener una sentencia de alimentos justa para los hijos del cliente, así como el reconocimiento del apellido paterno, garantizando sus derechos alimentarios y de identidad.", result: "Sentencia Favorable", icon: Trophy },
+  { _id: "testimonial-2", title: "Absolución en Proceso Penal Complejo", category: "Derecho Penal", description: "Defensa penal estratégica que resultó en la absolución completa de los cargos imputados, demostrando la inocencia de nuestro cliente ante el Poder Judicial y permitiendo su reincorporación a la vida familiar.", result: "Absolución Completa", icon: TrendingUp },
+  { _id: "testimonial-3", title: "Recuperación de Libertad y Reunificación Familiar", category: "Derecho Penal", description: "Defensa penal exitosa que permitió a nuestro cliente recuperar su libertad y reunirse nuevamente con sus hijas, gracias a una estrategia legal sólida y sostenida en cada etapa del proceso.", result: "Libertad Recuperada", icon: CheckCircle },
+  { _id: "testimonial-1", title: "Contratos Seguros para Inquilinos de Multifamiliar", category: "Derecho Civil", description: "Redacción y revisión de contratos de arrendamiento para todos los inquilinos de un multifamiliar, brindando seguridad jurídica al propietario y previniendo situaciones de precariedad legal.", result: "Seguridad Jurídica", icon: Trophy },
 ];
 
-export default function ResultadosPage() {
+export default async function ResultadosPage() {
+  const [{ data: testimonials }, { data: siteSettings }] = await Promise.all([
+    sanityFetch<Testimonial[]>({ query: TESTIMONIALS_QUERY }),
+    sanityFetch<SiteSettings>({ query: SITE_SETTINGS_QUERY }),
+  ]);
+
+  const items =
+    testimonials && testimonials.length > 0
+      ? testimonials.map((t, idx) => ({
+          _id: t._id,
+          title: t.clientName ? `Caso: ${t.clientName}` : DEFAULT_CASES[idx % DEFAULT_CASES.length].title,
+          category: t.caseType || "Derecho Especializado",
+          description: t.quote,
+          result: "Resolución Favorable",
+          icon: idx % 2 === 0 ? Trophy : CheckCircle,
+        }))
+      : DEFAULT_CASES;
+
   return (
-    <SiteLayout>
+    <SiteLayout siteSettings={siteSettings}>
       <section className="section-dark-gradient min-h-screen py-24 px-4">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
@@ -37,7 +58,7 @@ export default function ResultadosPage() {
             </ScrollReveal>
           </div>
 
-          {/* Stats — no cards, just numbers */}
+          {/* Stats */}
           <ScrollReveal delay={0.25}>
             <div className="grid grid-cols-3 gap-4 mb-16 text-center">
               {[
@@ -55,28 +76,44 @@ export default function ResultadosPage() {
 
           <hr className="subtle-divider mb-10" />
 
-          {/* Cases — no cards, left accent line only */}
+          {/* Cases */}
           <div className="space-y-10">
-            {cases.map((caseItem, index) => {
+            {items.map((caseItem, index) => {
               const Icon = caseItem.icon;
               return (
-                <ScrollReveal key={caseItem.id} delay={0.1 * (index + 1)}>
+                <ScrollReveal key={caseItem._id || index} delay={0.1 * (index + 1)}>
                   <div className="border-l-[3px] border-[#C9A961]/50 pl-5 sm:pl-8 py-2">
                     <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 mb-3">
                       <div className="flex-1 min-w-0">
                         <span className="case-number-gold text-sm font-medium text-gray-500" style={{ fontFamily: "var(--font-playfair), serif" }}>
-                          CASO {String(caseItem.id).padStart(2, '0')}
+                          CASO {String(index + 1).padStart(2, '0')}
                         </span>
-                        <h3 className="text-white font-bold text-base sm:text-lg mt-1 leading-snug" style={{ fontFamily: "var(--font-playfair), serif" }}>{caseItem.title}</h3>
-                        <p className="text-[#8B6F47] text-sm font-medium mt-1">{caseItem.category}</p>
+                        <h3
+                          className="text-white font-bold text-base sm:text-lg mt-1 leading-snug cursor-pointer"
+                          style={{ fontFamily: "var(--font-playfair), serif" }}
+                          {...ve(caseItem._id, "testimonial", "clientName")}
+                        >
+                          {caseItem.title}
+                        </h3>
+                        <p
+                          className="text-[#8B6F47] text-sm font-medium mt-1 cursor-pointer"
+                          {...ve(caseItem._id, "testimonial", "caseType")}
+                        >
+                          {caseItem.category}
+                        </p>
                       </div>
                       <span className="case-badge-victory shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5 self-start sm:mt-1">
                         <Icon className="w-3.5 h-3.5" />{caseItem.result}
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm leading-relaxed">{caseItem.description}</p>
+                    <p
+                      className="text-gray-400 text-sm leading-relaxed cursor-pointer"
+                      {...ve(caseItem._id, "testimonial", "quote")}
+                    >
+                      {caseItem.description}
+                    </p>
                   </div>
-                  {index < cases.length - 1 && <hr className="subtle-divider mt-10" />}
+                  {index < items.length - 1 && <hr className="subtle-divider mt-10" />}
                 </ScrollReveal>
               );
             })}
@@ -87,7 +124,14 @@ export default function ResultadosPage() {
             <div className="mt-16 text-center">
               <hr className="subtle-divider mb-10" />
               <p className="text-gray-500 text-sm mb-6">¿Tienes un caso que necesita representación legal de primer nivel?</p>
-              <a href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20MEDINA%20ALMONTE%20Lawyers%20Firm." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0F0F0F] font-bold text-sm px-8 py-3.5 rounded-xl">Consultar por WhatsApp</a>
+              <a
+                href="https://api.whatsapp.com/send?phone=51977186734&text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20de%20MEDINA%20ALMONTE%20Lawyers%20Firm."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 btn-gold-primary gpu-accelerated text-[#0F0F0F] font-bold text-sm px-8 py-3.5 rounded-xl cursor-pointer"
+              >
+                Consultar por WhatsApp
+              </a>
             </div>
           </ScrollReveal>
         </div>

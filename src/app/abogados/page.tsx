@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { SiteLayout } from "@/components/SiteLayout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TeamCards } from "@/components/TeamCards";
+import { sanityFetch } from "@/sanity/live";
+import { LAWYERS_QUERY, SITE_SETTINGS_QUERY } from "@/sanity/queries";
+import type { Lawyer, SiteSettings } from "@/sanity/types";
 
 export const metadata: Metadata = {
   title: "Nuestros Abogados | MEDINA ALMONTE — Lawyers Firm",
@@ -15,9 +18,14 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function AbogadosPage() {
+export default async function AbogadosPage() {
+  const [{ data: lawyers }, { data: siteSettings }] = await Promise.all([
+    sanityFetch<Lawyer[]>({ query: LAWYERS_QUERY }),
+    sanityFetch<SiteSettings>({ query: SITE_SETTINGS_QUERY }),
+  ]);
+
   return (
-    <SiteLayout>
+    <SiteLayout siteSettings={siteSettings}>
       <section className="section-dark-gradient py-24 px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
@@ -57,23 +65,8 @@ export default function AbogadosPage() {
             </ScrollReveal>
           </div>
 
-          {/* Team — no cards, vertical list */}
-          <TeamCards />
-
-          {/* Colegio de Abogados — no card */}
-          <ScrollReveal delay={0.2}>
-            <div className="mt-16 text-center">
-              <hr className="subtle-divider mb-10" />
-              <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-                Todos nuestros abogados se encuentran debidamente colegiados y
-                habilitados para el ejercicio profesional en el territorio
-                nacional.
-              </p>
-              <p className="text-[#C9A961] font-semibold mt-3 text-sm sm:text-base">
-                Registro: Colegio de Abogados del Callao — CAC
-              </p>
-            </div>
-          </ScrollReveal>
+          {/* Team cards list with Sanity live data */}
+          <TeamCards lawyers={lawyers} />
         </div>
       </section>
     </SiteLayout>

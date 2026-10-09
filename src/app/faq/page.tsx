@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/SiteLayout";
 import FAQClient from "./FAQClient";
+import { sanityFetch } from "@/sanity/live";
+import { FAQ_ITEMS_QUERY, SITE_SETTINGS_QUERY } from "@/sanity/queries";
+import type { FaqItem, SiteSettings } from "@/sanity/types";
 
 export const metadata: Metadata = {
   title: "Preguntas Frecuentes | MEDINA ALMONTE — Lawyers Firm",
@@ -21,10 +24,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function FAQPage() {
+export default async function FAQPage() {
+  const [{ data: faqs }, { data: siteSettings }] = await Promise.all([
+    sanityFetch<FaqItem[]>({ query: FAQ_ITEMS_QUERY }),
+    sanityFetch<SiteSettings>({ query: SITE_SETTINGS_QUERY }),
+  ]);
+
   return (
-    <SiteLayout>
-      <FAQClient />
+    <SiteLayout siteSettings={siteSettings}>
+      <FAQClient faqs={faqs} />
     </SiteLayout>
   );
 }

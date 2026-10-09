@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/SiteLayout";
 import ContactFormClient from "./ContactFormClient";
+import { sanityFetch } from "@/sanity/live";
+import { SITE_SETTINGS_QUERY } from "@/sanity/queries";
+import type { SiteSettings } from "@/sanity/types";
 
 export const metadata: Metadata = {
   title: "Contacto | MEDINA ALMONTE — Lawyers Firm",
@@ -22,10 +25,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactoPage() {
+export default async function ContactoPage() {
+  const { data: siteSettings } = await sanityFetch<SiteSettings>({
+    query: SITE_SETTINGS_QUERY,
+  });
+
   return (
-    <SiteLayout>
-      <ContactFormClient />
+    <SiteLayout siteSettings={siteSettings}>
+      <ContactFormClient siteSettings={siteSettings} />
     </SiteLayout>
   );
 }

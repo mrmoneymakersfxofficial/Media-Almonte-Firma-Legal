@@ -4,6 +4,8 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Preloader } from "@/components/Preloader";
 import { Playfair_Display, Inter, Merriweather } from "next/font/google";
+import { VisualEditing } from "@/components/cms/VisualEditing";
+import { SanityLiveWithToken } from "@/components/SanityLiveWithToken";
 
 // Fuentes MEDINA ALMONTE — Lawyers Firm
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
@@ -103,6 +105,8 @@ export default function RootLayout({
         <SpeedInsights />
         {children}
         <Toaster />
+        <VisualEditing />
+        <SanityLiveWithToken includeDrafts={true} />
       </body>
     </html>
   );

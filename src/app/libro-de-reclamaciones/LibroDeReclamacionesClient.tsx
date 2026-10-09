@@ -303,7 +303,7 @@ function generatePDF(data: FormData, ficha: string): void {
   doc.setFont("helvetica", "normal");
   doc.setTextColor(140, 140, 140);
   doc.text(
-    "Medina Almonte — Lawyers Firm  |  contacto@medinaalmonte.com  |  +51 977 186 734  |  Lima, Perú",
+    "Medina Almonte — Lawyers Firm  |  firmalegalmedinaalmonte@gmail.com  |  +51 977 186 734  |  Lima, Perú",
     pageW / 2,
     footY,
     { align: "center" }
@@ -762,7 +762,7 @@ export function LibroDeReclamacionesClient() {
                 RUC: Pendiente de Inscripción
               </p>
               <p className="text-white/40 text-sm">
-                contacto@medinaalmonte.com | +51 977 186 734
+                firmalegalmedinaalmonte@gmail.com | +51 977 186 734
               </p>
               <p className="text-white/40 text-sm">
                 Lima, Perú

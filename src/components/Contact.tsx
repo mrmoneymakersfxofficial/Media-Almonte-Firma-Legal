@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    detail: "contacto@medinaalmonte.com",
+    detail: "firmalegalmedinaalmonte@gmail.com",
     description: "Respuesta en 24h",
     color: "text-navy",
     bg: "bg-navy/10",

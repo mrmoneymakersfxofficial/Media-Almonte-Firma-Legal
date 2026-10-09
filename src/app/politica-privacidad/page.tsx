@@ -40,7 +40,7 @@ export default function PoliticaPrivacidadPage() {
               <section>
                 <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair), serif" }}>1. Responsable del Tratamiento</h2>
                 <p className="text-gray-400 text-base leading-relaxed">
-                  El responsable del tratamiento de los datos personales es <span className="text-white">MEDINA ALMONTE — Lawyers Firm</span>, con domicilio en Lima, Perú. Para cualquier consulta relacionada con el tratamiento de tus datos personales, puedes contactarnos a través de <a href="mailto:contacto@medinaalmonte.com" className="text-[#C9A961] hover:underline transition-colors">contacto@medinaalmonte.com</a> o al teléfono <a href="tel:+51977186734" className="text-[#C9A961] hover:underline transition-colors">+51 977 186 734</a>.
+                  El responsable del tratamiento de los datos personales es <span className="text-white">MEDINA ALMONTE — Lawyers Firm</span>, con domicilio en Lima, Perú. Para cualquier consulta relacionada con el tratamiento de tus datos personales, puedes contactarnos a través de <a href="mailto:firmalegalmedinaalmonte@gmail.com" className="text-[#C9A961] hover:underline transition-colors">firmalegalmedinaalmonte@gmail.com</a> o al teléfono <a href="tel:+51977186734" className="text-[#C9A961] hover:underline transition-colors">+51 977 186 734</a>.
                 </p>
               </section>
             </ScrollReveal>
@@ -123,7 +123,7 @@ export default function PoliticaPrivacidadPage() {
                     </div>
                   ))}
                 </div>
-                <p className="text-gray-400 text-base leading-relaxed mt-4">Para ejercer cualquiera de estos derechos, envía tu solicitud a <a href="mailto:contacto@medinaalmonte.com" className="text-[#C9A961] hover:underline transition-colors">contacto@medinaalmonte.com</a> y responderemos en un plazo máximo de 30 días hábiles.</p>
+                <p className="text-gray-400 text-base leading-relaxed mt-4">Para ejercer cualquiera de estos derechos, envía tu solicitud a <a href="mailto:firmalegalmedinaalmonte@gmail.com" className="text-[#C9A961] hover:underline transition-colors">firmalegalmedinaalmonte@gmail.com</a> y responderemos en un plazo máximo de 30 días hábiles.</p>
               </section>
             </ScrollReveal>
 
@@ -154,7 +154,7 @@ export default function PoliticaPrivacidadPage() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="text-[#C9A961] font-semibold w-28 shrink-0">Correo:</span>
-                    <a href="mailto:contacto@medinaalmonte.com" className="text-[#C9A961] hover:underline transition-colors">contacto@medinaalmonte.com</a>
+                    <a href="mailto:firmalegalmedinaalmonte@gmail.com" className="text-[#C9A961] hover:underline transition-colors">firmalegalmedinaalmonte@gmail.com</a>
                   </div>
                   <div className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="text-[#C9A961] font-semibold w-28 shrink-0">Teléfono:</span>

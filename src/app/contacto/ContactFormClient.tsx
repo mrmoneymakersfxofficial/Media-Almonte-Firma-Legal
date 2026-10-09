@@ -65,7 +65,7 @@ function FieldError({ message }: { message?: string }) {
 
 const contactInfo = [
   { icon: Phone, label: "WhatsApp", value: "+51 977 186 734", href: "https://api.whatsapp.com/send?phone=51977186734", color: "#25D366" },
-  { icon: Mail, label: "Correo Electrónico", value: "contacto@medinaalmonte.com", href: "mailto:contacto@medinaalmonte.com", color: "#C9A961" },
+  { icon: Mail, label: "Correo Electrónico", value: "firmalegalmedinaalmonte@gmail.com", href: "mailto:firmalegalmedinaalmonte@gmail.com", color: "#C9A961" },
   { icon: MapPin, label: "Ubicación", value: "Lima, Perú", href: undefined, color: "#8B6F47" },
   { icon: Clock, label: "Horario de Atención", value: "Lun–Vie 9:00–17:00", href: undefined, color: "#C9A961" },
 ];

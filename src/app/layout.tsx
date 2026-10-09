@@ -88,7 +88,7 @@ export default function RootLayout({
                 "addressCountry": "PE"
               },
               "telephone": "+51977186734",
-              "email": "contacto@medinaalmonte.com",
+              "email": "firmalegalmedinaalmonte@gmail.com",
               "priceRange": "$$",
               "areaServed": "Perú",
               "serviceType": [

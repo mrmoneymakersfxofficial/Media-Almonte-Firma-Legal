@@ -50,10 +50,10 @@ export function Footer() {
               Defensa legal estratégica en Derecho Civil, Penal y de Familia. MEDINA ALMONTE — Lawyers Firm, Perú.
             </p>
             <a
-              href="mailto:contacto@medinaalmonte.com"
+              href="mailto:firmalegalmedinaalmonte@gmail.com"
               className="text-white/60 hover:text-[#C9A961] text-sm transition-colors inline-block mt-3"
             >
-              contacto@medinaalmonte.com
+              firmalegalmedinaalmonte@gmail.com
             </a>
           </div>
 
@@ -102,7 +102,7 @@ export function Footer() {
             </h4>
             <div className="space-y-3 text-sm text-white/60 mb-6">
               <p>+51 977 186 734</p>
-              <p>contacto@medinaalmonte.com</p>
+              <p>firmalegalmedinaalmonte@gmail.com</p>
               <p>Lima, Perú</p>
             </div>
 

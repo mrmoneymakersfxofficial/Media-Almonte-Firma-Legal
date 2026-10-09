@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, CheckCircle2, Clock, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, Shield, CheckCircle2, Clock, TrendingUp, Users, Volume2, VolumeX } from "lucide-react";
 import { useCountUp } from "@/hooks/use-count-up";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
@@ -28,14 +28,15 @@ function CounterItem({
   return (
     <div className="text-center">
       <div className="flex items-center justify-center mb-2">
-        <Icon className="w-4 h-4 text-[#D4AF37]/50 mr-1.5" />
+        <Icon className="w-4 h-4 text-[#FFD700]/70 mr-1.5" />
         <span
           ref={ref}
           className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight"
           style={{
-            background: "linear-gradient(135deg, #f4e5c2, #d4af37)",
+            background: "linear-gradient(135deg, #FFF6D1 0%, #FFD700 35%, #DFB143 70%, #B8860B 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
+            filter: "drop-shadow(0 2px 10px rgba(255, 215, 0, 0.25))",
           }}
         >
           {count}
@@ -63,8 +64,8 @@ function CtaButton({
 }) {
   const cls =
     variant === "primary"
-      ? "btn-gold-primary inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:px-9 sm:py-4.5 rounded-xl text-[15px] sm:text-base gpu-accelerated"
-      : "btn-gold-outline inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:px-9 sm:py-4.5 rounded-xl text-[15px] sm:text-base gpu-accelerated";
+      ? "btn-gold-primary inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:px-9 sm:py-4.5 rounded-xl text-[15px] sm:text-base gpu-accelerated shadow-[0_4px_25px_rgba(255,215,0,0.35)]"
+      : "btn-gold-outline inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:px-9 sm:py-4.5 rounded-xl text-[15px] sm:text-base gpu-accelerated border-[#FFD700]/40 text-[#FFE082] hover:border-[#FFD700]";
 
   const inner = (
     <>
@@ -93,66 +94,48 @@ function CtaButton({
    ═══════════════════════════════════════════════════════════════════════ */
 export function Hero() {
   const { openModal } = useWhatsAppStore();
-  const [slideIndex, setSlideIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
 
-  const desktopSlides = [
-    "/medina-almonte-hero-desktop.webp",
-    "/medina-almonte-hero-desktop-2.webp",
-  ];
-  const mobileSlides = [
-    "/medina-almonte-hero-mobile-1.webp",
-    "/medina-almonte-hero-mobile-2.webp",
-  ];
-
-  const advance = useCallback(() => {
-    setSlideIndex((prev) => (prev + 1) % 2);
+  const toggleAudio = useCallback(() => {
+    if (videoRef.current) {
+      const nextMuted = !videoRef.current.muted;
+      videoRef.current.muted = nextMuted;
+      setIsMuted(nextMuted);
+      if (!nextMuted) {
+        videoRef.current.play().catch(() => {});
+      }
+    }
   }, []);
-
-  useEffect(() => {
-    const timer = setInterval(advance, 2800);
-    return () => clearInterval(timer);
-  }, [advance]);
 
   return (
     <section className="relative flex overflow-hidden min-h-[100svh] hero-fade-top">
-      {/* ═══ BACKGROUND SLIDESHOW — Premium Crossfade ═══ */}
-      {/* Mobile slides */}
-      {mobileSlides.map((src, i) => (
-        <div
-          key={`mobile-${i}`}
-          className="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat transition-opacity duration-[1200ms] ease-in-out"
-          style={{
-            backgroundImage: `url('${src}')`,
-            filter: "brightness(1.05) contrast(1.05)",
-            opacity: slideIndex === i ? 1 : 0,
-          }}
-          aria-hidden="true"
-        />
-      ))}
-      {/* Desktop slides */}
-      {desktopSlides.map((src, i) => (
-        <div
-          key={`desktop-${i}`}
-          className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat transition-opacity duration-[1200ms] ease-in-out"
-          style={{
-            backgroundImage: `url('${src}')`,
-            filter: "brightness(1.05) contrast(1.05)",
-            opacity: slideIndex === i ? 1 : 0,
-          }}
-          aria-hidden="true"
-        />
-      ))}
+      {/* ═══ BACKGROUND VIDEO — video 1 ═══ */}
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted={isMuted}
+          playsInline
+          preload="auto"
+          poster="/hero-video-poster.webp"
+          className="w-full h-full object-cover md:object-[68%_center] object-center filter brightness-[0.92] contrast-[1.08]"
+        >
+          <source src="/video-1.mp4" type="video/mp4" />
+        </video>
+      </div>
 
-      {/* ═══ Gold accent line at top ═══ */}
+      {/* ═══ Gold accent line at top (Pure 24K Gold) ═══ */}
       <div
         className="absolute top-0 left-0 right-0 h-[2px] z-20 gpu-accelerated"
         style={{
           background:
-            "linear-gradient(90deg, transparent 0%, #D4AF37 30%, #f4e5c2 50%, #B87333 70%, transparent 100%)",
+            "linear-gradient(90deg, transparent 0%, #D4AF37 25%, #FFF0AD 50%, #DFAB3E 75%, transparent 100%)",
         }}
       />
 
-      {/* ═══ LAYER 1 — Lighter overlay so background image is visible ═══ */}
+      {/* ═══ LAYER 1 — General ambient overlay ═══ */}
       <div
         className="absolute inset-0 gpu-accelerated"
         style={{
@@ -161,27 +144,39 @@ export function Hero() {
         }}
         aria-hidden="true"
       />
+
+      {/* ═══ LAYER 1B — Lateral Editorial Shade (PC only) ═══ */}
+      {/* Keeps text 100% crisp while letting the 3D gold logo shine unobstructed on the right */}
+      <div
+        className="absolute inset-0 hidden md:block gpu-accelerated"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.70) 35%, rgba(10,10,10,0.20) 65%, transparent 100%)",
+        }}
+        aria-hidden="true"
+      />
+
       {/* Bottom depth fade for counters */}
       <div
         className="absolute bottom-0 left-0 right-0 h-48 gpu-accelerated"
         style={{
           background:
-            "linear-gradient(to top, rgba(15,15,15,0.85) 0%, rgba(10,10,10,0.35) 40%, transparent 100%)",
+            "linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(10,10,10,0.40) 45%, transparent 100%)",
         }}
         aria-hidden="true"
       />
 
       {/* ═══ LAYER 2 — Decorative Elements ═══ */}
       <div className="hero-decor-layer">
-        {/* Large ambient glow — gold */}
+        {/* Large ambient glow — pure gold */}
         <div
           className="absolute -top-60 -right-60 w-[600px] h-[600px] rounded-full blur-[140px] gpu-accelerated"
-          style={{ background: "radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(255,215,0,0.08) 0%, transparent 70%)" }}
         />
-        {/* Copper glow bottom-left */}
+        {/* Warm gold glow bottom-left */}
         <div
           className="absolute -bottom-60 -left-60 w-[500px] h-[500px] rounded-full blur-[120px] gpu-accelerated"
-          style={{ background: "radial-gradient(circle, rgba(184,115,51,0.05) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(218,165,32,0.07) 0%, transparent 70%)" }}
         />
         {/* Dot grid pattern */}
         <div
@@ -196,21 +191,21 @@ export function Hero() {
 
       {/* ═══ CONTENT ═══ */}
       <div className="hero-content relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-center min-h-[100svh] py-24 md:py-32">
-        <div className="hero-text-col">
+        <div className="hero-text-col max-w-xl">
           {/* Badge — Glassmorphism pill */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="hero-badge lg:hidden inline-flex items-center gap-2.5 bg-white/[0.06] backdrop-blur-xl border border-[#D4AF37]/20 rounded-full px-5 py-2.5 shadow-[0_0_20px_rgba(212,175,55,0.08)] gpu-accelerated"
+            className="hero-badge lg:hidden inline-flex items-center gap-2.5 bg-white/[0.06] backdrop-blur-xl border border-[#FFD700]/30 rounded-full px-5 py-2.5 shadow-[0_0_20px_rgba(255,215,0,0.12)] gpu-accelerated"
           >
-            <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <Shield className="w-3.5 h-3.5 text-[#FFD700]" />
             <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">
               MEDINA ALMONTE — Lawyers Firm
             </span>
           </motion.div>
 
-          {/* H1 — Title */}
+          {/* H1 — Title with 24K Pure Real Gold Gradient & Specular Sheen */}
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -218,9 +213,10 @@ export function Hero() {
             className="hero-h1 mt-7 text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight"
             style={{
               fontFamily: "var(--font-playfair), serif",
-              background: "linear-gradient(135deg, #f4e5c2 0%, #d4af37 40%, #B87333 100%)",
+              background: "linear-gradient(135deg, #FFF6D1 0%, #FFD700 25%, #DFB143 50%, #FFF2B2 75%, #B8860B 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
+              filter: "drop-shadow(0 2px 14px rgba(255, 215, 0, 0.35))",
             }}
           >
             Medina Almonte
@@ -334,7 +330,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="hero-counters mt-14 lg:mt-20 grid grid-cols-3 gap-3 sm:gap-5 hero-text-col"
+          className="hero-counters mt-14 lg:mt-20 grid grid-cols-3 gap-3 sm:gap-5 hero-text-col max-w-xl"
         >
           {[
             { value: 15, suffix: "+", label: "Años de Experiencia", icon: Clock },
@@ -361,6 +357,25 @@ export function Hero() {
             </motion.div>
           ))}
         </motion.div>
+      </div>
+
+      {/* ═══ Audio Toggle Button (Luxury Glassmorphism) ═══ */}
+      <div className="absolute bottom-24 right-5 sm:bottom-10 sm:right-28 z-30">
+        <button
+          onClick={toggleAudio}
+          className="group flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2 rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md border border-[#FFD700]/30 hover:border-[#FFD700]/70 text-white/90 shadow-[0_4px_20px_rgba(0,0,0,0.45)] transition-all duration-300 active:scale-95 cursor-pointer"
+          aria-label={isMuted ? "Activar audio del video" : "Silenciar video"}
+          title={isMuted ? "Activar audio" : "Silenciar"}
+        >
+          {isMuted ? (
+            <VolumeX className="w-4 h-4 text-[#FFD700] transition-transform group-hover:scale-110" />
+          ) : (
+            <Volume2 className="w-4 h-4 text-[#FFD700] transition-transform group-hover:scale-110" />
+          )}
+          <span className="text-xs font-medium text-white/85 group-hover:text-white transition-colors tracking-wide">
+            {isMuted ? "Audio" : "Silenciar"}
+          </span>
+        </button>
       </div>
 
       {/* Scroll down indicator */}

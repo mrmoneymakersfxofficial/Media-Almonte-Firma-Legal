@@ -1320,10 +1320,10 @@ html {
 
 /* ─── CSS Custom Properties for Premium Palette ─── */
 :root {
-  --gold-gradient: linear-gradient(135deg, #8B6F47 0%, #B8956A 30%, #C9A961 50%, #D4C4B0 70%, #B8956A 100%);
-  --gold-gradient-hover: linear-gradient(135deg, #C9A961 0%, #D4C4B0 35%, #B8956A 60%, #8B6F47 100%);
-  --gold-glow: 0 0 20px rgba(201,169,97, 0.3), 0 0 60px rgba(201,169,97, 0.1);
-  --gold-glow-strong: 0 0 25px rgba(201,169,97, 0.4), 0 0 80px rgba(201,169,97, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
+  --gold-gradient: linear-gradient(135deg, #ECC369 0%, #FFF0AD 22%, #DFAB3E 45%, #F5CE68 70%, #B8860B 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #FFF5C0 0%, #ECC369 25%, #DFAB3E 55%, #AA7416 100%);
+  --gold-glow: 0 0 25px rgba(223, 171, 62, 0.45), 0 0 60px rgba(191, 140, 44, 0.2);
+  --gold-glow-strong: 0 0 35px rgba(255, 215, 0, 0.55), 0 0 90px rgba(223, 171, 62, 0.3), 0 8px 32px rgba(0, 0, 0, 0.5);
   --glass-bg: rgba(255, 255, 255, 0.04);
   --glass-border: rgba(201,169,97, 0.12);
   --glass-blur: 16px;

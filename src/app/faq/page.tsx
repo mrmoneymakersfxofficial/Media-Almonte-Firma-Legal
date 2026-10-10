@@ -21,6 +21,16 @@ export const metadata: Metadata = {
     description:
       "Resuelve tus dudas sobre nuestros servicios legales. Ofrecemos consultas legales ilimitadas luego de la contratación profesional.",
     url: "https://medinaalmontelawyers.com/faq",
+    images: [
+      {
+        url: "https://medinaalmontelawyers.com/og-image.jpg",
+        secureUrl: "https://medinaalmontelawyers.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "MEDINA ALMONTE — Lawyers Firm | Preguntas Frecuentes",
+        type: "image/jpeg",
+      },
+    ],
   },
 };
 

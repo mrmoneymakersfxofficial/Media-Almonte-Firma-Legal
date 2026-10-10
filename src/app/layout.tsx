@@ -45,11 +45,12 @@ export const metadata: Metadata = {
     url: "https://medinaalmontelawyers.com",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://medinaalmontelawyers.com/og-image.jpg",
+        secureUrl: "https://medinaalmontelawyers.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "MEDINA ALMONTE — Lawyers Firm - Abogados en Perú",
-        type: "image/png",
+        alt: "MEDINA ALMONTE — Lawyers Firm | Abogados en Perú",
+        type: "image/jpeg",
       },
     ],
   },
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     title: "MEDINA ALMONTE — Lawyers Firm | Abogados en Perú",
     description:
       "Defensa legal estratégica en Derecho Civil, Penal y de Familia. Protegemos tus derechos con excelencia y resultados comprobados.",
-    images: ["/og-image.png"],
+    images: ["https://medinaalmontelawyers.com/og-image.jpg"],
   },
   robots: {
     index: true,

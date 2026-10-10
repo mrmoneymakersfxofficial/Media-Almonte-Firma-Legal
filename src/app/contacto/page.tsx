@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Contacto | MEDINA ALMONTE — Lawyers Firm",
     description:
       "Escríbenos y recibe asesoría legal profesional. Ofrecemos consultas legales ilimitadas luego de la contratación profesional.",
-    url: "https://medinaalmonte.com/contacto",
+    url: "https://medinaalmontelawyers.com/contacto",
   },
 };
 

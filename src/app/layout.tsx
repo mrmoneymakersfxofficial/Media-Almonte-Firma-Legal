@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 const merriweather = Merriweather({ weight: ['300', '400', '700'], subsets: ['latin'], variable: '--font-merriweather', display: 'swap' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://medinaalmonte.com"),
+  metadataBase: new URL("https://medinaalmontelawyers.com"),
   title: "MEDINA ALMONTE — Lawyers Firm | Abogados Civiles, Penales y de Familia en Perú",
   description:
     "Defensa legal estratégica en Derecho Civil, Penal y de Familia. Protegemos tus derechos con excelencia y resultados comprobados.",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_PE",
     siteName: "MEDINA ALMONTE — Lawyers Firm",
-    url: "https://medinaalmonte.com",
+    url: "https://medinaalmontelawyers.com",
     images: [
       {
         url: "/og-image.png",
@@ -81,8 +81,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LegalService",
               "name": "MEDINA ALMONTE — Lawyers Firm",
-              "url": "https://medinaalmonte.com",
-              "logo": "https://medinaalmonte.com/logo.svg",
+              "url": "https://medinaalmontelawyers.com",
+              "logo": "https://medinaalmontelawyers.com/logo.svg",
               "description": "Defensa legal estratégica en Derecho Civil, Penal y de Familia en Perú.",
               "address": {
                 "@type": "PostalAddress",

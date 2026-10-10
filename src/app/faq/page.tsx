@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "Preguntas Frecuentes | MEDINA ALMONTE — Lawyers Firm",
     description:
       "Resuelve tus dudas sobre nuestros servicios legales. Ofrecemos consultas legales ilimitadas luego de la contratación profesional.",
-    url: "https://medinaalmonte.com/faq",
+    url: "https://medinaalmontelawyers.com/faq",
   },
 };
 
